@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>单词记忆 · 列表模式</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+<script>
+  /* 尽早定下主题，避免深色模式下打开时先闪一下白屏。
+     必须在 <body> 之前跑，所以单独放在这里。 */
+  (function () {
+    try {
+      var raw = localStorage.getItem('wordMemory.v1');
+      var theme = raw ? (JSON.parse(raw).settings || {}).theme : null;
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      }
+      document.documentElement.dataset.theme = theme;
+    } catch (e) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  })();
+</script>
+<style>
+  /* ============================================================
+     主题变量：浅色 / 深色两套，全部颜色都从这里取
+     想调风格只改这一段
+     ============================================================ */
+  :root{
+    color-scheme:light;
+
+    --bg:#f2f4f7;
+    --bg-glow:#ffffff;
+    --card:#ffffff;
+    --card-2:#fbfcfd;
+    --text:#1c2026;
+    --text-soft:#4a5058;
+    --text-dim:#8b919b;
+    --line:#e5e8ec;
+    --line-soft:#eef1f4;
+
+    --btn-bg:#ffffff;
+    --btn-bg-hover:#fafbfc;
+    --btn-border-hover:#ccd2da;
+
+    --accent:#2f6fed;
+    --accent-dark:#2560d4;
+    --accent-2:#6d9cff;
+    --accent-soft:#eef3fe;
+    --accent-text:#25478f;
+    --focus-ring:rgba(47,111,237,.14);
+
+    --ok:#1f9d63;
+    --ok-2:#4fd39a;
+    --ok-soft:#eaf7f1;
+    --ok-border:#c2e6d5;
+
+    --warn:#d97b2b;
+    --warn-soft:#fdf3e8;
+    --warn-border:#f0dcc4;
+    --warn-text:#b4641c;
+
+    --danger:#c8433f;
+    --danger-soft:#fdf4f4;
+    --danger-border:#f0c8c8;
+
+    --err:#e05b5b;
+    --err-soft:#fdf3f3;
+    --err-border:#f3cfcf;
+    --err-text:#a13a3a;
+
+    --notice-border:#cfe0ff;
+    --known-row:#fbfdfc;
+    --unsure-row:#fffdfa;
+    --mask:rgba(18,22,28,.46);
+    --sel:#cfe0ff;
+
+    --radius:12px;
+    --radius-sm:9px;
+    --radius-lg:16px;
+    --shadow:0 1px 2px rgba(20,26,35,.04), 0 1px 3px rgba(20,26,35,.05);
+    --shadow-hover:0 4px 16px rgba(20,26,35,.09);
+    --foot-shadow:0 -4px 16px rgba(20,26,35,.05);
+
+    /* 界面字号倍率（设置里可调） */
+    --fs-scale:1;
+    /* 英文词头字体（设置里可调，由 JS 覆盖） */
+    --font-head:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;
+  }
+
+  /* ---------- 深色主题 ---------- */
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+
+    --bg:#14171c;
+    --bg-glow:#1b212a;
+    --card:#1c2027;
+    --card-2:#171b21;
+    --text:#e7eaee;
+    --text-soft:#b3bac4;
+    --text-dim:#7f8794;
+    --line:#2b313a;
+    --line-soft:#252a32;
+
+    --btn-bg:#232932;
+    --btn-bg-hover:#2a313c;
+    --btn-border-hover:#3b4450;
+
+    --accent:#5b93ff;
+    --accent-dark:#4a80e8;
+    --accent-2:#7aa8ff;
+    --accent-soft:#1d2839;
+    --accent-text:#9dbcf5;
+    --focus-ring:rgba(91,147,255,.22);
+
+    --ok:#41c08a;
+    --ok-2:#5fd6a4;
+    --ok-soft:#152a20;
+    --ok-border:#28503c;
+
+    --warn:#e0953f;
+    --warn-soft:#2a2118;
+    --warn-border:#4d3a22;
+    --warn-text:#e8a95f;
+
+    --danger:#e0706c;
+    --danger-soft:#2b1c1c;
+    --danger-border:#4d2a2a;
+
+    --err:#ef6b6b;
+    --err-soft:#2c1b1b;
+    --err-border:#4d2a2a;
+    --err-text:#f0a0a0;
+
+    --notice-border:#2f4260;
+    --known-row:#191e24;
+    --unsure-row:#1f1d1a;
+    --mask:rgba(0,0,0,.62);
+    --sel:#2c4a7c;
+
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.35);
+    --shadow-hover:0 4px 18px rgba(0,0,0,.45);
+    --foot-shadow:0 -4px 16px rgba(0,0,0,.3);
+  }
+
+  *{ box-sizing:border-box; }
+  /* 字号全部用 rem，这样设置里的“界面字号”能整体缩放 */
+  html{ font-size:calc(16px * var(--fs-scale)); -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; color:var(--text); background:var(--bg);
+    background-image:radial-gradient(1200px 500px at 50% -240px, var(--bg-glow) 0%, rgba(255,255,255,0) 70%);
+    font:0.9375rem/1.62 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    transition:background-color .2s ease, color .2s ease;
+  }
+  ::selection{ background:var(--sel); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .wrap{ max-width:940px; margin:0 auto; padding:18px 18px 44px; }
+
+  /* ---------- 顶栏 / 底栏 ---------- */
+  .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; flex-wrap:wrap;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:11px 15px;
+    box-shadow:var(--shadow);
+    position:sticky; top:0; z-index:5; overflow:hidden;
+    transition:background-color .2s ease, border-color .2s ease;
+  }
+  footer.bar{
+    position:sticky; bottom:0; margin-top:14px;
+    color:var(--text-dim); font-size:0.875rem;
+    box-shadow:var(--foot-shadow);
+  }
+  .bar-left,.bar-right{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .date{ font-weight:650; letter-spacing:.2px; }
+  .progress{ color:var(--text-dim); font-size:0.875rem; }
+  .progress b{ color:var(--accent); font-size:0.9375rem; }
+  footer.bar b{ color:var(--text-soft); }
+
+  /* 今日进度条：贴在顶栏下沿 */
+  .bar-progress{
+    position:absolute; left:0; right:0; bottom:0; height:3px;
+    background:var(--line-soft);
+  }
+  .bar-progress i{
+    display:block; height:100%; width:0;
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition:width .35s ease;
+  }
+
+  /* ---------- 按钮 ---------- */
+  button{ font:inherit; cursor:pointer; border-radius:var(--radius-sm); transition:.16s ease; }
+  button:active:not(:disabled){ transform:translateY(1px); }
+  .btn{
+    border:1px solid var(--line); background:var(--btn-bg); color:var(--text);
+    padding:6px 14px; white-space:nowrap;
+  }
+  .btn:hover:not(:disabled){ border-color:var(--btn-border-hover); background:var(--btn-bg-hover); }
+  .btn:disabled{ opacity:.45; cursor:not-allowed; }
+  .btn-primary{ border-color:var(--accent); background:var(--accent); color:#fff; font-weight:600; }
+  .btn-primary:hover:not(:disabled){ background:var(--accent-dark); border-color:var(--accent-dark); }
+  .btn-ok{ border-color:var(--ok-border); background:var(--ok-soft); color:var(--ok); font-weight:600; }
+  .btn-ok:hover:not(:disabled){ border-color:var(--ok); }
+  .btn-warn{ border-color:var(--warn-border); background:var(--warn-soft); color:var(--warn-text); font-weight:600; }
+  .btn-warn:hover:not(:disabled){ border-color:var(--warn); }
+  .btn-danger{ border-color:var(--danger-border); background:var(--danger-soft); color:var(--danger); font-weight:600; }
+  .btn-danger:hover:not(:disabled){ border-color:var(--danger); }
+  /* 圆形图标按钮（发音 / 主题切换） */
+  .btn-icon{
+    width:34px; height:34px; padding:0; flex-shrink:0;
+    display:inline-flex; align-items:center; justify-content:center;
+    border:1px solid var(--line); background:var(--btn-bg); color:var(--text-soft);
+    border-radius:50%; font-size:0.9375rem; line-height:1;
+  }
+  .btn-icon:hover:not(:disabled){ border-color:var(--btn-border-hover); color:var(--accent); background:var(--btn-bg-hover); }
+
+  /* ---------- 提示条 ---------- */
+  .notice{
+    margin-top:12px; padding:11px 15px; border-radius:var(--radius);
+    border:1px solid var(--notice-border); background:var(--accent-soft); color:var(--accent-text);
+    display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+    font-size:0.875rem; line-height:1.55;
+    animation:slide-in .22s ease;
+  }
+  .notice.is-error{ border-color:var(--err-border); background:var(--err-soft); color:var(--err-text); }
+  .notice .close{
+    border:none; background:transparent; color:inherit; opacity:.55;
+    font-size:1.1875rem; line-height:1; padding:0 4px; border-radius:6px; flex-shrink:0;
+  }
+  .notice .close:hover{ opacity:1; background:rgba(128,128,128,.16); }
+  @keyframes slide-in{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:none; } }
+
+  /* ---------- 单词列表 ---------- */
+  .list{ margin-top:14px; display:flex; flex-direction:column; gap:9px; }
+  .row{
+    background:var(--card); border:1px solid var(--line);
+    border-left:4px solid transparent;
+    border-radius:var(--radius); padding:13px 15px;
+    box-shadow:var(--shadow);
+    transition:box-shadow .18s ease, transform .18s ease, border-color .18s ease, background-color .2s ease;
+  }
+  .row:hover{ box-shadow:var(--shadow-hover); transform:translateY(-1px); }
+  .row.is-open{ border-color:var(--notice-border); box-shadow:var(--shadow-hover); }
+  .row-main{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .col-main{ flex:1; min-width:0; cursor:pointer; }
+  .col-main:hover .word{ color:var(--accent); }
+  .row .word{
+    font-family:var(--font-head);
+    font-size:1.3125rem; font-weight:600;
+    letter-spacing:.2px; line-height:1.35; word-break:break-word;
+  }
+  .row .ph{
+    font-family:system-ui,sans-serif; font-size:0.84375rem; font-weight:400;
+    color:var(--text-dim); margin-left:9px; letter-spacing:0;
+  }
+  .row .meaning{ font-size:0.875rem; color:var(--text-soft); margin-top:3px; }
+  .row .act{ display:flex; gap:8px; flex-shrink:0; align-items:center; }
+  .chev{
+    display:inline-block; width:15px; margin-right:2px;
+    color:var(--text-dim); font-size:0.6875rem; font-family:system-ui,sans-serif;
+    transition:color .16s;
+  }
+
+  /* 展开的详情 */
+  .row-detail{
+    margin-top:11px; padding-top:11px; border-top:1px dashed var(--line);
+    font-size:0.875rem; line-height:1.7; color:var(--text-soft);
+    animation:slide-in .18s ease;
+  }
+  .d-line{ display:flex; gap:12px; margin-bottom:9px; }
+  .d-line:last-child{ margin-bottom:0; }
+  .d-line b{
+    flex:0 0 40px; color:var(--text-dim); font-weight:600; font-size:0.78125rem; line-height:1.9;
+  }
+  .d-line span{ flex:1; min-width:0; }
+  .d-en{ color:var(--text); font-family:var(--font-head); font-size:0.9375rem; }
+  .d-cn{ color:var(--text-dim); }
+  .d-none{ color:var(--text-dim); font-style:italic; }
+
+  /* 已标记的行视觉区分 */
+  .row.is-known{ border-left-color:var(--ok); background:var(--known-row); }
+  .row.is-known .word{ color:var(--text-dim); text-decoration:line-through; text-decoration-color:var(--ok); }
+  .row.is-known .meaning{ color:var(--text-dim); }
+  .row.is-unsure{ border-left-color:var(--warn); background:var(--unsure-row); }
+  .row.is-unsure .word{ color:var(--warn-text); }
+
+  /* 状态角标 */
+  .tag{
+    display:inline-block; font-family:system-ui,sans-serif;
+    font-size:0.71875rem; line-height:1.6; padding:1px 8px;
+    border-radius:9px; margin-left:9px; vertical-align:2px; font-weight:600;
+    letter-spacing:0;
+  }
+  .tag-known{ background:var(--ok-soft); color:var(--ok); }
+  .tag-unsure{ background:var(--warn-soft); color:var(--warn-text); }
+  .tag-new{ background:var(--accent-soft); color:var(--accent-text); }
+
+  .empty{ text-align:center; color:var(--text-dim); padding:56px 16px; }
+  .empty h3{ margin:0 0 6px; color:var(--text-soft); font-size:1rem; font-weight:600; }
+
+  /* ---------- 键盘拼写模式 ---------- */
+  /* 全局兜底：.list 之类带 display 的元素光加 hidden 是盖不住的 */
+  [hidden]{ display:none !important; }
+
+  .kbd{ margin-top:14px; }
+  .kbd-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:44px 26px 34px; text-align:center; box-shadow:var(--shadow);
+    transition:background-color .2s ease, border-color .2s ease;
+  }
+  .kbd-word{
+    font-family:var(--font-head);
+    font-size:2.625rem; font-weight:700;
+    letter-spacing:1px; line-height:1.25; word-break:break-word;
+  }
+  .kbd-ph{ color:var(--text-dim); font-size:0.9375rem; margin-top:7px; min-height:22px; }
+  .kbd-meaning{ font-size:1.0625rem; color:var(--text-soft); margin-top:5px; min-height:26px; }
+
+  .kbd-box{
+    display:inline-flex; align-items:center; justify-content:flex-start;
+    min-width:330px; min-height:66px; margin:28px auto 12px; padding:0 20px;
+    border:2px solid var(--line); border-radius:14px;
+    background:var(--card-2);
+    box-shadow:inset 0 2px 6px var(--shadow);
+    font-family:var(--font-head);
+    font-size:1.9375rem; font-weight:600; letter-spacing:4px;
+    transition:border-color .15s, background-color .15s;
+  }
+  .kbd-box.is-error{ border-color:var(--err); background:var(--err-soft); animation:shake .32s; }
+  .kbd-box.is-done{ border-color:var(--ok); background:var(--ok-soft); }
+  @keyframes shake{
+    0%,100%{ transform:translateX(0); }
+    20%{ transform:translateX(-8px); } 40%{ transform:translateX(8px); }
+    60%{ transform:translateX(-5px); } 80%{ transform:translateX(5px); }
+  }
+  .ch-ok{ color:var(--ok); }
+  .ch-bad{ color:var(--err); text-decoration:underline wavy var(--err); text-underline-offset:5px; }
+  .caret{
+    display:inline-block; width:2px; height:31px; background:var(--accent);
+    margin-left:3px; border-radius:1px; animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 0%,49%{ opacity:1; } 50%,100%{ opacity:0; } }
+
+  .kbd-hint{ color:var(--text-dim); font-size:0.8125rem; min-height:20px; }
+  .kbd-hint.is-error{ color:var(--danger); font-weight:600; }
+  .kbd-stats{
+    display:flex; justify-content:center; gap:28px; flex-wrap:wrap;
+    margin-top:24px; color:var(--text-dim); font-size:0.84375rem;
+  }
+  .kbd-stats b{ color:var(--text); font-size:1rem; font-variant-numeric:tabular-nums; }
+  .kbd-done .big{ font-size:1.4375rem; font-weight:700; margin-bottom:8px; }
+  .kbd-done .kbd-hint{ margin-top:2px; }
+
+  /* 接输入法用的透明输入框：
+     不能 display:none / visibility:hidden，否则拿不到焦点、软键盘不弹。
+     opacity:0 + pointer-events:none 既能被 focus，又不挡点击、不显示原生光标。
+     ⚠ 必须贴在屏幕**顶部**：放底部会被弹出来的软键盘盖住，
+       浏览器为了“露出”光标就会滚页面，表现成每敲一个字母页面就跳一下。
+     字号必须 ≥16px，否则 iOS 聚焦时会自动放大页面。 */
+  .kbd-input{
+    position:fixed; left:0; top:0;
+    width:2px; height:2px; padding:0; border:0; margin:0;
+    opacity:0; pointer-events:none;
+    background:transparent; color:transparent; caret-color:transparent;
+    font-size:16px; line-height:1;
+  }
+
+  /* ---------- 打卡提示条 ---------- */
+  .cta{
+    margin-top:12px; padding:11px 15px; border-radius:var(--radius);
+    border:1px solid var(--ok-border); background:var(--ok-soft); color:var(--ok);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    font-size:0.875rem; font-weight:600;
+    animation:slide-in .22s ease;
+  }
+  .cta .btn{ font-weight:600; }
+
+  /* ---------- 打卡页 ---------- */
+  .checkin{ margin-top:14px; display:flex; flex-direction:column; gap:12px; }
+  .ci-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:20px 22px; box-shadow:var(--shadow);
+    transition:background-color .2s ease, border-color .2s ease;
+  }
+  .ci-head{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .ci-title{ font-size:1.125rem; font-weight:700; }
+  .ci-sub{ color:var(--text-dim); font-size:0.875rem; margin-top:3px; }
+  .ci-action{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .ci-btn{ padding:9px 26px; font-weight:700; }
+  .ci-done{ color:var(--ok); font-weight:700; font-size:1rem; }
+
+  .ci-bar{
+    margin-top:14px; height:6px; border-radius:3px;
+    background:var(--line-soft); overflow:hidden;
+  }
+  .ci-bar i{
+    display:block; height:100%; width:0;
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition:width .35s ease;
+  }
+  .ci-bar i.is-done{ background:linear-gradient(90deg, var(--ok), var(--ok-2)); }
+  .ci-note{ margin-top:11px; color:var(--text-dim); font-size:0.8125rem; }
+
+  .ci-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .ci-stat{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 14px; text-align:center; box-shadow:var(--shadow);
+  }
+  .ci-stat b{
+    display:block; font-size:1.75rem; font-weight:700; color:var(--accent);
+    font-variant-numeric:tabular-nums; line-height:1.2;
+  }
+  .ci-stat span{ color:var(--text-dim); font-size:0.75rem; }
+
+  /* 月历 */
+  .ci-cal-head{ display:flex; align-items:center; justify-content:center; gap:16px; }
+  .ci-cal-head b{ font-size:1.0625rem; min-width:130px; text-align:center; font-variant-numeric:tabular-nums; }
+  /* 格子限制一下宽度：否则 940px 宽的页面里每格会有 115px 见方，数字显得很小 */
+  .ci-week{
+    display:grid; grid-template-columns:repeat(7,1fr); gap:6px;
+    max-width:600px; margin:16px auto 8px;
+    color:var(--text-dim); font-size:0.8125rem; text-align:center;
+  }
+  .ci-grid{
+    display:grid; grid-template-columns:repeat(7,1fr); gap:6px;
+    max-width:600px; margin:0 auto;
+  }
+  .ci-cell{
+    aspect-ratio:1 / 1; display:flex; align-items:center; justify-content:center;
+    border-radius:var(--radius-sm); border:1px solid transparent;
+    font-size:1rem; color:var(--text-dim);
+    font-variant-numeric:tabular-nums; cursor:default;
+    transition:background-color .16s, color .16s, border-color .16s;
+  }
+  .ci-cell.is-blank{ border:none; }
+  .ci-cell.is-future{ opacity:.4; }
+  .ci-cell.is-studied{
+    background:var(--accent-soft); color:var(--accent-text);
+    border-color:var(--notice-border); font-weight:600;
+  }
+  .ci-cell.is-checked{
+    background:var(--ok); color:#fff; font-weight:700;
+    box-shadow:0 2px 8px rgba(31,157,99,.28);
+  }  .ci-cell.is-today{ border-color:var(--accent); border-width:2px; }
+  .ci-cell.is-checked.is-today{ border-color:var(--accent-2); }
+
+  .ci-legend{
+    display:flex; gap:18px; flex-wrap:wrap; justify-content:center;
+    margin-top:16px; color:var(--text-dim); font-size:0.75rem;
+  }
+  .ci-legend > span{ display:inline-flex; align-items:center; gap:6px; }
+  .dot{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+  .dot-checked{ background:var(--ok); }
+  .dot-studied{ background:var(--accent-soft); border:1px solid var(--notice-border); }
+  .dot-today{ background:transparent; border:2px solid var(--accent); }
+
+  /* ---------- 打卡庆祝动画 ---------- */
+  .cel-mask{
+    position:fixed; inset:0; z-index:80;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(16,20,26,.32);
+    -webkit-backdrop-filter:blur(12px) saturate(1.15);
+    backdrop-filter:blur(12px) saturate(1.15);
+    animation:cel-fade .3s ease;
+    cursor:pointer;
+  }
+  .cel-mask[hidden]{ display:none; }
+  @keyframes cel-fade{ from{ opacity:0; } to{ opacity:1; } }
+
+  .cel-card{
+    position:relative; z-index:2;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:22px; padding:36px 46px 30px;
+    text-align:center;
+    box-shadow:0 26px 80px rgba(8,12,18,.34);
+    animation:cel-pop .46s cubic-bezier(.18,1.32,.42,1);
+  }
+  @keyframes cel-pop{
+    0%{ opacity:0; transform:scale(.84) translateY(16px); }
+    62%{ opacity:1; transform:scale(1.03) translateY(0); }
+    100%{ transform:scale(1) translateY(0); }
+  }
+
+  .cel-emoji{
+    font-size:66px; line-height:1;
+    animation:cel-bounce 1.15s ease-in-out .18s infinite alternate;
+  }
+  @keyframes cel-bounce{
+    from{ transform:translateY(0) rotate(-5deg) scale(1); }
+    to{ transform:translateY(-13px) rotate(5deg) scale(1.09); }
+  }
+
+  .cel-title{ margin-top:18px; font-size:1.375rem; font-weight:800; letter-spacing:.3px; }
+  .cel-sub{ margin-top:7px; color:var(--text-dim); font-size:0.875rem; }
+  .cel-hint{ margin-top:18px; color:var(--text-dim); font-size:0.75rem; opacity:.8; }
+
+  /* 飘起来的 emoji */
+  .cel-particles{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+  .cel-p{
+    position:absolute; bottom:-12%;
+    animation-name:cel-rise;
+    animation-timing-function:ease-out;
+    animation-fill-mode:forwards;
+    will-change:transform, opacity;
+  }
+  @keyframes cel-rise{
+    0%{ opacity:0; transform:translateY(0) scale(.5) rotate(0deg); }
+    18%{ opacity:1; }
+    100%{ opacity:0; transform:translateY(-108vh) scale(1.2) rotate(38deg); }
+  }
+
+  /* ---------- 弹窗 ---------- */
+  .mask{
+    position:fixed; inset:0; background:var(--mask);
+    backdrop-filter:blur(2px);
+    display:flex; align-items:center; justify-content:center; padding:20px; z-index:50;
+    animation:slide-in .16s ease;
+  }
+  .mask[hidden]{ display:none; }
+  .modal{
+    background:var(--card); color:var(--text);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg); padding:22px 24px;
+    width:100%; max-width:470px; box-shadow:0 18px 50px rgba(10,14,20,.28);
+    animation:pop-in .18s ease;
+    max-height:88vh; overflow-y:auto;
+  }
+  @keyframes pop-in{ from{ opacity:0; transform:translateY(8px) scale(.98); } to{ opacity:1; transform:none; } }
+  .modal h3{ margin:0 0 10px; font-size:1.0625rem; }
+  .modal .body{ font-size:0.875rem; color:var(--text-soft); white-space:pre-line; line-height:1.7; }
+  .modal .act{ margin-top:20px; display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; align-items:center; }
+  .modal .spacer{ flex:1; }
+
+  /* 设置面板表单 */
+  .set-row{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:12px 0; border-bottom:1px solid var(--line-soft); font-size:0.875rem;
+  }
+  /* 关键：label 不许被长说明文字挤到换行（中文可以在任意字之间断行） */
+  .set-row label{ flex:0 0 auto; white-space:nowrap; }
+  .set-row:first-of-type{ margin-top:8px; }
+  .set-ctl{
+    display:flex; align-items:center; gap:10px;
+    flex:0 1 auto; min-width:0; flex-wrap:wrap; justify-content:flex-end;
+  }
+  .set-note{
+    padding:7px 0 11px; border-bottom:1px solid var(--line-soft);
+    color:var(--text-dim); font-size:0.75rem; line-height:1.5;
+  }
+  .set-hint{
+    margin-top:16px; padding:10px 13px; border-radius:var(--radius-sm);
+    background:var(--accent-soft); color:var(--accent-text); font-size:0.8125rem;
+  }
+  input[type="number"]{
+    width:92px; padding:6px 11px; font:inherit; text-align:right;
+    border:1px solid var(--line); border-radius:var(--radius-sm);
+    background:var(--btn-bg); color:var(--text); font-variant-numeric:tabular-nums;
+    transition:border-color .16s, box-shadow .16s;
+  }
+  input[type="number"]:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--focus-ring); }
+  input[type="checkbox"]{ width:18px; height:18px; accent-color:var(--accent); cursor:pointer; margin:0; }
+  select{
+    padding:6px 10px; font:inherit; color:var(--text); background:var(--btn-bg);
+    border:1px solid var(--line); border-radius:var(--radius-sm);
+    max-width:200px; cursor:pointer;
+    transition:border-color .16s, box-shadow .16s;
+  }
+  select:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--focus-ring); }
+
+  /* ---------- 窄屏兜底（不专门做移动端，只保证不塌） ---------- */
+  @media (max-width:640px){
+    .wrap{ padding:12px 12px 36px; }
+    .bar{ padding:10px 12px; }
+    .row-main{ flex-wrap:wrap; gap:10px; }
+    .row .act{ width:100%; justify-content:flex-end; }
+    .row .word{ font-size:1.1875rem; }
+    .row-detail .d-line{ flex-direction:column; gap:2px; }
+    .d-line b{ flex:none; line-height:1.5; }
+    .kbd-card{ padding:32px 16px 26px; }
+    .kbd-word{ font-size:2rem; }
+    .kbd-box{ min-width:0; width:100%; font-size:1.625rem; }
+    .kbd-stats{ gap:16px; }
+    .modal{ padding:18px 16px; }
+    .set-row{ flex-direction:column; align-items:flex-start; gap:8px; }
+    .set-ctl{ width:100%; justify-content:flex-start; }
+  }
+
+  /* 尊重系统的“减少动态效果” */
+  @media (prefers-reduced-motion:reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .caret{ opacity:1 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 顶栏：日期 + 今日进度 + 操作按钮 ===== -->
+  <header class="bar">
+    <div class="bar-left">
+      <span class="date" id="dateLabel">📖</span>
+      <span class="progress">今日进度 <b id="progDone">0</b>/<b id="progTotal">0</b></span>
+    </div>
+    <div class="bar-right">
+      <button class="btn-icon" id="btnTheme" title="切换深色 / 浅色" aria-label="切换深色或浅色">🌙</button>
+      <button class="btn btn-primary" id="btnImport">导入词库</button>
+      <button class="btn" id="btnCheckin">打卡</button>
+      <button class="btn" id="btnSettings">设置</button>
+      <button class="btn" id="btnKbd">键盘模式</button>
+    </div>
+    <!-- 今日进度条 -->
+    <div class="bar-progress"><i id="progBar"></i></div>
+  </header>
+
+  <!-- ===== 提示条（导入结果等） ===== -->
+  <div class="notice" id="notice" hidden>
+    <span id="noticeText"></span>
+    <button class="close" id="noticeClose" title="关闭">×</button>
+  </div>
+
+  <!-- ===== 今日任务全部完成时的打卡提示 ===== -->
+  <div class="cta" id="ctaBanner" hidden>
+    <span id="ctaText"></span>
+    <button class="btn" id="ctaBtn">去打卡</button>
+  </div>
+
+  <!-- ===== 单词列表 ===== -->
+  <main class="list" id="list"></main>
+
+  <!-- ===== 键盘拼写模式（阶段 3） ===== -->
+  <section class="kbd" id="kbd" hidden>
+    <div class="kbd-card" id="kbdCard"></div>
+    <!-- 真实的输入框：Android/iOS 只有可编辑元素获得焦点才会弹软键盘。
+         它透明、不接收鼠标事件，只负责“接住”输入法的字符，
+         真正的显示由上面的 .kbd-box 自己画。 -->
+    <input class="kbd-input" id="kbdInput" type="text"
+           inputmode="latin" autocomplete="off" autocorrect="off" autocapitalize="off"
+           spellcheck="false" enterkeyhint="done" tabindex="-1" aria-label="拼写输入">
+  </section>
+
+  <!-- ===== 打卡页（扩展） ===== -->
+  <section class="checkin" id="checkin" hidden>
+    <div class="ci-card">
+      <div class="ci-head">
+        <div>
+          <div class="ci-title">今日打卡</div>
+          <div class="ci-sub" id="ciSub"></div>
+        </div>
+        <div class="ci-action" id="ciAction"></div>
+      </div>
+      <div class="ci-bar"><i id="ciBar"></i></div>
+      <div class="ci-note" id="ciNote"></div>
+    </div>
+
+    <div class="ci-stats">
+      <div class="ci-stat"><b id="ciStreak">0</b><span>连续打卡（天）</span></div>
+      <div class="ci-stat"><b id="ciTotal">0</b><span>累计打卡（天）</span></div>
+      <div class="ci-stat"><b id="ciMonth">0</b><span>本月打卡（天）</span></div>
+    </div>
+
+    <div class="ci-card">
+      <div class="ci-cal-head">
+        <button class="btn-icon" id="calPrev" title="上个月" aria-label="上个月">‹</button>
+        <b id="calTitle"></b>
+        <button class="btn-icon" id="calNext" title="下个月" aria-label="下个月">›</button>
+      </div>
+      <div class="ci-week">
+        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+      </div>
+      <div class="ci-grid" id="calGrid"></div>
+      <div class="ci-legend">
+        <span><i class="dot dot-checked"></i>已打卡</span>
+        <span><i class="dot dot-studied"></i>学习过未打卡</span>
+        <span><i class="dot dot-today"></i>今天</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 底栏：统计 ===== -->
+  <footer class="bar">
+    <span>已掌握 <b id="knownCount">0</b> 个 · 复习池 <b id="reviewCount">0</b> 词 · 词库共 <b id="bankCount">0</b> 词</span>
+    <span class="bar-right">
+      <button class="btn" id="btnReview">查看复习池</button>
+      <button class="btn" id="btnExport">导出进度</button>
+    </span>
+  </footer>
+
+</div>
+
+<!-- 隐藏的文件选择框：导入词库用 -->
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+
+<!-- 通用弹窗 -->
+<div class="mask" id="mask" hidden>
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <div class="body" id="modalBody"></div>
+    <div class="act" id="modalAct"></div>
+  </div>
+</div>
+
+<!-- 打卡完成庆祝动画 -->
+<div class="cel-mask" id="celebrateMask" hidden>
+  <div class="cel-particles" id="celParticles"></div>
+  <div class="cel-card">
+    <div class="cel-emoji" id="celEmoji">🎉</div>
+    <div class="cel-title" id="celTitle">今日任务已完成！</div>
+    <div class="cel-sub" id="celSub"></div>
+    <div class="cel-hint">点任意位置继续</div>
+  </div>
+</div>
+
+<!-- 设置面板（阶段 4） -->
+<div class="mask" id="setMask" hidden>
+  <div class="modal">
+    <h3>设置</h3>
+
+    <div class="set-row">
+      <label for="setLimit">每日词数</label>
+      <span class="set-ctl">
+        <input type="number" id="setLimit" min="1" max="1000" step="5">
+      </span>
+    </div>
+    <div class="set-note">新词补足到这个上限，改完立即重排今日任务</div>
+
+    <div class="set-row">
+      <label for="setTheme">主题</label>
+      <span class="set-ctl">
+        <select id="setTheme">
+          <option value="auto">跟随系统</option>
+          <option value="light">浅色</option>
+          <option value="dark">深色</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="set-row">
+      <label for="setFontScale">界面字号</label>
+      <span class="set-ctl">
+        <select id="setFontScale">
+          <option value="0.9">小</option>
+          <option value="1">标准</option>
+          <option value="1.1">大</option>
+          <option value="1.25">特大</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="set-row">
+      <label for="setHeadFont">英文字体</label>
+      <span class="set-ctl">
+        <select id="setHeadFont">
+          <option value="serif">衬线（字典感）</option>
+          <option value="sans">无衬线（现代）</option>
+          <option value="mono">等宽（打字感）</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="set-row">
+      <label for="setPhonetic">显示音标</label>
+      <span class="set-ctl"><input type="checkbox" id="setPhonetic"></span>
+    </div>
+
+    <div class="set-row">
+      <label for="setExample">显示例句</label>
+      <span class="set-ctl"><input type="checkbox" id="setExample"></span>
+    </div>
+
+    <div class="set-row">
+      <label for="setKeyboard">直接进入键盘模式</label>
+      <span class="set-ctl"><input type="checkbox" id="setKeyboard"></span>
+    </div>
+
+    <div class="set-hint" id="setHint"></div>
+
+    <div class="act">
+      <button class="btn btn-danger" id="setReset">重置进度…</button>
+      <span class="spacer"></span>
+      <button class="btn btn-primary" id="setClose">完成</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================================================================
+   英语单词记忆工具
+   阶段 1：基础列表 + 标记 + 持久化
+   阶段 2：词库导入 + 每日任务逻辑（复习池 + 新词补足）
+   ================================================================ */
+
+/* ---------- 1. 常量 ---------- */
+const STORAGE_KEY = 'wordMemory.v1';
+
+// 默认设置
+const DEFAULT_SETTINGS = {
+  dailyLimit: 50,       // 每日新词上限
+  showPhonetic: true,   // 是否显示音标
+  showExample: true,    // 是否显示例句
+  keyboardMode: false,  // 是否默认进入键盘模式
+  theme: 'auto',        // auto | light | dark
+  fontScale: 1,         // 界面字号倍率：0.9 | 1 | 1.1 | 1.25
+  headFont: 'serif'     // 英文词头字体：serif | sans | mono
+};
+
+// 英文词头可选字体
+const FONT_STACKS = {
+  serif: '"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif',
+  sans:  'system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif',
+  mono:  'ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace'
+};
+
+// 可选的界面字号
+const FONT_SCALES = [0.9, 1, 1.1, 1.25];
+
+// 阶段 1 留下的内置测试词，字段与正式词库格式完全一致
+const SEED_WORDS = [
+  {
+    word: 'abandon',
+    phonetic: '/əˈbændən/',
+    meaning: 'v. 放弃，抛弃；离开',
+    scene: '想象你站在一艘即将沉没的船上，船长下令所有人必须放弃货物逃生。这个“放弃”就是 abandon——不是暂时放下，而是彻底、决绝地离开。',
+    example: 'The crew had to abandon the sinking ship.',
+    exampleCn: '船员们不得不弃船逃生。'
+  },
+  {
+    word: 'ability',
+    phonetic: '/əˈbɪləti/',
+    meaning: 'n. 能力，才能',
+    scene: 'able（能够的）的名词形式。把 -able 变成 -ility，就是“能把事情做成的那个东西”——能力。',
+    example: 'She has the ability to explain difficult ideas clearly.',
+    exampleCn: '她有能力把复杂的想法讲清楚。'
+  },
+  {
+    word: 'absorb',
+    phonetic: '/əbˈzɔːrb/',
+    meaning: 'v. 吸收；吸引…的注意',
+    scene: '海绵丢进水里，水被“吸进去”——absorb。注意力也是一样：一本好书能把你的注意力整个吸走。',
+    example: 'Plants absorb carbon dioxide from the air.',
+    exampleCn: '植物从空气中吸收二氧化碳。'
+  },
+  {
+    word: 'abstract',
+    phonetic: '/ˈæbstrækt/',
+    meaning: 'adj. 抽象的；n. 摘要',
+    scene: 'abs-（离开）+ tract（拉）→ 从具体事物里“抽离”出来的东西，就是抽象的；把整篇论文的要点抽出来，就是摘要。',
+    example: 'This is too abstract for a beginner.',
+    exampleCn: '对初学者来说这太抽象了。'
+  },
+  {
+    word: 'accept',
+    phonetic: '/əkˈsept/',
+    meaning: 'v. 接受，同意',
+    scene: '收到快递时伸手“接住”那个动作——accept。除了接东西，还可以接一个邀请、一个道歉、一个事实。',
+    example: 'He decided to accept the job offer.',
+    exampleCn: '他决定接受这份工作邀请。'
+  }
+];
+
+/* ---------- 2. 工具函数 ---------- */
+
+// 调试用的“时钟偏移”，只存在内存里，刷新即失效（见文末 wordMemory.nextDay）
+let debugDayOffset = 0;
+
+// 当前时间（带调试偏移）
+function now() {
+  const d = new Date();
+  if (debugDayOffset) d.setDate(d.getDate() + debugDayOffset);
+  return d;
+}
+
+// 本地日期 YYYY-MM-DD
+// 注意：不用 toISOString()，那个是 UTC 日期，在东八区凌晨 0~8 点会算成“昨天”
+function fmtDate(d) {
+  const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+
+// “今天”的唯一标识
+function today() {
+  return fmtDate(now());
+}
+
+// 把词库里的原始条目补齐成完整的内部记录（保证字段齐全）
+// 注意：如果条目里带了 status / failCount / lastReview（也就是本工具导出的进度文件），
+// 这里会原样保留——不然“导出进度再导入恢复”就会把进度洗掉
+function createWordRecord(raw) {
+  // 所有文本字段统一去首尾空白：手写的 JSON 常带多余空格/换行，
+  // 不清掉会在列表里显示出诡异的缩进（校验和入库两处的处理也要一致）
+  const s = v => (v == null ? '' : String(v).trim());
+  return {
+    word:       s(raw.word),
+    phonetic:   s(raw.phonetic),
+    meaning:    s(raw.meaning),
+    scene:      s(raw.scene),
+    example:    s(raw.example),
+    exampleCn:  s(raw.exampleCn),
+    status:     ['new', 'unsure', 'known'].includes(raw.status) ? raw.status : 'new',
+    failCount:  Math.max(0, Number(raw.failCount) || 0),
+    lastReview: (typeof raw.lastReview === 'string' && raw.lastReview) ? raw.lastReview : null
+  };
+}
+
+// 每日词数：夹到 1~1000。非数字才回退到 fallback，注意 0 是合法输入要夹到 1
+function clampLimit(v, fallback) {
+  const n = Number(v);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.min(1000, Math.max(1, Math.round(n)));
+}
+
+// 设置项纠偏（导入的设置文件可能是脏的）
+function normalizeSettings(s) {
+  const out = Object.assign({}, DEFAULT_SETTINGS, s || {});
+  out.dailyLimit   = clampLimit(out.dailyLimit, DEFAULT_SETTINGS.dailyLimit);
+  out.showPhonetic = !!out.showPhonetic;
+  out.showExample  = !!out.showExample;
+  out.keyboardMode = !!out.keyboardMode;
+  out.theme        = ['auto', 'light', 'dark'].includes(out.theme) ? out.theme : 'auto';
+  out.fontScale    = FONT_SCALES.includes(Number(out.fontScale)) ? Number(out.fontScale) : 1;
+  out.headFont     = Object.prototype.hasOwnProperty.call(FONT_STACKS, out.headFont) ? out.headFont : 'serif';
+  return out;
+}
+
+// 首次打开时的初始数据
+function buildInitialData() {
+  return {
+    words: SEED_WORDS.map(createWordRecord),
+    settings: Object.assign({}, DEFAULT_SETTINGS),
+    todayTask: null,     // { date:'YYYY-MM-DD', words:['abandon', ...] }
+    checkins: {}         // { 'YYYY-MM-DD': { at, done, total } } 打卡记录
+  };
+}
+
+// 打卡日期键是否合法：不光看格式，还要是真实存在的日期（挡掉 2026-13-99 这种）
+function isValidDateKey(k) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(k)) return false;
+  const y = Number(k.slice(0, 4)), m = Number(k.slice(5, 7)), d = Number(k.slice(8, 10));
+  const dt = new Date(y, m - 1, d);
+  return dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d;
+}
+
+// 打卡记录纠偏（导入的文件可能是脏的）
+function normalizeCheckins(raw) {
+  const out = {};
+  if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+    Object.keys(raw).forEach(k => {
+      if (!isValidDateKey(k)) return;   // 不是真实日期的键直接丢掉
+      const v = raw[k] || {};
+      out[k] = {
+        at: typeof v.at === 'string' ? v.at : null,
+        done: Math.max(0, Number(v.done) || 0),
+        total: Math.max(0, Number(v.total) || 0)
+      };
+    });
+  }
+  return out;
+}
+
+// 去重用的键：忽略大小写和首尾空格
+function wordKey(w) {
+  return String(w || '').trim().toLowerCase();
+}
+
+// 转义，防止词库里的特殊字符破坏页面
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
+}
+
+/* ---------- 3. 数据层：读取 / 写入 localStorage ---------- */
+
+let state = null;   // 全局数据：{ words, settings, todayTask }
+
+// 把任意来源的数据整形成合法状态（缺字段补默认，非法值纠正）
+function normalizeState(parsed) {
+  const words = (parsed.words || []).map(w => Object.assign(createWordRecord(w), w, {
+    status: ['new', 'unsure', 'known'].includes(w.status) ? w.status : 'new',
+    failCount: Math.max(0, Number(w.failCount) || 0),
+    lastReview: w.lastReview || null
+  }));
+  const settings = normalizeSettings(parsed.settings);
+  const tt = parsed.todayTask;
+  const todayTask = (tt && Array.isArray(tt.words))
+    ? { date: tt.date || null, words: tt.words.slice() }
+    : null;
+  return { words, settings, todayTask, checkins: normalizeCheckins(parsed.checkins) };
+}
+
+function loadData() {
+  let raw = null;
+  try {
+    raw = localStorage.getItem(STORAGE_KEY);
+  } catch (e) {
+    console.warn('[单词记忆] 无法读取 localStorage，本次进度不会保存', e);
+  }
+
+  if (!raw) return buildInitialData();
+
+  try {
+    const parsed = JSON.parse(raw);
+    if (!parsed || !Array.isArray(parsed.words)) throw new Error('数据结构不合法');
+    return normalizeState(parsed);
+  } catch (e) {
+    console.warn('[单词记忆] 本地数据损坏，已重置为初始词库', e);
+    return buildInitialData();
+  }
+}
+
+// 每次数据变动后立刻落盘，刷新不丢
+function saveData() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    console.error('[单词记忆] 保存失败（可能是隐私模式或空间已满）', e);
+  }
+}
+
+/* ---------- 4. 每日任务逻辑（阶段 2 核心） ---------- */
+
+/**
+ * 生成“今天该背哪些词”，规则来自需求文档 2.2：
+ *   ① 复习池：所有 status==='unsure' 的词，按 failCount 降序（错得多的排前面），全部纳入
+ *   ② 新词：从 status==='new' 的词里按词库顺序取，补足到每日上限
+ *   ③ 额外保留：今天已经标记过的词，留在名单里方便当天回看（不影响 ①② 的规则）
+ * 返回单词对象数组。
+ */
+function buildTodayTask() {
+  const t = today();
+  const limit = Math.max(1, Number(state.settings.dailyLimit) || 50);
+
+  const picked = [];
+  const seen = new Set();
+  const add = w => {
+    if (w && !seen.has(wordKey(w.word))) { seen.add(wordKey(w.word)); picked.push(w); }
+  };
+
+  // ① 今天已动过的词（标记后仍留在列表里，明天是否出现由 status 决定）
+  state.words.filter(w => w.lastReview === t).forEach(add);
+
+  // ② 复习池：没记住的词全部纳入，错得越多越靠前
+  state.words
+    .filter(w => w.status === 'unsure')
+    .sort((a, b) => (b.failCount - a.failCount) || a.word.localeCompare(b.word))
+    .forEach(add);
+
+  // ③ 新词：按词库顺序补足到每日上限
+  const need = Math.max(0, limit - picked.length);
+  if (need > 0) {
+    state.words.filter(w => w.status === 'new').slice(0, need).forEach(add);
+  }
+
+  return picked;
+}
+
+/**
+ * 取出今日任务列表。
+ * 按已确认的设计：同一天内任务名单固定（存在 todayTask 里），刷新不会不断涌入新词。
+ */
+function getTodayList() {
+  const t = today();
+  const byKey = new Map(state.words.map(w => [wordKey(w.word), w]));
+
+  // 名单仍然是今天的，且词库里这些词还在 → 直接沿用
+  if (state.todayTask && state.todayTask.date === t && state.todayTask.words.length) {
+    const alive = state.todayTask.words.filter(n => byKey.has(wordKey(n)));
+    if (alive.length) return alive.map(n => byKey.get(wordKey(n)));
+  }
+
+  // 否则重新生成（新的一天 / 首次运行 / 词库被替换）
+  state.todayTask = { date: t, words: buildTodayTask().map(w => w.word) };
+  saveData();
+  return state.todayTask.words.map(n => byKey.get(wordKey(n))).filter(Boolean);
+}
+
+// 强制重新生成今日任务（导入词库后调用，让新词当天就能进来）
+function rebuildTodayTask() {
+  state.todayTask = { date: today(), words: buildTodayTask().map(w => w.word) };
+  saveData();
+}
+
+/* ---------- 5. 标记操作 ---------- */
+
+/**
+ * 只改数据、不渲染。列表模式和键盘模式共用这一份判定逻辑。
+ * 返回这次标记后该词的最新状态。
+ */
+function applyVerdict(word, verdict) {
+  const t = today();
+
+  if (verdict === 'known') {
+    word.status = 'known';
+  } else {
+    // 同一个词同一天最多只累加一次 failCount，
+    // 防止手滑连点把计数刷高（跨天再忘，仍会 +1）
+    if (word.status !== 'unsure' || word.lastReview !== t) {
+      word.failCount += 1;
+    }
+    word.status = 'unsure';
+  }
+
+  word.lastReview = t;   // 无论哪种标记都记录“今天动过它”
+  saveData();            // 立即持久化
+  return word.status;
+}
+
+// 列表模式：标记后重绘列表
+function markWord(word, verdict) {
+  applyVerdict(word, verdict);
+  render();
+}
+
+/* ---------- 6. 词库导入（阶段 2 核心） ---------- */
+
+/**
+ * 解析词库文件的文字内容。
+ * 支持两种格式：
+ *   ① 纯数组：[ {word, meaning, ...}, ... ]      ← 需求文档 4.1 的输入词库格式
+ *   ② 对象：  { words:[...], settings:{...} }      ← 本工具的导出格式（进度文件）
+ */
+function parseWordBank(text) {
+  // 先去掉 BOM 和首尾空白：记事本 / PowerShell 保存的 UTF-8 常带 BOM，
+  // 带着它 JSON.parse 会直接失败，而用户完全看不出原因
+  const clean = String(text == null ? '' : text).replace(/^\uFEFF/, '').trim();
+
+  let data;
+  try {
+    data = JSON.parse(clean);
+  } catch (e) {
+    throw new Error('不是合法的 JSON 文件');
+  }
+
+  let arr = null;
+  if (Array.isArray(data)) arr = data;
+  else if (data && Array.isArray(data.words)) arr = data.words;
+  if (!arr) throw new Error('文件里没有找到单词数组（应为 [...] 或 { "words": [...] }）');
+
+  return { list: arr, raw: data };
+}
+
+/**
+ * 把解析出的词条写进当前词库。
+ * mode = 'merge'   合并：按 word 去重，已有词只更新文本字段，进度（status/failCount/lastReview）保留
+ * mode = 'replace' 替换：整个词库换成新文件，所有进度清零
+ * fileMeta = 导出文件里除词条外的内容（settings / checkins）；纯数组词库传 null
+ */
+function importWords(list, mode, fileMeta) {
+  const report = {
+    mode, added: 0, updated: 0, duplicates: 0, invalid: 0, total: 0,
+    settingsRestored: false, checkinsRestored: 0
+  };
+
+  // 先做校验和文件内去重
+  const incoming = [];
+  const seen = new Set();
+  list.forEach(raw => {
+    if (!raw || typeof raw !== 'object') { report.invalid++; return; }
+    const w = String(raw.word || '').trim();
+    const m = String(raw.meaning || '').trim();
+    if (!w || !m) { report.invalid++; return; }   // word / meaning 必填
+    const k = wordKey(w);
+    if (seen.has(k)) { report.duplicates++; return; }
+    seen.add(k);
+    incoming.push(raw);
+  });
+
+  if (mode === 'replace') {
+    state.words = incoming.map(createWordRecord);
+    report.added = incoming.length;
+    // 替换模式下，导出文件里的设置和打卡记录一并恢复（文件没带就不动）
+    if (fileMeta && fileMeta.settings) {
+      state.settings = normalizeSettings(fileMeta.settings);
+      report.settingsRestored = true;
+    }
+    if (fileMeta && fileMeta.checkins) {
+      state.checkins = normalizeCheckins(fileMeta.checkins);
+      report.checkinsRestored = Object.keys(state.checkins).length;
+    }
+  } else {
+    const index = new Map(state.words.map(w => [wordKey(w.word), w]));
+    incoming.forEach(raw => {
+      const k = wordKey(raw.word);
+      const exist = index.get(k);
+      if (!exist) {
+        const rec = createWordRecord(raw);
+        state.words.push(rec);       // 新词按文件顺序追加到词库末尾
+        index.set(k, rec);
+        report.added++;
+      } else {
+        // 只覆盖非空的文本字段；word 本身保持原样，进度字段完全不动
+        ['phonetic', 'meaning', 'scene', 'example', 'exampleCn'].forEach(f => {
+          const v = raw[f];
+          if (typeof v === 'string' && v.trim()) exist[f] = v.trim();
+        });
+        report.updated++;
+      }
+    });
+
+    // 合并模式下补进文件里有的打卡记录（已有的日期以本机为准）
+    if (fileMeta && fileMeta.checkins) {
+      const incomingRec = normalizeCheckins(fileMeta.checkins);
+      Object.keys(incomingRec).forEach(d => {
+        if (!checkins()[d]) { checkins()[d] = incomingRec[d]; report.checkinsRestored += 1; }
+      });
+    }
+  }
+
+  report.total = state.words.length;
+  rebuildTodayTask();   // 让刚导入的新词有机会进入今天的任务
+  saveData();
+  return report;
+}
+
+/* ---------- 7. 渲染层 ---------- */
+
+let viewMode = 'today';              // today = 今日任务 | review = 复习池
+const expandedWords = new Set();     // 哪些词展开了详情
+
+// 复习池：所有没记住的词，错得多的排前面
+function reviewPool() {
+  return state.words
+    .filter(w => w.status === 'unsure')
+    .sort((a, b) => (b.failCount - a.failCount) || a.word.localeCompare(b.word));
+}
+
+function render() {
+  const todayList = getTodayList();
+  const t = today();
+  const list = viewMode === 'review' ? reviewPool() : todayList;
+
+  // 顶栏：日期 + 今日进度（分子=今天已标记的词数，分母=今日任务总数）
+  // 注意：进度始终按“今日任务”算，切到复习池视图也不改变口径
+  document.getElementById('dateLabel').textContent = '📖 ' + t;
+  const doneToday = todayList.filter(w => w.lastReview === t).length;
+  document.getElementById('progDone').textContent = doneToday;
+  document.getElementById('progTotal').textContent = todayList.length;
+  // 顶栏下沿的进度条
+  const pct = todayList.length ? Math.round(doneToday / todayList.length * 100) : 0;
+  document.getElementById('progBar').style.width = pct + '%';
+
+  // 底栏统计
+  document.getElementById('knownCount').textContent = state.words.filter(w => w.status === 'known').length;
+  document.getElementById('reviewCount').textContent = state.words.filter(w => w.status === 'unsure').length;
+  document.getElementById('bankCount').textContent = state.words.length;
+
+  // 复习池按钮的文字随视图切换
+  document.getElementById('btnReview').textContent = viewMode === 'review' ? '返回今日任务' : '查看复习池';
+
+  // 今日任务全部完成 → 提示去打卡（打过卡就不再提示）
+  const doneAll = todayList.length > 0 && doneToday >= todayList.length;
+  const cta = document.getElementById('ctaBanner');
+  if (doneAll && !isCheckedIn(t)) {
+    document.getElementById('ctaText').textContent =
+      '🎉 今天的 ' + todayList.length + ' 个词都过了，去打卡吧';
+    cta.hidden = false;
+  } else {
+    cta.hidden = true;
+  }
+
+  // 打卡页开着的话，数据变了也要跟着刷新
+  if (inCheckin) renderCheckin();
+
+  // 列表本体
+  const box = document.getElementById('list');
+  if (!list.length) {
+    box.innerHTML = viewMode === 'review'
+      ? '<div class="empty"><h3>复习池是空的</h3>目前没有“没记住”的词。</div>'
+      : (state.words.length
+          ? '<div class="empty"><h3>今日任务已清空</h3>所有词都处理完了，明天再来吧。</div>'
+          : '<div class="empty"><h3>词库是空的</h3>点右上角「导入词库」选择一个 JSON 文件开始。</div>');
+    return;
+  }
+
+  box.innerHTML = list.map(w => {
+    const cls = w.status === 'known' ? 'is-known' : (w.status === 'unsure' ? 'is-unsure' : '');
+    const tag = w.status === 'known'
+      ? '<span class="tag tag-known">已掌握</span>'
+      : (w.status === 'unsure'
+          ? '<span class="tag tag-unsure">没记住 ×' + w.failCount + '</span>'
+          : '<span class="tag tag-new">新词</span>');
+    const ph = state.settings.showPhonetic && w.phonetic
+      ? '<span class="ph">' + esc(w.phonetic) + '</span>' : '';
+
+    const expanded = expandedWords.has(wordKey(w.word));
+    return '' +
+      '<div class="row ' + cls + (expanded ? ' is-open' : '') + '" data-word="' + esc(w.word) + '">' +
+        '<div class="row-main">' +
+          '<div class="col-main" title="点击展开场景和例句">' +
+            '<div class="word">' +
+              '<span class="chev">' + (expanded ? '▾' : '▸') + '</span>' +
+              esc(w.word) + ph + tag +
+            '</div>' +
+            '<div class="meaning">' + esc(w.meaning) + '</div>' +
+          '</div>' +
+          '<div class="act">' +
+            '<button class="btn-icon" data-speak title="听发音" aria-label="听发音">🔊</button>' +
+            '<button class="btn btn-ok"   data-act="known">记住了</button>' +
+            '<button class="btn btn-warn" data-act="unsure">没记住</button>' +
+          '</div>' +
+        '</div>' +
+        (expanded ? renderDetail(w) : '') +
+      '</div>';
+  }).join('');
+}
+
+// 展开后的详情：场景 + 例句（例句受 settings.showExample 控制）
+function renderDetail(w) {
+  const bits = [];
+  if (w.scene) {
+    bits.push('<div class="d-line"><b>场景</b><span>' + esc(w.scene) + '</span></div>');
+  }
+  if (state.settings.showExample && (w.example || w.exampleCn)) {
+    const en = w.example ? '<span class="d-en">' + esc(w.example) + '</span>' : '';
+    const cn = w.exampleCn ? '<br><span class="d-cn">' + esc(w.exampleCn) + '</span>' : '';
+    bits.push('<div class="d-line"><b>例句</b><span>' + en + cn + '</span></div>');
+  }
+  if (!bits.length) bits.push('<div class="d-line"><span class="d-none">这个词条没有补充内容</span></div>');
+  return '<div class="row-detail">' + bits.join('') + '</div>';
+}
+
+/* ---------- 8. 提示条 / 弹窗 ---------- */
+
+function showNotice(text, isError) {
+  const box = document.getElementById('notice');
+  document.getElementById('noticeText').textContent = text;
+  box.classList.toggle('is-error', !!isError);
+  box.hidden = false;
+}
+
+/**
+ * 通用弹窗。buttons = [{ label, value, primary }]，返回被点按钮的 value（点遮罩返回 null）
+ */
+function askDialog(title, body, buttons) {
+  return new Promise(resolve => {
+    const mask = document.getElementById('mask');
+    const act = document.getElementById('modalAct');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalBody').textContent = body;
+    act.innerHTML = '';
+
+    const close = value => {
+      mask.hidden = true;
+      act.innerHTML = '';
+      mask.onclick = null;
+      resolve(value);
+    };
+
+    buttons.forEach(b => {
+      const el = document.createElement('button');
+      el.className = 'btn' + (b.primary ? ' btn-primary' : '');
+      el.textContent = b.label;
+      el.addEventListener('click', () => close(b.value));
+      act.appendChild(el);
+    });
+
+    mask.onclick = e => { if (e.target === mask) close(null); };
+    mask.hidden = false;
+  });
+}
+
+/* ---------- 9. 导入流程（文件 → 询问合并/替换 → 写库 → 报告） ---------- */
+
+async function handleImportFile(file) {
+  let text;
+  try {
+    text = await file.text();
+  } catch (e) {
+    showNotice('读取文件失败：' + e.message, true);
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = parseWordBank(text);
+  } catch (e) {
+    showNotice('导入失败：' + e.message, true);
+    return;
+  }
+
+  const mode = await askDialog(
+    '导入 ' + file.name,
+    '文件里有 ' + parsed.list.length + ' 个条目。\n\n' +
+    '· 合并：保留现有学习进度，新词追加到词库末尾（重复的词只更新释义等文本）\n' +
+    '· 替换：清空现有词库和全部进度，只保留这个文件的内容',
+    [
+      { label: '合并', value: 'merge', primary: true },
+      { label: '替换（清空进度）', value: 'replace' },
+      { label: '取消', value: null }
+    ]
+  );
+  if (!mode) return;
+
+  const fileMeta = Array.isArray(parsed.raw)
+    ? null
+    : { settings: parsed.raw.settings, checkins: parsed.raw.checkins };
+  const report = importWords(parsed.list, mode, fileMeta);
+  if (inKeyboard) exitKeyboardMode();   // 词库变了，本轮练习队列作废
+  render();
+
+  const parts = [
+    (report.mode === 'replace' ? '已替换词库：' : '已合并：') + '新增 ' + report.added + ' 词',
+    report.updated ? '更新 ' + report.updated + ' 词' : null,
+    report.duplicates ? '文件内重复跳过 ' + report.duplicates + ' 条' : null,
+    report.invalid ? '缺少 word/meaning 跳过 ' + report.invalid + ' 条' : null,
+    report.settingsRestored ? '设置已从文件恢复' : null,
+    report.checkinsRestored ? '打卡记录恢复 ' + report.checkinsRestored + ' 天' : null,
+    '词库共 ' + report.total + ' 词',
+    '今日任务 ' + (state.todayTask ? state.todayTask.words.length : 0) + ' 词'
+  ].filter(Boolean);
+  showNotice(parts.join('，') + '。');
+}
+
+/* ---------- 10. 外观：主题 + 字体（扩展功能） ---------- */
+
+// 设置里的 theme 是 auto 时，看系统偏好决定实际用哪套
+function resolveTheme() {
+  const t = state.settings.theme;
+  if (t === 'dark' || t === 'light') return t;
+  const prefersDark = typeof window.matchMedia === 'function' &&
+                      window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return prefersDark ? 'dark' : 'light';
+}
+
+// 把解析出的主题写到 <html data-theme>，CSS 变量随之切换
+function applyTheme() {
+  const resolved = resolveTheme();
+  document.documentElement.dataset.theme = resolved;
+
+  const btn = document.getElementById('btnTheme');
+  if (btn) {
+    const dark = resolved === 'dark';
+    btn.textContent = dark ? '☀️' : '🌙';
+    btn.title = dark ? '切换到浅色' : '切换到深色';
+    btn.setAttribute('aria-label', btn.title);
+  }
+  return resolved;
+}
+
+// 字号倍率 + 英文词头字体，都是改 <html> 上的 CSS 变量
+function applyFonts() {
+  const root = document.documentElement.style;
+  if (root && typeof root.setProperty === 'function') {
+    root.setProperty('--fs-scale', String(state.settings.fontScale));
+    root.setProperty('--font-head', FONT_STACKS[state.settings.headFont] || FONT_STACKS.serif);
+  }
+}
+
+function applyAppearance() {
+  applyTheme();
+  applyFonts();
+}
+
+// 顶栏那个圆按钮：在浅色/深色之间直接切（会把 theme 固定成显式值，不再跟随系统）
+function toggleTheme() {
+  state.settings.theme = resolveTheme() === 'dark' ? 'light' : 'dark';
+  saveData();
+  applyTheme();
+  // 设置面板开着的话，下拉框跟着同步
+  const sel = document.getElementById('setTheme');
+  if (sel) sel.value = state.settings.theme;
+  return state.settings.theme;
+}
+
+/* ---------- 11. 设置 / 导出 / 重置（阶段 4） ---------- */
+
+/* ---- 设置面板 ---- */
+function openSettings() {
+  const s = state.settings;
+  document.getElementById('setLimit').value = s.dailyLimit;
+  document.getElementById('setTheme').value = s.theme;
+  document.getElementById('setFontScale').value = String(s.fontScale);
+  document.getElementById('setHeadFont').value = s.headFont;
+  document.getElementById('setPhonetic').checked = s.showPhonetic;
+  document.getElementById('setExample').checked = s.showExample;
+  document.getElementById('setKeyboard').checked = s.keyboardMode;
+  document.getElementById('setHint').textContent =
+    '今日任务 ' + (state.todayTask ? state.todayTask.words.length : 0) + ' 词 · 词库共 ' + state.words.length + ' 词';
+  document.getElementById('setMask').hidden = false;
+}
+
+function closeSettings() {
+  document.getElementById('setMask').hidden = true;
+}
+
+// 每日词数变了 → 立即按新上限重排今日任务
+function applyDailyLimit(value) {
+  const n = clampLimit(value, state.settings.dailyLimit);
+  state.settings.dailyLimit = n;
+  rebuildTodayTask();          // 今天已标记的词会被保留，不会因为调小而丢
+  saveData();
+  render();
+  document.getElementById('setHint').textContent =
+    '每日词数已设为 ' + n + '，今日任务 ' + state.todayTask.words.length + ' 词';
+}
+
+function applySetting(key, value) {
+  state.settings[key] = value;
+  saveData();
+  render();
+  if (inKeyboard) renderKbd();   // 键盘面板也要跟着更新
+}
+
+/* ---- 导出进度 ---- */
+// 导出内容与内部数据结构完全一致，换设备时可以直接导入恢复
+function buildExportText() {
+  return JSON.stringify(state, null, 2);
+}
+function exportProgress() {
+  const text = buildExportText();
+  const name = 'word-memory-progress-' + today() + '.json';
+
+  try {
+    const blob = new Blob([text], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    showNotice('已导出 ' + name + '（' + state.words.length + ' 词，含学习进度）。');
+  } catch (e) {
+    // 极端情况下（比如浏览器禁了下载）退化成控制台输出
+    console.error('[单词记忆] 导出失败，内容已打印在控制台', e);
+    console.log(text);
+    showNotice('浏览器不允许自动下载，已把进度打印到控制台（F12 复制）。', true);
+  }
+  return text;
+}
+
+/* ---- 重置（二次确认） ---- */
+// scope = 'progress' 只清学习进度、保留词库 | 'all' 连词库一起清掉
+function resetProgress(scope) {
+  if (scope === 'all') {
+    localStorage.removeItem(STORAGE_KEY);
+    location.reload();
+    return;
+  }
+  state.words.forEach(w => { w.status = 'new'; w.failCount = 0; w.lastReview = null; });
+  state.todayTask = null;
+  state.checkins = {};        // 打卡记录也属于学习进度，一起清掉
+  expandedWords.clear();
+  viewMode = 'today';
+  saveData();
+  if (inKeyboard) exitKeyboardMode();
+  if (inCheckin) exitCheckin();
+  render();
+  showNotice('学习进度已清空，词库保留（共 ' + state.words.length + ' 词）。');
+}
+
+async function resetFlow() {
+  closeSettings();
+  const choice = await askDialog(
+    '重置 —— 这个操作不可撤销',
+    '· 清空学习进度：词库保留，所有词变回“新词”，已掌握和 failCount 全部归零\n' +
+    '· 清空全部数据：词库和进度一起清掉，回到内置的 5 个测试词\n\n' +
+    '想留个后路的话，先「导出进度」。',
+    [
+      { label: '清空学习进度', value: 'progress' },
+      { label: '清空全部数据', value: 'all' },
+      { label: '取消', value: null, primary: true }
+    ]
+  );
+  if (!choice) return;
+  resetProgress(choice);
+}
+
+/* ---------- 12. 打卡（扩展功能） ---------- */
+
+let inCheckin = false;
+let calCursor = null;   // 日历当前显示哪个月：{y, m}，m 是 0~11
+
+function checkins() {
+  if (!state.checkins) state.checkins = {};
+  return state.checkins;
+}
+
+function isCheckedIn(date) {
+  return !!checkins()[date || today()];
+}
+
+// 今日任务完成度：done = 今天标记过的词数，total = 今日任务总数
+function todayProgress() {
+  const list = getTodayList();
+  const t = today();
+  const done = list.filter(w => w.lastReview === t).length;
+  return { done, total: list.length, complete: list.length > 0 && done >= list.length };
+}
+
+// 连续打卡天数：今天还没打不算断（从昨天往前数）
+function checkinStreak() {
+  const d = now();
+  if (!isCheckedIn(fmtDate(d))) d.setDate(d.getDate() - 1);
+  let n = 0;
+  while (isCheckedIn(fmtDate(d))) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+
+function checkinTotal() {
+  return Object.keys(checkins()).length;
+}
+
+function checkinInMonth(y, m) {
+  const prefix = y + '-' + String(m + 1).padStart(2, '0') + '-';
+  return Object.keys(checkins()).filter(k => k.indexOf(prefix) === 0).length;
+}
+
+// 从单词的 lastReview 反推“哪些天学习过”，用来在日历上区分“学过但没打卡”
+function studiedDays() {
+  const map = {};
+  state.words.forEach(w => {
+    if (w.lastReview) map[w.lastReview] = (map[w.lastReview] || 0) + 1;
+  });
+  return map;
+}
+
+/* ---- 打卡动作 ---- */
+function doCheckIn() {
+  const p = todayProgress();
+  const t = today();
+  if (!p.complete) {
+    return { ok: false, reason: '今天的任务还没完成，还剩 ' + (p.total - p.done) + ' 个词' };
+  }
+  if (isCheckedIn(t)) {
+    return { ok: false, reason: '今天已经打过卡了' };
+  }
+  checkins()[t] = { at: new Date().toISOString(), done: p.done, total: p.total };
+  saveData();
+  renderCheckin();
+  render();
+  const streak = checkinStreak();
+  // 打卡成功 → 放个庆祝动画
+  celebrate(p.done + '/' + p.total + ' 个词 · 连续打卡 ' + streak + ' 天');
+  return { ok: true, date: t, streak };
+}
+
+function undoCheckIn(date) {
+  const d = date || today();
+  if (!isCheckedIn(d)) return false;
+  delete checkins()[d];
+  saveData();
+  renderCheckin();
+  render();
+  return true;
+}
+
+/* ---- 打卡成功的庆祝动画 ---- */
+// 主 emoji 和飘起来的 emoji 都从池子里随机挑
+const CELEBRATE_EMOJI = ['😎','🎉','🥳','💪','🚀','🌟','🤩','🔥','👏','🏆','✨','🎯','😺','🦾','🍻'];
+const CELEBRATE_PARTICLES = ['✨','🎊','⭐','💫','🌟','🎈','🍀','💪','📚','🔥','🎉','🏅','🫧','🪄'];
+
+const CELEBRATE_TITLES = ['今日任务已完成！', '今天的词全过啦！', '今日打卡完成！'];
+
+let celebrateTimer = null;
+
+function shufflePick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function celebrate(sub) {
+  const mask = document.getElementById('celebrateMask');
+  if (!mask) return null;
+
+  const emoji = shufflePick(CELEBRATE_EMOJI);
+  document.getElementById('celEmoji').textContent = emoji;
+  document.getElementById('celTitle').textContent = shufflePick(CELEBRATE_TITLES);
+  document.getElementById('celSub').textContent = sub || '';
+
+  // 随机撒一把飘上去的 emoji：位置、大小、延迟、时长都随机
+  const layer = document.getElementById('celParticles');
+  layer.innerHTML = '';
+  const count = 12 + Math.floor(Math.random() * 6);   // 12~17 个
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('span');
+    p.className = 'cel-p';
+    p.textContent = shufflePick(CELEBRATE_PARTICLES);
+    p.style.left = (4 + Math.random() * 92).toFixed(1) + '%';
+    p.style.fontSize = (15 + Math.random() * 17).toFixed(0) + 'px';
+    p.style.animationDelay = (Math.random() * 0.6).toFixed(2) + 's';
+    p.style.animationDuration = (1.7 + Math.random() * 1.3).toFixed(2) + 's';
+    layer.appendChild(p);
+  }
+
+  mask.hidden = false;
+  if (celebrateTimer) clearTimeout(celebrateTimer);
+  celebrateTimer = setTimeout(hideCelebrate, 3200);   // 到点自动收起来
+  return emoji;
+}
+
+function hideCelebrate() {
+  if (celebrateTimer) { clearTimeout(celebrateTimer); celebrateTimer = null; }
+  const mask = document.getElementById('celebrateMask');
+  if (mask) mask.hidden = true;
+}
+
+/* ---- 渲染打卡页 ---- */
+function renderCheckin() {
+  if (!inCheckin) return;
+  const p = todayProgress();
+  const t = today();
+  const checked = isCheckedIn(t);
+
+  // 今日状态卡
+  document.getElementById('ciSub').textContent = p.total
+    ? '今日任务 ' + p.done + '/' + p.total + (p.complete ? ' · 已全部完成' : '')
+    : '词库是空的，先回列表导入词库';
+  const bar = document.getElementById('ciBar');
+  bar.style.width = (p.total ? Math.round(p.done / p.total * 100) : 0) + '%';
+  bar.classList.toggle('is-done', p.complete);
+
+  const action = document.getElementById('ciAction');
+  if (checked) {
+    const rec = checkins()[t];
+    let time = '';
+    try {
+      time = rec.at ? new Date(rec.at).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) : '';
+    } catch (e) { time = ''; }
+    action.innerHTML =
+      '<div class="ci-done">✓ 今天已打卡' + (time ? ' · ' + esc(time) : '') + '</div>' +
+      '<button class="btn" data-ci="undo">取消打卡</button>';
+  } else if (p.complete) {
+    action.innerHTML = '<button class="btn btn-primary ci-btn" data-ci="checkin">今天打卡</button>';
+  } else {
+    action.innerHTML = '<button class="btn ci-btn" disabled>今天打卡</button>';
+  }
+
+  // 提示语
+  const note = document.getElementById('ciNote');
+  if (checked) {
+    note.textContent = '连续打卡 ' + checkinStreak() + ' 天，继续保持。';
+  } else if (p.complete) {
+    note.textContent = '今天的词都过完了，可以打卡了。';
+  } else if (p.total) {
+    note.textContent = '还剩 ' + (p.total - p.done) + ' 个词没标记，把它们都点完就能打卡。';
+  } else {
+    note.textContent = '导入词库后，每天完成任务即可打卡。';
+  }
+
+  // 统计
+  const n = now();
+  document.getElementById('ciStreak').textContent = checkinStreak();
+  document.getElementById('ciTotal').textContent = checkinTotal();
+  document.getElementById('ciMonth').textContent = checkinInMonth(n.getFullYear(), n.getMonth());
+
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const n = now();
+  if (!calCursor) calCursor = { y: n.getFullYear(), m: n.getMonth() };
+  const { y, m } = calCursor;
+
+  document.getElementById('calTitle').textContent = y + ' 年 ' + (m + 1) + ' 月';
+  // 已经是最新的月份就不让再往后翻
+  document.getElementById('calNext').disabled = (y === n.getFullYear() && m === n.getMonth());
+
+  const first = new Date(y, m, 1);
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+  // 以周一为一周起点：getDay() 里周日是 0，换算成 0 = 周一
+  const lead = (first.getDay() + 6) % 7;
+
+  const t = today();
+  const stud = studiedDays();
+  const rec = checkins();
+  let html = '';
+  for (let i = 0; i < lead; i++) html += '<span class="ci-cell is-blank"></span>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = fmtDate(new Date(y, m, d));
+    const cls = ['ci-cell'];
+    const checked = !!rec[date];
+    if (checked) cls.push('is-checked');
+    else if (stud[date]) cls.push('is-studied');
+    if (date === t) cls.push('is-today');
+    if (date > t) cls.push('is-future');
+
+    const tip = [(m + 1) + '月' + d + '日'];
+    if (checked) tip.push('已打卡 · 完成 ' + rec[date].done + '/' + rec[date].total);
+    else if (stud[date]) tip.push('学习过 ' + stud[date] + ' 个词，未打卡');
+    else tip.push(date > t ? '还没到' : '没有学习记录');
+
+    html += '<span class="' + cls.join(' ') + '" title="' + esc(tip.join(' · ')) + '">' + d + '</span>';
+  }
+
+  document.getElementById('calGrid').innerHTML = html;
+}
+
+function shiftMonth(delta) {
+  const n = now();
+  if (!calCursor) calCursor = { y: n.getFullYear(), m: n.getMonth() };
+  const d = new Date(calCursor.y, calCursor.m + delta, 1);
+  // 不允许翻到未来的月份
+  if (d.getFullYear() > n.getFullYear() ||
+     (d.getFullYear() === n.getFullYear() && d.getMonth() > n.getMonth())) return false;
+  calCursor = { y: d.getFullYear(), m: d.getMonth() };
+  renderCalendar();
+  return true;
+}
+
+function enterCheckin() {
+  showPage('checkin');
+}
+
+function exitCheckin() {
+  showPage('list');
+}
+
+/* ---------- 13. 键盘拼写模式（阶段 3） ---------- */
+
+let inKeyboard = false;   // 当前是否处于键盘模式
+let session = null;       // 本轮练习状态
+
+/* ---- 发音：Web Speech API ---- */
+function speak(word) {
+  if (!word) return;
+  if (typeof window.speechSynthesis === 'undefined' ||
+      typeof window.SpeechSynthesisUtterance === 'undefined') {
+    console.warn('[单词记忆] 当前浏览器不支持语音合成，换 Chrome / Edge 试试');
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();   // 打断上一个，避免连点排队
+    const u = new window.SpeechSynthesisUtterance(word);
+    u.lang = 'en-US';
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  } catch (e) {
+    console.warn('[单词记忆] 发音失败', e);
+  }
+}
+
+/* ---- 输入：真实输入框（手机软键盘 / 桌面都走这条） ---- */
+
+// 输入框里上一次的值，用来算这次是增还是删
+let kbdInputPrev = '';
+
+function kbdInputEl() {
+  return document.getElementById('kbdInput');
+}
+
+// 让输入框的值和 session.typed 保持一致（不触发 input 事件，不会递归）
+// ⚠ 这里**不能**调 setSelectionRange：手机浏览器会因此把光标滚进可视区，
+//   每敲一个字母页面就跳一下。值一致时连赋值都不做。
+function syncKbdInput() {
+  const el = kbdInputEl();
+  if (!el) return;
+  const want = (inKeyboard && session && !session.done) ? (session.typed || '') : '';
+  if (el.value !== want) el.value = want;
+  kbdInputPrev = el.value;
+}
+
+/**
+ * 输入框内容变了。
+ * 用“和上一次的差值”判断增删，而不是读 e.key ——
+ * Android 软键盘的 keydown 拿不到字符，只有 input 事件才可靠。
+ */
+function onKbdInput(e) {
+  const el = (e && e.target) || kbdInputEl();
+  if (!el) return;
+  if (!inKeyboard || !session) { syncKbdInput(); return; }
+
+  const now = el.value;
+  const prev = kbdInputPrev;
+
+  if (now.length > prev.length) {
+    // 新增了字符（一次可能多个：粘贴 / 输入法一次提交）
+    const added = now.slice(Math.min(prev.length, now.length));
+    for (const ch of added) kbdTypeChar(ch);
+  } else if (now.length < prev.length) {
+    // 删掉了字符（退格 / 选中后删除）
+    const removed = prev.length - now.length;
+    for (let i = 0; i < removed; i++) kbdBackspace();
+  }
+
+  syncKbdInput();   // 把值拉回 session 的真实状态（敲错的字符会被这里弹回去）
+}
+
+// 把焦点交给输入框，用来唤起软键盘。必须在用户手势里调用。
+function focusKbdInput() {
+  const el = kbdInputEl();
+  if (!el || !inKeyboard) return false;
+
+  // 记下当前滚动位置：个别手机浏览器聚焦时会把页面滚走，事后还原
+  const y = (typeof window.scrollY === 'number') ? window.scrollY : 0;
+
+  try {
+    if (document.activeElement !== el) {
+      try { el.focus({ preventScroll: true }); }
+      catch (err) { el.focus(); }   // 老浏览器不认参数对象
+    }
+    // 光标放到末尾：只在聚焦时做一次，不要每次输入都做
+    const n = (session && session.typed) ? session.typed.length : 0;
+    if (typeof el.setSelectionRange === 'function') el.setSelectionRange(n, n);
+  } catch (e) { /* 忽略 */ }
+
+  if (typeof window.scrollTo === 'function' && typeof window.scrollY === 'number' && window.scrollY !== y) {
+    try { window.scrollTo(0, y); } catch (e) { /* 忽略 */ }
+  }
+  return true;
+}
+// 今日列表里还没掌握的词，按列表顺序
+/* ---- 本轮练哪些词 ---- */
+// 今日列表里还没掌握的词，按列表顺序
+function buildSessionQueue() {
+  return getTodayList().filter(w => w.status !== 'known');
+}
+
+function startSession(queue) {
+  const t = today();
+  const all = queue || buildSessionQueue();
+  // 从今天还没动过的词开始（中断后回来能接着练）；
+  // 直接把前面的词切掉，这样“第 N/M 词”显示的数字才对得上
+  let start = all.findIndex(w => w.lastReview !== t);
+  if (start < 0) start = 0;   // 全练过了 → 从头再走一轮
+  const list = all.slice(start);
+  session = {
+    queue: list,
+    idx: 0,
+    typed: '',          // 已输入的字符
+    errorLocked: false, // 敲错了还没退格 → 锁住后续输入
+    mistake: false,     // 本词是否敲错过
+    done: false,        // 本词是否已完成
+    totalKeys: 0,       // 本轮总按键数
+    correctKeys: 0,     // 本轮敲对的按键数
+    startTime: null,    // 本轮第一次按键的时间（算 WPM 用）
+    finished: 0,        // 本轮完成的词数
+    known: 0,           // 其中标记为记住的
+    unsure: 0           // 其中标记为没记住的
+  };
+}
+
+/* ---- 渲染 ---- */
+function renderKbd() {
+  if (!inKeyboard) return;
+  const card = document.getElementById('kbdCard');
+  if (!card) return;
+
+  // 没有可练的词
+  if (!session || !session.queue.length) {
+    card.innerHTML =
+      '<div class="kbd-done">' +
+        '<div class="big">没有需要练的词 🎉</div>' +
+        '<div class="kbd-hint">' +
+          (state.words.length ? '今日列表里的词都已掌握。' : '词库是空的，先回列表导入词库。') +
+        '</div>' +
+      '</div>' +
+      '<div class="kbd-stats"><button class="btn" data-kbd="back">返回列表</button></div>';
+    bindKbdButtons(null);
+    return;
+  }
+
+  // 一轮练完
+  if (session.idx >= session.queue.length) {
+    renderKbdComplete(card);
+    return;
+  }
+
+  const w = session.queue[session.idx];
+  card.innerHTML =
+    '<div class="kbd-word" id="kbdWord">' + esc(w.word) + '</div>' +
+    '<div class="kbd-ph" id="kbdPhonetic">' +
+      (state.settings.showPhonetic ? esc(w.phonetic || '') : '') + '</div>' +
+    '<div class="kbd-meaning" id="kbdMeaning">' + esc(w.meaning) + '</div>' +
+    '<div class="kbd-stats" style="margin-top:14px">' +
+      '<button class="btn" data-kbd="speak">🔊 听发音</button>' +
+    '</div>' +
+    '<div class="kbd-box" id="kbdBox"></div>' +
+    '<div class="kbd-hint" id="kbdHint">直接敲键盘输入 · 手机上点一下画面唤起键盘（Esc 返回列表）</div>' +
+    '<div class="kbd-stats">' +
+      '<span>正确率 <b id="kbdAcc">100%</b></span>' +
+      '<span>速度 <b id="kbdWpm">0</b> WPM</span>' +
+      '<span>第 <b id="kbdPos">1</b>/<b id="kbdTotal">0</b> 词</span>' +
+    '</div>';
+
+  bindKbdButtons(w);
+  updateKbdBox();
+  updateKbdStats();
+}
+
+function bindKbdButtons(w) {
+  const card = document.getElementById('kbdCard');
+  card.querySelectorAll('[data-kbd]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const act = btn.dataset.kbd;
+      if (act === 'speak' && w) speak(w.word);
+      else if (act === 'back') exitKeyboardMode();
+      else if (act === 'again') { startSession(); renderKbd(); }
+    });
+  });
+}
+
+// 只重画输入框（逐字母着色），不重建整个面板，否则动画和按钮都会被重置
+function updateKbdBox() {
+  const box = document.getElementById('kbdBox');
+  if (!box || !session || !session.queue.length) return;
+  const w = session.queue[session.idx];
+  if (!w) return;
+
+  const target = w.word;
+  let html = '';
+  for (let i = 0; i < session.typed.length; i++) {
+    const ok = session.typed[i].toLowerCase() === target[i].toLowerCase();
+    html += '<span class="' + (ok ? 'ch-ok' : 'ch-bad') + '">' + esc(session.typed[i]) + '</span>';
+  }
+  if (!session.done) html += '<span class="caret"></span>';
+
+  box.innerHTML = html;
+  box.classList.toggle('is-error', session.errorLocked);
+  box.classList.toggle('is-done', session.done);
+  syncKbdInput();   // 显示和输入框的值保持同步
+}
+
+// 正确率 = 敲对的按键 / 总按键；WPM = (敲对的字符数 / 5) / 用时分钟
+function kbdStats() {
+  const acc = session.totalKeys ? Math.round(session.correctKeys / session.totalKeys * 100) : 100;
+  const mins = session.startTime ? (Date.now() - session.startTime) / 60000 : 0;
+  const wpm = mins > 0.005 ? Math.round((session.correctKeys / 5) / mins) : 0;
+  return { acc, wpm };
+}
+
+function updateKbdStats() {
+  if (!session || !session.queue.length) return;
+  const { acc, wpm } = kbdStats();
+  const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = String(v); };
+  set('kbdAcc', acc + '%');
+  set('kbdWpm', wpm);
+  set('kbdPos', session.idx + 1);
+  set('kbdTotal', session.queue.length);
+}
+
+function renderKbdComplete(card) {
+  const { acc, wpm } = kbdStats();
+  card.innerHTML =
+    '<div class="kbd-done">' +
+      '<div class="big">🎉 今日已练完</div>' +
+      '<div class="kbd-hint">本轮练了 ' + session.finished + ' 个词：' +
+        '记住 ' + session.known + ' 个，没记住 ' + session.unsure + ' 个</div>' +
+      '<div class="kbd-stats">' +
+        '<span>正确率 <b>' + acc + '%</b></span>' +
+        '<span>速度 <b>' + wpm + '</b> WPM</span>' +
+      '</div>' +
+      '<div class="kbd-stats">' +
+        '<button class="btn btn-primary" data-kbd="again">重开一轮</button>' +
+        '<button class="btn" data-kbd="back">返回列表</button>' +
+      '</div>' +
+    '</div>';
+  bindKbdButtons(null);
+}
+
+/* ---- 输入判定 ---- */
+
+// 敲了一个字符
+function kbdTypeChar(ch) {
+  if (!session || session.done || session.idx >= session.queue.length) return;
+
+  // 敲错了还没退格 → 锁住，必须先删掉才能继续（避免形成错误肌肉记忆）
+  if (session.errorLocked) return;
+
+  const w = session.queue[session.idx];
+  const target = w.word;
+  const expect = target[session.typed.length];
+  if (expect === undefined) return;
+
+  if (!session.startTime) session.startTime = Date.now();
+  session.totalKeys += 1;
+
+  if (ch.toLowerCase() === expect.toLowerCase()) {
+    session.typed += ch;
+    session.correctKeys += 1;
+    if (session.typed.length === target.length) kbdCompleteWord(w);
+  } else {
+    // 错字符照样显示出来（红色），玩家必须用退格删掉它
+    session.mistake = true;
+    session.typed += ch;
+    session.errorLocked = true;
+  }
+
+  updateKbdBox();
+  updateKbdStats();
+}
+
+// 退格
+function kbdBackspace() {
+  if (!session || session.done || session.idx >= session.queue.length) return;
+  if (!session.typed.length) return;
+
+  session.typed = session.typed.slice(0, -1);
+  session.errorLocked = false;   // 删掉错字符后解锁
+  updateKbdBox();
+  updateKbdStats();
+}
+
+// 整个词敲完
+function kbdCompleteWord(w) {
+  session.done = true;
+  // 中途敲错过 → 算没记住（已确认的判定）；全程无错 → 算记住
+  const verdict = session.mistake ? 'unsure' : 'known';
+  applyVerdict(w, verdict);
+
+  session.finished += 1;
+  if (verdict === 'known') session.known += 1; else session.unsure += 1;
+
+  updateKbdBox();
+  const hint = document.getElementById('kbdHint');
+  if (hint) {
+    hint.textContent = verdict === 'known' ? '✓ 记住了' : '✗ 中途敲错过，已记为“没记住”';
+    hint.classList.toggle('is-error', verdict !== 'known');
+  }
+
+  render();                        // 同步顶栏/底栏统计
+  setTimeout(kbdNextWord, 300);    // 延迟一小会儿再切下一个，让人看清结果
+}
+
+// 切到下一个词
+function kbdNextWord() {
+  if (!inKeyboard || !session) return;
+  session.idx += 1;
+  session.typed = '';
+  session.errorLocked = false;
+  session.mistake = false;
+  session.done = false;
+  renderKbd();
+  focusKbdInput();   // 一般焦点没丢，这里只是保险（避免手机上键盘收起来）
+}
+
+/* ---- 键盘事件 ---- */
+function onKbdKeyDown(e) {
+  // Esc：优先关掉庆祝动画
+  if (e.key === 'Escape') {
+    const cel = document.getElementById('celebrateMask');
+    if (cel && !cel.hidden) { hideCelebrate(); return; }
+  }
+
+  // Esc 退出当前页面（打卡页 / 键盘模式都能退）
+  if (e.key === 'Escape') {
+    if (inCheckin) { exitCheckin(); return; }
+    if (inKeyboard) {
+      const mask = document.getElementById('mask');
+      if (mask && !mask.hidden) return;   // 弹窗开着时先让弹窗处理
+      exitKeyboardMode();
+    }
+    return;
+  }
+
+  if (!inKeyboard) return;
+
+  // 弹窗打开时（比如导入词库在问合并/替换）不要把按键送进拼写框
+  const mask = document.getElementById('mask');
+  if (mask && !mask.hidden) return;
+
+  if (e.ctrlKey || e.metaKey || e.altKey) return;   // 组合键放行
+
+  // 输入框有焦点时，字符交给 input 事件处理（那条路手机也走得通），
+  // 这里只当兜底：万一焦点跑了（点了页面别处），物理键盘照样能敲。
+  if (document.activeElement === kbdInputEl()) return;
+
+  if (e.key === 'Backspace') { e.preventDefault(); kbdBackspace(); return; }
+
+  // 只处理能产生一个字符的按键（字母、数字、' - 空格等都能覆盖）
+  if (typeof e.key !== 'string' || e.key.length !== 1) return;
+  e.preventDefault();
+  kbdTypeChar(e.key);
+}
+
+// 收起输入框：离开键盘模式时调，否则手机上软键盘会一直盖在列表上
+function blurKbdInput() {
+  const el = kbdInputEl();
+  if (!el) return;
+  el.value = '';
+  kbdInputPrev = '';
+  try {
+    if (typeof el.blur === 'function') el.blur();
+  } catch (e) { /* 忽略 */ }
+}
+
+/* ---- 页面切换：列表 / 键盘 / 打卡 ---- */
+function showPage(page) {   // 'list' | 'kbd' | 'checkin'
+  inKeyboard = (page === 'kbd');
+  inCheckin = (page === 'checkin');
+
+  document.getElementById('list').hidden = (page !== 'list');
+  document.getElementById('kbd').hidden = (page !== 'kbd');
+  document.getElementById('checkin').hidden = (page !== 'checkin');
+  document.getElementById('btnKbd').textContent = inKeyboard ? '返回列表' : '键盘模式';
+  document.getElementById('btnCheckin').textContent = inCheckin ? '返回列表' : '打卡';
+
+  if (inKeyboard) {
+    // 先把页面滚到顶部再聚焦：这样软键盘弹出时浏览器没有需要“露出”的东西，
+    // 从源头上避免手机上输入时页面上下跳
+    if (typeof window.scrollTo === 'function') {
+      try { window.scrollTo(0, 0); } catch (e) { /* 忽略 */ }
+    }
+    startSession();
+    renderKbd();
+    focusKbdInput();      // 必须在用户点击的手势里调，否则软键盘不弹
+  } else {
+    blurKbdInput();       // 离开键盘模式就收起软键盘
+  }
+  if (inCheckin) renderCheckin();
+  if (page === 'list') render();
+}
+
+/* ---- 进出键盘模式 ---- */
+function enterKeyboardMode() {
+  showPage('kbd');
+}
+
+function exitKeyboardMode() {
+  session = null;
+  showPage('list');
+}
+
+/* ---------- 12. 事件绑定 ---------- */
+
+// 列表按钮（委托，避免每次重渲染重绑）
+document.getElementById('list').addEventListener('click', function (e) {
+  const findRowWord = el => {
+    const row = el.closest('.row');
+    return row ? state.words.find(w => wordKey(w.word) === wordKey(row.dataset.word)) : null;
+  };
+
+  // 点 🔊 听发音
+  const speakBtn = e.target.closest('button[data-speak]');
+  if (speakBtn) {
+    const w = findRowWord(speakBtn);
+    if (w) speak(w.word);
+    return;
+  }
+
+  // 点「记住了 / 没记住」
+  const btn = e.target.closest('button[data-act]');
+  if (btn) {
+    const w = findRowWord(btn);
+    if (w) markWord(w, btn.dataset.act);
+    return;
+  }
+
+  // 点单词区域 → 展开/收起场景与例句
+  const main = e.target.closest('.col-main');
+  if (main) {
+    const row = main.closest('.row');
+    const key = wordKey(row.dataset.word);
+    if (expandedWords.has(key)) expandedWords.delete(key); else expandedWords.add(key);
+    render();
+  }
+});
+
+// 复习池 / 今日任务 视图切换
+document.getElementById('btnReview').addEventListener('click', () => {
+  viewMode = viewMode === 'review' ? 'today' : 'review';
+  render();
+});
+
+document.getElementById('btnImport').addEventListener('click', () => {
+  document.getElementById('importFile').click();
+});
+
+document.getElementById('importFile').addEventListener('change', function (e) {
+  const file = e.target.files && e.target.files[0];
+  e.target.value = '';   // 清空，允许连续导入同一个文件
+  if (file) handleImportFile(file);
+});
+
+document.getElementById('noticeClose').addEventListener('click', () => {
+  document.getElementById('notice').hidden = true;
+});
+
+// 键盘模式开关
+document.getElementById('btnKbd').addEventListener('click', () => {
+  if (inKeyboard) exitKeyboardMode(); else enterKeyboardMode();
+});
+
+// 拼写输入走全局 keydown（阶段 5 接上焦点管理时再细化）
+window.addEventListener('keydown', onKbdKeyDown);
+
+/* ---- 设置面板 ---- */
+document.getElementById('btnSettings').addEventListener('click', openSettings);
+document.getElementById('setClose').addEventListener('click', closeSettings);
+document.getElementById('setReset').addEventListener('click', resetFlow);
+document.getElementById('setMask').addEventListener('click', e => {
+  if (e.target.id === 'setMask') closeSettings();
+});
+
+// 每日词数：用 change（失焦/回车才生效），不然输 "60" 会先按 "6" 重排一次
+document.getElementById('setLimit').addEventListener('change', function () {
+  applyDailyLimit(this.value);
+  this.value = state.settings.dailyLimit;
+});
+document.getElementById('setPhonetic').addEventListener('change', function () {
+  applySetting('showPhonetic', this.checked);
+});
+document.getElementById('setExample').addEventListener('change', function () {
+  applySetting('showExample', this.checked);
+});
+document.getElementById('setKeyboard').addEventListener('change', function () {
+  applySetting('keyboardMode', this.checked);
+  document.getElementById('setHint').textContent = this.checked
+    ? '已开启：下次打开页面会直接进入键盘模式'
+    : '已关闭：打开页面停在列表模式';
+});
+
+// 主题 / 字体
+document.getElementById('setTheme').addEventListener('change', function () {
+  applySetting('theme', this.value);
+  applyTheme();
+});
+document.getElementById('setFontScale').addEventListener('change', function () {
+  applySetting('fontScale', Number(this.value));
+  applyFonts();
+});
+document.getElementById('setHeadFont').addEventListener('change', function () {
+  applySetting('headFont', this.value);
+  applyFonts();
+});
+document.getElementById('btnTheme').addEventListener('click', toggleTheme);
+
+/* ---- 键盘模式：输入法与焦点 ---- */
+// 输入框内容变化（手机软键盘、桌面输入法、粘贴都走这里）
+document.getElementById('kbdInput').addEventListener('input', onKbdInput);
+
+// 点键盘模式面板任意位置 → 把焦点交回输入框，重新唤起软键盘
+document.getElementById('kbd').addEventListener('click', () => focusKbdInput());
+
+/* ---- 打卡页（扩展） ---- */
+document.getElementById('btnCheckin').addEventListener('click', () => {
+  if (inCheckin) exitCheckin(); else enterCheckin();
+});
+document.getElementById('ctaBtn').addEventListener('click', () => enterCheckin());
+
+// 卡片里的按钮是动态生成的，用委托
+document.getElementById('checkin').addEventListener('click', function (e) {
+  const btn = e.target.closest('[data-ci]');
+  if (!btn) return;
+  const act = btn.dataset.ci;
+  if (act === 'checkin') doCheckIn();
+  else if (act === 'undo') undoCheckIn();
+});
+
+// 月历翻页
+document.getElementById('calPrev').addEventListener('click', () => shiftMonth(-1));
+document.getElementById('calNext').addEventListener('click', () => shiftMonth(1));
+
+// 庆祝动画：点任意位置收起来
+document.getElementById('celebrateMask').addEventListener('click', hideCelebrate);
+
+/* ---- 导出进度 ---- */
+document.getElementById('btnExport').addEventListener('click', exportProgress);
+
+/* ---------- 13. 启动 ---------- */
+
+state = loadData();
+saveData();          // 首次运行把初始数据写入本地，便于后续直接看到存储结构
+applyAppearance();   // 先把主题和字体定下来，再渲染，避免闪一下
+render();
+
+// 主题选了“跟随系统”时，系统切换深浅色要跟着变
+if (typeof window.matchMedia === 'function') {
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const onChange = () => { if (state.settings.theme === 'auto') applyTheme(); };
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onChange);
+  else if (typeof mq.addListener === 'function') mq.addListener(onChange);   // 老浏览器
+}
+
+// 设置里开了“直接进入键盘模式”的话，加载完就进去
+if (state.settings.keyboardMode) enterKeyboardMode();
+
+/* ---------- 14. 调试接口（浏览器控制台可用） ---------- */
+window.wordMemory = {
+  get state() { return state; },
+  today,
+
+  // 清空所有数据，回到内置 5 个测试词
+  reset() {
+    localStorage.removeItem(STORAGE_KEY);
+    location.reload();
+  },
+
+  // 把“今天”往后推 n 天，用来验证“昨天没记住的词今天会不会回来”
+  nextDay(n) {
+    debugDayOffset += (n || 1);
+    state.todayTask = null;   // 强制重新生成今日任务
+    saveData();
+    render();
+    console.log('[调试] 现在假装今天是 ' + today());
+    return today();
+  },
+
+  // 把调试时钟调回真实日期
+  resetClock() {
+    debugDayOffset = 0;
+    state.todayTask = null;
+    saveData();
+    render();
+    console.log('[调试] 已恢复真实日期 ' + today());
+    return today();
+  },
+
+  // 不开浏览器也能导入：wordMemory.importJSON(jsonText, 'merge'|'replace')
+  importJSON(text, mode) {
+    const parsed = parseWordBank(text);
+    const meta = Array.isArray(parsed.raw)
+      ? null
+      : { settings: parsed.raw.settings, checkins: parsed.raw.checkins };
+    const report = importWords(parsed.list, mode || 'merge', meta);
+    render();
+    return report;
+  },
+
+  // 看看今天的任务是怎么排出来的
+  previewToday() {
+    return buildTodayTask().map(w => w.word + ' (' + w.status + '×' + w.failCount + ')');
+  },
+
+  // ---- 打卡（扩展）----
+  checkin: {
+    enter: enterCheckin,
+    exit: exitCheckin,
+    get isOpen() { return inCheckin; },
+    get records() { return checkins(); },
+    get streak() { return checkinStreak(); },
+    get total() { return checkinTotal(); },
+    get today() { return todayProgress(); },
+    isCheckedIn(date) { return isCheckedIn(date); },
+    do: doCheckIn,
+    undo(date) { return undoCheckIn(date); },
+    shiftMonth(delta) { return shiftMonth(delta); },
+    get calendar() { return calCursor ? (calCursor.y + '-' + String(calCursor.m + 1).padStart(2, '0')) : null; },
+    studiedDays,
+    // 单独预览庆祝动画：wordMemory.checkin.celebrate('随便写点什么')
+    celebrate(sub) { return celebrate(sub || '预览效果'); },
+    hideCelebrate,
+    get celebrating() {
+      const m = document.getElementById('celebrateMask');
+      return !!(m && !m.hidden);
+    }
+  },
+
+  // ---- 外观：主题 / 字体 ----
+  appearance: {
+    get theme() { return resolveTheme(); },          // 实际生效的主题
+    get setting() { return state.settings.theme; },  // 设置里的值（可能是 auto）
+    toggle: toggleTheme,
+    set(theme) { state.settings.theme = theme; saveData(); applyTheme(); },
+    setFontScale(v) { state.settings.fontScale = normalizeSettings({ fontScale: v }).fontScale; saveData(); applyFonts(); },
+    setHeadFont(v) { state.settings.headFont = normalizeSettings({ headFont: v }).headFont; saveData(); applyFonts(); },
+    get htmlThemeAttr() { return document.documentElement.dataset.theme; },
+    get cssFontHead() { return document.documentElement.style['--font-head']; },
+    get cssFsScale() { return document.documentElement.style['--fs-scale']; }
+  },
+
+  // ---- 设置 / 导出 / 重置（阶段 4）----
+  settings: {
+    open: openSettings,
+    close: closeSettings,
+    setDailyLimit: applyDailyLimit,
+    set(key, value) { applySetting(key, value); },
+    get values() { return state.settings; }
+  },
+  exportText: buildExportText,
+  exportProgress,
+  resetProgress,
+
+  // ---- 列表视图 ----
+  view: {
+    get mode() { return viewMode; },
+    review() { viewMode = 'review'; render(); return reviewPool().map(w => w.word); },
+    today() { viewMode = 'today'; render(); return getTodayList().map(w => w.word); },
+    expand(word) { expandedWords.add(wordKey(word)); render(); },
+    collapse(word) { expandedWords.delete(wordKey(word)); render(); },
+    get expanded() { return Array.from(expandedWords); }
+  },
+
+  // ---- 键盘模式（阶段 3）----
+  kbd: {
+    enter: enterKeyboardMode,
+    exit: exitKeyboardMode,
+    get session() { return session; },
+    get current() { return session && session.idx < session.queue.length ? session.queue[session.idx] : null; },
+    // 模拟敲一个键，走的是和真实键盘完全相同的判定逻辑
+    // （字符直接进判定函数：真实浏览器里字符是 input 事件送来的，键位不重要）
+    press(key) {
+      if (key === 'Backspace') { kbdBackspace(); return; }
+      if (typeof key === 'string' && key.length === 1) { kbdTypeChar(key); return; }
+      onKbdKeyDown({ key, ctrlKey: false, metaKey: false, altKey: false, preventDefault() {} });
+    },
+    // 一次性把一个词敲完：type('abandon')
+    type(text) {
+      for (const ch of text) this.press(ch);
+    },
+    // 手机路径：模拟输入法往输入框里塞字符（会触发 input 事件）
+    inputEvent(value) {
+      const el = kbdInputEl();
+      el.value = value;
+      onKbdInput({ target: el });
+      return el.value;
+    },
+    focusInput: focusKbdInput,
+    get inputValue() { return kbdInputEl().value; },
+    speak
+  }
+};
+</script>
+</body>
+</html>
