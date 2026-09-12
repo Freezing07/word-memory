@@ -35,7 +35,7 @@
     --card-2:#fbfcfd;
     --text:#1c2026;
     --text-soft:#4a5058;
-    --text-dim:#8b919b;
+    --text-dim:#636b78;      /* 原本 #8b919b，在浅色背景上对比度只有 2.9~3.2，太淡了 */
     --line:#e5e8ec;
     --line-soft:#eef1f4;
 
@@ -50,15 +50,15 @@
     --accent-text:#25478f;
     --focus-ring:rgba(47,111,237,.14);
 
-    --ok:#1f9d63;
+    --ok:#187a4d;            /* 原本 #1f9d63，绿字只有 3.1，压深到 4.9 */
     --ok-2:#4fd39a;
     --ok-soft:#eaf7f1;
     --ok-border:#c2e6d5;
 
-    --warn:#d97b2b;
+    --warn:#d97b2b;          /* 只做左边框，不承载文字 */
     --warn-soft:#fdf3e8;
     --warn-border:#f0dcc4;
-    --warn-text:#b4641c;
+    --warn-text:#9d5614;     /* 原本 #b4641c，橙字只有 4.0，压深到 5.2 */
 
     --danger:#c8433f;
     --danger-soft:#fdf4f4;
@@ -98,7 +98,7 @@
     --card-2:#171b21;
     --text:#e7eaee;
     --text-soft:#b3bac4;
-    --text-dim:#7f8794;
+    --text-dim:#8b93a1;      /* 原本 #7f8794，对比度只有 4.51，留点余量 */
     --line:#2b313a;
     --line-soft:#252a32;
 
@@ -574,7 +574,14 @@
   @keyframes pop-in{ from{ opacity:0; transform:translateY(8px) scale(.98); } to{ opacity:1; transform:none; } }
   .modal h3{ margin:0 0 10px; font-size:1.0625rem; }
   .modal .body{ font-size:0.875rem; color:var(--text-soft); white-space:pre-line; line-height:1.7; }
-  .modal .act{ margin-top:20px; display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; align-items:center; }
+  .modal .act{
+    margin-top:20px; display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap; align-items:center;
+    /* 设置面板内容较高时，弹窗内部会滚动；把操作按钮钉在底部，免得要滚下去才能点「完成」 */
+    position:sticky; bottom:-22px; z-index:1;
+    background:var(--card);
+    padding:12px 0 22px;
+    border-top:1px solid var(--line-soft);
+  }
   .modal .spacer{ flex:1; }
 
   /* 设置面板表单 */
@@ -645,7 +652,7 @@
   <header class="bar">
     <div class="bar-left">
       <span class="date" id="dateLabel">📖</span>
-      <span class="progress">今日进度 <b id="progDone">0</b>/<b id="progTotal">0</b></span>
+      <span class="progress">今日已记住 <b id="progDone">0</b>/<b id="progTotal">0</b></span>
     </div>
     <div class="bar-right">
       <button class="btn-icon" id="btnTheme" title="切换深色 / 浅色" aria-label="切换深色或浅色">🌙</button>

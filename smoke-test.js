@@ -1407,6 +1407,75 @@ check('[切换] 退出重进后队列变成新的 3 词',
   wm().kbd.session.queue.length === 3, 'len=' + wm().kbd.session.queue.length);
 wm().kbd.exit();
 
+/* ================================================================
+   扩展 12：配色对比度回归（在真实浏览器里量出来的，固化成静态检查）
+   ================================================================ */
+function parseVars(block) {
+  const out = {};
+  block.split('\n').forEach(line => {
+    const m = line.match(/^\s*(--[\w-]+)\s*:\s*([^;]+);/);
+    if (m) out[m[1]] = m[2].trim();
+  });
+  return out;
+}
+const lightRoot = styleBlock.match(/:root\s*\{([\s\S]*?)\n  \}/);
+const darkRoot = styleBlock.match(/:root\[data-theme="dark"\]\s*\{([\s\S]*?)\n  \}/);
+const VARS = { 浅色: parseVars(lightRoot ? lightRoot[1] : ''), 深色: parseVars(darkRoot ? darkRoot[1] : '') };
+
+function hex2rgb(h) {
+  const s = String(h).replace('#', '').trim();
+  const f = s.length === 3 ? s.split('').map(c => c + c).join('') : s;
+  return [0, 2, 4].map(i => parseInt(f.slice(i, i + 2), 16));
+}
+function lumOf(rgb) {
+  const a = rgb.map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+  return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+}
+function contrastOf(fg, bg) {
+  const L1 = lumOf(hex2rgb(fg)), L2 = lumOf(hex2rgb(bg));
+  const hi = Math.max(L1, L2), lo = Math.min(L1, L2);
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+// [说明, 前景变量, 背景变量, 最低要求]
+const CONTRAST_PAIRS = [
+  ['正文文字 / 卡片', '--text', '--card', 4.5],
+  ['释义 / 卡片', '--text-soft', '--card', 4.5],
+  ['次要文字 / 卡片（音标等）', '--text-dim', '--card', 4.5],
+  ['次要文字 / 页面底色（统计、提示）', '--text-dim', '--bg', 4.5],
+  ['次要文字 / 已记住行', '--text-dim', '--known-row', 4.5],
+  ['绿色标题·今日已记住', '--ok', '--bg', 4.5],
+  ['绿色按钮字 / 浅绿底', '--ok', '--ok-soft', 4.5],
+  ['橙色标题·未记住', '--warn-text', '--bg', 4.5],
+  ['橙色按钮字 / 浅橙底', '--warn-text', '--warn-soft', 4.5],
+  ['橙色词 / 没记住行', '--warn-text', '--unsure-row', 4.5],
+  ['强调色文字 / 浅蓝底（角标）', '--accent-text', '--accent-soft', 4.5],
+  ['错误文字 / 浅红底', '--err-text', '--err-soft', 4.5]
+];
+
+['浅色', '深色'].forEach(theme => {
+  const vars = VARS[theme];
+  let worst = 99, worstName = '';
+  CONTRAST_PAIRS.forEach(([name, fg, bg, need]) => {
+    const f = vars[fg], b = vars[bg];
+    if (!f || !b) { check('[配色] ' + theme + ' ' + name + ' 变量存在', false, fg + '=' + f + ' ' + bg + '=' + b); return; }
+    const r = contrastOf(f, b);
+    if (r < worst) { worst = r; worstName = name; }
+    check('[配色] ' + theme + ' ' + name + ' ≥ ' + need, r >= need, r.toFixed(2) + ' (' + f + ' on ' + b + ')');
+  });
+  check('[配色] ' + theme + ' 最低对比度 ≥ 4.5（' + worstName + '）', worst >= 4.5, worst.toFixed(2));
+});
+
+/* ================================================================
+   扩展 13：顶栏文案与实际口径一致
+   ================================================================ */
+check('[文案] 顶栏写的是“今日已记住”，不是“今日进度”',
+  /class="progress">今日已记住/.test(html),
+  (html.match(/class="progress">[^<]*/) || ['没找到'])[0]);
+check('[文案] 顶栏分子确实只算“记住了”的词',
+  el('progDone').textContent === String(wm().view.knownToday.length),
+  el('progDone').textContent + ' vs ' + wm().view.knownToday.length);
+
 /* ---------------- 汇总 ---------------- */
 console.log(results.join('\n'));
 const passed = results.filter(r => r.startsWith('PASS')).length;
