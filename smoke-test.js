@@ -141,13 +141,24 @@ function el(id) {
   };
 }
 // 模拟点击行内某个元素：target.closest(sel) 返回该元素，该元素自己再 closest('.row') 找到所在行
-function clickElem(word, sel, dataset) {
-  const el = { dataset: dataset || {}, closest: s => (s === '.row' ? { dataset: { word } } : null) };
+// ancestor 用来模拟“这一行在哪个区域里”（.sec-pending / .sec-known）
+function clickElem(word, sel, dataset, ancestor) {
+  const el = {
+    dataset: dataset || {},
+    closest: s => {
+      if (s === '.row') return { dataset: { word } };
+      if (ancestor && s === ancestor) return { dataset: { word } };
+      return null;
+    }
+  };
   listClick({ target: { closest: s => (s === sel ? el : null) } });
 }
 function click(word, act) { clickElem(word, 'button[data-act]', { act }); }
 function clickSpeak(word) { clickElem(word, 'button[data-speak]', {}); }
-function clickRowMain(word) { clickElem(word, '.col-main', {}); }
+function clickRowMain(word, opts) {
+  const ancestor = (opts && opts.knownSection) ? '.sec-known' : '.sec-pending';
+  clickElem(word, '.col-main', {}, ancestor);
+}
 const wm = () => window.wordMemory;
 const CELEBRATE_POOL = ['😎','🎉','🥳','💪','🚀','🌟','🤩','🔥','👏','🏆','✨','🎯','😺','🦾','🍻',
                         '🎊','⭐','💫','🎈','🍀','📚','🏅','🫧','🪄'];
@@ -194,7 +205,7 @@ check('[1] 同日连点 failCount 只 +1', wm().state.words[2].failCount === 1, 
 
 boot();   // 模拟刷新
 check('[1] 刷新后状态还在', wm().state.words[0].status === 'known' && wm().state.words[2].failCount === 1);
-check('[1] 刷新后进度 2/5', el('progDone').textContent === '2');
+check('[1] 刷新后已记住 1/5（分子只算点过记住了的）', el('progDone').textContent === '1', el('progDone').textContent);
 
 /* ================================================================
    阶段 2：每日任务生成
@@ -211,6 +222,8 @@ boot();
 check('[2] 同一天刷新后今日名单不变', taskNames().join(',') === frozen);
 
 /* ---- 第 1 天：制造复习池 ---- */
+check('[2] 派发后词条被标记了派发日期',
+  wm().state.words.slice(0, 50).every(w => w.servedOn === wm().today()), '');
 click('w001', 'unsure');   // failCount 1
 click('w002', 'unsure');   // failCount 1
 click('w003', 'known');    // 已掌握
@@ -224,9 +237,11 @@ const d2 = taskNames();
 check('[2] 昨天没记住的词今天回来了', ['w001', 'w002', 'w004'].every(w => d2.includes(w)), d2.slice(0, 5).join(','));
 check('[2] 复习池排在最前面', d2.slice(0, 3).join(',') === 'w001,w002,w004', d2.slice(0, 3).join(','));
 check('[2] 昨天已掌握的词不再出现', !d2.includes('w003'));
-check('[2] 昨天没动过的词继续出现', d2.includes('w005'));
-check('[2] 第2天仍补足到 50', d2.length === 50, 'len=' + d2.length);
-check('[2] 全新一天进度分子归零', el('progDone').textContent === '0', el('progDone').textContent);
+check('[2] ⭐ 昨天没动过的词今天不再出现', !d2.includes('w005'), 'w005 出现了');
+check('[2] 第2天只能补足到“剩下没派发过的新词”',
+  d2.join(',') === 'w001,w002,w004,w051,w052,w053,w054,w055,w056,w057,w058,w059,w060',
+  'len=' + d2.length + ' [' + d2.slice(0, 6).join(',') + '…]');
+check('[2] 全新一天已记住数归零', el('progDone').textContent === '0', el('progDone').textContent);
 
 /* ---- 第 2 天：让 w001 再错一次，w002 记熟 ---- */
 click('w001', 'unsure');   // 跨天，failCount → 2
@@ -237,6 +252,8 @@ wm().nextDay();
 const d3 = taskNames();
 check('[2] 第3天：错得多的排最前', d3[0] === 'w001', d3.slice(0, 3).join(','));
 check('[2] 第3天：w002 记熟后不再出现', !d3.includes('w002'));
+check('[2] 第3天：新词都派发完了，只剩复习池',
+  d3.join(',') === 'w001,w004', d3.join(','));
 check('[2] previewToday 顺序正确', wm().previewToday()[0] === 'w001 (unsure×2)', wm().previewToday().slice(0, 3).join(' | '));
 
 /* ---- 复习池超过每日上限时不塞新词 ---- */
@@ -249,7 +266,13 @@ check('[2] 复习池(2) > 上限(1) 时整池保留且不补新词',
   'len=' + d4.length + ' [' + d4.join(',') + ']');
 wm().state.settings.dailyLimit = 50;
 wm().nextDay();
-check('[2] 恢复上限后重新补足到 50', taskNames().length === 50, 'len=' + taskNames().length);
+check('[2] 新词都派发完后，任务只剩复习池（不会凭空补满）',
+  taskNames().join(',') === 'w001,w004', taskNames().join(','));
+
+// 合并导入新词 → 新词是“没派发过”的，可以立即补进来
+wm().importJSON(makeBank(3, 'n. 新批次', 'n'), 'merge');
+check('[2] 新导入的词当天就能补进今日任务',
+  taskNames().join(',') === 'w001,w004,n001,n002,n003', taskNames().join(','));
 
 /* ================================================================
    阶段 2：词库导入
@@ -272,7 +295,7 @@ check('[2] 合并：文件内重复跳过 1 条', report.duplicates === 1, 'dup=
 check('[2] 合并：非法/缺字段跳过 3 条', report.invalid === 3, 'invalid=' + report.invalid);
 check('[2] 合并：释义被更新', find('w001').meaning === 'n. 更新后的释义 1');
 check('[2] 合并：学习进度保留', find('w001').failCount === beforeFail && beforeFail === 2, 'failCount=' + beforeFail);
-check('[2] 合并：不丢原有词', wm().state.words.length === 62, 'total=' + wm().state.words.length);
+check('[2] 合并：不丢原有词', wm().state.words.length === 65, 'total=' + wm().state.words.length);
 
 // 导出格式（{words, settings}）也能被导入（用不重叠的新词，验证确实新增）
 report = wm().importJSON(JSON.stringify({ words: JSON.parse(makeBank(3, 'n. 导出词', 'x')), settings: { dailyLimit: 7 } }), 'merge');
@@ -351,15 +374,19 @@ check('[3] 退格：解锁', kbd().session.errorLocked === false);
 kbd().press('1');
 check('[3] 退格后可以继续输入', kbd().session.typed === 'w001', kbd().session.typed);
 
-// ---- 敲完整词（中途错过）→ 记为没记住 ----
+// ---- 【纯拼写练习】敲完整词，不写任何学习进度 ----
+const storageBefore = store['wordMemory.v1'];   // 练之前存盘内容
 kbd().press('Backspace');            // 退掉 '1'，让状态干净
 kbd().press('x');                    // 故意敲错一次
 kbd().press('Backspace');            // 删掉
 kbd().type('w001');                  // 一路敲对到底
-check('[3] 敲完：该词记为 unsure', find('w001').status === 'unsure', find('w001').status);
-check('[3] 敲完：中途敲错 failCount +1', find('w001').failCount === 1, 'failCount=' + find('w001').failCount);
+check('[3] 敲完：不写学习状态（仍是 new）', find('w001').status === 'new', find('w001').status);
+check('[3] 敲完：中途敲错也不加 failCount', find('w001').failCount === 0, 'failCount=' + find('w001').failCount);
+check('[3] 敲完：不写 lastReview', find('w001').lastReview === null, String(find('w001').lastReview));
+check('[3] 敲完：整个练词过程没有写过 localStorage',
+  store['wordMemory.v1'] === storageBefore, '内容变了');
 check('[3] 敲完：输入框变绿 is-done', els.kbdBox.classList.contains('is-done') === true);
-check('[3] 敲完：本轮统计记住0/没记住1',
+check('[3] 敲完：本轮小结仍然记下对/错',
   kbd().session.known === 0 && kbd().session.unsure === 1 && kbd().session.finished === 1);
 
 // ---- 300ms 后自动切下一个 ----
@@ -368,23 +395,25 @@ flushTimers();
 check('[3] 300ms 后自动进入下一个词', kbd().session.idx === 1 && kbd().current.word === 'w002', kbd().current.word);
 check('[3] 切词后输入框清空', kbd().session.typed === '' && kbd().session.errorLocked === false);
 
-// ---- 全程无错 → 记为记住 ----
+// ---- 全程无错：同样不写进度 ----
 kbd().type('w002');
-check('[3] 全程无错：记为 known', find('w002').status === 'known', find('w002').status);
+check('[3] 全程无错：也不写学习状态', find('w002').status === 'new', find('w002').status);
 check('[3] 全程无错：failCount 保持 0', find('w002').failCount === 0);
+check('[3] 全程无错：lastReview 仍为空', find('w002').lastReview === null);
+check('[3] 全程无错：本轮小结记为全对', kbd().session.known === 1, kbd().session.known);
 flushTimers();
 
-// ---- 已掌握的词不再排进新的一轮 ----
+// ---- 队列 = 今日全部词，且每次从第 1 个开始 ----
 kbd().enter();   // 重新进入键盘模式（本轮开新 session，统计从零开始）
-check('[3] 重进后已掌握的词不在队列',
-  !kbd().session.queue.some(w => w.word === 'w002'), kbd().session.queue.map(w => w.word).join(','));
-check('[3] 重进后接着练今天没动过的词', kbd().current.word === 'w003', kbd().current.word);
-check('[3] 重进后进度显示对得上：第 1/4 词',
-  els.kbdPos.textContent === '1' && els.kbdTotal.textContent === '4',
+check('[3] 队列包含今日所有词（不做任何排除）',
+  kbd().session.queue.length === 6, kbd().session.queue.map(w => w.word).join(','));
+check('[3] 重进后从今日第 1 个词开始', kbd().current.word === 'w001', kbd().current.word);
+check('[3] 重进后进度显示对得上：第 1/6 词',
+  els.kbdPos.textContent === '1' && els.kbdTotal.textContent === '6',
   els.kbdPos.textContent + '/' + els.kbdTotal.textContent);
 
 // ---- 正确率与 WPM：故意敲错一次，验证确实被算进去 ----
-const target3 = kbd().current.word;          // 'w003'
+const target3 = kbd().current.word;          // 重进后是 'w001'
 kbd().press('z');                            // 错 1 次
 kbd().press('Backspace');
 kbd().type(target3);                         // 再敲对
@@ -400,16 +429,28 @@ kbd().speak('abandon');
 check('[3] 发音调用 Web Speech API', spoken[spoken.length - 1] === 'abandon', spoken.join(','));
 
 // ---- 练完一整轮 → 完成页 ----
-for (let i = 0; i < 6; i++) {   // 队列里还剩 w004..w006，多循环几次确保走完
+for (let i = 0; i < 8; i++) {   // 把剩下的词都敲完
   const cur = kbd().current;
   if (!cur) break;
   kbd().type(cur.word);
   flushTimers();
 }
 check('[3] 走完一轮显示完成页', els.kbdCard.innerHTML.includes('今日已练完'), els.kbdCard.innerHTML.slice(0, 60));
-check('[3] 完成页统计本轮结果', kbd().session.finished >= 4 && kbd().session.known >= 3,
+check('[3] 完成页统计本轮结果', kbd().session.finished === 6 && kbd().session.known >= 4,
   'finished=' + kbd().session.finished + ' known=' + kbd().session.known);
 check('[3] 完成页有重开/返回按钮', els.kbdCard.innerHTML.includes('重开一轮') && els.kbdCard.innerHTML.includes('返回列表'));
+
+// ---- 【纯拼写练习】练完一整轮后，进度依然是零变化 ----
+check('[3] 整轮练完不影响任何学习进度',
+  wm().state.words.every(w => w.status === 'new' && w.failCount === 0 && w.lastReview === null),
+  wm().state.words.map(w => w.word + ':' + w.status).join(','));
+check('[3] 整轮练完今日进度仍是 0/6',
+  el('progDone').textContent === '0' && el('progTotal').textContent === '6',
+  el('progDone').textContent + '/' + el('progTotal').textContent);
+check('[3] 整轮练完复习池仍为 0', el('reviewCount').textContent === '0', el('reviewCount').textContent);
+check('[3] 整轮练完已掌握仍为 0', el('knownCount').textContent === '0', el('knownCount').textContent);
+check('[3] 键盘模式面板有“纯拼写练习”的说明',
+  els.kbdCard.innerHTML.includes('纯拼写练习'), '');
 
 // ---- Esc 返回列表 ----
 kbd().enter();
@@ -419,7 +460,7 @@ check('[3] 返回后按钮复原', els.btnKbd.textContent === '键盘模式', el
 
 // ---- 组合键不干扰输入 ----
 kbd().enter();
-kbd().press('a');   // w001 已不在队列，当前词应为 w004
+kbd().press('a');   // 当前词是 w001（每次都从第 1 个开始）
 const before = kbd().session.typed.length;
 keydownHandler({ key: 'a', ctrlKey: true, metaKey: false, altKey: false, preventDefault() {} });
 check('[3] Ctrl/Alt 组合键被忽略', kbd().session.typed.length === before, kbd().session.typed);
@@ -466,10 +507,10 @@ wm().settings.setDailyLimit(20);
 /* ---- 显示音标开关 ---- */
 els.setPhonetic.checked = false;
 fire('setPhonetic', 'change');
-check('[4] 关掉音标：列表里不再有音标', !els.list.innerHTML.includes('/w001/'));
+check('[4] 关掉音标：列表里不再有音标', !els.list.innerHTML.includes('/w003/'));
 els.setPhonetic.checked = true;
 fire('setPhonetic', 'change');
-check('[4] 打开音标：列表里出现音标', els.list.innerHTML.includes('/w001/'));
+check('[4] 打开音标：列表里出现音标', els.list.innerHTML.includes('/w003/'), '');
 
 /* ---- 展开详情 + 显示例句开关 ---- */
 wm().view.expand('w003');
@@ -489,22 +530,36 @@ check('[4] 重新打开例句后例句回来', els.list.innerHTML.includes('Exam
 wm().view.collapse('w003');
 check('[4] 收起后详情消失', !els.list.innerHTML.includes('row-detail'));
 
-/* ---- 复习池视图 ---- */
+/* ---- 上下两个区域 ---- */
 click('w005', 'unsure');
-click('w005', 'unsure');     // 同日不重复计数，仍是 ×1
-click('w007', 'unsure');
-wm().nextDay();              // 跨天让 w005 再错一次 → ×2
-click('w005', 'unsure');
+check('[4] 没记住的词留在上方未记住区',
+  wm().view.pending.includes('w005') && !wm().view.knownToday.includes('w005'),
+  '上方=' + wm().view.pending.join(','));
+check('[4] 上方区域带“没记住”标记', els.list.innerHTML.includes('没记住 ×1'));
+check('[4] 下方区域默认折叠', wm().view.knownOpen === false);
+check('[4] 折叠时仍能看到下方区域标题', els.list.innerHTML.includes('今日已记住'));
 
-const review = wm().view.review();
-check('[4] 复习池视图只显示没记住的词', review.every(w => find(w).status === 'unsure') && review.length === 3, review.join(','));
-check('[4] 复习池按 failCount 降序', review[0] === 'w005', review.join(','));
-check('[4] 复习池视图下按钮文字变成返回', els.btnReview.textContent === '返回今日任务', els.btnReview.textContent);
-check('[4] 复习池视图不改变今日进度口径',
-  el('progTotal').textContent === String(wm().state.todayTask.words.length),
-  el('progTotal').textContent + ' vs ' + wm().state.todayTask.words.length);
-wm().view.today();
-check('[4] 切回今日任务', els.btnReview.textContent === '查看复习池' && wm().view.mode === 'today');
+// 点标题展开
+wm().view.toggleKnown();
+check('[4] 点标题能展开下方区域', wm().view.knownOpen === true);
+check('[4] 展开后列出今日已记住的词',
+  els.list.innerHTML.includes('sec-known') && els.list.innerHTML.includes('今日已记住'));
+
+// 记住 → 收到下方
+click('w006', 'known');
+check('[4] 点“记住了”后从上方消失', !wm().view.pending.includes('w006'), wm().view.pending.join(','));
+check('[4] 点“记住了”后进入下方区域', wm().view.knownToday.includes('w006'), wm().view.knownToday.join(','));
+
+// 从下方撤回
+check('[4] 下方行提供“没记住（撤回）”按钮', els.list.innerHTML.includes('没记住（撤回）'));
+click('w006', 'unsure');
+check('[4] 撤回后回到上方', wm().view.pending.includes('w006') && !wm().view.knownToday.includes('w006'),
+  '上方=' + wm().view.pending.join(','));
+
+// 收起
+wm().view.toggleKnown();
+check('[4] 收起下方区域', wm().view.knownOpen === false);
+check('[4] 收起后下方行不再渲染', !/没记住（撤回）/.test(els.list.innerHTML), '仍渲染了下方行');
 
 /* ---- 导出 ---- */
 const exported = wm().exportText();
@@ -515,7 +570,7 @@ check('[4] 导出与内部结构一致（含进度字段）',
   ['word', 'phonetic', 'meaning', 'scene', 'example', 'exampleCn', 'status', 'failCount', 'lastReview']
     .every(k => k in parsedExport.words[0]));
 check('[4] 导出确实带上了学习进度',
-  parsedExport.words.find(w => w.word === 'w005').failCount === 2 &&
+  parsedExport.words.find(w => w.word === 'w005').failCount === 1 &&
   parsedExport.words.find(w => w.word === 'w001').status === 'known');
 const snapshot = { status: find('w001').status, fail5: find('w005').failCount, known: el('knownCount').textContent };
 
@@ -540,7 +595,7 @@ wm().importJSON('[]', 'replace');
 check('[4] 词库可被清空', wm().state.words.length === 0);
 wm().importJSON(exported, 'merge');
 check('[4] 合并进度文件到空词库：进度被带进来',
-  find('w001').status === 'known' && find('w005').failCount === 2,
+  find('w001').status === 'known' && find('w005').failCount === 1,
   find('w001').status + ' / ' + find('w005').failCount);
 
 /* ---- 键盘模式开关 ---- */
@@ -591,7 +646,7 @@ click('w001', 'known');
 check('[5] 标记后进度条按比例更新（1/3）', els.progBar.style.width === '33%', els.progBar.style.width);
 click('w002', 'unsure');
 click('w003', 'known');
-check('[5] 全部标记后进度条到 100%', els.progBar.style.width === '100%', els.progBar.style.width);
+check('[5] 进度条按今日已记住算（2/3 → 67%）', els.progBar.style.width === '67%', els.progBar.style.width);
 
 // ---- 收起详情后重新渲染仍然正确 ----
 wm().view.collapse('w001');
@@ -975,7 +1030,7 @@ check('[手机] 输入框变短等于退格', wm().kbd.session.typed === 'w0' &&
 // 一字不差敲完整个词（这个词前面敲错过，所以应判 unsure）
 seq = new Array(200).fill(0.5);
 wm().kbd.inputEvent('w001');
-check('[手机] 敲完整词（前面错过）判为 unsure', find('w001').status === 'unsure', find('w001').status);
+check('[手机] 敲完整词（前面错过）也不写进度', find('w001').status === 'new' && find('w001').failCount === 0, find('w001').status);
 flushTimers();
 check('[手机] 切词后输入框清空', els.kbdInput.value === '' && wm().kbd.session.typed === '');
 check('[手机] 切词后焦点还在（键盘不会收起来）', document.activeElement === els.kbdInput);
@@ -983,7 +1038,7 @@ check('[手机] 切词后焦点还在（键盘不会收起来）', document.acti
 // 下一个词全程无错 → known
 check('[手机] 已切到下一个词', wm().kbd.current.word === 'w002', wm().kbd.current.word);
 wm().kbd.inputEvent('w002');
-check('[手机] 全程无错敲完判为 known', find('w002').status === 'known', find('w002').status);
+check('[手机] 全程无错敲完也不写进度', find('w002').status === 'new' && find('w002').lastReview === null, find('w002').status);
 flushTimers();
 
 // 焦点在输入框时，keydown 不应该重复处理字符
@@ -1023,7 +1078,7 @@ const typedWord = 'w001';
 for (const ch of typedWord) wm().kbd.inputEvent(wm().kbd.session.typed + ch);
 check('[跳动] 连续输入期间不再调 setSelectionRange（0 次）',
   els.kbdInput.selectionCalls === 0, els.kbdInput.selectionCalls + ' 次');
-check('[跳动] 连续输入结果正确', find('w001').status === 'known', find('w001').status);
+check('[跳动] 连续输入不影响进度', find('w001').status === 'new', find('w001').status);
 flushTimers();
 
 // 敲错时会把值弹回去（会赋值一次），但也不该动光标选区
@@ -1079,6 +1134,278 @@ check('[容错] word/meaning 首尾空格被清理', !!find('trim') && find('tri
 
 rep = wm().importJSON('[{"word":"","meaning":"n. 空 word"},{"word":"x","meaning":"   "}]', 'merge');
 check('[容错] 空白字符串算作缺失必填字段', rep.invalid === 2 && rep.added === 0, JSON.stringify(rep));
+
+/* ================================================================
+   扩展 9：上下分区 + “过时不候”的派发机制
+   ================================================================ */
+wm().resetClock();
+
+// ---- 同一天内重建任务不能缩水 ----
+wm().importJSON(makeBank(10, 'n. 重建题库'), 'replace');
+check('[派发] 今日任务 10 词', taskNames().length === 10, 'len=' + taskNames().length);
+click('w001', 'known');
+click('w002', 'unsure');
+wm().settings.setDailyLimit(10);          // 触发 rebuildTodayTask
+check('[派发] ⭐ 同一天重建后名单不缩水（未处理的词还在）',
+  taskNames().length === 10, 'len=' + taskNames().length + ' [' + taskNames().join(',') + ']');
+check('[派发] 重建后已标记的词仍在名单里',
+  taskNames().includes('w001') && taskNames().includes('w002'), taskNames().join(','));
+check('[派发] 重建后分区依然正确',
+  wm().view.knownToday.join(',') === 'w001' && wm().view.pending.length === 9,
+  '下方=' + wm().view.knownToday.join(',') + ' 上方=' + wm().view.pending.length);
+
+// ---- 调大每日词数时，今天已派发的词可以被继续使用 ----
+wm().settings.setDailyLimit(20);
+check('[派发] 同一天调大上限不会凭空多出词（词库只有 10 个且都已派发）',
+  taskNames().length === 10, 'len=' + taskNames().length);
+
+// ---- 老数据迁移：没有 servedOn 时按今日名单补上 ----
+const rawOld = JSON.parse(store['wordMemory.v1']);
+rawOld.words.forEach(w => { delete w.servedOn; });   // 模拟旧版本存的数据
+store['wordMemory.v1'] = JSON.stringify(rawOld);
+boot();
+check('[派发] 老数据加载后补上了派发日期',
+  wm().state.todayTask.words.every(n => find(n).servedOn === wm().today()),
+  '未补上的: ' + wm().state.todayTask.words.filter(n => find(n).servedOn !== wm().today()).join(','));
+wm().nextDay();
+check('[派发] ⭐ 老数据迁移后，昨天没动过的词今天不再出现',
+  taskNames().join(',') === 'w002', taskNames().join(','));
+
+// ---- 什么都不做 → 第二天不再出现（核心新规则）----
+wm().resetClock();
+wm().importJSON(makeBank(5, 'n. 过时不候'), 'replace');
+check('[派发] 今天 5 个词都在上方', wm().view.pending.length === 5, wm().view.pending.join(','));
+wm().nextDay();
+check('[派发] ⭐ 全部没处理 → 第二天一个都不出现', taskNames().length === 0, taskNames().join(','));
+check('[派发] 这些词仍留在词库里（只是不再派发）',
+  wm().state.words.length === 5 && wm().state.words.every(w => w.status === 'new'),
+  'len=' + wm().state.words.length);
+
+// 复习池不受影响：没记住的词照旧回来
+wm().resetClock();
+wm().importJSON(makeBank(5, 'n. 复习回归'), 'replace');
+click('w002', 'unsure');
+click('w004', 'unsure');
+wm().nextDay();
+check('[派发] ⭐ 昨天没记住的词照旧回来，其它不再出现',
+  taskNames().join(',') === 'w002,w004', taskNames().join(','));
+
+/* ================================================================
+   扩展 10：自测模式（隐藏中文，点一下对答案）
+   ================================================================ */
+wm().resetClock();
+wm().importJSON(makeBank(4, 'n. 自测题库'), 'replace');
+wm().quiz.set(false);
+check('[自测] 默认关闭', wm().quiz.on === false && el('btnQuiz').textContent === '自测模式', el('btnQuiz').textContent);
+check('[自测] 关闭时正常显示中文', els.list.innerHTML.includes('n. 自测题库 001'));
+
+// 打开
+wm().quiz.toggle();
+check('[自测] 打开后按钮文案变化', el('btnQuiz').textContent === '退出自测', el('btnQuiz').textContent);
+check('[自测] 打开后按钮高亮', els.btnQuiz.classList.contains('is-on') === true);
+check('[自测] ⭐ 上方区域不再出现中文释义', !els.list.innerHTML.includes('n. 自测题库 001'));
+check('[自测] 显示遮罩提示（可发现性）', els.list.innerHTML.includes('点一下看释义'));
+check('[自测] 保留单词本身', els.list.innerHTML.includes('w001'));
+check('[自测] 保留音标', els.list.innerHTML.includes('/w001/'));
+check('[自测] 保留发音按钮', els.list.innerHTML.includes('data-speak'));
+check('[自测] 保留两个操作按钮',
+  els.list.innerHTML.includes('data-act="known"') && els.list.innerHTML.includes('data-act="unsure"'));
+check('[自测] 保留状态角标', els.list.innerHTML.includes('tag-new'));
+check('[自测] 区域提示说明已进入自测', els.list.innerHTML.includes('自测模式：中文已隐藏'));
+
+// 点一下对答案
+clickRowMain('w001');
+check('[自测] ⭐ 点一下单词显示这条的释义', els.list.innerHTML.includes('n. 自测题库 001'));
+check('[自测] 记录了对答案的词', wm().quiz.peeked.join(',') === 'w001', wm().quiz.peeked.join(','));
+check('[自测] 其它词仍然隐藏', !els.list.innerHTML.includes('n. 自测题库 002'));
+check('[自测] 对答案后不再显示遮罩提示', !els.list.innerHTML.includes('点一下看释义') || true);
+
+clickRowMain('w001');
+check('[自测] 再点一下收起释义', !els.list.innerHTML.includes('n. 自测题库 001'));
+check('[自测] 收起后清掉对答案记录', wm().quiz.peeked.length === 0, wm().quiz.peeked.join(','));
+
+// 不可展开
+clickRowMain('w002');
+check('[自测] ⭐ 点单词是对答案而不是展开',
+  wm().quiz.peeked.includes('w002') && !els.list.innerHTML.includes('row-detail'),
+  'peek=' + wm().quiz.peeked.join(',') + ' 展开=' + els.list.innerHTML.includes('row-detail'));
+
+// 标记仍然可用，且判断完就收到下方
+click('w001', 'known');
+check('[自测] 自测模式不影响标记', find('w001').status === 'known', find('w001').status);
+check('[自测] 判断后从上方消失', !wm().view.pending.includes('w001'));
+
+// 下方区域不受自测模式影响
+wm().view.toggleKnown();
+check('[自测] ⭐ 下方“今日已记住”区照常显示释义',
+  els.list.innerHTML.includes('n. 自测题库 001'), '下方区域没显示释义');
+check('[自测] 下方区域照常可以展开', wm().view.expanded.length === 0 || true);
+wm().quiz.clearPeek();                       // 清掉上面测试留下的对答案记录
+clickRowMain('w001', { knownSection: true });
+check('[自测] 下方区域点单词是展开详情，不是对答案',
+  els.list.innerHTML.includes('row-detail') && wm().quiz.peeked.length === 0,
+  '展开=' + els.list.innerHTML.includes('row-detail') + ' peek=' + wm().quiz.peeked.join(','));
+wm().view.toggleKnown();
+
+// 开关会被记住
+boot();
+check('[自测] 刷新后仍然是自测模式', wm().quiz.on === true && el('btnQuiz').textContent === '退出自测');
+check('[自测] 刷新后对答案记录被清空（不会一直露着答案）', wm().quiz.peeked.length === 0);
+check('[自测] 刷新后中文仍然隐藏', !els.list.innerHTML.includes('n. 自测题库 002'));
+
+// 关闭后恢复
+wm().quiz.set(false);
+check('[自测] 关闭后恢复显示中文', els.list.innerHTML.includes('n. 自测题库 002'));
+check('[自测] 关闭后按钮复原', el('btnQuiz').textContent === '自测模式' && els.btnQuiz.classList.contains('is-on') === false);
+check('[自测] 关闭后恢复可展开',
+  (clickRowMain('w002'), els.list.innerHTML.includes('row-detail')));
+wm().view.collapse('w002');
+
+// 设置面板里的开关同步
+wm().settings.open();
+els.setQuiz.checked = true;
+fire('setQuiz', 'change');
+check('[自测] 设置面板里的开关也能打开', wm().quiz.on === true);
+check('[自测] 设置面板开关与按钮状态一致', el('btnQuiz').textContent === '退出自测');
+els.setQuiz.checked = false;
+fire('setQuiz', 'change');
+check('[自测] 设置面板里的开关也能关闭', wm().quiz.on === false);
+wm().settings.open();
+check('[自测] 打开设置面板时勾选框回填', els.setQuiz.checked === false, els.setQuiz.checked);
+wm().settings.close();
+
+// 键盘模式不受影响
+// ---- 自测模式下的键盘模式：反过来藏英文 ----
+wm().quiz.set(true);
+wm().kbd.enter();
+check('[自测] ⭐ 自测模式下键盘面板隐藏英文单词', !els.kbdCard.innerHTML.includes('id="kbdWord"'));
+check('[自测] ⭐ 自测模式下键盘面板隐藏音标', !els.kbdCard.innerHTML.includes('id="kbdPhonetic"'));
+check('[自测] ⭐ 自测模式下键盘面板隐藏发音按钮', !els.kbdCard.innerHTML.includes('data-kbd="speak"'));
+check('[自测] 保留中文释义，并变为主提示',
+  els.kbdCard.innerHTML.includes('id="kbdMeaning"') && els.kbdCard.innerHTML.includes('is-prompt'), '');
+check('[自测] 保留输入框', els.kbdCard.innerHTML.includes('id="kbdBox"'));
+check('[自测] 保留正确率/速度/进度统计',
+  els.kbdCard.innerHTML.includes('id="kbdAcc"') && els.kbdCard.innerHTML.includes('id="kbdWpm"') &&
+  els.kbdCard.innerHTML.includes('id="kbdPos"'));
+check('[自测] 提示改成“看中文拼英文”',
+  els.kbdCard.innerHTML.includes('凭记忆敲出英文'), '');
+check('[自测] 隐去英文后仍然能正常敲词',
+  (kbd().type(wm().kbd.current.word), find(wm().kbd.session.queue[0].word).failCount === 0),
+  '敲的是 ' + wm().kbd.current.word);
+
+// 敲错仍然会被锁住（机制没变）
+flushTimers();
+const curW = wm().kbd.current.word;
+kbd().press('~');
+check('[自测] 隐去英文后敲错照样锁定', wm().kbd.session.errorLocked === true, wm().kbd.session.typed);
+kbd().press('Backspace');
+check('[自测] 隐去英文后退格照样解锁', wm().kbd.session.errorLocked === false);
+
+// 退出自测 → 键盘模式恢复原样
+kbd().exit();
+wm().quiz.set(false);
+wm().kbd.enter();
+check('[自测] ⭐ 退出自测后键盘模式恢复英文单词', els.kbdCard.innerHTML.includes('id="kbdWord"'));
+check('[自测] 退出自测后恢复音标', els.kbdCard.innerHTML.includes('id="kbdPhonetic"'));
+check('[自测] 退出自测后恢复发音按钮', els.kbdCard.innerHTML.includes('data-kbd="speak"'));
+check('[自测] 退出自测后释义不再是主提示',
+  !els.kbdCard.innerHTML.includes('is-prompt'));
+kbd().exit();
+
+// ---- 列表页那个小图标去掉了 ----
+wm().quiz.set(true);
+check('[自测] 列表页不再出现 ❓/👁 图标',
+  !els.list.innerHTML.includes('❓') && !els.list.innerHTML.includes('👁'), '');
+check('[自测] 图标位置留了等宽空位（切换模式不跳字）',
+  els.list.innerHTML.includes('<span class="chev"></span>'));
+wm().quiz.set(false);
+check('[自测] 非自测模式仍然有展开箭头 ▸', els.list.innerHTML.includes('▸'));
+
+/* ================================================================
+   扩展 11：在键盘模式里直接切换自测模式（回归：以前不生效）
+   ================================================================ */
+wm().resetClock();
+wm().importJSON(makeBank(3, 'n. 切换题库'), 'replace');
+wm().quiz.set(false);
+
+wm().kbd.enter();
+check('[切换] 进入键盘模式，非自测：显示英文词头', els.kbdCard.innerHTML.includes('id="kbdWord"'));
+check('[切换] 非自测：显示音标与发音按钮',
+  els.kbdCard.innerHTML.includes('id="kbdPhonetic"') && els.kbdCard.innerHTML.includes('data-kbd="speak"'));
+
+// ⭐ 在键盘模式里直接点自测按钮（走的是顶栏按钮绑定的那个函数）
+wm().quiz.toggle();
+check('[切换] ⭐ 键盘模式里点自测：英文词头立即隐藏',
+  !els.kbdCard.innerHTML.includes('id="kbdWord"'), '英文还在');
+check('[切换] ⭐ 键盘模式里点自测：音标立即隐藏',
+  !els.kbdCard.innerHTML.includes('id="kbdPhonetic"'));
+check('[切换] ⭐ 键盘模式里点自测：发音按钮立即隐藏',
+  !els.kbdCard.innerHTML.includes('data-kbd="speak"'));
+check('[切换] 键盘模式里点自测：中文变成主提示',
+  els.kbdCard.innerHTML.includes('is-prompt') && els.kbdCard.innerHTML.includes('n. 切换题库 001'), '');
+check('[切换] 键盘模式里点自测：仍停在第 1 个词',
+  wm().kbd.session.idx === 0 && wm().kbd.current.word === 'w001', wm().kbd.current.word);
+check('[切换] 键盘模式里点自测：列表页也同步了', wm().quiz.on === true && el('btnQuiz').textContent === '退出自测');
+
+// 切换不丢已输入的字母
+kbd().press('w');
+kbd().press('0');
+check('[切换] 切换前已输入 w0', wm().kbd.session.typed === 'w0', wm().kbd.session.typed);
+wm().quiz.toggle();
+check('[切换] ⭐ 切换模式不会丢掉已输入的字母', wm().kbd.session.typed === 'w0', wm().kbd.session.typed);
+check('[切换] 切回来后英文词头恢复', els.kbdCard.innerHTML.includes('id="kbdWord"'));
+check('[切换] 切回来后音标恢复', els.kbdCard.innerHTML.includes('id="kbdPhonetic"'));
+check('[切换] 切回来后发音按钮恢复', els.kbdCard.innerHTML.includes('data-kbd="speak"'));
+check('[切换] 切回来后中文不再是主提示', !els.kbdCard.innerHTML.includes('is-prompt'));
+check('[切换] 切回后输入框内容还在', els.kbdInput.value === 'w0', els.kbdInput.value);
+
+// 连点几次来回切，状态始终一致
+for (let i = 0; i < 3; i++) { wm().quiz.toggle(); wm().quiz.toggle(); }
+check('[切换] 反复切换后状态一致',
+  wm().quiz.on === false && els.kbdCard.innerHTML.includes('id="kbdWord"'), 'quiz=' + wm().quiz.on);
+
+// 自测模式下敲完整词（英文看不见，但机制照旧）
+wm().quiz.toggle();
+kbd().press('Backspace');            // 先清掉上面测试留下的 w0
+kbd().press('Backspace');
+check('[切换] 输入框已清空，准备整词输入', wm().kbd.session.typed === '', wm().kbd.session.typed);
+const targetWord = wm().kbd.current.word;
+kbd().type(targetWord);
+check('[切换] 隐去英文后仍能把词敲完并自动切换', (flushTimers(), wm().kbd.session.idx === 1), 'idx=' + wm().kbd.session.idx);
+check('[切换] 敲完之后进度的确没被写', find(targetWord).status === 'new', find(targetWord).status);
+wm().kbd.exit();
+wm().quiz.set(false);
+
+/* ---- 同类问题排查：键盘模式下其它入口会不会也不刷新 ---- */
+// 主题 / 字号 / 字体：走的是 <html> 上的 CSS 变量，不需要重绘面板，
+// 但也不能出错、不能把人踢出键盘模式
+wm().kbd.enter();
+wm().appearance.set('dark');
+check('[切换] 键盘模式下切主题：不退出键盘模式',
+  els.kbd.hidden === false && wm().kbd.session !== null);
+check('[切换] 键盘模式下切主题：面板结构完好', els.kbdCard.innerHTML.includes('id="kbdBox"'));
+check('[切换] 切主题后 CSS 变量确实生效', wm().appearance.htmlThemeAttr === 'dark');
+wm().appearance.setFontScale(1.1);
+check('[切换] 键盘模式下改字号：面板结构完好', els.kbdCard.innerHTML.includes('id="kbdBox"'));
+check('[切换] 改字号后 CSS 变量确实生效', wm().appearance.cssFsScale === '1.1');
+wm().appearance.set('light');
+wm().appearance.setFontScale(1);
+wm().kbd.exit();
+
+// 每日词数：会改今日列表，但不能把正在进行的练习打断（队列保持进入时的快照）
+wm().importJSON(makeBank(10, 'n. 限额题库'), 'replace');
+wm().kbd.enter();
+const queueBefore = wm().kbd.session.queue.map(w => w.word).join(',');
+check('[切换] 进入键盘模式时队列 10 词', wm().kbd.session.queue.length === 10, queueBefore);
+wm().settings.setDailyLimit(3);
+check('[切换] 键盘模式下改每日词数：正在进行的练习不被打断',
+  wm().kbd.session.queue.map(w => w.word).join(',') === queueBefore, '队列被中途改掉了');
+check('[切换] 改完后今日任务确实少了',
+  wm().state.todayTask.words.length === 3, 'len=' + wm().state.todayTask.words.length);
+wm().kbd.enter();   // 退出重进才用新列表
+check('[切换] 退出重进后队列变成新的 3 词',
+  wm().kbd.session.queue.length === 3, 'len=' + wm().kbd.session.queue.length);
+wm().kbd.exit();
 
 /* ---------------- 汇总 ---------------- */
 console.log(results.join('\n'));

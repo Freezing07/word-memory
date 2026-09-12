@@ -1,0 +1,474 @@
+[
+  {
+    "word": "analyse",
+    "phonetic": "/ˈænəlaɪz/",
+    "meaning": "v. 分析；分解",
+    "scene": "ana-（向上）+ lys（松开）→ 把东西拆开、一层层“松开”来看，就是分析。做芯片失效分析时，你把电路逐层剥离，看清每一层结构。",
+    "example": "Researchers analyse the data to identify patterns in the failure.",
+    "exampleCn": "研究人员分析数据以找出失效模式。"
+  },
+  {
+    "word": "approach",
+    "phonetic": "/əˈproʊtʃ/",
+    "meaning": "v. 接近；着手处理；n. 方法，途径",
+    "scene": "ap-（朝向）+ proach（靠近）→ 朝着目标一步步靠近。做科研也像走近一座山：先选一条路（approach），再开始爬。",
+    "example": "This approach is widely used in analog circuit design.",
+    "exampleCn": "这种方法在模拟电路设计中广泛使用。"
+  },
+  {
+    "word": "area",
+    "phonetic": "/ˈeriə/",
+    "meaning": "n. 领域；区域；面积",
+    "scene": "想象一张版图，你拿笔圈出一块——那块被圈出来的，就是 area。你的研究方向，就是学术版图上被你圈定的那块区域。",
+    "example": "She is an expert in the area of low-power VLSI design.",
+    "exampleCn": "她是低功耗超大规模集成电路设计领域的专家。"
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "meaning": "v. 评估；估价",
+    "scene": "as-（向）+ sess（坐）→ 古时法官“坐”在庭上定夺价值。流片前你评估功耗和面积，就是在“坐堂”审判这个设计能不能过。",
+    "example": "We need to assess the trade-off between speed and power.",
+    "exampleCn": "我们需要评估速度与功耗之间的权衡。"
+  },
+  {
+    "word": "assume",
+    "phonetic": "/əˈsuːm/",
+    "meaning": "v. 假定；认为；承担",
+    "scene": "as-（向）+ sum（拿）→ 先把一个说法“拿过来”用着，就是假定。做仿真前你假定晶体管是理想的，先跑通再补细节。",
+    "example": "Let us assume the transistors are perfectly matched.",
+    "exampleCn": "让我们假定晶体管是完全匹配的。"
+  },
+  {
+    "word": "authority",
+    "phonetic": "/əˈθɔːrəti/",
+    "meaning": "n. 权威；当局；权限",
+    "scene": "author（作者）→ 在一本书上署名的作者，就是那本书的“权威”。在某个细分方向，能被反复引用的那篇论文的作者，就是这个方向的 authority。",
+    "example": "He is a leading authority on semiconductor device modeling.",
+    "exampleCn": "他是半导体器件建模领域的权威。"
+  },
+  {
+    "word": "available",
+    "phonetic": "/əˈveɪləbl/",
+    "meaning": "adj. 可用的；可获得的",
+    "scene": "avail（有用）+ able（能）→ 能派上用场的。你查工艺库时，只有那些被标注“available”的单元才能调用；不在库里的，就是 unavailable。",
+    "example": "Only a limited number of standard cells are available.",
+    "exampleCn": "只有有限数量的标准单元可用。"
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "meaning": "n. 益处；v. 受益",
+    "scene": "bene-（好）+ fit（做）→ 做好事。你把衬底偏置从 0V 调到 -0.2V，漏电下降——这个“好”就是 benefit。",
+    "example": "Body biasing offers significant power benefits in low-power designs.",
+    "exampleCn": "体偏置在低功耗设计中带来显著的功耗收益。"
+  },
+  {
+    "word": "concept",
+    "phonetic": "/ˈkɑːnsept/",
+    "meaning": "n. 概念；观念",
+    "scene": "con-（一起）+ cept（拿）→ 把一堆零散现象“一起抓”住的那个东西。你向导师解释你的 idea 时，导师说“先把 concept 讲清楚”——就是要你抓住那个核心。",
+    "example": "The concept of charge sharing is fundamental to dynamic logic.",
+    "exampleCn": "电荷分享的概念是动态逻辑的基础。"
+  },
+  {
+    "word": "consist",
+    "phonetic": "/kənˈsɪst/",
+    "meaning": "v. 由……组成；在于",
+    "scene": "con-（一起）+ sist（站）→ 若干部分“站在一起”构成整体。一个运算放大器 consist of 差分输入级、增益级和输出缓冲。",
+    "example": "The system consists of three main functional blocks.",
+    "exampleCn": "该系统由三个主要功能模块组成。"
+  },
+  {
+    "word": "constitute",
+    "phonetic": "/ˈkɑːnstɪtuːt/",
+    "meaning": "v. 构成；组成；设立",
+    "scene": "con-（一起）+ stitut（建立）→ 各部分共同“建立”出整体。在 5nm 工艺中，FinFET 构成了晶体管的主流结构——它们“立”起了整个工艺节点。",
+    "example": "These components constitute the core of the ADC.",
+    "exampleCn": "这些组件构成了 ADC 的核心。"
+  },
+  {
+    "word": "context",
+    "phonetic": "/ˈkɑːntekst/",
+    "meaning": "n. 背景；语境",
+    "scene": "con-（一起）+ text（编织）→ 把一句话“一起编织”在周围的东西。读一篇论文，某个公式看不懂，往往是因为你没看懂它的 context——它前面那几段在做什么。",
+    "example": "The result should be interpreted in the context of the whole system.",
+    "exampleCn": "这个结果应该放在整个系统的背景下理解。"
+  },
+  {
+    "word": "contract",
+    "phonetic": "/ˈkɑːntrækt/",
+    "meaning": "n. 合同；v. 收缩；订约",
+    "scene": "con-（一起）+ tract（拉）→ 双方“拉到一起”签的文书是合同；布料“拉到一起”就是收缩。工艺厂和你签的 NDA 是 contract，而热胀冷缩也是 contract。",
+    "example": "The foundry contract specifies the process design kit.",
+    "exampleCn": "代工厂合同明确了工艺设计套件。"
+  },
+  {
+    "word": "create",
+    "phonetic": "/kriˈeɪt/",
+    "meaning": "v. 创造；产生",
+    "scene": "cre-（生长）+ ate（使）→ 使东西“长出来”。你画完版图，从无到有生成了一个 GDS 文件——那个动作就是 create。",
+    "example": "The tool creates a netlist from the schematic.",
+    "exampleCn": "该工具从原理图生成网表。"
+  },
+  {
+    "word": "data",
+    "phonetic": "/ˈdeɪtə/",
+    "meaning": "n. 数据；资料",
+    "scene": "拉丁语 datum（给定之物）的复数 → 实验“给出来”的那些数字。你跑完蒙特卡洛仿真，屏幕上那一列列 Vth 值，就是 data。",
+    "example": "The measured data agree well with the simulation results.",
+    "exampleCn": "测量数据与仿真结果吻合良好。"
+  },
+  {
+    "word": "define",
+    "phonetic": "/dɪˈfaɪn/",
+    "meaning": "v. 定义；界定",
+    "scene": "de-（彻底）+ fin（边界）→ 把边界彻底划出来。你写 .param 时给 VDD 赋值 1.8，就是在 define 这个变量的边界。",
+    "example": "The specification defines the maximum operating frequency.",
+    "exampleCn": "规格书定义了最大工作频率。"
+  },
+  {
+    "word": "derive",
+    "phonetic": "/dɪˈraɪv/",
+    "meaning": "v. 推导；源于",
+    "scene": "de-（从）+ riv（河流）→ 从一条大河“引”出一条支流。你从麦克斯韦方程推导出传输线方程，那个过程就是 derive。",
+    "example": "We derive the small-signal model from the large-signal equations.",
+    "exampleCn": "我们从大信号方程推导出小信号模型。"
+  },
+  {
+    "word": "distribute",
+    "phonetic": "/dɪˈstrɪbjuːt/",
+    "meaning": "v. 分配；分布",
+    "scene": "dis-（分开）+ tribut（给予）→ 分给各处。时钟树综合的核心任务，就是把时钟信号 distribute 到芯片上每一个触发器。",
+    "example": "The clock signal must be distributed evenly across the chip.",
+    "exampleCn": "时钟信号必须均匀分布到整个芯片。"
+  },
+  {
+    "word": "economy",
+    "phonetic": "/ɪˈkɑːnəmi/",
+    "meaning": "n. 经济；节约",
+    "scene": "eco-（家）+ nom（管理）→ 管好一个家。芯片设计里的“经济”就是 PPA：同样的面积，你做出更高的性能，就是 economy of design。",
+    "example": "Power economy is critical in battery-powered systems.",
+    "exampleCn": "在电池供电系统中，功耗经济性至关重要。"
+  },
+  {
+    "word": "environment",
+    "phonetic": "/ɪnˈvaɪrənmənt/",
+    "meaning": "n. 环境；周围状况",
+    "scene": "en-（使）+ viron（转圈）+ ment → 把你“围在中间”的一切。你的设计运行在怎样的温度、电压、噪声环境下？这些 surrounds 就是 environment。",
+    "example": "The device must operate reliably in a harsh radiation environment.",
+    "exampleCn": "该器件必须在恶劣的辐射环境中可靠工作。"
+  },
+  {
+    "word": "establish",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "meaning": "v. 建立；确立",
+    "scene": "e- + stabl（站立）+ ish（使）→ 使某物“站稳”。你第一次在实验室把仿真和实测对上了，那个模型就 establish 了它的可信度。",
+    "example": "The model establishes a link between process variation and timing.",
+    "exampleCn": "该模型建立了工艺偏差与时序之间的联系。"
+  },
+  {
+    "word": "estimate",
+    "phonetic": "/ˈestɪmeɪt/",
+    "meaning": "v. 估计；n. 估算",
+    "scene": "aestimare（评价）→ 不需要精确，先“评”个大概。你布线前先用 wire-load model 估一下延迟，这就是 estimate。",
+    "example": "We estimate the leakage current at room temperature.",
+    "exampleCn": "我们估算室温下的漏电流。"
+  },
+  {
+    "word": "evidence",
+    "phonetic": "/ˈevɪdəns/",
+    "meaning": "n. 证据；迹象",
+    "scene": "e-（出）+ vid（看）+ ence → 能“看出来”的东西。你声称新结构能降低短沟道效应，审稿人问：evidence 呢？你拿出 TCAD 仿真和实测数据。",
+    "example": "There is strong evidence that the new structure reduces DIBL.",
+    "exampleCn": "有强有力的证据表明新结构降低了 DIBL。"
+  },
+  {
+    "word": "export",
+    "phonetic": "/ɪkˈspɔːrt/",
+    "meaning": "v. 输出；n. 出口",
+    "scene": "ex-（出）+ port（港口）→ 从港口“运出去”。你把 Cadence 里的版图 export 成 GDSII，再 export 给代工厂——数据从你的电脑“出港”了。",
+    "example": "The final layout is exported in GDSII format.",
+    "exampleCn": "最终版图以 GDSII 格式导出。"
+  },
+  {
+    "word": "factor",
+    "phonetic": "/ˈfæktər/",
+    "meaning": "n. 因素；因子",
+    "scene": "fact（做）+ or（者）→ 参与“做事”的那一个。工艺偏差、温度、电压——每个都是让你的电路表现偏离预期的 factor。",
+    "example": "Process variation is a major factor affecting yield.",
+    "exampleCn": "工艺偏差是影响良率的主要因素。"
+  },
+  {
+    "word": "finance",
+    "phonetic": "/ˈfaɪnæns/",
+    "meaning": "n. 财政；资金；v. 资助",
+    "scene": "fin（结束）+ ance → 古时“了结”债务的手段。你申请科研经费，就是去找 finance；而流片一次要多少钱，是你组里最大的 finance 决策。",
+    "example": "The project is financed by a national research grant.",
+    "exampleCn": "该项目由国家科研基金资助。"
+  },
+  {
+    "word": "formula",
+    "phonetic": "/ˈfɔːrmjələ/",
+    "meaning": "n. 公式；配方",
+    "scene": "form（形式）→ 把规律“形式化”写下来。MOS 管的 I-V 特性有一个简洁的公式，但短沟道下它就不准了——这时候你需要更复杂的 formula。",
+    "example": "The drain current follows a square-law formula in long-channel devices.",
+    "exampleCn": "在长沟道器件中，漏电流遵循平方律公式。"
+  },
+  {
+    "word": "function",
+    "phonetic": "/ˈfʌŋkʃn/",
+    "meaning": "n. 功能；函数；v. 运行",
+    "scene": "fung（执行）+ tion → 它“执行”的事。一个标准单元的 function 就是给定输入，产生输出；在 Verilog 里，你把它写成一个 function。",
+    "example": "Each standard cell performs a specific logic function.",
+    "exampleCn": "每个标准单元执行特定的逻辑功能。"
+  },
+  {
+    "word": "identify",
+    "phonetic": "/aɪˈdentɪfaɪ/",
+    "meaning": "v. 识别；确认",
+    "scene": "ident（相同）+ ify（使）→ 认出“就是它”。调试芯片时，你花三天 identify 了那个 bug——一个漏接的电源地。",
+    "example": "The engineer identified the root cause of the timing violation.",
+    "exampleCn": "工程师确认了时序违例的根本原因。"
+  },
+  {
+    "word": "income",
+    "phonetic": "/ˈɪnkʌm/",
+    "meaning": "n. 收入；收益",
+    "scene": "in-（进）+ come（来）→ 进来的东西。芯片的“收入”是什么？是单位面积能卖多少钱。同样的工艺，面积越小，income 越高。",
+    "example": "The company's income grew with the success of the new chip.",
+    "exampleCn": "公司收入随着新芯片的成功而增长。"
+  },
+  {
+    "word": "indicate",
+    "phonetic": "/ˈɪndɪkeɪt/",
+    "meaning": "v. 表明；指示",
+    "scene": "in-（向）+ dic（说）+ ate → 指给你看。示波器上那条掉下来的眼图，indicate 了信号完整性出了问题。",
+    "example": "The measurement results indicate a clear improvement in linearity.",
+    "exampleCn": "测量结果表明线性度有明显改善。"
+  },
+  {
+    "word": "individual",
+    "phonetic": "/ˌɪndɪˈvɪdʒuəl/",
+    "meaning": "adj. 个别的；独特的；n. 个人",
+    "scene": "in-（不）+ divid（分）+ ual → 不能再分的最小单位。每个晶体管都是 individual 的：它们不可能完全一样，这正是匹配问题的根源。",
+    "example": "Each individual transistor exhibits slightly different threshold voltage.",
+    "exampleCn": "每个单独的晶体管表现出略微不同的阈值电压。"
+  },
+  {
+    "word": "interpret",
+    "phonetic": "/ɪnˈtɜːrprɪt/",
+    "meaning": "v. 解释；解读",
+    "scene": "inter-（之间）+ pret（交易）→ 在两边“翻译”。你测到一条奇怪的 I-V 曲线，导师让你 interpret——不是读数字，是讲出数字背后的故事。",
+    "example": "The nonlinearity can be interpreted as a sign of velocity saturation.",
+    "exampleCn": "这种非线性可以解释为速度饱和的迹象。"
+  },
+  {
+    "word": "involve",
+    "phonetic": "/ɪnˈvɑːlv/",
+    "meaning": "v. 涉及；包含；使参与",
+    "scene": "in-（进）+ volv（卷）→ 被“卷进去”。流片不是一个步骤，它 involve 了几十道工序、好几周时间和一大笔钱。",
+    "example": "The design process involves multiple stages of verification.",
+    "exampleCn": "设计过程涉及多个验证阶段。"
+  },
+  {
+    "word": "issue",
+    "phonetic": "/ˈɪʃuː/",
+    "meaning": "n. 问题；议题；v. 发布",
+    "scene": "ex-（出）+ ire（走）→ 从里面“走出来”的东西。你读一篇论文，最该关注的就是它想解决的那个 issue——不是所有段落都值得读。",
+    "example": "Thermal management is a critical issue in 3D ICs.",
+    "exampleCn": "热管理是三维集成电路中的关键问题。"
+  },
+  {
+    "word": "labour",
+    "phonetic": "/ˈleɪbər/",
+    "meaning": "n. 劳动；劳工",
+    "scene": "想象版图工程师趴在屏幕上拖金属线——那就是 labour。芯片设计里，最贵的往往不是 EDA 工具，是 labour。",
+    "example": "Manual layout is labour-intensive and error-prone.",
+    "exampleCn": "手动版图工作量大且容易出错。"
+  },
+  {
+    "word": "legal",
+    "phonetic": "/ˈliːɡl/",
+    "meaning": "adj. 法律的；合法的",
+    "scene": "lex（法律）→ 按“法”来的。你从某公司下载了一个 PDK，如果不小心用在流片里，那就是不合法的。合法合规，在芯片行业尤其敏感。",
+    "example": "Using the proprietary PDK without a license is not legal.",
+    "exampleCn": "未经许可使用专有 PDK 是不合法的。"
+  },
+  {
+    "word": "major",
+    "phonetic": "/ˈmeɪdʒər/",
+    "meaning": "adj. 主要的；重大的",
+    "scene": "magn（大）→ 大的那个。你的电路里有几十个参数，但真正影响性能的 major factor 可能只有两三个。抓住 major 的，忽略 minor 的。",
+    "example": "Power consumption is a major concern in mobile SoC design.",
+    "exampleCn": "功耗是移动 SoC 设计中的主要关注点。"
+  },
+  {
+    "word": "method",
+    "phonetic": "/ˈmeθəd/",
+    "meaning": "n. 方法；办法",
+    "scene": "meta-（沿）+ hodos（路）→ 沿着一条路走。你导师说“你试试那个 method”——不是让你换方向，是让你换一条走到终点的路。",
+    "example": "The proposed method reduces simulation time significantly.",
+    "exampleCn": "所提出的方法显著缩短了仿真时间。"
+  },
+  {
+    "word": "occur",
+    "phonetic": "/əˈkɜːr/",
+    "meaning": "v. 发生；出现",
+    "scene": "ob-（向）+ curr（跑）→ 朝你“跑”过来。latch-up 什么时候 occur？当寄生 SCR 被触发的时候。它不常发生，但一旦 occur 就是灾难性的。",
+    "example": "Metastability can occur when the setup time is violated.",
+    "exampleCn": "当建立时间被违反时，可能发生亚稳态。"
+  },
+  {
+    "word": "percent",
+    "phonetic": "/pərˈsent/",
+    "meaning": "n. 百分比",
+    "scene": "per（每）+ cent（百）→ 每一百里面有多少。良率 95 percent——剩下那 5 percent 的芯片去哪儿了？被测试淘汰了。",
+    "example": "The yield improved by ten percent after the fix.",
+    "exampleCn": "修复后良率提高了百分之十。"
+  },
+  {
+    "word": "period",
+    "phonetic": "/ˈpɪriəd/",
+    "meaning": "n. 时期；周期；句号",
+    "scene": "peri-（周围）+ hod（路）→ 绕一圈的时间。时钟的 period 是 1ns，意味着你所有时序收敛必须在 1ns 的“绕圈”内完成。",
+    "example": "The clock period determines the maximum operating frequency.",
+    "exampleCn": "时钟周期决定了最大工作频率。"
+  },
+  {
+    "word": "policy",
+    "phonetic": "/ˈpɑːləsi/",
+    "meaning": "n. 政策；方针",
+    "scene": "polis（城市）→ 管理一座城的规则。代工厂的 DRC policy 就是它的“城市法规”：不遵守，你的版图就进不了流片流程。",
+    "example": "The foundry's DRC policy must be strictly followed.",
+    "exampleCn": "必须严格遵守代工厂的 DRC 政策。"
+  },
+  {
+    "word": "principle",
+    "phonetic": "/ˈprɪnsəpl/",
+    "meaning": "n. 原理；原则",
+    "scene": "prin-（第一）+ cip（拿）→ 最先“拿住”的东西。你学模电时，戴维南定理是一个 principle；你设计运放时，虚短虚断也是 principle。",
+    "example": "The principle of superposition applies to linear circuits.",
+    "exampleCn": "叠加原理适用于线性电路。"
+  },
+  {
+    "word": "proceed",
+    "phonetic": "/proʊˈsiːd/",
+    "meaning": "v. 进行；继续",
+    "scene": "pro-（向前）+ ceed（走）→ 向前走。DRC clean 之后，你 proceed 到 LVS；LVS 过了，才 proceed 到 tapeout。每一步都是“向前走”的许可。",
+    "example": "Once the design is verified, we proceed to tapeout.",
+    "exampleCn": "设计验证通过后，我们进入流片阶段。"
+  },
+  {
+    "word": "process",
+    "phonetic": "/ˈprɑːses/",
+    "meaning": "n. 过程；工艺；v. 处理",
+    "scene": "pro-（向前）+ cess（走）→ 一步一步向前走的过程。芯片制造有几百道 process step；而你的设计被“处理”成 GDS 也是一个 process。",
+    "example": "The CMOS process technology has scaled down to 3nm.",
+    "exampleCn": "CMOS 工艺技术已经微缩到 3nm。"
+  },
+  {
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪər/",
+    "meaning": "v. 需要；要求",
+    "scene": "re-（反复）+ quir（寻求）→ 反复去找的东西。一个 12 位 ADC 要求你 require 匹配精度到 0.1% 以下——这不是“建议”，是硬性 require。",
+    "example": "High-resolution ADCs require precise component matching.",
+    "exampleCn": "高分辨率 ADC 需要精确的元件匹配。"
+  },
+  {
+    "word": "research",
+    "phonetic": "/rɪˈsɜːrtʃ/",
+    "meaning": "n. 研究；v. 调查",
+    "scene": "re-（反复）+ search（找）→ 反复地找。你读文献不是从头读到尾，是在 research：反复搜、反复筛，找到那几篇真正有用的。",
+    "example": "His research focuses on low-power analog circuit techniques.",
+    "exampleCn": "他的研究聚焦于低功耗模拟电路技术。"
+  },
+  {
+    "word": "role",
+    "phonetic": "/roʊl/",
+    "meaning": "n. 作用；角色",
+    "scene": "roll（卷轴）→ 古时演员把台词卷在卷轴上上台。你的电路里，每个器件都有自己的 role：电阻提供偏置，电容负责补偿，各司其职。",
+    "example": "Parasitic capacitance plays a key role in high-speed circuits.",
+    "exampleCn": "寄生电容在高速电路中起关键作用。"
+  },
+  {
+    "word": "section",
+    "phonetic": "/ˈsekʃn/",
+    "meaning": "n. 部分；章节；截面",
+    "scene": "sec（切）→ 被“切”开的一块。一篇论文的 Methodology section，就是被切开的那一块——也是最该精读的那一块。",
+    "example": "The circuit is divided into three main sections.",
+    "exampleCn": "该电路被分为三个主要部分。"
+  },
+  {
+    "word": "sector",
+    "phonetic": "/ˈsektər/",
+    "meaning": "n. 部门；领域；扇形",
+    "scene": "sec（切）→ 被切出来的一个扇形区域。整个芯片产业是一个大圆，你所在的 IP 设计只是其中一个 sector。",
+    "example": "The semiconductor sector is highly competitive.",
+    "exampleCn": "半导体行业竞争激烈。"
+  },
+  {
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "meaning": "adj. 重要的；显著的",
+    "scene": "sign（标记）+ fic（做）+ ant → 做了标记的，值得注意的。你测到两个数据：一个只变了 0.1%，一个变了 30%——后者才是 significant 的。",
+    "example": "The new architecture achieves a significant reduction in power.",
+    "exampleCn": "新架构实现了功耗的显著降低。"
+  },
+  {
+    "word": "similar",
+    "phonetic": "/ˈsɪmələr/",
+    "meaning": "adj. 相似的；类似的",
+    "scene": "simil（相同）+ ar → 长得像。你看到一个新的放大器结构，觉得很 similar 于你去年做过的一个——这不是巧合，拓扑是有限的。",
+    "example": "This topology is similar to the one used in the previous design.",
+    "exampleCn": "这种拓扑与之前设计中使用的类似。"
+  },
+  {
+    "word": "source",
+    "phonetic": "/sɔːrs/",
+    "meaning": "n. 来源；源极",
+    "scene": "surgere（升起）→ 水“涌出来”的地方。在 MOSFET 里，source 是载流子“涌出”的端子；在论文里，source 是你论据的出处。",
+    "example": "The source terminal is connected to the ground.",
+    "exampleCn": "源极端子连接到地。"
+  },
+  {
+    "word": "specific",
+    "phonetic": "/spəˈsɪfɪk/",
+    "meaning": "adj. 具体的；特定的",
+    "scene": "spec（看）+ fic（做）→ 能“看出来”的，不是模糊的。导师说“给一个 specific example”——意思是你刚才讲得太 general 了。",
+    "example": "The circuit is designed for a specific frequency band.",
+    "exampleCn": "该电路是为特定频段设计的。"
+  },
+  {
+    "word": "structure",
+    "phonetic": "/ˈstrʌktʃər/",
+    "meaning": "n. 结构；构造；v. 构建",
+    "scene": "stru（建造）+ ure → 建造出来的东西。FinFET 的“鳍”是一种 structure，你的论文的 organization 也是一种 structure。",
+    "example": "The device structure determines its electrical characteristics.",
+    "exampleCn": "器件结构决定了其电学特性。"
+  },
+  {
+    "word": "theory",
+    "phonetic": "/ˈθɪri/",
+    "meaning": "n. 理论；学说",
+    "scene": "theo（看）+ ry → 看出来的规律。你仿真跑出来的曲线，能不能用已有的 theory 解释？如果不能，你可能发现了新东西。",
+    "example": "The experimental results agree with the theoretical prediction.",
+    "exampleCn": "实验结果与理论预测一致。"
+  },
+  {
+    "word": "variable",
+    "phonetic": "/ˈveriəbl/",
+    "meaning": "n. 变量；adj. 可变的",
+    "scene": "vary（变化）+ able（能）→ 能变的。你的电路里有 VDD、温度、工艺角——每一个都是 variable。PPA 的优化，就是在 variable 的空间里找最优解。",
+    "example": "Process variables must be controlled during fabrication.",
+    "exampleCn": "制造过程中必须控制工艺变量。"
+  },
+  {
+    "word": "volume",
+    "phonetic": "/ˈvɑːljuːm/",
+    "meaning": "n. 体积；量；卷",
+    "scene": "volvere（卷）→ 古书一卷一卷的。产量大不大，用 volume 衡量：小批量流片叫 low-volume，消费级芯片是 high-volume。",
+    "example": "High-volume production demands high yield.",
+    "exampleCn": "大批量生产要求高良率。"
+  }
+]

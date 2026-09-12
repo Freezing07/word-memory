@@ -1,0 +1,1354 @@
+[
+  {
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɑːlɪdʒ/",
+    "meaning": "v. 承认；致谢；确认收到",
+    "scene": "ac-（加强）+ knowledge（知道）→ 明明知道，还要“公开表示知道”。论文致谢里你 acknowledge 导师的帮助；审稿意见里你 acknowledge 某个局限——都是把“知道”变成“说出口”。",
+    "example": "The author acknowledges the limitations of the current study.",
+    "exampleCn": "作者承认了当前研究的局限性。"
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "meaning": "adj. 足够的；适当的",
+    "scene": "ad-（向）+ equ（相等）+ ate → 加到“刚好相等”的程度。实验样本量不够，审稿人会说 sample size is not adequate——不是“少”，是“没有达到那个刚好够的线”。",
+    "example": "The sample size was not adequate for statistical analysis.",
+    "exampleCn": "样本量不足以进行统计分析。"
+  },
+  {
+    "word": "adjust",
+    "phonetic": "/əˈdʒʌst/",
+    "meaning": "v. 调整；适应",
+    "scene": "ad-（向）+ just（正确）→ 往“对”的方向挪一点。实验跑偏了，你不是推翻重来，而是 adjust 一个参数，让它回到正轨。",
+    "example": "We adjusted the parameters to improve the fit.",
+    "exampleCn": "我们调整参数以改善拟合效果。"
+  },
+  {
+    "word": "advocate",
+    "phonetic": "/ˈædvəkeɪt/",
+    "meaning": "v. 提倡；主张；n. 拥护者",
+    "scene": "ad-（向）+ voc（喊）+ ate → 朝着某方向大声喊。你在组会上 advocate 一种新方法，就是站起来替它“喊话”。",
+    "example": "Many researchers advocate open access to scientific data.",
+    "exampleCn": "许多研究者提倡科学数据的开放获取。"
+  },
+  {
+    "word": "alter",
+    "phonetic": "/ˈɔːltər/",
+    "meaning": "v. 改变；修改",
+    "scene": "alter（另一个）→ 变成“另一个样子”。你只 alter 了一个变量，结果整个曲线形状都变了——这就是敏感度。",
+    "example": "Any alteration to the protocol must be documented.",
+    "exampleCn": "对方案的任何修改都必须记录在案。"
+  },
+  {
+    "word": "ambiguous",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "meaning": "adj. 模糊的；有歧义的",
+    "scene": "ambi-（两个）+ gu（走）→ 能往两个方向走。审稿人说你的表述 ambiguous，意思是他不知道你到底想说 A 还是 B。",
+    "example": "The results are ambiguous and require further investigation.",
+    "exampleCn": "结果模糊，需要进一步研究。"
+  },
+  {
+    "word": "anticipate",
+    "phonetic": "/ænˈtɪsɪpeɪt/",
+    "meaning": "v. 预期；预料",
+    "scene": "ante-（前）+ cip（拿）+ ate → 提前“拿到”未来的事。你在写论文时 anticipate 审稿人会问什么，提前把答案写进正文——这叫预判。",
+    "example": "We anticipate that the trend will continue in the coming years.",
+    "exampleCn": "我们预期这一趋势在未来几年将持续。"
+  },
+  {
+    "word": "apparent",
+    "phonetic": "/əˈpærənt/",
+    "meaning": "adj. 明显的；表面上的",
+    "scene": "ap-（向）+ par（出现）+ ent → 出现在你眼前的。但注意：apparent 有两层——可能是“一眼就看出”，也可能只是“表面上看起来”。",
+    "example": "It is apparent that the two groups differ significantly.",
+    "exampleCn": "显然，两组之间存在显著差异。"
+  },
+  {
+    "word": "appreciate",
+    "phonetic": "/əˈpriːʃieɪt/",
+    "meaning": "v. 欣赏；感激；理解",
+    "scene": "ap-（向）+ preci（价值）+ ate → 给某物“标上价值”。你 appreciate 一篇论文，不只是说“好”，而是你看到了它真正的价值。",
+    "example": "I appreciate your careful review of my manuscript.",
+    "exampleCn": "感谢您对我稿件的仔细审阅。"
+  },
+  {
+    "word": "approximate",
+    "phonetic": "/əˈprɑːksɪmət/",
+    "meaning": "adj. 近似的；v. 接近",
+    "scene": "ap-（向）+ proxim（最近）+ ate → 走到“最近”的位置。实验值 3.14，理论值 3.15——两者 approximate，但不相等。",
+    "example": "The approximate value is sufficient for this calculation.",
+    "exampleCn": "这个近似值对本计算已经足够。"
+  },
+  {
+    "word": "arbitrary",
+    "phonetic": "/ˈɑːrbɪtreri/",
+    "meaning": "adj. 任意的；武断的",
+    "scene": "arbiter（裁决者）→ 由裁决者“说了算”的。你说“取 N=100”，审稿人问为什么不是 200？如果你答不上来，这个选择就是 arbitrary 的。",
+    "example": "The choice of threshold was somewhat arbitrary.",
+    "exampleCn": "阈值的选择有些随意。"
+  },
+  {
+    "word": "articulate",
+    "phonetic": "/ɑːrˈtɪkjuleɪt/",
+    "meaning": "v. 清晰表达；adj. 表达清楚的",
+    "scene": "articul（关节）→ 把想法像关节一样“一节一节接起来”。想法在脑子里是一团，articulate 就是把它们接成一条清晰的链。",
+    "example": "She articulated her research question very clearly.",
+    "exampleCn": "她非常清晰地表达了自己的研究问题。"
+  },
+  {
+    "word": "attribute",
+    "phonetic": "/əˈtrɪbjuːt/",
+    "meaning": "v. 归因于；n. 属性",
+    "scene": "at-（向）+ tribut（给予）→ 把原因“给”到某处。性能提升 20%，你 attribute 给新结构——但审稿人可能 attribute 给测量误差。",
+    "example": "The improvement can be attributed to better material quality.",
+    "exampleCn": "这一改进可归因于更好的材料质量。"
+  },
+  {
+    "word": "authorise",
+    "phonetic": "/ˈɔːθəraɪz/",
+    "meaning": "v. 授权；批准",
+    "scene": "author（作者/权威）+ ise（使）→ 使某人成为“有权的人”。伦理审查委员会 authorise 你的实验，你才能开始招募被试。",
+    "example": "The committee authorised the use of human subjects.",
+    "exampleCn": "委员会批准了人体受试者的使用。"
+  },
+  {
+    "word": "cease",
+    "phonetic": "/siːs/",
+    "meaning": "v. 停止；终止",
+    "scene": "ced（走）→ 走到头了，不再往前。实验在达到平衡后 cease 变化，曲线变成一条水平线。",
+    "example": "The reaction ceases once the catalyst is consumed.",
+    "exampleCn": "催化剂消耗完后反应即停止。"
+  },
+  {
+    "word": "cite",
+    "phonetic": "/saɪt/",
+    "meaning": "v. 引用；举例",
+    "scene": "cit（召唤）→ 把别人的话“叫”到你的文章里。你 cite 一篇论文，就是请它的作者来给你作证。",
+    "example": "The authors cite several recent studies on this topic.",
+    "exampleCn": "作者引用了若干关于该主题的最新研究。"
+  },
+  {
+    "word": "coherent",
+    "phonetic": "/koʊˈhɪrənt/",
+    "meaning": "adj. 连贯的；条理清晰的",
+    "scene": "co-（一起）+ her（粘）+ ent → 粘在一起的。一篇 coherent 的论文，每一段都能“粘”住上一段，读者不会掉队。",
+    "example": "The paper presents a coherent argument for the new model.",
+    "exampleCn": "该论文为新模型提出了连贯的论证。"
+  },
+  {
+    "word": "coincide",
+    "phonetic": "/ˌkoʊɪnˈsaɪd/",
+    "meaning": "v. 同时发生；一致",
+    "scene": "co-（一起）+ incid（落下）→ 两件事“落在同一处”。你的实验峰值和理论预测 coincide，那一瞬间你会松一口气。",
+    "example": "The observed peak coincides with the predicted frequency.",
+    "exampleCn": "观测到的峰值与预测频率一致。"
+  },
+  {
+    "word": "collaborate",
+    "phonetic": "/kəˈlæbəreɪt/",
+    "meaning": "v. 合作；协作",
+    "scene": "col-（一起）+ labor（劳动）+ ate → 一起干活。你和隔壁组 collaborate，他们出样品，你出测试——论文署名就是这段“共同劳动”的凭证。",
+    "example": "The two teams collaborated on the device characterization.",
+    "exampleCn": "两个团队在器件表征方面开展了合作。"
+  },
+  {
+    "word": "commence",
+    "phonetic": "/kəˈmens/",
+    "meaning": "v. 开始；着手",
+    "scene": "com-（一起）+ menc（开始）→ 正式地“开个头”。实验 commence 之前，你得先签安全培训表——commence 总是带着一点仪式感。",
+    "example": "The experiment will commence once approval is granted.",
+    "exampleCn": "一旦获得批准，实验将开始。"
+  },
+  {
+    "word": "compatible",
+    "phonetic": "/kəmˈpætəbl/",
+    "meaning": "adj. 兼容的；相容的",
+    "scene": "com-（一起）+ pati（忍受）+ ble → 能“一起忍受”的。你选的算法必须 compatible 于现有的硬件平台，否则再漂亮也跑不起来。",
+    "example": "The software is compatible with most operating systems.",
+    "exampleCn": "该软件与大多数操作系统兼容。"
+  },
+  {
+    "word": "compensate",
+    "phonetic": "/ˈkɑːmpenseɪt/",
+    "meaning": "v. 补偿；弥补",
+    "scene": "com-（一起）+ pens（称重）+ ate → 两边“一起称”，轻的一边补上。系统有延迟，你加一个补偿网络 compensate——哪边缺，就往哪边加。",
+    "example": "The circuit compensates for temperature-induced drift.",
+    "exampleCn": "该电路补偿了温度引起的漂移。"
+  },
+  {
+    "word": "competent",
+    "phonetic": "/ˈkɑːmpɪtənt/",
+    "meaning": "adj. 有能力的；胜任的",
+    "scene": "com-（一起）+ pet（追求）+ ent → 有资格“一起争”的人。导师说你还不够 competent 独立写论文，意思是：你得先证明你能“同台竞争”。",
+    "example": "He is a competent researcher in the field of materials science.",
+    "exampleCn": "他是材料科学领域一位有能力的研究者。"
+  },
+  {
+    "word": "comprehensive",
+    "phonetic": "/ˌkɑːmprɪˈhensɪv/",
+    "meaning": "adj. 全面的；综合的",
+    "scene": "com-（全部）+ prehend（抓住）+ ive → 把所有东西都“抓住”。一篇 comprehensive review，就是把这个领域所有重要工作都抓进一篇里。",
+    "example": "The review provides a comprehensive overview of the field.",
+    "exampleCn": "该综述提供了该领域的全面概述。"
+  },
+  {
+    "word": "comprise",
+    "phonetic": "/kəmˈpraɪz/",
+    "meaning": "v. 包含；由……组成",
+    "scene": "com-（一起）+ pris（抓住）→ 把各部分“一起抓住”。注意用法：整体 comprise 部分，而不是部分 comprise 整体——写反了审稿人会圈出来。",
+    "example": "The dataset comprises samples from five different sources.",
+    "exampleCn": "该数据集包含来自五个不同来源的样本。"
+  },
+  {
+    "word": "conceive",
+    "phonetic": "/kənˈsiːv/",
+    "meaning": "v. 构想；设想；怀孕",
+    "scene": "con-（一起）+ ceiv（拿）→ 把想法“拿到一起”形成雏形。你 conceive 了一个实验方案，它此刻还只存在于你的脑子里。",
+    "example": "The project was conceived as a way to test the hypothesis.",
+    "exampleCn": "该项目最初的构想是作为检验该假设的一种方式。"
+  },
+  {
+    "word": "concentrate",
+    "phonetic": "/ˈkɑːnsntreɪt/",
+    "meaning": "v. 集中；专注；浓缩",
+    "scene": "con-（一起）+ centr（中心）+ ate → 全部往“中心”聚。你把精力 concentrate 在一个问题上，才有可能做出深度；样品的浓度也是 concentrate。",
+    "example": "We concentrated on the most promising candidates.",
+    "exampleCn": "我们集中研究了最有前景的候选方案。"
+  },
+  {
+    "word": "conclude",
+    "phonetic": "/kənˈkluːd/",
+    "meaning": "v. 得出结论；结束",
+    "scene": "con-（一起）+ clud（关闭）→ 把讨论“关起来”。你 conclude 的时候，就是把所有证据收拢，给出一句收口的话。",
+    "example": "The study concludes that the treatment is effective.",
+    "exampleCn": "该研究得出结论：该治疗有效。"
+  },
+  {
+    "word": "confine",
+    "phonetic": "/kənˈfaɪn/",
+    "meaning": "v. 限制；局限",
+    "scene": "con-（一起）+ fin（边界）→ 把东西“圈进边界”。你的讨论 confine 在室温条件下——超出这个范围，结论就不成立。",
+    "example": "The analysis is confined to the low-frequency range.",
+    "exampleCn": "该分析仅限于低频范围。"
+  },
+  {
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːrm/",
+    "meaning": "v. 确认；证实",
+    "scene": "con-（加强）+ firm（坚固）→ 把一件事“钉牢”。一次实验不够，你得重复三次才能 confirm 这个现象。",
+    "example": "The results confirm the earlier findings of Smith et al.",
+    "exampleCn": "这些结果证实了 Smith 等人此前的发现。"
+  },
+  {
+    "word": "conflict",
+    "phonetic": "/ˈkɑːnflɪkt/",
+    "meaning": "n. 冲突；矛盾；v. 抵触",
+    "scene": "con-（一起）+ flict（打击）→ 两边“互相打”。你的结果和前人文献 conflict——这不一定是你错了，也可能是你发现了新东西。",
+    "example": "The findings conflict with those reported in previous studies.",
+    "exampleCn": "这些发现与以往研究报告的结果相矛盾。"
+  },
+  {
+    "word": "conform",
+    "phonetic": "/kənˈfɔːrm/",
+    "meaning": "v. 符合；遵守",
+    "scene": "con-（一起）+ form（形状）→ 变成“同一个形状”。你的实验数据必须 conform 于理论模型，否则模型就要改。",
+    "example": "The data conform to a linear relationship.",
+    "exampleCn": "数据符合线性关系。"
+  },
+  {
+    "word": "consent",
+    "phonetic": "/kənˈsent/",
+    "meaning": "n. 同意；v. 准许",
+    "scene": "con-（一起）+ sent（感觉）→ 心里“感觉一致”。受试者签知情同意书，那个签字就是 consent——不是被动配合，是主动说“我同意”。",
+    "example": "Informed consent was obtained from all participants.",
+    "exampleCn": "所有参与者均获得了知情同意。"
+  },
+  {
+    "word": "considerable",
+    "phonetic": "/kənˈsɪdərəbl/",
+    "meaning": "adj. 相当大的；可观的",
+    "scene": "consider（考虑）+ able → 值得你“认真考虑”的量。误差只差 0.01，不用管；差 10%，那就是 considerable，必须解释。",
+    "example": "There is considerable interest in this new material.",
+    "exampleCn": "人们对这种新材料有相当大的兴趣。"
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "meaning": "adj. 一致的；连贯的",
+    "scene": "con-（一起）+ sist（站）+ ent → 始终“站在同一边”。你三次实验结果都一致，这就是 consistent；审稿人最想看到的就是这个词。",
+    "example": "The results are consistent across all three experiments.",
+    "exampleCn": "三次实验的结果是一致的。"
+  },
+  {
+    "word": "constitute",
+    "phonetic": "/ˈkɑːnstɪtuːt/",
+    "meaning": "v. 构成；组成",
+    "scene": "con-（一起）+ stitut（建立）→ 各部分共同“立起”整体。水分子 constitute 了冰、水、蒸汽——同样的砖，搭出不同的结构。",
+    "example": "These findings constitute a major advance in the field.",
+    "exampleCn": "这些发现构成了该领域的一项重大进展。"
+  },
+  {
+    "word": "constrain",
+    "phonetic": "/kənˈstreɪn/",
+    "meaning": "v. 限制；约束",
+    "scene": "con-（一起）+ strain（拉紧）→ 把绳子“拉紧”，活动空间就小了。实验条件 constrain 了你能用的样本量——不是你不想做多，是条件不允许。",
+    "example": "The study is constrained by a limited sample size.",
+    "exampleCn": "该研究受限于样本量有限。"
+  },
+  {
+    "word": "consult",
+    "phonetic": "/kənˈsʌlt/",
+    "meaning": "v. 咨询；查阅",
+    "scene": "con-（一起）+ sult（商量）→ 找人“一起商量”。遇到不懂的，你 consult 导师、consult 文献——consult 是把别人的经验请进来。",
+    "example": "You should consult the latest guidelines before proceeding.",
+    "exampleCn": "在继续之前，你应当查阅最新指南。"
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "meaning": "v. 消耗；消费",
+    "scene": "con-（全部）+ sum（拿）→ 全部“拿走”。实验 consume 了你三个月时间和大量试剂——consume 的东西，回不来了。",
+    "example": "The process consumes a large amount of energy.",
+    "exampleCn": "该过程消耗大量能源。"
+  },
+  {
+    "word": "contemporary",
+    "phonetic": "/kənˈtempəreri/",
+    "meaning": "adj. 当代的；同时代的",
+    "scene": "con-（一起）+ tempor（时间）+ ary → 活在“同一段时间”里的人。你和某位学者 contemporary，意思是你们生活在同一个时代——但不一定认识。",
+    "example": "Contemporary research focuses on sustainability.",
+    "exampleCn": "当代研究聚焦于可持续性。"
+  },
+  {
+    "word": "contradict",
+    "phonetic": "/ˌkɑːntrəˈdɪkt/",
+    "meaning": "v. 反驳；与……矛盾",
+    "scene": "contra-（相反）+ dict（说）→ 说“反话”。你的数据 contradict 了假设，这时候你要么改假设，要么查数据——不能装作没看见。",
+    "example": "The new evidence contradicts the earlier hypothesis.",
+    "exampleCn": "新证据与早先的假设相矛盾。"
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "meaning": "v. 贡献；促成",
+    "scene": "con-（一起）+ tribut（给予）→ 大家一起“给”。你的研究 contribute 了什么？审稿人问的就是：你往这个领域里“放”进了什么新东西。",
+    "example": "This study contributes to our understanding of the mechanism.",
+    "exampleCn": "本研究有助于我们理解该机制。"
+  },
+  {
+    "word": "controversial",
+    "phonetic": "/ˌkɑːntrəˈvɜːrʃl/",
+    "meaning": "adj. 有争议的",
+    "scene": "contro-（相反）+ vers（转）+ ial → 两边“对着转”，转不到一起。一个 controversial 的结论，会引来一堆反驳论文——但这未必是坏事，说明它重要。",
+    "example": "The claim remains controversial among researchers.",
+    "exampleCn": "这一主张在研究界仍有争议。"
+  },
+  {
+    "word": "convene",
+    "phonetic": "/kənˈviːn/",
+    "meaning": "v. 召集；集合",
+    "scene": "con-（一起）+ ven（来）→ 把大家“叫到一起来”。导师 convene 全组开会，就是让所有人“到场”。",
+    "example": "The committee convened to discuss the proposal.",
+    "exampleCn": "委员会召集会议讨论该提案。"
+  },
+  {
+    "word": "convert",
+    "phonetic": "/kənˈvɜːrt/",
+    "meaning": "v. 转换；改变",
+    "scene": "con-（一起）+ vert（转）→ 整个“转”过去。你把模拟信号 convert 成数字信号，ADC 就是那个“转”的关口。",
+    "example": "The signal is converted into digital form for processing.",
+    "exampleCn": "信号被转换为数字形式以便处理。"
+  },
+  {
+    "word": "convince",
+    "phonetic": "/kənˈvɪns/",
+    "meaning": "v. 说服；使信服",
+    "scene": "con-（彻底）+ vinc（征服）→ 彻底“征服”对方。你写论文，本质上是用数据 convince 审稿人——不是求他相信，是让他无法反驳。",
+    "example": "The evidence convinced the reviewers of the method's validity.",
+    "exampleCn": "证据使审稿人相信了该方法的有效性。"
+  },
+  {
+    "word": "crucial",
+    "phonetic": "/ˈkruːʃl/",
+    "meaning": "adj. 关键的；至关重要的",
+    "scene": "cruc（十字）→ 十字路口，必须选一边。实验里 crucial 的那一步，往往不是最难的，而是最容易忽略的——但错了就全盘皆输。",
+    "example": "Temperature control is crucial for reproducible results.",
+    "exampleCn": "温度控制对于获得可重复的结果至关重要。"
+  },
+  {
+    "word": "cultivate",
+    "phonetic": "/ˈkʌltɪveɪt/",
+    "meaning": "v. 培养；耕作",
+    "scene": "cult（耕作）+ iv + ate → 像种地一样“养”出来。科研能力不是天生的，是 cultivate 出来的——每天读一篇文献，就是在给你的学术田松土。",
+    "example": "Students should cultivate the habit of critical reading.",
+    "exampleCn": "学生应当培养批判性阅读的习惯。"
+  },
+  {
+    "word": "deduce",
+    "phonetic": "/dɪˈduːs/",
+    "meaning": "v. 推断；演绎",
+    "scene": "de-（从）+ duc（引导）→ 从已知“引”出未知。你从三条线索 deduce 出结论——不是猜，是“引”出来的。",
+    "example": "We can deduce the mechanism from the observed data.",
+    "exampleCn": "我们可以从观测数据推断出机制。"
+  },
+  {
+    "word": "deficiency",
+    "phonetic": "/dɪˈfɪʃnsi/",
+    "meaning": "n. 缺乏；缺陷",
+    "scene": "de-（不）+ fic（做）+ iency → “没做到”的地方。你论文的 limitation 部分，写的就是研究的 deficiency——缺样本、缺时间、缺某个条件。",
+    "example": "Vitamin deficiency can lead to serious health problems.",
+    "exampleCn": "维生素缺乏可导致严重的健康问题。"
+  },
+  {
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "meaning": "v. 证明；演示",
+    "scene": "de-（彻底）+ monstr（显示）+ ate → 彻底“亮出来”给人看。你说你的方法有效？demonstrate 给我看——拿数据、拿图表，不要只讲道理。",
+    "example": "The experiment demonstrates the feasibility of the approach.",
+    "exampleCn": "该实验证明了该方法的可行性。"
+  },
+  {
+    "word": "denote",
+    "phonetic": "/dɪˈnoʊt/",
+    "meaning": "v. 表示；意味着",
+    "scene": "de-（向下）+ not（标记）→ 做下“标记”。公式里字母 E denote 能量，不是随便选的——每个符号都背着它的含义。",
+    "example": "In this equation, T denotes the absolute temperature.",
+    "exampleCn": "在此方程中，T 表示绝对温度。"
+  },
+  {
+    "word": "depress",
+    "phonetic": "/dɪˈpres/",
+    "meaning": "v. 压低；使沮丧；使不景气",
+    "scene": "de-（向下）+ press（压）→ 往下“压”。温度一升，载流子迁移率就被 depress——不是消失，是被压低了。",
+    "example": "High temperatures depress the performance of the device.",
+    "exampleCn": "高温会压低器件的性能。"
+  },
+  {
+    "word": "deprive",
+    "phonetic": "/dɪˈpraɪv/",
+    "meaning": "v. 剥夺；使丧失",
+    "scene": "de-（去掉）+ priv（私有）→ 把属于他的“拿走”。睡眠被 deprive 的人，注意力和记忆力都会下降——科研狗最懂这个词。",
+    "example": "The patients were deprived of sleep for 24 hours.",
+    "exampleCn": "患者被剥夺睡眠 24 小时。"
+  },
+  {
+    "word": "derive",
+    "phonetic": "/dɪˈraɪv/",
+    "meaning": "v. 推导；源于",
+    "scene": "de-（从）+ riv（河流）→ 从大河“引”出支流。你从基本方程 derive 出简化模型——推导的每一步都要站得住。",
+    "example": "The formula is derived from first principles.",
+    "exampleCn": "该公式由第一性原理推导得出。"
+  },
+  {
+    "word": "detect",
+    "phonetic": "/dɪˈtekt/",
+    "meaning": "v. 检测；发现",
+    "scene": "de-（去掉）+ tect（覆盖）→ 把“盖着”的东西揭开。探测器 detect 到的信号极其微弱，但它确实存在——detect 就是把它从噪声里挖出来。",
+    "example": "The sensor can detect very low concentrations of gas.",
+    "exampleCn": "该传感器能检测到极低浓度的气体。"
+  },
+  {
+    "word": "deviate",
+    "phonetic": "/ˈdiːvieɪt/",
+    "meaning": "v. 偏离；违背",
+    "scene": "de-（离开）+ vi（路）+ ate → 离开了原来的路。数据 deviate 出预期范围，你得停下来查——是仪器问题，还是真现象？",
+    "example": "The results deviate significantly from the theoretical prediction.",
+    "exampleCn": "结果明显偏离理论预测。"
+  },
+  {
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "meaning": "v. 减少；削弱",
+    "scene": "di-（向下）+ min（小）+ ish → 越变越小。信号在传输线上 diminish，距离越长，衰减越多——这就是为什么高速链路要加中继。",
+    "example": "The signal strength diminishes with distance.",
+    "exampleCn": "信号强度随距离衰减。"
+  },
+  {
+    "word": "discard",
+    "phonetic": "/dɪsˈkɑːrd/",
+    "meaning": "v. 丢弃；抛弃",
+    "scene": "dis-（去掉）+ card（卡片）→ 把“牌”扔掉。实验里有些数据点明显异常，你要不要 discard？——不能随便丢，丢了要说明理由。",
+    "example": "Outliers should not be discarded without justification.",
+    "exampleCn": "离群值不应在没有正当理由的情况下被丢弃。"
+  },
+  {
+    "word": "discipline",
+    "phonetic": "/ˈdɪsəplɪn/",
+    "meaning": "n. 学科；纪律；v. 训练",
+    "scene": "discip（学习）+ line（线）→ 沿着一条线学习。一门 discipline 就是一条被公认的知识线索；而科研本身也需要 discipline——按时读文献，就是纪律。",
+    "example": "The study draws on methods from several disciplines.",
+    "exampleCn": "该研究借鉴了多个学科的方法。"
+  },
+  {
+    "word": "disclose",
+    "phonetic": "/dɪsˈkloʊz/",
+    "meaning": "v. 披露；公开",
+    "scene": "dis-（打开）+ close（关闭）→ 把“关着的”打开。财务利益冲突必须 disclose——不是可选项，是学术伦理的硬要求。",
+    "example": "The authors disclosed no potential conflicts of interest.",
+    "exampleCn": "作者披露无潜在利益冲突。"
+  },
+  {
+    "word": "discrete",
+    "phonetic": "/dɪˈskriːt/",
+    "meaning": "adj. 离散的；分立的",
+    "scene": "dis-（分开）+ cret（区分）→ 彼此“分开”的。数字信号是 discrete 的：只有 0 和 1，中间没有 0.5。这是它抗噪声的根本原因。",
+    "example": "The signal is sampled at discrete time intervals.",
+    "exampleCn": "信号在离散时间间隔上采样。"
+  },
+  {
+    "word": "discriminate",
+    "phonetic": "/dɪˈskrɪmɪneɪt/",
+    "meaning": "v. 区分；歧视",
+    "scene": "dis-（分开）+ crimin（判断）+ ate → 把两者“分开判断”。好的实验设计能 discriminate 出真实效应和噪声——分不开，就等于没做。",
+    "example": "The test can discriminate between the two conditions.",
+    "exampleCn": "该测试能区分这两种情况。"
+  },
+  {
+    "word": "displace",
+    "phonetic": "/dɪsˈpleɪs/",
+    "meaning": "v. 取代；使移位",
+    "scene": "dis-（去掉）+ place（位置）→ 把原来的“挤出位置”。新技术 displace 旧技术，就像 FinFET displace 了平面 MOSFET——不是共存，是顶替。",
+    "example": "The new material may displace conventional silicon in some applications.",
+    "exampleCn": "这种新材料可能在某些应用中取代传统硅。"
+  },
+  {
+    "word": "dispose",
+    "phonetic": "/dɪˈspoʊz/",
+    "meaning": "v. 处理；处置；使倾向于",
+    "scene": "dis-（分开）+ pos（放置）→ 把东西“分开放好”。实验室废液不能随便倒，必须按规定 dispose——处置方式本身就是安全规范的一部分。",
+    "example": "Chemical waste must be disposed of properly.",
+    "exampleCn": "化学废料必须妥善处置。"
+  },
+  {
+    "word": "distinct",
+    "phonetic": "/dɪˈstɪŋkt/",
+    "meaning": "adj. 明显的；截然不同的",
+    "scene": "dis-（分开）+ stinct（刺）→ 被“刺”开、分得很清楚。两条曲线 distinct，一眼就能看出差别——不是“有点像”，是“明显不同”。",
+    "example": "The two phases are distinct in their optical properties.",
+    "exampleCn": "这两个相在光学性质上截然不同。"
+  },
+  {
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "meaning": "v. 区分；辨别",
+    "scene": "dis-（分开）+ stingu（刺）+ ish → 用刺“分开”。实验的关键是 distinguish 信号和噪声——分不开，数据就没意义。",
+    "example": "It is difficult to distinguish between the two mechanisms.",
+    "exampleCn": "很难区分这两种机制。"
+  },
+  {
+    "word": "distort",
+    "phonetic": "/dɪˈstɔːrt/",
+    "meaning": "v. 扭曲；使失真",
+    "scene": "dis-（分开）+ tort（扭）→ 往两边“扭”。信号经过非线性放大器会被 distort——原本的形状被扭歪了，信息就丢了。",
+    "example": "The amplifier distorts the signal at high frequencies.",
+    "exampleCn": "该放大器在高频下会使信号失真。"
+  },
+  {
+    "word": "diverse",
+    "phonetic": "/daɪˈvɜːrs/",
+    "meaning": "adj. 多样的；不同的",
+    "scene": "di-（分开）+ vers（转）→ 往不同方向“转”。一个 diverse 的团队，有人做器件、有人做电路、有人做算法——转的方向不同，才能拼出完整图景。",
+    "example": "The field attracts researchers from diverse backgrounds.",
+    "exampleCn": "该领域吸引了来自不同背景的研究者。"
+  },
+  {
+    "word": "dominate",
+    "phonetic": "/ˈdɑːmɪneɪt/",
+    "meaning": "v. 支配；主导",
+    "scene": "domin（主人）+ ate → 像“主人”一样说了算。在低频下，闪烁噪声 dominate；在高频下，热噪声 dominate——谁主导，决定了你的设计重点。",
+    "example": "Thermal noise dominates at high frequencies.",
+    "exampleCn": "热噪声在高频下占主导地位。"
+  },
+  {
+    "word": "elaborate",
+    "phonetic": "/ɪˈlæbərət/",
+    "meaning": "adj. 精心制作的；v. 详细阐述",
+    "scene": "e-（出）+ labor（劳动）+ ate → 花大量劳动“做出来”的。审稿人说“please elaborate”，就是让你把刚才一句话带过的地方，展开讲清楚。",
+    "example": "The authors elaborate on the theoretical framework in Section 2.",
+    "exampleCn": "作者在第二节详细阐述了理论框架。"
+  },
+  {
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "meaning": "v. 消除；排除",
+    "scene": "e-（出）+ limin（门槛）+ ate → 把东西“赶出门槛”。实验设计的目标之一，就是 eliminate 干扰变量——把它们挡在门外，剩下的才是真效应。",
+    "example": "The procedure eliminates the effect of background noise.",
+    "exampleCn": "该流程消除了背景噪声的影响。"
+  },
+  {
+    "word": "emerge",
+    "phonetic": "/ɪˈmɜːrdʒ/",
+    "meaning": "v. 出现；浮现",
+    "scene": "e-（出）+ merg（沉）→ 从水里“浮出来”。趋势不是一开始就清楚的，是你把数据堆起来之后才 emerge 的。",
+    "example": "A clear pattern emerged from the data analysis.",
+    "exampleCn": "数据分析中浮现出清晰的模式。"
+  },
+  {
+    "word": "emphasise",
+    "phonetic": "/ˈemfəsaɪz/",
+    "meaning": "v. 强调；着重",
+    "scene": "em-（进入）+ phas（说）+ ise → 把话“说进去”。在论文里 emphasise 一个点，就是反复说、放在显眼位置说——让它被记住。",
+    "example": "The authors emphasise the need for further validation.",
+    "exampleCn": "作者强调需要进一步验证。"
+  },
+  {
+    "word": "enable",
+    "phonetic": "/ɪˈneɪbl/",
+    "meaning": "v. 使能够；使成为可能",
+    "scene": "en-（使）+ able（能够）→ 让某人“变得能够”。新技术 enable 了以前做不到的事——比如先进封装 enable 了 chiplet 架构。",
+    "example": "The new tool enables faster data processing.",
+    "exampleCn": "新工具使更快的数据处理成为可能。"
+  },
+  {
+    "word": "encounter",
+    "phonetic": "/ɪnˈkaʊntər/",
+    "meaning": "v. 遇到；n. 遭遇",
+    "scene": "en-（进入）+ counter（对面）→ 迎面“撞上”。你在实验中 encounter 了一个意外现象——不要绕开，它可能就是你的论文起点。",
+    "example": "We encountered several difficulties during the experiment.",
+    "exampleCn": "我们在实验中遇到了若干困难。"
+  },
+  {
+    "word": "enhance",
+    "phonetic": "/ɪnˈhæns/",
+    "meaning": "v. 增强；提高",
+    "scene": "en-（使）+ hance（高）→ 使“变高”。掺杂可以 enhance 导电性；加一个反馈环可以 enhance 线性度——都是往好的方向推一把。",
+    "example": "The treatment enhances the material's conductivity.",
+    "exampleCn": "该处理增强了材料的导电性。"
+  },
+  {
+    "word": "enormous",
+    "phonetic": "/ɪˈnɔːrməs/",
+    "meaning": "adj. 巨大的；庞大的",
+    "scene": "e-（出）+ norm（标准）+ ous → 超出标准之外。数据量 enormous，你不可能手动处理——所以需要算法。",
+    "example": "The dataset is enormous and requires automated processing.",
+    "exampleCn": "该数据集极其庞大，需要自动化处理。"
+  },
+  {
+    "word": "ensure",
+    "phonetic": "/ɪnˈʃʊr/",
+    "meaning": "v. 确保；保证",
+    "scene": "en-（使）+ sure（确定）→ 使事情“变成确定的”。实验前校准仪器，就是为了 ensure 数据可信——不是“希望”，是“确保”。",
+    "example": "Careful calibration ensures accurate measurements.",
+    "exampleCn": "仔细校准确保测量准确。"
+  },
+  {
+    "word": "entitle",
+    "phonetic": "/ɪnˈtaɪtl/",
+    "meaning": "v. 使有权；给……命名",
+    "scene": "en-（使）+ title（头衔）→ 给某人“安上头衔”。你的论文被 accept，你才 entitle 说“我发表了”——不是投稿就有的权利。",
+    "example": "The scholarship entitles students to a stipend.",
+    "exampleCn": "该奖学金使学生有权获得津贴。"
+  },
+  {
+    "word": "equate",
+    "phonetic": "/ɪˈkweɪt/",
+    "meaning": "v. 等同；使相等",
+    "scene": "equ（相等）+ ate → 把两个东西“画等号”。不要把相关 equate 成因果——这是科研写作里最常见的逻辑错误之一。",
+    "example": "It is a mistake to equate correlation with causation.",
+    "exampleCn": "把相关等同于因果是一个错误。"
+  },
+  {
+    "word": "evaluate",
+    "phonetic": "/ɪˈvæljueɪt/",
+    "meaning": "v. 评估；评价",
+    "scene": "e-（出）+ valu（价值）+ ate → 把“价值”算出来。审稿人 evaluate 你的论文，不是看你写得多漂亮，是看你贡献了多少新东西。",
+    "example": "We evaluated the performance of the proposed method.",
+    "exampleCn": "我们评估了所提出方法的性能。"
+  },
+  {
+    "word": "eventually",
+    "phonetic": "/ɪˈventʃuəli/",
+    "meaning": "adv. 最终；终于",
+    "scene": "event（事件）+ ually → 所有事件走完之后。实验 eventually 收敛到稳定值——但前面那几百次失败，也是过程的一部分。",
+    "example": "The system eventually reached a stable state.",
+    "exampleCn": "系统最终达到了稳定状态。"
+  },
+  {
+    "word": "evident",
+    "phonetic": "/ˈevɪdənt/",
+    "meaning": "adj. 明显的；显然的",
+    "scene": "e-（出）+ vid（看）+ ent → 一眼就能“看出来”。图表上两条曲线的差距 evident——不需要你解释，读者自己就看得到。",
+    "example": "It is evident from the data that the trend is robust.",
+    "exampleCn": "从数据可以明显看出该趋势是稳健的。"
+  },
+  {
+    "word": "evolve",
+    "phonetic": "/ɪˈvɑːlv/",
+    "meaning": "v. 进化；演变",
+    "scene": "e-（出）+ volv（卷）→ 慢慢“卷开”。一个研究领域不是一天建成的，它是 evolve 出来的——每一篇论文都是下一块的垫脚石。",
+    "example": "The technology has evolved rapidly over the past decade.",
+    "exampleCn": "该技术在过去十年中迅速演变。"
+  },
+  {
+    "word": "exceed",
+    "phonetic": "/ɪkˈsiːd/",
+    "meaning": "v. 超过；超出",
+    "scene": "ex-（出）+ ceed（走）→ 走出界线之外。测量值 exceed 量程，仪器就爆表了——你得换挡重测。",
+    "example": "The measured value exceeds the expected range.",
+    "exampleCn": "测量值超出了预期范围。"
+  },
+  {
+    "word": "exclude",
+    "phonetic": "/ɪkˈskluːd/",
+    "meaning": "v. 排除；不包括",
+    "scene": "ex-（出）+ clud（关闭）→ 把门关上，不让进来。统计时你 exclude 掉缺失数据——但要在方法部分写清楚，不能偷偷丢。",
+    "example": "Participants with incomplete data were excluded from the analysis.",
+    "exampleCn": "数据不完整的参与者被排除在分析之外。"
+  },
+  {
+    "word": "exhibit",
+    "phonetic": "/ɪɡˈzɪbɪt/",
+    "meaning": "v. 表现出；展示；n. 展品",
+    "scene": "ex-（出）+ hibit（拿）→ 把东西“拿出来”给人看。材料 exhibit 出非线性行为——不是它“说”自己有，是你测出来了。",
+    "example": "The material exhibits excellent thermal stability.",
+    "exampleCn": "该材料表现出优异的热稳定性。"
+  },
+  {
+    "word": "exploit",
+    "phonetic": "/ɪkˈsplɔɪt/",
+    "meaning": "v. 利用；开发；剥削",
+    "scene": "ex-（出）+ ploit（展开）→ 把潜力“展开”用起来。你 exploit 了器件的某个特性做出新电路——利用不是贬义，关键看用在哪。",
+    "example": "The design exploits the nonlinearity of the device.",
+    "exampleCn": "该设计利用了器件的非线性特性。"
+  },
+  {
+    "word": "expose",
+    "phonetic": "/ɪkˈspoʊz/",
+    "meaning": "v. 暴露；使接触",
+    "scene": "ex-（出）+ pos（放）→ 放到外面。样品 expose 在空气中会氧化——有些材料必须在手套箱里操作，就是因为怕“暴露”。",
+    "example": "The samples were exposed to ultraviolet light.",
+    "exampleCn": "样品被暴露在紫外光下。"
+  },
+  {
+    "word": "facilitate",
+    "phonetic": "/fəˈsɪlɪteɪt/",
+    "meaning": "v. 促进；使便利",
+    "scene": "facil（容易）+ itate → 使事情“变容易”。好的工具 facilitate 研究，但不替代思考——它把搬砖的活干掉，让你专注在想问题上。",
+    "example": "The software facilitates the analysis of large datasets.",
+    "exampleCn": "该软件便于对大型数据集进行分析。"
+  },
+  {
+    "word": "fluctuate",
+    "phonetic": "/ˈflʌktʃueɪt/",
+    "meaning": "v. 波动；起伏",
+    "scene": "fluct（流动）+ uate → 像水一样“流来流去”。温度 fluctuate，测量值也跟着 fluctuate——你得先稳住环境，才能稳住数据。",
+    "example": "The readings fluctuated throughout the experiment.",
+    "exampleCn": "整个实验过程中读数一直在波动。"
+  },
+  {
+    "word": "fundamental",
+    "phonetic": "/ˌfʌndəˈmentl/",
+    "meaning": "adj. 基本的；根本的；n. 基础",
+    "scene": "fund（底部）+ amental → 在“最底下”的那一层。fundamental 的问题不解决，上面的应用都是沙上建塔。",
+    "example": "This is a fundamental principle of thermodynamics.",
+    "exampleCn": "这是热力学的一条基本原理。"
+  },
+  {
+    "word": "generate",
+    "phonetic": "/ˈdʒenəreɪt/",
+    "meaning": "v. 产生；生成",
+    "scene": "gen（生）+ er + ate → “生”出来。你的模型 generate 了一条预测曲线，接下来要看它和实测差多少。",
+    "example": "The model generates predictions that match the data.",
+    "exampleCn": "该模型生成的预测与数据吻合。"
+  },
+  {
+    "word": "hypothesis",
+    "phonetic": "/haɪˈpɑːθəsɪs/",
+    "meaning": "n. 假设；假说",
+    "scene": "hypo-（下面）+ thesis（放置）→ 放在下面“垫底”的那个说法。整个实验都是围绕 hypothesis 搭起来的——如果它倒了，上面的都要重来。",
+    "example": "The hypothesis was tested in a controlled experiment.",
+    "exampleCn": "该假设在对照实验中得到了检验。"
+  },
+  {
+    "word": "illustrate",
+    "phonetic": "/ˈɪləstreɪt/",
+    "meaning": "v. 说明；举例说明",
+    "scene": "il-（使）+ lustr（光）+ ate → 打一束光上去，让东西“亮起来”。一个例子就能 illustrate 一个抽象概念——比十句定义都管用。",
+    "example": "Figure 2 illustrates the relationship between the two variables.",
+    "exampleCn": "图 2 说明了这两个变量之间的关系。"
+  },
+  {
+    "word": "imply",
+    "phonetic": "/ɪmˈplaɪ/",
+    "meaning": "v. 暗示；意味着",
+    "scene": "im-（进入）+ ply（折）→ 把意思“折”进话里，不明说。作者说“结果值得进一步研究”，这 imply 他对自己当前的结论也不完全确定。",
+    "example": "The results imply that the mechanism is more complex than assumed.",
+    "exampleCn": "这些结果意味着该机制比假设的更复杂。"
+  },
+  {
+    "word": "impose",
+    "phonetic": "/ɪmˈpoʊz/",
+    "meaning": "v. 强加；施加",
+    "scene": "im-（进入）+ pos（放）→ 硬“放”到别人身上。实验条件 impose 了限制——不是你选的，是条件替你做的主。",
+    "example": "The method imposes strict requirements on data quality.",
+    "exampleCn": "该方法对数据质量施加了严格要求。"
+  },
+  {
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "meaning": "n. 激励；动机",
+    "scene": "in-（进入）+ cent（唱）+ ive → 在耳边“唱”给你听的动力。发表压力是一种 incentive，但它不总是让你做出好研究——所以需要学术伦理来平衡。",
+    "example": "Funding provides an incentive for researchers to publish.",
+    "exampleCn": "经费为研究者发表成果提供了激励。"
+  },
+  {
+    "word": "incorporate",
+    "phonetic": "/ɪnˈkɔːrpəreɪt/",
+    "meaning": "v. 纳入；包含；合并",
+    "scene": "in-（进入）+ corpor（身体）+ ate → 把东西“吸收进身体”。你在论文里 incorporate 了审稿人的建议——不是简单照抄，是把它变成自己论证的一部分。",
+    "example": "The revised manuscript incorporates the reviewers' suggestions.",
+    "exampleCn": "修改后的稿件纳入了审稿人的建议。"
+  },
+  {
+    "word": "induce",
+    "phonetic": "/ɪnˈduːs/",
+    "meaning": "v. 引起；诱导",
+    "scene": "in-（向）+ duc（引导）→ 往里“引”。一个小的扰动可以 induce 整个系统的振荡——不是它自己发生的，是被“引”出来的。",
+    "example": "The change induced a shift in the resonance frequency.",
+    "exampleCn": "该变化引起了共振频率的偏移。"
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "meaning": "adj. 不可避免的；必然的",
+    "scene": "in-（不）+ evit（避开）+ able → 避不开的。任何测量都有误差，这是 inevitable——你能做的只是把误差压到可接受范围内。",
+    "example": "Some degree of uncertainty is inevitable in measurement.",
+    "exampleCn": "测量中一定程度的不确定是不可避免的。"
+  },
+  {
+    "word": "infer",
+    "phonetic": "/ɪnˈfɜːr/",
+    "meaning": "v. 推断；推论",
+    "scene": "in-（进入）+ fer（带）→ 从已知里“带”出未知。你从数据 infer 出机制——注意：infer 是“推”，不是“猜”，每一步都要有依据。",
+    "example": "We can infer the presence of a hidden layer from the data.",
+    "exampleCn": "我们可以从数据推断出隐藏层的存在。"
+  },
+  {
+    "word": "inherent",
+    "phonetic": "/ɪnˈhɪrənt/",
+    "meaning": "adj. 固有的；内在的",
+    "scene": "in-（在内）+ her（粘）+ ent → 粘在里面的，拿不掉。噪声是器件 inherent 的属性——你不能“消除”它，只能“管理”它。",
+    "example": "There are inherent limitations to this approach.",
+    "exampleCn": "该方法存在固有的局限性。"
+  },
+  {
+    "word": "initiate",
+    "phonetic": "/ɪˈnɪʃieɪt/",
+    "meaning": "v. 开始；发起",
+    "scene": "in-（进入）+ it（走）+ ate → 迈步“走进去”。一个项目 initiate 之前，你得先想清楚目标和边界——开始容易，收尾难。",
+    "example": "The researchers initiated a long-term study of the phenomenon.",
+    "exampleCn": "研究者启动了对该现象的长期研究。"
+  },
+  {
+    "word": "innovate",
+    "phonetic": "/ˈɪnəveɪt/",
+    "meaning": "v. 创新；革新",
+    "scene": "in-（进入）+ nov（新）+ ate → 把“新”东西带进来。innovate 不是把旧东西换个包装，而是真正引入以前没有的东西。",
+    "example": "Companies must innovate to stay competitive.",
+    "exampleCn": "公司必须创新才能保持竞争力。"
+  },
+  {
+    "word": "integrate",
+    "phonetic": "/ˈɪntɪɡreɪt/",
+    "meaning": "v. 整合；使成一体",
+    "scene": "in-（不）+ teg（触碰）+ rate → 让各部分“碰在一起”成一整体。你把传感器、电路和算法 integrate 到一个芯片上——这就是 SoC 的本意。",
+    "example": "The system integrates sensing, processing, and communication.",
+    "exampleCn": "该系统集成了传感、处理和通信功能。"
+  },
+  {
+    "word": "intervene",
+    "phonetic": "/ˌɪntərˈviːn/",
+    "meaning": "v. 干预；介入",
+    "scene": "inter-（之间）+ ven（来）→ 走到两者“之间”。对照组不 intervene，实验组 intervene——两者的差别，就是干预的效果。",
+    "example": "The researchers intervened at an early stage of the disease.",
+    "exampleCn": "研究者在疾病早期进行了干预。"
+  },
+  {
+    "word": "intrinsic",
+    "phonetic": "/ɪnˈtrɪnzɪk/",
+    "meaning": "adj. 内在的；固有的",
+    "scene": "intrin-（在内）+ sic → 长在里面的。本征载流子浓度是材料的 intrinsic 属性——不掺杂、不加电压，它本来就是这样。",
+    "example": "The intrinsic properties of the material were measured.",
+    "exampleCn": "测量了该材料的内在性质。"
+  },
+  {
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "meaning": "v. 证明……正当；为……辩护",
+    "scene": "just（正确）+ ify（使）→ 使某件事“变得正确”。审稿人问：你为什么用这个参数？你得 justify——不是“我觉得”，是“有理由”。",
+    "example": "The authors justify their choice of parameters in Section 3.",
+    "exampleCn": "作者在第三节为参数选择提供了依据。"
+  },
+  {
+    "word": "manipulate",
+    "phonetic": "/məˈnɪpjuleɪt/",
+    "meaning": "v. 操纵；操作",
+    "scene": "mani（手）+ pul（拉）+ ate → 用手“拉来拉去”。实验中你 manipulate 变量，观察响应——但数据不能 manipulate，那是学术不端。",
+    "example": "The researchers manipulated the temperature to observe the effect.",
+    "exampleCn": "研究者操纵温度以观察其效应。"
+  },
+  {
+    "word": "mature",
+    "phonetic": "/məˈtʃʊr/",
+    "meaning": "adj. 成熟的；v. 成熟",
+    "scene": "matur（成熟）+ e → 长到“可以了”的程度。一项技术从实验室到量产，要等它 mature——太早推出去，良率会教你做人。",
+    "example": "The technology is not yet mature enough for mass production.",
+    "exampleCn": "该技术尚未成熟到可以量产。"
+  },
+  {
+    "word": "modify",
+    "phonetic": "/ˈmɑːdɪfaɪ/",
+    "meaning": "v. 修改；调整",
+    "scene": "mod（尺度）+ ify（使）→ 在“尺度”上动一下。你不需要推翻整个方案，只需 modify 一个参数——但改哪里，需要判断力。",
+    "example": "The protocol was modified to reduce bias.",
+    "exampleCn": "方案经过修改以减少偏差。"
+  },
+  {
+    "word": "monitor",
+    "phonetic": "/ˈmɑːnɪtər/",
+    "meaning": "v. 监测；n. 显示器；监控器",
+    "scene": "mon（警告）+ itor → 站在旁边“盯着”的人。实验过程中你要实时 monitor 温度和压力——不是等出事了再查，是盯着它别出事。",
+    "example": "The system monitors the temperature continuously.",
+    "exampleCn": "该系统持续监测温度。"
+  },
+  {
+    "word": "neglect",
+    "phonetic": "/nɪˈɡlekt/",
+    "meaning": "v. 忽略；疏忽",
+    "scene": "neg-（不）+ lect（选择）→ 没有“选”它。你做实验时 neglect 了湿度的影响——结果偏差就出在这里。",
+    "example": "The study neglected the effect of humidity.",
+    "exampleCn": "该研究忽略了湿度的影响。"
+  },
+  {
+    "word": "nevertheless",
+    "phonetic": "/ˌnevərðəˈles/",
+    "meaning": "adv. 然而；尽管如此",
+    "scene": "never + the + less → “一点也不少”。前面说了一堆困难，nevertheless 一转——困难再多，结论仍然成立。这是论文里最常用的“转折信号”。",
+    "example": "The data are limited; nevertheless, the trend is clear.",
+    "exampleCn": "数据有限，然而趋势是清楚的。"
+  },
+  {
+    "word": "notion",
+    "phonetic": "/ˈnoʊʃn/",
+    "meaning": "n. 概念；观念",
+    "scene": "not（知道）+ ion → 你“知道”的那个东西，但不一定成体系。一个 notion 可能只是模糊的直觉；要变成 hypothesis，还得把它说清楚。",
+    "example": "The notion of feedback is central to control theory.",
+    "exampleCn": "反馈的概念是控制理论的核心。"
+  },
+  {
+    "word": "obtain",
+    "phonetic": "/əbˈteɪn/",
+    "meaning": "v. 获得；得到",
+    "scene": "ob-（向）+ tain（拿住）→ 朝目标“拿住”。你不是“等”来数据，是 obtain 来的——设计实验、跑测试、筛样本，每一步都是主动去拿。",
+    "example": "The data were obtained from three independent experiments.",
+    "exampleCn": "数据来自三次独立实验。"
+  },
+  {
+    "word": "occupy",
+    "phonetic": "/ˈɑːkjupaɪ/",
+    "meaning": "v. 占据；占用",
+    "scene": "oc-（向）+ cup（拿）+ y → 把位置“拿住”。这个算法 occupy 了大量内存——你得优化，否则跑不动。",
+    "example": "The process occupies a large portion of the available memory.",
+    "exampleCn": "该过程占用了可用内存的很大一部分。"
+  },
+  {
+    "word": "overlap",
+    "phonetic": "/ˌoʊvərˈlæp/",
+    "meaning": "v. 重叠；n. 重叠部分",
+    "scene": "over（在上）+ lap（搭）→ 一块“搭”在另一块上。两条曲线 overlap 得越多，说明两个方法越接近——但接近不等于相同。",
+    "example": "The two distributions overlap significantly.",
+    "exampleCn": "这两个分布有显著重叠。"
+  },
+  {
+    "word": "participate",
+    "phonetic": "/pɑːrˈtɪsɪpeɪt/",
+    "meaning": "v. 参与；参加",
+    "scene": "part（部分）+ cip（拿）+ ate → 把自己“算作一部分”。你 participate 一个项目，就意味着你的时间和产出都进了这个盘子。",
+    "example": "All participants were asked to sign a consent form.",
+    "exampleCn": "所有参与者都被要求签署同意书。"
+  },
+  {
+    "word": "perceive",
+    "phonetic": "/pərˈsiːv/",
+    "meaning": "v. 察觉；感知；认为",
+    "scene": "per-（彻底）+ ceiv（拿）→ 彻底“抓住”某个信号。你 perceive 到的差异，仪器不一定测得到——人的感官有极限，所以才需要工具。",
+    "example": "Participants perceived the difference between the two stimuli.",
+    "exampleCn": "参与者察觉到了两个刺激之间的差异。"
+  },
+  {
+    "word": "persist",
+    "phonetic": "/pərˈsɪst/",
+    "meaning": "v. 持续；坚持",
+    "scene": "per-（一直）+ sist（站）→ 一直“站着”不倒。如果异常现象 persist 出现，你就不能当它是偶然——它可能在告诉你什么。",
+    "example": "The effect persisted even after the treatment was stopped.",
+    "exampleCn": "即使停止处理后，该效应仍然持续。"
+  },
+  {
+    "word": "phenomenon",
+    "phonetic": "/fəˈnɑːmɪnən/",
+    "meaning": "n. 现象；奇迹",
+    "scene": "phaino（显现）→ 显现出来的东西。科研的起点，往往就是观察到一个“不对劲”的 phenomenon——然后问为什么。",
+    "example": "This phenomenon has been observed in several studies.",
+    "exampleCn": "这一现象已在多项研究中被观察到。"
+  },
+  {
+    "word": "possess",
+    "phonetic": "/pəˈzes/",
+    "meaning": "v. 拥有；具有",
+    "scene": "pos-（能）+ sess（坐）→ 能“坐得住”的东西。这个材料 possess 优异的导电性——不是它“有”，是它“坐得住”这个属性。",
+    "example": "The compound possesses unique optical properties.",
+    "exampleCn": "该化合物具有独特的光学性质。"
+  },
+  {
+    "word": "predict",
+    "phonetic": "/prɪˈdɪkt/",
+    "meaning": "v. 预测；预言",
+    "scene": "pre-（前）+ dict（说）→ 提前“说”。模型的价值就在于 predict——如果它只能解释过去，那它和事后诸葛亮没区别。",
+    "example": "The model accurately predicts the experimental results.",
+    "exampleCn": "该模型准确预测了实验结果。"
+  },
+  {
+    "word": "preliminary",
+    "phonetic": "/prɪˈlɪmɪneri/",
+    "meaning": "adj. 初步的；预备的",
+    "scene": "pre-（前）+ limin（门槛）+ ary → 进门槛之前的。preliminary results 只是探路，不是定论——写论文时要区分“初步”和“最终”。",
+    "example": "Preliminary results suggest a positive trend.",
+    "exampleCn": "初步结果提示有积极趋势。"
+  },
+  {
+    "word": "presume",
+    "phonetic": "/prɪˈzuːm/",
+    "meaning": "v. 假定；推测",
+    "scene": "pre-（前）+ sum（拿）→ 提前“拿”一个说法来用。presume 和 assume 相近，但 presume 更有“先这么信着”的意味。",
+    "example": "We presume that the sample is homogeneous.",
+    "exampleCn": "我们假定样品是均匀的。"
+  },
+  {
+    "word": "prevail",
+    "phonetic": "/prɪˈveɪl/",
+    "meaning": "v. 盛行；获胜；占优势",
+    "scene": "pre-（前）+ vail（价值）→ 更有“价值”的胜出。在学术争论中，最终 prevail 的往往不是嗓门大的，而是证据硬的。",
+    "example": "This view prevailed for many decades.",
+    "exampleCn": "这一观点盛行了数十年。"
+  },
+  {
+    "word": "prohibit",
+    "phonetic": "/proʊˈhɪbɪt/",
+    "meaning": "v. 禁止；阻止",
+    "scene": "pro-（前）+ hibit（拿）→ 提前“拿住”，不让你过去。伦理规范 prohibit 某些实验——不是建议，是明令禁止。",
+    "example": "The regulations prohibit testing on human subjects without consent.",
+    "exampleCn": "法规禁止未经同意进行人体试验。"
+  },
+  {
+    "word": "prominent",
+    "phonetic": "/ˈprɑːmɪnənt/",
+    "meaning": "adj. 突出的；著名的",
+    "scene": "pro-（向前）+ min（突出）+ ent → 往前“凸出来”。一个 prominent 的学者，不是自封的，是他的工作把他推到了台前。",
+    "example": "She is a prominent figure in the field of nanotechnology.",
+    "exampleCn": "她是纳米技术领域的杰出人物。"
+  },
+  {
+    "word": "promote",
+    "phonetic": "/prəˈmoʊt/",
+    "meaning": "v. 促进；提升；推广",
+    "scene": "pro-（向前）+ mot（移动）→ 往前“推”。催化剂 promote 反应，不是它参与反应，而是它把反应“往前推”了一把。",
+    "example": "The catalyst promotes the reaction at lower temperatures.",
+    "exampleCn": "该催化剂在较低温度下促进反应。"
+  },
+  {
+    "word": "proportion",
+    "phonetic": "/prəˈpɔːrʃn/",
+    "meaning": "n. 比例；部分",
+    "scene": "pro-（向前）+ portion（部分）→ 各部分之间的“向前关系”。样本中男性占什么 proportion？这个数字决定了你的结论能推多远。",
+    "example": "A large proportion of the samples were contaminated.",
+    "exampleCn": "很大一部分样品被污染了。"
+  },
+  {
+    "word": "propose",
+    "phonetic": "/prəˈpoʊz/",
+    "meaning": "v. 提出；提议；打算",
+    "scene": "pro-（向前）+ pos（放）→ 把方案“放到前面”。你 propose 一个方法，就是把它摆到台面上——接下来要接受检验。",
+    "example": "The authors propose a new model for the phenomenon.",
+    "exampleCn": "作者为该现象提出了一个新模型。"
+  },
+  {
+    "word": "pursue",
+    "phonetic": "/pərˈsuː/",
+    "meaning": "v. 追求；从事；继续",
+    "scene": "pur-（向前）+ sue（跟随）→ 一路“跟”着走。你 pursue 一个方向，意味着你愿意在它上面花几年——选错了，代价很大。",
+    "example": "She decided to pursue a career in research.",
+    "exampleCn": "她决定从事研究工作。"
+  },
+  {
+    "word": "react",
+    "phonetic": "/riˈækt/",
+    "meaning": "v. 反应；起反应",
+    "scene": "re-（回）+ act（行动）→ “回”一个动作。材料遇水 react，产生气体——反应是双向的：你给它条件，它给你结果。",
+    "example": "The two chemicals react violently when mixed.",
+    "exampleCn": "这两种化学品混合时会剧烈反应。"
+  },
+  {
+    "word": "recognise",
+    "phonetic": "/ˈrekəɡnaɪz/",
+    "meaning": "v. 识别；承认；认可",
+    "scene": "re-（再）+ cogn（知道）+ ise → “再一次知道”。你 recognise 一个模式，是因为你以前见过类似的——识别，本质上是旧经验的匹配。",
+    "example": "The algorithm recognises patterns in the data.",
+    "exampleCn": "该算法能识别数据中的模式。"
+  },
+  {
+    "word": "refine",
+    "phonetic": "/rɪˈfaɪn/",
+    "meaning": "v. 精炼；改进",
+    "scene": "re-（反复）+ fine（精细）→ 反复弄“细”。论文不是一稿就成的，是 refine 出来的——每一轮修改，都把粗糙的地方磨掉一点。",
+    "example": "The model was refined using additional data.",
+    "exampleCn": "该模型利用额外数据得到了改进。"
+  },
+  {
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːrs/",
+    "meaning": "v. 加强；强化",
+    "scene": "re-（再）+ in-（进入）+ force（力量）→ 再加一把力。新数据 reinforce 了原有结论——不是推翻，是把它撑得更稳。",
+    "example": "The new findings reinforce the earlier conclusion.",
+    "exampleCn": "新发现强化了早先的结论。"
+  },
+  {
+    "word": "reluctant",
+    "phonetic": "/rɪˈlʌktənt/",
+    "meaning": "adj. 不情愿的；勉强的",
+    "scene": "re-（反）+ luct（挣扎）+ ant → 心里在“挣扎”。审稿人 reluctant 接受一个反常识的结论——你得拿出更强证据，才能让他点头。",
+    "example": "Reviewers were reluctant to accept the unconventional claim.",
+    "exampleCn": "审稿人不愿接受这一非常规主张。"
+  },
+  {
+    "word": "resemble",
+    "phonetic": "/rɪˈzembl/",
+    "meaning": "v. 像；与……相似",
+    "scene": "re-（加强）+ sembl（相似）→ 长得很像。你的新结构和某篇论文里的 resemble——这时候你要说清楚“哪里不同”，否则会被说成抄袭。",
+    "example": "The pattern resembles that observed in earlier work.",
+    "exampleCn": "该模式与早期工作中观察到的相似。"
+  },
+  {
+    "word": "reside",
+    "phonetic": "/rɪˈzaɪd/",
+    "meaning": "v. 居住；存在于",
+    "scene": "re-（反复）+ sid（坐）→ 反复“坐”在一个地方。问题的关键 reside 在某个环节——你的任务就是找到它“坐”在哪里。",
+    "example": "The difficulty resides in the calibration step.",
+    "exampleCn": "困难存在于校准这一步。"
+  },
+  {
+    "word": "resolve",
+    "phonetic": "/rɪˈzɑːlv/",
+    "meaning": "v. 解决；决心；分解",
+    "scene": "re-（再）+ solv（松开）→ 把死结“松开”。一个 unresolved 的问题，就是还没被“松开”的结——科研的大部分时间，都在解这些结。",
+    "example": "The issue was resolved by adjusting the parameters.",
+    "exampleCn": "该问题通过调整参数得到了解决。"
+  },
+  {
+    "word": "restrict",
+    "phonetic": "/rɪˈstrɪkt/",
+    "meaning": "v. 限制；约束",
+    "scene": "re-（回）+ strict（拉紧）→ 往回“拉紧”。实验条件 restrict 了样本范围——你必须在论文里说清楚，否则读者会误以为结论普适。",
+    "example": "The analysis is restricted to a narrow range of conditions.",
+    "exampleCn": "该分析仅限于很窄的条件范围。"
+  },
+  {
+    "word": "retain",
+    "phonetic": "/rɪˈteɪn/",
+    "meaning": "v. 保留；保持",
+    "scene": "re-（回）+ tain（拿住）→ 往回“拿住”不放。材料在高温下仍 retain 其结构——这是它比同类材料强的地方。",
+    "example": "The material retains its properties at high temperatures.",
+    "exampleCn": "该材料在高温下仍保持其性能。"
+  },
+  {
+    "word": "reveal",
+    "phonetic": "/rɪˈviːl/",
+    "meaning": "v. 揭示；显示",
+    "scene": "re-（反）+ veal（面纱）→ 把面纱“掀开”。实验 reveal 了一个此前未知的机制——揭示的东西，之前是藏着的。",
+    "example": "The results reveal a previously unknown mechanism.",
+    "exampleCn": "这些结果揭示了一个此前未知的机制。"
+  },
+  {
+    "word": "rigorous",
+    "phonetic": "/ˈrɪɡərəs/",
+    "meaning": "adj. 严格的；严谨的",
+    "scene": "rigor（僵硬）+ ous → 一点不“松”的。一篇 rigorous 的论文，每个结论都有对应的证据——读者找不到“松”的地方。",
+    "example": "The study followed a rigorous experimental protocol.",
+    "exampleCn": "该研究遵循了严格的实验方案。"
+  },
+  {
+    "word": "satisfy",
+    "phonetic": "/ˈsætɪsfaɪ/",
+    "meaning": "v. 满足；使满意；符合",
+    "scene": "satis（足够）+ fy（使）→ 使“够了”。你的结果必须 satisfy 三个条件，才算有效——少一个，审稿人就会退回来。",
+    "example": "The design must satisfy all the specified constraints.",
+    "exampleCn": "该设计必须满足所有指定约束。"
+  },
+  {
+    "word": "scatter",
+    "phonetic": "/ˈskætər/",
+    "meaning": "v. 散射；散开；n. 分散",
+    "scene": "想象一把沙子撒出去——不是整齐排列，而是“散”在各处。实验点 scatter 得越厉害，说明重复性越差，误差越大。",
+    "example": "The data points scatter widely around the fitted line.",
+    "exampleCn": "数据点围绕拟合线分散得很开。"
+  },
+  {
+    "word": "scheme",
+    "phonetic": "/skiːm/",
+    "meaning": "n. 方案；体系；阴谋",
+    "scene": "schema（图形）→ 画出来的一张“图”。你提出一个 coding scheme，就是把抽象思路画成可执行的步骤——scheme 是思路的可视化。",
+    "example": "The proposed coding scheme reduces the error rate.",
+    "exampleCn": "所提出的编码方案降低了误码率。"
+  },
+  {
+    "word": "scrutiny",
+    "phonetic": "/ˈskruːtəni/",
+    "meaning": "n. 仔细审查；细看",
+    "scene": "scrut（翻找）→ 翻来覆去地看。你的论文要经得起 scrutiny——不是“大概对”，是每一处都要经得起别人盯着看。",
+    "example": "The data did not withstand close scrutiny.",
+    "exampleCn": "这些数据经不起仔细审查。"
+  },
+  {
+    "word": "simulate",
+    "phonetic": "/ˈsɪmjuleɪt/",
+    "meaning": "v. 模拟；仿真",
+    "scene": "simul（相似）+ ate → 做一个“相似”的东西出来。仿真不是实验的替代品，是它的“预演”——预演能帮你少走弯路，但最终还得上真家伙。",
+    "example": "The system was simulated under various conditions.",
+    "exampleCn": "该系统在各种条件下进行了仿真。"
+  },
+  {
+    "word": "specify",
+    "phonetic": "/ˈspesɪfaɪ/",
+    "meaning": "v. 具体说明；明确规定",
+    "scene": "spec（看）+ ify（使）→ 把东西说到“看得见”的程度。你说“高温”，这是模糊的；specify 成“85°C”，这才是可执行的。",
+    "example": "The protocol specifies the exact temperature and duration.",
+    "exampleCn": "该方案明确规定了确切的温度和持续时间。"
+  },
+  {
+    "word": "stable",
+    "phonetic": "/ˈsteɪbl/",
+    "meaning": "adj. 稳定的；n. 马厩",
+    "scene": "st（站）+ able → 能“站住”的。一个 stable 的系统，受到扰动后能回到原位——如果回不来，那就是 unstable，设计不能交付。",
+    "example": "The compound is stable under ambient conditions.",
+    "exampleCn": "该化合物在环境条件下是稳定的。"
+  },
+  {
+    "word": "stimulate",
+    "phonetic": "/ˈstɪmjuleɪt/",
+    "meaning": "v. 刺激；激励；促进",
+    "scene": "stimul（刺棒）+ ate → 用“刺棒”戳一下，让它动起来。一个新发现可以 stimulate 整个领域的研究——它不是答案，是发令枪。",
+    "example": "The finding stimulated further research in the field.",
+    "exampleCn": "这一发现促进了该领域的进一步研究。"
+  },
+  {
+    "word": "substitute",
+    "phonetic": "/ˈsʌbstɪtuːt/",
+    "meaning": "v. 代替；n. 替代品",
+    "scene": "sub-（下面）+ stitut（站）→ 站在下面“顶替”位置。你用便宜的 substitute 替代贵材料——但性能能不能对上，得测了才知道。",
+    "example": "The cheaper material can be substituted for the original.",
+    "exampleCn": "这种更便宜的材料可以替代原来的材料。"
+  },
+  {
+    "word": "sufficient",
+    "phonetic": "/səˈfɪʃnt/",
+    "meaning": "adj. 足够的；充分的",
+    "scene": "suf-（下面）+ fic（做）+ ient → 在下面“做够了”支撑。证据 sufficient，结论才能站住——差一点也不行。",
+    "example": "The evidence is sufficient to support the conclusion.",
+    "exampleCn": "证据足以支持该结论。"
+  },
+  {
+    "word": "suspend",
+    "phonetic": "/səˈspend/",
+    "meaning": "v. 暂停；悬挂；悬浮",
+    "scene": "sus-（下面）+ pend（挂）→ 挂在下面。实验被 suspend，不是取消，是“挂起来”等条件——粒子悬浮在液体中，也是 suspend。",
+    "example": "The experiment was suspended due to equipment failure.",
+    "exampleCn": "实验因设备故障而暂停。"
+  },
+  {
+    "word": "sustain",
+    "phonetic": "/səˈsteɪn/",
+    "meaning": "v. 维持；支撑；遭受",
+    "scene": "sus-（下面）+ tain（拿住）→ 在下面“托住”。一个理论要 sustain 住所有反例，才算站得住——托不住，就会塌。",
+    "example": "The system can sustain high loads without failure.",
+    "exampleCn": "该系统能承受高负载而不失效。"
+  },
+  {
+    "word": "terminate",
+    "phonetic": "/ˈtɜːrmɪneɪt/",
+    "meaning": "v. 终止；结束",
+    "scene": "termin（边界）+ ate → 走到“边界”就停。实验 terminate 后，你要把所有数据归档——结束不是终点，是整理的起点。",
+    "example": "The experiment was terminated after 24 hours.",
+    "exampleCn": "实验在 24 小时后终止。"
+  },
+  {
+    "word": "transform",
+    "phonetic": "/trænsˈfɔːrm/",
+    "meaning": "v. 转变；变换",
+    "scene": "trans-（跨越）+ form（形状）→ 跨到“另一种形状”。傅里叶变换 transform 时域信号到频域——同一个东西，换了个看法。",
+    "example": "The signal is transformed into the frequency domain.",
+    "exampleCn": "信号被变换到频域。"
+  },
+  {
+    "word": "transmit",
+    "phonetic": "/trænsˈmɪt/",
+    "meaning": "v. 传输；传播；传染",
+    "scene": "trans-（跨越）+ mit（送）→ 跨过距离“送”过去。信号 transmit 到接收端——距离越远，衰减越大，这就是通信的根本矛盾。",
+    "example": "The data are transmitted over a wireless link.",
+    "exampleCn": "数据通过无线链路传输。"
+  },
+  {
+    "word": "undergo",
+    "phonetic": "/ˌʌndərˈɡoʊ/",
+    "meaning": "v. 经历；经受",
+    "scene": "under（下面）+ go（走）→ 从下面“走”过去。材料 undergo 相变，不是它主动选的，是条件到了，它必须“走”这一遭。",
+    "example": "The samples underwent heat treatment before testing.",
+    "exampleCn": "样品在测试前经过了热处理。"
+  },
+  {
+    "word": "undertake",
+    "phonetic": "/ˌʌndərˈteɪk/",
+    "meaning": "v. 承担；着手做",
+    "scene": "under（下面）+ take（拿）→ 把任务“拿到自己下面”。你 undertake 一个课题，就是把责任揽到自己身上——不是别人推给你，是你主动接的。",
+    "example": "The team undertook a comprehensive study of the material.",
+    "exampleCn": "该团队承担了对该材料的全面研究。"
+  },
+  {
+    "word": "utilise",
+    "phonetic": "/ˈjuːtəlaɪz/",
+    "meaning": "v. 利用；使用",
+    "scene": "util（有用）+ ise（使）→ 使东西“变得有用”。你 utilise 现有设备做新实验——不是买新的，是把已有的用出新花样。",
+    "example": "The method utilises existing hardware efficiently.",
+    "exampleCn": "该方法高效利用了现有硬件。"
+  },
+  {
+    "word": "valid",
+    "phonetic": "/ˈvælɪd/",
+    "meaning": "adj. 有效的；正当的",
+    "scene": "val（价值）+ id → 有“价值”的、站得住的。一个 valid 的结论，换个人、换个时间、换个样本，仍然成立——否则只是巧合。",
+    "example": "The method is valid only under certain conditions.",
+    "exampleCn": "该方法仅在某些条件下有效。"
+  },
+  {
+    "word": "verify",
+    "phonetic": "/ˈverɪfaɪ/",
+    "meaning": "v. 验证；核实",
+    "scene": "ver（真）+ ify（使）→ 使某件事“变成真的”。仿真结果必须 verify 于实测——仿真说“行”，实测说“不一定”。",
+    "example": "The simulation results were verified experimentally.",
+    "exampleCn": "仿真结果通过实验得到了验证。"
+  },
+  {
+    "word": "violate",
+    "phonetic": "/ˈvaɪəleɪt/",
+    "meaning": "v. 违反；侵犯",
+    "scene": "viol（暴力）+ ate → 用暴力“破”规则。数据造假 violate 学术伦理——不是“小错”，是底线问题。",
+    "example": "The procedure violates the safety regulations.",
+    "exampleCn": "该程序违反了安全法规。"
+  },
+  {
+    "word": "yield",
+    "phonetic": "/jiːld/",
+    "meaning": "v. 产生；让步；n. 产量；良率",
+    "scene": "古英语 gieldan（付出）→ 土地“付出”收成。芯片流片后，100 片里能用几片，就是 yield——它是设计和工艺共同交出的答卷。",
+    "example": "The new process yields a higher proportion of working chips.",
+    "exampleCn": "新工艺产出了更高比例的可工作芯片。"
+  }
+]

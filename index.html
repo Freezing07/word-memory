@@ -206,6 +206,12 @@
   .btn-warn:hover:not(:disabled){ border-color:var(--warn); }
   .btn-danger{ border-color:var(--danger-border); background:var(--danger-soft); color:var(--danger); font-weight:600; }
   .btn-danger:hover:not(:disabled){ border-color:var(--danger); }
+  /* 处于开启状态的模式按钮（自测模式） */
+  .btn.is-on{
+    border-color:var(--accent); background:var(--accent-soft);
+    color:var(--accent-text); font-weight:600;
+  }
+  .btn.is-on:hover:not(:disabled){ background:var(--accent-soft); border-color:var(--accent); }
   /* 圆形图标按钮（发音 / 主题切换） */
   .btn-icon{
     width:34px; height:34px; padding:0; flex-shrink:0;
@@ -232,7 +238,34 @@
   @keyframes slide-in{ from{ opacity:0; transform:translateY(-6px); } to{ opacity:1; transform:none; } }
 
   /* ---------- 单词列表 ---------- */
-  .list{ margin-top:14px; display:flex; flex-direction:column; gap:9px; }
+  .list{ margin-top:14px; display:flex; flex-direction:column; gap:14px; }
+
+  /* 上下两个区域 */
+  .sec{ display:flex; flex-direction:column; gap:9px; }
+  .sec-head{
+    display:flex; align-items:center; gap:9px; flex-wrap:wrap;
+    padding:0 2px 2px; font-size:0.875rem; text-align:left;
+    background:transparent; border:none; width:100%;
+  }
+  .sec-title{ font-weight:700; color:var(--text); }
+  .sec-count{
+    display:inline-block; min-width:22px; padding:0 7px;
+    background:var(--line-soft); color:var(--text-soft);
+    border-radius:9px; font-size:0.75rem; line-height:1.6;
+    text-align:center; font-variant-numeric:tabular-nums; font-weight:600;
+  }
+  .sec-hint{ color:var(--text-dim); font-size:0.75rem; font-weight:400; }
+  .sec-toggle{ cursor:pointer; border-radius:var(--radius-sm); transition:background .16s; }
+  .sec-toggle:hover{ background:var(--line-soft); }
+  .sec-pending .sec-title{ color:var(--warn-text); }
+  .sec-known .sec-title{ color:var(--ok); }
+  .sec-empty{
+    padding:16px 18px; border-radius:var(--radius);
+    border:1px dashed var(--line); color:var(--text-dim); font-size:0.875rem;
+    text-align:center; background:var(--card);
+  }
+  .rows{ display:flex; flex-direction:column; gap:9px; }
+
   .row{
     background:var(--card); border:1px solid var(--line);
     border-left:4px solid transparent;
@@ -255,6 +288,12 @@
     color:var(--text-dim); margin-left:9px; letter-spacing:0;
   }
   .row .meaning{ font-size:0.875rem; color:var(--text-soft); margin-top:3px; }
+  /* 自测模式下的遮罩提示（替代释义的位置） */
+  .row .meaning.is-masked{
+    color:var(--text-dim); font-size:0.8125rem; letter-spacing:2px;
+    user-select:none;
+  }
+  .row.is-peeked .col-main .word{ color:var(--accent); }
   .row .act{ display:flex; gap:8px; flex-shrink:0; align-items:center; }
   .chev{
     display:inline-block; width:15px; margin-right:2px;
@@ -316,6 +355,11 @@
   }
   .kbd-ph{ color:var(--text-dim); font-size:0.9375rem; margin-top:7px; min-height:22px; }
   .kbd-meaning{ font-size:1.0625rem; color:var(--text-soft); margin-top:5px; min-height:26px; }
+  /* 自测模式：中文释义变成主提示（英文被藏起来了） */
+  .kbd-meaning.is-prompt{
+    font-size:1.5rem; font-weight:700; color:var(--text);
+    margin-top:0; min-height:38px; line-height:1.4;
+  }
 
   .kbd-box{
     display:inline-flex; align-items:center; justify-content:flex-start;
@@ -351,6 +395,7 @@
   .kbd-stats b{ color:var(--text); font-size:1rem; font-variant-numeric:tabular-nums; }
   .kbd-done .big{ font-size:1.4375rem; font-weight:700; margin-bottom:8px; }
   .kbd-done .kbd-hint{ margin-top:2px; }
+  .kbd-note{ margin-top:14px; color:var(--text-dim); font-size:0.75rem; opacity:.85; }
 
   /* 接输入法用的透明输入框：
      不能 display:none / visibility:hidden，否则拿不到焦点、软键盘不弹。
@@ -606,6 +651,7 @@
       <button class="btn-icon" id="btnTheme" title="切换深色 / 浅色" aria-label="切换深色或浅色">🌙</button>
       <button class="btn btn-primary" id="btnImport">导入词库</button>
       <button class="btn" id="btnCheckin">打卡</button>
+      <button class="btn" id="btnQuiz">自测模式</button>
       <button class="btn" id="btnSettings">设置</button>
       <button class="btn" id="btnKbd">键盘模式</button>
     </div>
@@ -681,7 +727,6 @@
   <footer class="bar">
     <span>已掌握 <b id="knownCount">0</b> 个 · 复习池 <b id="reviewCount">0</b> 词 · 词库共 <b id="bankCount">0</b> 词</span>
     <span class="bar-right">
-      <button class="btn" id="btnReview">查看复习池</button>
       <button class="btn" id="btnExport">导出进度</button>
     </span>
   </footer>
@@ -759,6 +804,12 @@
     </div>
 
     <div class="set-row">
+      <label for="setQuiz">自测模式</label>
+      <span class="set-ctl"><input type="checkbox" id="setQuiz"></span>
+    </div>
+    <div class="set-note">打开后，列表上方区域的中文释义会被隐藏（点单词可临时对答案），方便自测。键盘模式不受影响。</div>
+
+    <div class="set-row">
       <label for="setPhonetic">显示音标</label>
       <span class="set-ctl"><input type="checkbox" id="setPhonetic"></span>
     </div>
@@ -801,7 +852,8 @@ const DEFAULT_SETTINGS = {
   keyboardMode: false,  // 是否默认进入键盘模式
   theme: 'auto',        // auto | light | dark
   fontScale: 1,         // 界面字号倍率：0.9 | 1 | 1.1 | 1.25
-  headFont: 'serif'     // 英文词头字体：serif | sans | mono
+  headFont: 'serif',    // 英文词头字体：serif | sans | mono
+  quizMode: false       // 自测模式：隐藏上方区域的中文释义，点一下才显示
 };
 
 // 英文词头可选字体
@@ -898,7 +950,11 @@ function createWordRecord(raw) {
     exampleCn:  s(raw.exampleCn),
     status:     ['new', 'unsure', 'known'].includes(raw.status) ? raw.status : 'new',
     failCount:  Math.max(0, Number(raw.failCount) || 0),
-    lastReview: (typeof raw.lastReview === 'string' && raw.lastReview) ? raw.lastReview : null
+    lastReview: (typeof raw.lastReview === 'string' && raw.lastReview) ? raw.lastReview : null,
+    // servedOn：这个字是哪一天被派发进当日任务的。
+    // 用来实现“过时不候”——派发过、又没被标记的词，之后不再自动派发。
+    // 存日期而不是布尔值，是为了同一天内重建任务时名单不会缩水。
+    servedOn:   (typeof raw.servedOn === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(raw.servedOn)) ? raw.servedOn : null
   };
 }
 
@@ -919,6 +975,7 @@ function normalizeSettings(s) {
   out.theme        = ['auto', 'light', 'dark'].includes(out.theme) ? out.theme : 'auto';
   out.fontScale    = FONT_SCALES.includes(Number(out.fontScale)) ? Number(out.fontScale) : 1;
   out.headFont     = Object.prototype.hasOwnProperty.call(FONT_STACKS, out.headFont) ? out.headFont : 'serif';
+  out.quizMode     = !!out.quizMode;
   return out;
 }
 
@@ -978,7 +1035,8 @@ function normalizeState(parsed) {
   const words = (parsed.words || []).map(w => Object.assign(createWordRecord(w), w, {
     status: ['new', 'unsure', 'known'].includes(w.status) ? w.status : 'new',
     failCount: Math.max(0, Number(w.failCount) || 0),
-    lastReview: w.lastReview || null
+    lastReview: w.lastReview || null,
+    servedOn: (typeof w.servedOn === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(w.servedOn)) ? w.servedOn : null
   }));
   const settings = normalizeSettings(parsed.settings);
   const tt = parsed.todayTask;
@@ -1020,11 +1078,23 @@ function saveData() {
 /* ---------- 4. 每日任务逻辑（阶段 2 核心） ---------- */
 
 /**
- * 生成“今天该背哪些词”，规则来自需求文档 2.2：
- *   ① 复习池：所有 status==='unsure' 的词，按 failCount 降序（错得多的排前面），全部纳入
- *   ② 新词：从 status==='new' 的词里按词库顺序取，补足到每日上限
- *   ③ 额外保留：今天已经标记过的词，留在名单里方便当天回看（不影响 ①② 的规则）
- * 返回单词对象数组。
+ * 一个“新词”现在能不能被派发：
+ *   - 从没派发过（servedOn 为空）→ 可以
+ *   - 就是今天派发的 → 也可以（同一天内重建任务时名单不能缩水）
+ *   - 昨天或更早派发过、又一直没被标记 → 不再派发（“过时不候”）
+ */
+function isPickableNew(w, t) {
+  return w.status === 'new' && (!w.servedOn || w.servedOn === t);
+}
+
+/**
+ * 生成“今天该背哪些词”：
+ *   ① 今天已经标记过的词（保留在名单里，记成“已记住”的要显示在下方区域）
+ *   ② 复习池：所有 status==='unsure' 的词，按 failCount 降序，全部纳入
+ *   ③ 新词：只取可派发的（见 isPickableNew），按词库顺序补足到每日上限
+ *
+ * 注意：这个函数是**纯的**，不改数据（调试用的 previewToday 也调它）。
+ * 真正“派发”并打上 servedOn 标记的是 setTodayTask()。
  */
 function buildTodayTask() {
   const t = today();
@@ -1036,7 +1106,7 @@ function buildTodayTask() {
     if (w && !seen.has(wordKey(w.word))) { seen.add(wordKey(w.word)); picked.push(w); }
   };
 
-  // ① 今天已动过的词（标记后仍留在列表里，明天是否出现由 status 决定）
+  // ① 今天已动过的词
   state.words.filter(w => w.lastReview === t).forEach(add);
 
   // ② 复习池：没记住的词全部纳入，错得越多越靠前
@@ -1048,15 +1118,23 @@ function buildTodayTask() {
   // ③ 新词：按词库顺序补足到每日上限
   const need = Math.max(0, limit - picked.length);
   if (need > 0) {
-    state.words.filter(w => w.status === 'new').slice(0, need).forEach(add);
+    state.words.filter(w => isPickableNew(w, t)).slice(0, need).forEach(add);
   }
 
   return picked;
 }
 
+// 落盘今日名单，并给这些词打上“派发日期”
+function setTodayTask(words) {
+  const t = today();
+  state.todayTask = { date: t, words: words.map(w => w.word) };
+  words.forEach(w => { w.servedOn = t; });
+  saveData();
+}
+
 /**
  * 取出今日任务列表。
- * 按已确认的设计：同一天内任务名单固定（存在 todayTask 里），刷新不会不断涌入新词。
+ * 同一天内名单固定（存在 todayTask 里），刷新不会不断涌入新词。
  */
 function getTodayList() {
   const t = today();
@@ -1064,20 +1142,25 @@ function getTodayList() {
 
   // 名单仍然是今天的，且词库里这些词还在 → 直接沿用
   if (state.todayTask && state.todayTask.date === t && state.todayTask.words.length) {
-    const alive = state.todayTask.words.filter(n => byKey.has(wordKey(n)));
-    if (alive.length) return alive.map(n => byKey.get(wordKey(n)));
+    const alive = state.todayTask.words.map(n => byKey.get(wordKey(n))).filter(Boolean);
+    if (alive.length) {
+      // 老数据可能没有 servedOn，这里补上（幂等，同时也算一次性迁移）
+      let changed = false;
+      alive.forEach(w => { if (w.servedOn !== t) { w.servedOn = t; changed = true; } });
+      if (changed) saveData();
+      return alive;
+    }
   }
 
   // 否则重新生成（新的一天 / 首次运行 / 词库被替换）
-  state.todayTask = { date: t, words: buildTodayTask().map(w => w.word) };
-  saveData();
+  const picked = buildTodayTask();
+  setTodayTask(picked);
   return state.todayTask.words.map(n => byKey.get(wordKey(n))).filter(Boolean);
 }
 
-// 强制重新生成今日任务（导入词库后调用，让新词当天就能进来）
+// 强制重新生成今日任务（导入词库 / 改每日词数后调用）
 function rebuildTodayTask() {
-  state.todayTask = { date: today(), words: buildTodayTask().map(w => w.word) };
-  saveData();
+  setTodayTask(buildTodayTask());
 }
 
 /* ---------- 5. 标记操作 ---------- */
@@ -1214,29 +1297,35 @@ function importWords(list, mode, fileMeta) {
 
 /* ---------- 7. 渲染层 ---------- */
 
-let viewMode = 'today';              // today = 今日任务 | review = 复习池
 const expandedWords = new Set();     // 哪些词展开了详情
+const peekedWords = new Set();       // 自测模式下，哪些词临时显示了释义（对答案）
+let knownSectionOpen = false;        // 下方“今日已记住”区域是否展开（默认折叠）
 
-// 复习池：所有没记住的词，错得多的排前面
-function reviewPool() {
-  return state.words
-    .filter(w => w.status === 'unsure')
-    .sort((a, b) => (b.failCount - a.failCount) || a.word.localeCompare(b.word));
+// 自测模式是否生效（只作用于上方“未记住”区）
+function isQuizMode() {
+  return !!state.settings.quizMode;
+}
+
+// 今日已记住的词（只有今天标记过的才会出现在今日名单里）
+function knownTodayWords(list) {
+  return list.filter(w => w.status === 'known');
+}
+// 上方未记住区：今日名单里还没被收走的词
+function pendingTodayWords(list) {
+  return list.filter(w => w.status !== 'known');
 }
 
 function render() {
   const todayList = getTodayList();
   const t = today();
-  const list = viewMode === 'review' ? reviewPool() : todayList;
+  const pending = pendingTodayWords(todayList);
+  const known = knownTodayWords(todayList);
 
-  // 顶栏：日期 + 今日进度（分子=今天已标记的词数，分母=今日任务总数）
-  // 注意：进度始终按“今日任务”算，切到复习池视图也不改变口径
+  // 顶栏：日期 + 今日已记住（分子只算今天点过“记住了”的）
   document.getElementById('dateLabel').textContent = '📖 ' + t;
-  const doneToday = todayList.filter(w => w.lastReview === t).length;
-  document.getElementById('progDone').textContent = doneToday;
+  document.getElementById('progDone').textContent = known.length;
   document.getElementById('progTotal').textContent = todayList.length;
-  // 顶栏下沿的进度条
-  const pct = todayList.length ? Math.round(doneToday / todayList.length * 100) : 0;
+  const pct = todayList.length ? Math.round(known.length / todayList.length * 100) : 0;
   document.getElementById('progBar').style.width = pct + '%';
 
   // 底栏统计
@@ -1244,15 +1333,18 @@ function render() {
   document.getElementById('reviewCount').textContent = state.words.filter(w => w.status === 'unsure').length;
   document.getElementById('bankCount').textContent = state.words.length;
 
-  // 复习池按钮的文字随视图切换
-  document.getElementById('btnReview').textContent = viewMode === 'review' ? '返回今日任务' : '查看复习池';
+  // 自测模式按钮：打开时高亮 + 文案变成“退出自测”
+  const quizBtn = document.getElementById('btnQuiz');
+  quizBtn.textContent = isQuizMode() ? '退出自测' : '自测模式';
+  quizBtn.classList.toggle('is-on', isQuizMode());
 
-  // 今日任务全部完成 → 提示去打卡（打过卡就不再提示）
+  // 今日任务全部处理过 → 提示去打卡（打过卡就不再提示）
+  const doneToday = todayList.filter(w => w.lastReview === t).length;
   const doneAll = todayList.length > 0 && doneToday >= todayList.length;
   const cta = document.getElementById('ctaBanner');
   if (doneAll && !isCheckedIn(t)) {
     document.getElementById('ctaText').textContent =
-      '🎉 今天的 ' + todayList.length + ' 个词都过了，去打卡吧';
+      '🎉 今天的 ' + todayList.length + ' 个词都处理完了，去打卡吧';
     cta.hidden = false;
   } else {
     cta.hidden = true;
@@ -1261,47 +1353,113 @@ function render() {
   // 打卡页开着的话，数据变了也要跟着刷新
   if (inCheckin) renderCheckin();
 
-  // 列表本体
+  // 列表本体：上下两个区域
   const box = document.getElementById('list');
-  if (!list.length) {
-    box.innerHTML = viewMode === 'review'
-      ? '<div class="empty"><h3>复习池是空的</h3>目前没有“没记住”的词。</div>'
-      : (state.words.length
-          ? '<div class="empty"><h3>今日任务已清空</h3>所有词都处理完了，明天再来吧。</div>'
-          : '<div class="empty"><h3>词库是空的</h3>点右上角「导入词库」选择一个 JSON 文件开始。</div>');
+  if (!state.words.length) {
+    box.innerHTML = '<div class="empty"><h3>词库是空的</h3>点右上角「导入词库」选择一个 JSON 文件开始。</div>';
+    return;
+  }
+  if (!todayList.length) {
+    box.innerHTML = '<div class="empty"><h3>今日任务已清空</h3>所有词都处理完了，明天再来吧。</div>';
     return;
   }
 
-  box.innerHTML = list.map(w => {
-    const cls = w.status === 'known' ? 'is-known' : (w.status === 'unsure' ? 'is-unsure' : '');
-    const tag = w.status === 'known'
-      ? '<span class="tag tag-known">已掌握</span>'
-      : (w.status === 'unsure'
-          ? '<span class="tag tag-unsure">没记住 ×' + w.failCount + '</span>'
-          : '<span class="tag tag-new">新词</span>');
-    const ph = state.settings.showPhonetic && w.phonetic
-      ? '<span class="ph">' + esc(w.phonetic) + '</span>' : '';
+  box.innerHTML =
+    renderPendingSection(pending) +
+    renderKnownSection(known);
+}
 
-    const expanded = expandedWords.has(wordKey(w.word));
-    return '' +
-      '<div class="row ' + cls + (expanded ? ' is-open' : '') + '" data-word="' + esc(w.word) + '">' +
-        '<div class="row-main">' +
-          '<div class="col-main" title="点击展开场景和例句">' +
-            '<div class="word">' +
-              '<span class="chev">' + (expanded ? '▾' : '▸') + '</span>' +
-              esc(w.word) + ph + tag +
-            '</div>' +
-            '<div class="meaning">' + esc(w.meaning) + '</div>' +
+// 上半部分：未记住（默认展开）
+function renderPendingSection(list) {
+  const quiz = isQuizMode();
+  const rows = list.length
+    ? list.map(w => renderRow(w, 'pending')).join('')
+    : '<div class="sec-empty">这一部分空了 🎉 今天的词都收到了下面。</div>';
+  const hint = quiz
+    ? '自测模式：中文已隐藏，先回想再判断，点单词可对答案'
+    : '认为记住了就点右下角「记住了」，它会被收到下方';
+  return '' +
+    '<section class="sec sec-pending">' +
+      '<div class="sec-head">' +
+        '<span class="sec-title">未记住</span>' +
+        '<span class="sec-count">' + list.length + '</span>' +
+        '<span class="sec-hint">' + hint + '</span>' +
+      '</div>' +
+      '<div class="rows">' + rows + '</div>' +
+    '</section>';
+}
+
+// 下半部分：今日已记住（默认折叠，可展开）
+function renderKnownSection(list) {
+  const open = knownSectionOpen;
+  const body = open
+    ? '<div class="rows">' + (list.length
+        ? list.map(w => renderRow(w, 'known')).join('')
+        : '<div class="sec-empty">今天还没有记住任何词。</div>') + '</div>'
+    : '';
+  return '' +
+    '<section class="sec sec-known">' +
+      '<button class="sec-head sec-toggle" data-toggle="known" aria-expanded="' + open + '">' +
+        '<span class="chev">' + (open ? '▾' : '▸') + '</span>' +
+        '<span class="sec-title">今日已记住</span>' +
+        '<span class="sec-count">' + list.length + '</span>' +
+        '<span class="sec-hint">' + (open ? '点击收起' : '点击展开查看') + '</span>' +
+      '</button>' +
+      body +
+    '</section>';
+}
+
+// 一行单词。where = 'pending'（带两个按钮）| 'known'（只留“没记住”，用来撤回）
+function renderRow(w, where) {
+  const key = wordKey(w.word);
+  const cls = w.status === 'known' ? 'is-known' : (w.status === 'unsure' ? 'is-unsure' : '');
+  const tag = w.status === 'known'
+    ? '<span class="tag tag-known">已记住</span>'
+    : (w.status === 'unsure'
+        ? '<span class="tag tag-unsure">没记住 ×' + w.failCount + '</span>'
+        : '<span class="tag tag-new">新词</span>');
+  const ph = state.settings.showPhonetic && w.phonetic
+    ? '<span class="ph">' + esc(w.phonetic) + '</span>' : '';
+
+  // 自测模式只作用于上方“未记住”区：藏中文、不可展开、点一下才显示释义
+  const quiz = isQuizMode() && where === 'pending';
+  const peeked = quiz && peekedWords.has(key);
+  const expanded = !quiz && expandedWords.has(key);
+
+  const meaning = (quiz && !peeked)
+    ? '<div class="meaning is-masked">点一下看释义</div>'
+    : '<div class="meaning">' + esc(w.meaning) + '</div>';
+
+  const acts = where === 'known'
+    ? '<button class="btn btn-warn" data-act="unsure">没记住（撤回）</button>'
+    : '<button class="btn btn-ok"   data-act="known">记住了</button>' +
+      '<button class="btn btn-warn" data-act="unsure">没记住</button>';
+
+  const title = quiz
+    ? (peeked ? '点一下收起释义' : '点一下显示释义')
+    : '点击展开场景和例句';
+
+  // 自测模式下不放那个小图标（太小看不清），留个等宽空位免得切换模式时整行文字左右跳
+  const chev = quiz ? '' : (expanded ? '▾' : '▸');
+
+  return '' +
+    '<div class="row ' + cls + (expanded ? ' is-open' : '') + (peeked ? ' is-peeked' : '') +
+        '" data-word="' + esc(w.word) + '">' +
+      '<div class="row-main">' +
+        '<div class="col-main" title="' + title + '">' +
+          '<div class="word">' +
+            '<span class="chev">' + chev + '</span>' +
+            esc(w.word) + ph + tag +
           '</div>' +
-          '<div class="act">' +
-            '<button class="btn-icon" data-speak title="听发音" aria-label="听发音">🔊</button>' +
-            '<button class="btn btn-ok"   data-act="known">记住了</button>' +
-            '<button class="btn btn-warn" data-act="unsure">没记住</button>' +
-          '</div>' +
+          meaning +
         '</div>' +
-        (expanded ? renderDetail(w) : '') +
-      '</div>';
-  }).join('');
+        '<div class="act">' +
+          '<button class="btn-icon" data-speak title="听发音" aria-label="听发音">🔊</button>' +
+          acts +
+        '</div>' +
+      '</div>' +
+      (expanded ? renderDetail(w) : '') +
+    '</div>';
 }
 
 // 展开后的详情：场景 + 例句（例句受 settings.showExample 控制）
@@ -1474,6 +1632,7 @@ function openSettings() {
   document.getElementById('setPhonetic').checked = s.showPhonetic;
   document.getElementById('setExample').checked = s.showExample;
   document.getElementById('setKeyboard').checked = s.keyboardMode;
+  document.getElementById('setQuiz').checked = s.quizMode;
   document.getElementById('setHint').textContent =
     '今日任务 ' + (state.todayTask ? state.todayTask.words.length : 0) + ' 词 · 词库共 ' + state.words.length + ' 词';
   document.getElementById('setMask').hidden = false;
@@ -1499,6 +1658,27 @@ function applySetting(key, value) {
   saveData();
   render();
   if (inKeyboard) renderKbd();   // 键盘面板也要跟着更新
+}
+
+/* ---- 自测模式（列表页 + 键盘模式） ---- */
+function setQuizMode(on) {
+  state.settings.quizMode = !!on;
+  peekedWords.clear();      // 切换模式时把已对过的答案清掉，重新开始
+  saveData();
+  render();
+  // 键盘模式开着的话，面板必须立刻跟着变。
+  // 少了这一句就只能在列表页切换模式，在键盘模式里点按钮没反应。
+  if (inKeyboard) {
+    renderKbd();
+    focusKbdInput();        // 点按钮可能让输入框失焦，顺手把焦点交回去
+  }
+  const cb = document.getElementById('setQuiz');
+  if (cb) cb.checked = state.settings.quizMode;
+  return state.settings.quizMode;
+}
+
+function toggleQuizMode() {
+  return setQuizMode(!state.settings.quizMode);
 }
 
 /* ---- 导出进度 ---- */
@@ -1542,7 +1722,7 @@ function resetProgress(scope) {
   state.todayTask = null;
   state.checkins = {};        // 打卡记录也属于学习进度，一起清掉
   expandedWords.clear();
-  viewMode = 'today';
+  knownSectionOpen = false;
   saveData();
   if (inKeyboard) exitKeyboardMode();
   if (inCheckin) exitCheckin();
@@ -1902,21 +2082,16 @@ function focusKbdInput() {
 }
 // 今日列表里还没掌握的词，按列表顺序
 /* ---- 本轮练哪些词 ---- */
-// 今日列表里还没掌握的词，按列表顺序
+// 纯拼写练习：今日任务列表里的**全部**词，一个不落
+// （不再排除已掌握的词，也不再跳过今天已标记过的词）
 function buildSessionQueue() {
-  return getTodayList().filter(w => w.status !== 'known');
+  return getTodayList();
 }
 
 function startSession(queue) {
-  const t = today();
-  const all = queue || buildSessionQueue();
-  // 从今天还没动过的词开始（中断后回来能接着练）；
-  // 直接把前面的词切掉，这样“第 N/M 词”显示的数字才对得上
-  let start = all.findIndex(w => w.lastReview !== t);
-  if (start < 0) start = 0;   // 全练过了 → 从头再走一轮
-  const list = all.slice(start);
+  const list = (queue || buildSessionQueue()).slice();
   session = {
-    queue: list,
+    queue: list,        // 每次进入都从第 1 个词开始，练完一轮就结束
     idx: 0,
     typed: '',          // 已输入的字符
     errorLocked: false, // 敲错了还没退格 → 锁住后续输入
@@ -1926,8 +2101,8 @@ function startSession(queue) {
     correctKeys: 0,     // 本轮敲对的按键数
     startTime: null,    // 本轮第一次按键的时间（算 WPM 用）
     finished: 0,        // 本轮完成的词数
-    known: 0,           // 其中标记为记住的
-    unsure: 0           // 其中标记为没记住的
+    known: 0,           // 其中全程无错的（只用于本轮小结，不写进度）
+    unsure: 0           // 其中中途敲错过的（只用于本轮小结，不写进度）
   };
 }
 
@@ -1958,21 +2133,37 @@ function renderKbd() {
   }
 
   const w = session.queue[session.idx];
+
+  // 自测模式下键盘模式反过来：只留中文和词性，隐去英文、音标、发音按钮，
+  // 变成“看中文凭记忆敲出英文”的练习。
+  const quiz = isQuizMode();
+  const head =
+    // 自测模式下隐去英文词头和音标，只留中文（并把中文放大成主提示）
+    (quiz ? '' :
+      '<div class="kbd-word" id="kbdWord">' + esc(w.word) + '</div>' +
+      '<div class="kbd-ph" id="kbdPhonetic">' +
+        (state.settings.showPhonetic ? esc(w.phonetic || '') : '') + '</div>') +
+    '<div class="kbd-meaning' + (quiz ? ' is-prompt' : '') + '" id="kbdMeaning">' +
+      esc(w.meaning) + '</div>' +
+    (quiz ? '' :
+      '<div class="kbd-stats" style="margin-top:14px">' +
+        '<button class="btn" data-kbd="speak">🔊 听发音</button>' +
+      '</div>');
+
+  const hintText = quiz
+    ? '看中文，凭记忆敲出英文单词 · 手机点画面唤起键盘（Esc 返回列表）'
+    : '直接敲键盘输入 · 手机上点一下画面唤起键盘（Esc 返回列表）';
+
   card.innerHTML =
-    '<div class="kbd-word" id="kbdWord">' + esc(w.word) + '</div>' +
-    '<div class="kbd-ph" id="kbdPhonetic">' +
-      (state.settings.showPhonetic ? esc(w.phonetic || '') : '') + '</div>' +
-    '<div class="kbd-meaning" id="kbdMeaning">' + esc(w.meaning) + '</div>' +
-    '<div class="kbd-stats" style="margin-top:14px">' +
-      '<button class="btn" data-kbd="speak">🔊 听发音</button>' +
-    '</div>' +
+    head +
     '<div class="kbd-box" id="kbdBox"></div>' +
-    '<div class="kbd-hint" id="kbdHint">直接敲键盘输入 · 手机上点一下画面唤起键盘（Esc 返回列表）</div>' +
+    '<div class="kbd-hint" id="kbdHint">' + hintText + '</div>' +
     '<div class="kbd-stats">' +
       '<span>正确率 <b id="kbdAcc">100%</b></span>' +
       '<span>速度 <b id="kbdWpm">0</b> WPM</span>' +
       '<span>第 <b id="kbdPos">1</b>/<b id="kbdTotal">0</b> 词</span>' +
-    '</div>';
+    '</div>' +
+    '<div class="kbd-note">纯拼写练习：不影响这些词的「记住 / 没记住」状态，也不计入今日进度</div>';
 
   bindKbdButtons(w);
   updateKbdBox();
@@ -2045,6 +2236,7 @@ function renderKbdComplete(card) {
         '<button class="btn btn-primary" data-kbd="again">重开一轮</button>' +
         '<button class="btn" data-kbd="back">返回列表</button>' +
       '</div>' +
+      '<div class="kbd-note">纯拼写练习：上面的「记住 / 没记住」只是本轮表现，没有改动这些词的状态</div>' +
     '</div>';
   bindKbdButtons(null);
 }
@@ -2095,21 +2287,22 @@ function kbdBackspace() {
 // 整个词敲完
 function kbdCompleteWord(w) {
   session.done = true;
-  // 中途敲错过 → 算没记住（已确认的判定）；全程无错 → 算记住
-  const verdict = session.mistake ? 'unsure' : 'known';
-  applyVerdict(w, verdict);
 
+  // 【纯拼写练习】这里**不写任何学习进度**：
+  // 不调 applyVerdict、不改 status/failCount/lastReview、不 saveData。
+  // 键盘模式只读今日词表，练完不影响今日进度、复习池和打卡门槛。
+  const clean = !session.mistake;
   session.finished += 1;
-  if (verdict === 'known') session.known += 1; else session.unsure += 1;
+  if (clean) session.known += 1; else session.unsure += 1;   // 只用于本轮小结
 
   updateKbdBox();
   const hint = document.getElementById('kbdHint');
   if (hint) {
-    hint.textContent = verdict === 'known' ? '✓ 记住了' : '✗ 中途敲错过，已记为“没记住”';
-    hint.classList.toggle('is-error', verdict !== 'known');
+    hint.textContent = clean ? '✓ 记住了' : '✗ 中途敲错过';
+    hint.classList.toggle('is-error', !clean);
   }
 
-  render();                        // 同步顶栏/底栏统计
+  // 没有数据变化，所以不需要 render()/saveData()
   setTimeout(kbdNextWord, 300);    // 延迟一小会儿再切下一个，让人看清结果
 }
 
@@ -2221,6 +2414,14 @@ document.getElementById('list').addEventListener('click', function (e) {
     return row ? state.words.find(w => wordKey(w.word) === wordKey(row.dataset.word)) : null;
   };
 
+  // 点「今日已记住」的标题 → 展开/收起
+  const toggle = e.target.closest('.sec-toggle');
+  if (toggle) {
+    knownSectionOpen = !knownSectionOpen;
+    render();
+    return;
+  }
+
   // 点 🔊 听发音
   const speakBtn = e.target.closest('button[data-speak]');
   if (speakBtn) {
@@ -2237,21 +2438,23 @@ document.getElementById('list').addEventListener('click', function (e) {
     return;
   }
 
-  // 点单词区域 → 展开/收起场景与例句
+  // 点单词区域 → 自测模式下是“对答案”，否则是展开场景/例句
   const main = e.target.closest('.col-main');
   if (main) {
     const row = main.closest('.row');
     const key = wordKey(row.dataset.word);
+    // 自测模式只作用于上方“未记住”区，且此时不允许展开
+    if (isQuizMode() && main.closest('.sec-pending')) {
+      if (peekedWords.has(key)) peekedWords.delete(key); else peekedWords.add(key);
+      render();
+      return;
+    }
     if (expandedWords.has(key)) expandedWords.delete(key); else expandedWords.add(key);
     render();
   }
 });
 
-// 复习池 / 今日任务 视图切换
-document.getElementById('btnReview').addEventListener('click', () => {
-  viewMode = viewMode === 'review' ? 'today' : 'review';
-  render();
-});
+// 复习池 / 今日任务 视图切换 —— 已取消（改为上下两个区域）
 
 document.getElementById('btnImport').addEventListener('click', () => {
   document.getElementById('importFile').click();
@@ -2315,6 +2518,12 @@ document.getElementById('setHeadFont').addEventListener('change', function () {
   applyFonts();
 });
 document.getElementById('btnTheme').addEventListener('click', toggleTheme);
+
+// 自测模式开关
+document.getElementById('btnQuiz').addEventListener('click', toggleQuizMode);
+document.getElementById('setQuiz').addEventListener('change', function () {
+  setQuizMode(this.checked);
+});
 
 /* ---- 键盘模式：输入法与焦点 ---- */
 // 输入框内容变化（手机软键盘、桌面输入法、粘贴都走这里）
@@ -2462,11 +2671,23 @@ window.wordMemory = {
   exportProgress,
   resetProgress,
 
-  // ---- 列表视图 ----
+  // ---- 自测模式（列表页）----
+  quiz: {
+    get on() { return isQuizMode(); },
+    toggle: toggleQuizMode,
+    set(on) { return setQuizMode(on); },
+    get peeked() { return Array.from(peekedWords); },
+    peek(word) { peekedWords.add(wordKey(word)); render(); },
+    unpeek(word) { peekedWords.delete(wordKey(word)); render(); },
+    clearPeek() { peekedWords.clear(); render(); }
+  },
+
+  // ---- 列表视图（上下两个区域）----
   view: {
-    get mode() { return viewMode; },
-    review() { viewMode = 'review'; render(); return reviewPool().map(w => w.word); },
-    today() { viewMode = 'today'; render(); return getTodayList().map(w => w.word); },
+    get knownOpen() { return knownSectionOpen; },
+    toggleKnown() { knownSectionOpen = !knownSectionOpen; render(); return knownSectionOpen; },
+    get pending() { return pendingTodayWords(getTodayList()).map(w => w.word); },
+    get knownToday() { return knownTodayWords(getTodayList()).map(w => w.word); },
     expand(word) { expandedWords.add(wordKey(word)); render(); },
     collapse(word) { expandedWords.delete(wordKey(word)); render(); },
     get expanded() { return Array.from(expandedWords); }

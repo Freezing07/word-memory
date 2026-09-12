@@ -1,0 +1,2482 @@
+[
+  {
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "meaning": "adj. 重要的；显著的",
+    "scene": "sign（记号）+ fic（做）+ ant（形容词后缀）→ 值得做个记号的东西，就是重要的、显著的。想象你在论文里用荧光笔划重点，划下来的都是 significant 的数据。",
+    "example": "The study found a significant difference between the two groups.",
+    "exampleCn": "研究发现两组之间存在显著差异。"
+  },
+  {
+    "word": "analyze",
+    "phonetic": "/ˈænəlaɪz/",
+    "meaning": "v. 分析，解析",
+    "scene": "ana-（向上）+ lys（松开）→ 把一团缠在一起的线向上松开、一根根理清，就是分析。想象你把一篇长论文拆成一个个论点，摆在桌上逐条看。",
+    "example": "Researchers need to analyze the data carefully before drawing conclusions.",
+    "exampleCn": "研究者在得出结论前需要仔细分析数据。"
+  },
+  {
+    "word": "approach",
+    "phonetic": "/əˈproʊtʃ/",
+    "meaning": "n. 方法，途径；v. 接近",
+    "scene": "ap-（朝向）+ proach（靠近）→ 朝着某个目标一步步靠近。做研究也一样：你选的那条靠近答案的路，就是你的 approach。",
+    "example": "We need a new approach to solving this problem.",
+    "exampleCn": "我们需要一种新方法来解决这个问题。"
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "meaning": "v. 评估，评定",
+    "scene": "as-（旁边）+ sess（坐）→ 坐在旁边仔细打量。想象考官坐在你旁边，一边看你操作一边打分，这就是 assess。",
+    "example": "Teachers assess students' progress through both exams and projects.",
+    "exampleCn": "老师通过考试和项目两种方式评估学生的进步。"
+  },
+  {
+    "word": "concept",
+    "phonetic": "/ˈkɑːnsept/",
+    "meaning": "n. 概念，观念",
+    "scene": "con-（一起）+ cept（抓）→ 把许多具体例子抓在一起，提炼出的那个共同东西就是概念。比如苹果、香蕉、橘子抓在一起，就有了 fruit 这个概念。",
+    "example": "The concept of time is difficult to define precisely.",
+    "exampleCn": "时间的概念很难精确定义。"
+  },
+  {
+    "word": "constitute",
+    "phonetic": "/ˈkɑːnstɪtuːt/",
+    "meaning": "v. 构成，组成；设立",
+    "scene": "con-（一起）+ stitut（站立）→ 几个部分站在一起，撑起一个整体。想象三根柱子站在一起撑起一座桥，它们就 constitute 了桥的支撑。",
+    "example": "Women constitute nearly half of the workforce in this industry.",
+    "exampleCn": "女性构成了该行业近一半的劳动力。"
+  },
+  {
+    "word": "establish",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "meaning": "v. 建立，设立；确立",
+    "scene": "stabl（站立）→ 让某样东西稳稳地站起来。想象你在空地上打下第一根桩，把帐篷立起来，这就是 establish。",
+    "example": "The university established a new research center last year.",
+    "exampleCn": "该大学去年建立了一个新的研究中心。"
+  },
+  {
+    "word": "indicate",
+    "phonetic": "/ˈɪndɪkeɪt/",
+    "meaning": "v. 表明，指示",
+    "scene": "in-（向）+ dic（说）+ ate → 用手指着方向“说”给你看。路标指向左边，就是在 indicate 左转。",
+    "example": "The results indicate that the treatment is effective.",
+    "exampleCn": "结果表明该治疗是有效的。"
+  },
+  {
+    "word": "involve",
+    "phonetic": "/ɪnˈvɑːlv/",
+    "meaning": "v. 涉及，包含；使参与",
+    "scene": "in-（进入）+ volv（卷）→ 把你卷进来。想象一个漩涡，一旦靠近就被卷进去，想脱身都难——这就是 involve。",
+    "example": "The project involves close cooperation between several departments.",
+    "exampleCn": "该项目涉及多个部门之间的密切合作。"
+  },
+  {
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪər/",
+    "meaning": "v. 需要，要求",
+    "scene": "re-（反复）+ quir（寻求）→ 反复寻求、非要不可。想象你写论文时反复找那篇关键文献，找不到就写不下去——它就是 required。",
+    "example": "This position requires excellent communication skills.",
+    "exampleCn": "这个职位需要出色的沟通能力。"
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "meaning": "v. 达到，实现",
+    "scene": "a-（到）+ chieve（头）→ 到达顶点。想象爬山时终于摸到山顶那块石头，就是 achieve。",
+    "example": "She achieved her goal of publishing three papers this year.",
+    "exampleCn": "她实现了今年发表三篇论文的目标。"
+  },
+  {
+    "word": "acquire",
+    "phonetic": "/əˈkwaɪər/",
+    "meaning": "v. 获得，取得；习得",
+    "scene": "ac-（朝向）+ quir（寻求）→ 朝着目标不断寻求，最终拿到手。学语言就是 acquire：不是背一次就会，是反复接触后慢慢“长”在脑子里。",
+    "example": "Children acquire language skills remarkably quickly.",
+    "exampleCn": "儿童习得语言技能的速度惊人。"
+  },
+  {
+    "word": "adapt",
+    "phonetic": "/əˈdæpt/",
+    "meaning": "v. 适应；改编",
+    "scene": "ad-（朝向）+ apt（合适）→ 朝着合适的方向调整自己。想象你到新城市，把作息、饮食、路线都调成当地模式，就是 adapt。",
+    "example": "It takes time to adapt to a new academic environment.",
+    "exampleCn": "适应新的学术环境需要时间。"
+  },
+  {
+    "word": "alternative",
+    "phonetic": "/ɔːlˈtɜːrnətɪv/",
+    "meaning": "n. 替代方案；adj. 替代的",
+    "scene": "alter（另一个）→ 当第一条路堵死时，你转向的“另一个”选择。想象导航说“前方拥堵，已为你规划替代路线”，那就是 alternative route。",
+    "example": "We must find an alternative to plastic packaging.",
+    "exampleCn": "我们必须找到塑料包装的替代方案。"
+  },
+  {
+    "word": "ambiguous",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "meaning": "adj. 模棱两可的，含糊的",
+    "scene": "ambi-（两边）+ gu（走）→ 两边都能走，意思不明确。想象一个路口没有路牌，左也行右也行，你站在那儿不知道往哪走——这就是 ambiguous。",
+    "example": "The instructions were ambiguous and confused many students.",
+    "exampleCn": "说明模棱两可，把很多学生弄糊涂了。"
+  },
+  {
+    "word": "anticipate",
+    "phonetic": "/ænˈtɪsɪpeɪt/",
+    "meaning": "v. 预期，预料；期望",
+    "scene": "anti-（提前）+ cip（拿）+ ate → 提前拿到手。想象你提前把雨伞放进包里，因为你看天色已经预料到要下雨——这就是 anticipate。",
+    "example": "We anticipate that demand will increase next year.",
+    "exampleCn": "我们预计明年需求会增加。"
+  },
+  {
+    "word": "apparent",
+    "phonetic": "/əˈpærənt/",
+    "meaning": "adj. 明显的；表面上的",
+    "scene": "ap-（朝向）+ par（出现）→ 直接出现在你眼前。想象雾散了，山一下子露出来，谁都看得见——这就是 apparent。",
+    "example": "It became apparent that the plan would not work.",
+    "exampleCn": "很明显这个计划行不通。"
+  },
+  {
+    "word": "arbitrary",
+    "phonetic": "/ˈɑːrbɪtreri/",
+    "meaning": "adj. 任意的，武断的",
+    "scene": "arbitr（裁决）→ 全凭裁决者个人意志，没有依据。想象老师不看试卷，随手一指“你及格你不及格”，这就是 arbitrary。",
+    "example": "The decision seemed arbitrary and unfair to many employees.",
+    "exampleCn": "这个决定在许多员工看来既武断又不公平。"
+  },
+  {
+    "word": "assume",
+    "phonetic": "/əˈsuːm/",
+    "meaning": "v. 假定，认为；承担",
+    "scene": "as-（朝向）+ sum（拿）→ 先拿过来当真。想象你还没看答案就先拿一个说法当基础往下推，这就是 assume。",
+    "example": "Let us assume that the theory is correct for now.",
+    "exampleCn": "我们暂且假定这个理论是正确的。"
+  },
+  {
+    "word": "attribute",
+    "phonetic": "/əˈtrɪbjuːt/",
+    "meaning": "v. 把……归因于；n. 属性",
+    "scene": "at-（朝向）+ tribut（给予）→ 把原因“给”到某处。想象你指着成绩单说：这次进步要归功于每天早起——你就在 attribute 进步 to 早起。",
+    "example": "Scientists attribute the rise in temperature to human activity.",
+    "exampleCn": "科学家把气温上升归因于人类活动。"
+  },
+  {
+    "word": "capacity",
+    "phonetic": "/kəˈpæsəti/",
+    "meaning": "n. 容量；能力",
+    "scene": "cap（拿）→ 能拿多少。想象一个杯子，倒水到杯口就再也装不下，那个极限就是它的 capacity。",
+    "example": "The human brain has an enormous capacity for learning.",
+    "exampleCn": "人脑具有巨大的学习能力。"
+  },
+  {
+    "word": "category",
+    "phonetic": "/ˈkætəɡɔːri/",
+    "meaning": "n. 类别，范畴",
+    "scene": "cata-（向下）+ agor（聚集）→ 把东西往下归到一堆。想象你把衣服分堆：上衣一堆、裤子一堆，每一堆就是一个 category。",
+    "example": "These books fall into three main categories.",
+    "exampleCn": "这些书分为三大类。"
+  },
+  {
+    "word": "comment",
+    "phonetic": "/ˈkɑːment/",
+    "meaning": "n. 评论；v. 评论",
+    "scene": "com-（一起）+ ment（思考）→ 一起想一想后说出的话。想象看完一场电影，你和朋友边走边聊看法，那些话就是 comment。",
+    "example": "The professor made a brief comment on my draft.",
+    "exampleCn": "教授对我的草稿作了简短评论。"
+  },
+  {
+    "word": "compensate",
+    "phonetic": "/ˈkɑːmpenseɪt/",
+    "meaning": "v. 补偿，弥补",
+    "scene": "com-（一起）+ pens（称重）→ 把两边的重量称平。想象天平一边少了，你往另一边加砝码让它平衡，这就是 compensate。",
+    "example": "Nothing can compensate for the loss of time.",
+    "exampleCn": "什么也无法弥补时间的损失。"
+  },
+  {
+    "word": "complex",
+    "phonetic": "/kəmˈpleks/",
+    "meaning": "adj. 复杂的；n. 综合体",
+    "scene": "com-（一起）+ plex（编织）→ 许多线编在一起。想象一团打了结的耳机线，越拉越乱，这就是 complex。",
+    "example": "The relationship between the two variables is complex.",
+    "exampleCn": "这两个变量之间的关系很复杂。"
+  },
+  {
+    "word": "comprehensive",
+    "phonetic": "/ˌkɑːmprɪˈhensɪv/",
+    "meaning": "adj. 全面的，综合的",
+    "scene": "com-（全部）+ prehend（抓住）→ 全部抓住，一个不漏。想象复习时你把整本书的考点全抓在手里，那就是 comprehensive review。",
+    "example": "The report provides a comprehensive analysis of the market.",
+    "exampleCn": "该报告提供了对市场的全面分析。"
+  },
+  {
+    "word": "conclude",
+    "phonetic": "/kənˈkluːd/",
+    "meaning": "v. 得出结论；结束",
+    "scene": "con-（一起）+ clud（关闭）→ 把所有线索合上、关上门。想象你查完所有资料，合上笔记本说“就这样”，那一刻就是 conclude。",
+    "example": "The researchers concluded that the drug was safe.",
+    "exampleCn": "研究者得出结论：该药物是安全的。"
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/kənˈdʌkt/",
+    "meaning": "v. 进行，实施；n. 行为",
+    "scene": "con-（一起）+ duct（引导）→ 带着大家往前走。想象你带着一组人做实验，从头到尾把流程走完，就是在 conduct 实验。",
+    "example": "The team conducted a series of experiments last month.",
+    "exampleCn": "该团队上个月进行了一系列实验。"
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɑːnsɪkwens/",
+    "meaning": "n. 后果，结果",
+    "scene": "con-（一起）+ sequ（跟随）→ 跟着前面的事一起来的东西。想象多米诺骨牌，推倒第一张，后面跟着倒下的都是 consequence。",
+    "example": "He did not consider the consequences of his decision.",
+    "exampleCn": "他没有考虑自己决定的后果。"
+  },
+  {
+    "word": "considerable",
+    "phonetic": "/kənˈsɪdərəbl/",
+    "meaning": "adj. 相当大的，可观的",
+    "scene": "consider（考虑）+ able → 多到值得你认真考虑。想象账单数字大到你要停下来想一想，那就是 considerable。",
+    "example": "The project required a considerable amount of time and money.",
+    "exampleCn": "该项目需要相当多的时间和金钱。"
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "meaning": "adj. 一致的，连贯的",
+    "scene": "con-（一起）+ sist（站立）→ 前后站在一起，不打架。想象你两次实验数据几乎一样，它们就是 consistent。",
+    "example": "Her results are consistent with previous studies.",
+    "exampleCn": "她的结果与先前的研究一致。"
+  },
+  {
+    "word": "contemporary",
+    "phonetic": "/kənˈtempəreri/",
+    "meaning": "adj. 当代的；n. 同代人",
+    "scene": "con-（一起）+ tempor（时间）→ 处在同一时间。想象你和某位作家生活在同一时代，你们就是 contemporary。",
+    "example": "Contemporary art often challenges traditional ideas.",
+    "exampleCn": "当代艺术常常挑战传统观念。"
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "meaning": "v. 贡献；促成",
+    "scene": "con-（一起）+ tribut（给予）→ 大家一起给。想象课题组每人交一份数据，合起来完成论文，每个人都在 contribute。",
+    "example": "Regular exercise contributes to good health.",
+    "exampleCn": "规律运动有助于身体健康。"
+  },
+  {
+    "word": "controversial",
+    "phonetic": "/ˌkɑːntrəˈvɜːrʃl/",
+    "meaning": "adj. 有争议的",
+    "scene": "contro-（相反）+ vers（转）→ 两边朝相反方向转，吵起来了。想象一条新闻下面评论区吵成两派，这就是 controversial。",
+    "example": "The new policy remains highly controversial.",
+    "exampleCn": "这项新政策仍然极具争议。"
+  },
+  {
+    "word": "convey",
+    "phonetic": "/kənˈveɪ/",
+    "meaning": "v. 传达，传递；运送",
+    "scene": "con-（一起）+ vey（路）→ 沿着路把东西带过去。想象你把一个想法从脑子里“运”到对方脑子里，就是 convey。",
+    "example": "Words cannot convey how grateful I am.",
+    "exampleCn": "言语无法表达我有多感激。"
+  },
+  {
+    "word": "crucial",
+    "phonetic": "/ˈkruːʃl/",
+    "meaning": "adj. 至关重要的",
+    "scene": "cruc（十字）→ 十字路口。想象你站在十字路口，选错方向就全盘皆输，那个决定就是 crucial。",
+    "example": "Sleep plays a crucial role in memory formation.",
+    "exampleCn": "睡眠在记忆形成中起着至关重要的作用。"
+  },
+  {
+    "word": "cultivate",
+    "phonetic": "/ˈkʌltɪveɪt/",
+    "meaning": "v. 培养；耕作",
+    "scene": "cult（耕作）→ 像种地一样松土、浇水、等它长。习惯和友谊都一样，不是天生就有，是一天天 cultivate 出来的。",
+    "example": "It is important to cultivate good reading habits early.",
+    "exampleCn": "尽早培养良好的阅读习惯很重要。"
+  },
+  {
+    "word": "decline",
+    "phonetic": "/dɪˈklaɪn/",
+    "meaning": "v. 下降；拒绝；n. 衰退",
+    "scene": "de-（向下）+ clin（倾斜）→ 往下斜。想象一条曲线从左上滑到右下，那就是 decline。",
+    "example": "The number of readers has declined sharply in recent years.",
+    "exampleCn": "近年来读者数量急剧下降。"
+  },
+  {
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "meaning": "v. 证明；演示",
+    "scene": "de-（完全）+ monstr（显示）→ 完全展示出来。想象你在课堂上一边操作一边讲解，让大家亲眼看到结果，就是 demonstrate。",
+    "example": "The experiment demonstrates the importance of clean water.",
+    "exampleCn": "该实验证明了清洁水源的重要性。"
+  },
+  {
+    "word": "derive",
+    "phonetic": "/dɪˈraɪv/",
+    "meaning": "v. 源自；获得",
+    "scene": "de-（从）+ riv（河流）→ 从河流引水。想象一条支流从主干道分出来，它的源头就是 derive from。",
+    "example": "Many English words derive from Latin.",
+    "exampleCn": "许多英语单词源自拉丁语。"
+  },
+  {
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "meaning": "v. 区分，辨别",
+    "scene": "di-（分开）+ stingu（刺）→ 用刺做标记分开。想象给两只相似的杯子各贴一个标签，你就能 distinguish 它们。",
+    "example": "It is hard to distinguish between the two species.",
+    "exampleCn": "很难区分这两个物种。"
+  },
+  {
+    "word": "dominate",
+    "phonetic": "/ˈdɑːmɪneɪt/",
+    "meaning": "v. 支配，主导",
+    "scene": "domin（主人）→ 像主人一样说了算。想象会议桌上一个人从头讲到尾，别人插不上话，他就在 dominate 讨论。",
+    "example": "A few large companies dominate the market.",
+    "exampleCn": "少数大公司主导着市场。"
+  },
+  {
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "meaning": "v. 消除，排除",
+    "scene": "e-（出）+ limin（门槛）→ 赶出门槛。想象你把错选项一个个划掉，最后只剩正确答案，划掉的动作就是 eliminate。",
+    "example": "The new system eliminates most manual errors.",
+    "exampleCn": "新系统消除了大部分人工错误。"
+  },
+  {
+    "word": "emerge",
+    "phonetic": "/ɪˈmɜːrdʒ/",
+    "meaning": "v. 出现，浮现",
+    "scene": "e-（出）+ merg（沉）→ 从水里冒出来。想象潜水员从水面钻出的那一刻，就是 emerge。",
+    "example": "New evidence emerged during the investigation.",
+    "exampleCn": "调查过程中出现了新证据。"
+  },
+  {
+    "word": "emphasize",
+    "phonetic": "/ˈemfəsaɪz/",
+    "meaning": "v. 强调，着重",
+    "scene": "em-（使）+ phas（显示）→ 让某一点显出来。想象说话时用手指重重敲桌子，敲的那一下就是 emphasize。",
+    "example": "The author emphasizes the need for further research.",
+    "exampleCn": "作者强调需要进一步研究。"
+  },
+  {
+    "word": "enhance",
+    "phonetic": "/ɪnˈhæns/",
+    "meaning": "v. 提高，增强",
+    "scene": "en-（使）+ hance（高）→ 使变高。想象给照片加滤镜，画面一下子更亮更清晰，这就是 enhance。",
+    "example": "Regular practice can enhance your writing skills.",
+    "exampleCn": "规律练习可以提高你的写作能力。"
+  },
+  {
+    "word": "ensure",
+    "phonetic": "/ɪnˈʃʊr/",
+    "meaning": "v. 确保，保证",
+    "scene": "en-（使）+ sure（确定）→ 使事情变得确定。想象出门前反复检查钥匙，就是为了 ensure 自己不会被锁在外面。",
+    "example": "Please ensure that all documents are submitted on time.",
+    "exampleCn": "请确保所有文件按时提交。"
+  },
+  {
+    "word": "evaluate",
+    "phonetic": "/ɪˈvæljueɪt/",
+    "meaning": "v. 评价，评估",
+    "scene": "e-（出）+ valu（价值）→ 把价值算出来。想象你给一篇文章打分，逐项看优点缺点，就是在 evaluate。",
+    "example": "We need to evaluate the effectiveness of the program.",
+    "exampleCn": "我们需要评估该项目的有效性。"
+  },
+  {
+    "word": "evident",
+    "phonetic": "/ˈevɪdənt/",
+    "meaning": "adj. 明显的，显然的",
+    "scene": "e-（出）+ vid（看）→ 一眼就能看出来。想象雪地上的脚印，清清楚楚摆在那里，就是 evident。",
+    "example": "It is evident that the two events are connected.",
+    "exampleCn": "显然这两个事件是有关联的。"
+  },
+  {
+    "word": "exceed",
+    "phonetic": "/ɪkˈsiːd/",
+    "meaning": "v. 超过，超出",
+    "scene": "ex-（出）+ ceed（走）→ 走出界限。想象温度计的水银柱冲出刻度线，那就是 exceed。",
+    "example": "The results exceeded our expectations.",
+    "exampleCn": "结果超出了我们的预期。"
+  },
+  {
+    "word": "exhibit",
+    "phonetic": "/ɪɡˈzɪbɪt/",
+    "meaning": "v. 展示，表现出；n. 展品",
+    "scene": "ex-（出）+ hibit（拿）→ 拿出来给人看。博物馆把画拿出来挂上墙，就是在 exhibit。",
+    "example": "The patient exhibited symptoms of severe stress.",
+    "exampleCn": "该患者表现出严重压力的症状。"
+  },
+  {
+    "word": "expand",
+    "phonetic": "/ɪkˈspænd/",
+    "meaning": "v. 扩大，扩展",
+    "scene": "ex-（向外）+ pand（展开）→ 向外摊开。想象把一张折好的地图完全展开，面积一下子变大，就是 expand。",
+    "example": "The company plans to expand into overseas markets.",
+    "exampleCn": "公司计划拓展海外市场。"
+  },
+  {
+    "word": "explicit",
+    "phonetic": "/ɪkˈsplɪsɪt/",
+    "meaning": "adj. 明确的，清楚的",
+    "scene": "ex-（出）+ plic（折叠）→ 把折起来的东西摊开。意思被摊开、没有藏着，就是 explicit。",
+    "example": "The instructions were explicit and easy to follow.",
+    "exampleCn": "说明明确，容易照着做。"
+  },
+  {
+    "word": "exploit",
+    "phonetic": "/ɪkˈsplɔɪt/",
+    "meaning": "v. 利用；剥削",
+    "scene": "ex-（出）+ ploit（折叠）→ 把里面的东西展开取出来。资源被取出来用是 exploit，人被当成资源榨取也是 exploit。",
+    "example": "We should exploit solar energy more effectively.",
+    "exampleCn": "我们应该更有效地利用太阳能。"
+  },
+  {
+    "word": "facilitate",
+    "phonetic": "/fəˈsɪlɪteɪt/",
+    "meaning": "v. 促进，使便利",
+    "scene": "facil（容易）→ 让事情变容易。想象给门装上自动感应器，进出不用手推，这个装置就在 facilitate 通行。",
+    "example": "The new software facilitates collaboration among team members.",
+    "exampleCn": "新软件促进了团队成员之间的协作。"
+  },
+  {
+    "word": "fundamental",
+    "phonetic": "/ˌfʌndəˈmentl/",
+    "meaning": "adj. 基本的，根本的",
+    "scene": "fund（底部）→ 像地基一样在最下面。想象盖楼，地基没打好上面全白搭，这就是 fundamental。",
+    "example": "Trust is fundamental to any good relationship.",
+    "exampleCn": "信任是任何良好关系的基础。"
+  },
+  {
+    "word": "generate",
+    "phonetic": "/ˈdʒenəreɪt/",
+    "meaning": "v. 产生，生成",
+    "scene": "gen（出生）→ 让东西生出来。想象发电机一转，电就“生”出来了，这就是 generate electricity。",
+    "example": "The new policy is expected to generate more jobs.",
+    "exampleCn": "新政策预计会创造更多就业机会。"
+  },
+  {
+    "word": "identify",
+    "phonetic": "/aɪˈdentɪfaɪ/",
+    "meaning": "v. 识别，确认",
+    "scene": "ident（相同）→ 认出“就是它”。想象在一堆相似的照片里一眼找出你朋友的脸，就是 identify。",
+    "example": "Researchers identified three main causes of the problem.",
+    "exampleCn": "研究者确认了该问题的三个主要原因。"
+  },
+  {
+    "word": "imply",
+    "phonetic": "/ɪmˈplaɪ/",
+    "meaning": "v. 暗示，意味着",
+    "scene": "im-（进入）+ ply（折叠）→ 意思折在里面没直说。想象对方说“你最近很忙吧”，其实是在暗示你别忘了约定，这就是 imply。",
+    "example": "His silence implied that he disagreed.",
+    "exampleCn": "他的沉默暗示他不同意。"
+  },
+  {
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "meaning": "n. 激励，刺激",
+    "scene": "in-（使）+ cent（唱）→ 像用歌声催人向前。想象终点线前有人喊加油，你突然又有了力气，那个加油就是 incentive。",
+    "example": "Tax cuts provide an incentive for small businesses.",
+    "exampleCn": "减税为小企业提供了激励。"
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "meaning": "adj. 不可避免的",
+    "scene": "in-（不）+ evit（避开）+ able → 避不开的。想象你站在瀑布上方的河边，水迟早会把你冲下去，那就是 inevitable。",
+    "example": "Some conflict is inevitable in any team.",
+    "exampleCn": "任何团队中一些冲突都是不可避免的。"
+  },
+  {
+    "word": "infer",
+    "phonetic": "/ɪnˈfɜːr/",
+    "meaning": "v. 推断，推论",
+    "scene": "in-（进入）+ fer（带）→ 把线索带进去，推出结论。想象侦探看到地上的脚印，推断出有人来过，这就是 infer。",
+    "example": "From the data we can infer a clear trend.",
+    "exampleCn": "从数据中我们可以推断出明显的趋势。"
+  },
+  {
+    "word": "integrate",
+    "phonetic": "/ˈɪntɪɡreɪt/",
+    "meaning": "v. 整合，使融合",
+    "scene": "in-（不）+ teg（触摸）+ rate → 使各部分不再分开。想象把几块拼图严丝合缝拼成一幅画，就是 integrate。",
+    "example": "The course integrates theory with practical training.",
+    "exampleCn": "该课程将理论与实践训练结合起来。"
+  },
+  {
+    "word": "interpret",
+    "phonetic": "/ɪnˈtɜːrprɪt/",
+    "meaning": "v. 解释；口译",
+    "scene": "inter-（之间）+ pret（价格）→ 在两种语言或两种理解之间做中介。想象你站在两个说不同语言的人中间，把话转过去，就是 interpret。",
+    "example": "Different people interpret the same poem differently.",
+    "exampleCn": "不同的人对同一首诗有不同的解读。"
+  },
+  {
+    "word": "investigate",
+    "phonetic": "/ɪnˈvestɪɡeɪt/",
+    "meaning": "v. 调查，研究",
+    "scene": "in-（进入）+ vestig（脚印）→ 顺着脚印追进去。想象侦探沿着雪地脚印一路查到底，就是 investigate。",
+    "example": "The team is investigating the cause of the accident.",
+    "exampleCn": "该团队正在调查事故原因。"
+  },
+  {
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "meaning": "v. 证明……正当；辩护",
+    "scene": "just（公正）→ 让事情看起来站得住脚。想象你向老师解释为什么迟交，理由足够充分，老师点头，你就 justify 了迟交。",
+    "example": "Nothing can justify such rude behavior.",
+    "exampleCn": "没有什么能为如此粗鲁的行为辩护。"
+  },
+  {
+    "word": "maintain",
+    "phonetic": "/meɪnˈteɪn/",
+    "meaning": "v. 维持，保持；主张",
+    "scene": "main（手）+ tain（拿住）→ 用手一直拿住不掉。想象你端着一杯满水走过长廊，不让它洒出来，就是 maintain。",
+    "example": "It is important to maintain a balanced diet.",
+    "exampleCn": "保持均衡饮食很重要。"
+  },
+  {
+    "word": "mechanism",
+    "phonetic": "/ˈmekənɪzəm/",
+    "meaning": "n. 机制，机理",
+    "scene": "mechan（机器）→ 机器里齿轮怎么咬合、怎么传动的那套规则。研究一个现象，就是搞清楚它内部的 mechanism。",
+    "example": "Scientists are studying the mechanism of memory loss.",
+    "exampleCn": "科学家正在研究记忆丧失的机制。"
+  },
+  {
+    "word": "minimize",
+    "phonetic": "/ˈmɪnɪmaɪz/",
+    "meaning": "v. 最小化，使降到最低",
+    "scene": "minim（最小）→ 把数字往小里压。想象手机屏幕亮度调到最低，耗电就最少，这就是 minimize。",
+    "example": "We should minimize the risk of data loss.",
+    "exampleCn": "我们应该把数据丢失的风险降到最低。"
+  },
+  {
+    "word": "modify",
+    "phonetic": "/ˈmɑːdɪfaɪ/",
+    "meaning": "v. 修改，调整",
+    "scene": "mod（尺度）→ 按新尺度调整。想象把裤脚改短一寸，衣服还是那件衣服，但更合身了，这就是 modify。",
+    "example": "The design was modified to reduce costs.",
+    "exampleCn": "设计经过修改以降低成本。"
+  },
+  {
+    "word": "neglect",
+    "phonetic": "/nɪˈɡlekt/",
+    "meaning": "v. 忽视，忽略；n. 疏忽",
+    "scene": "neg-（不）+ lect（选择）→ 不选它，把它放在一边。想象桌上那盆花你总忘了浇水，最后枯了，就是 neglect。",
+    "example": "He neglected his health while working on the project.",
+    "exampleCn": "他做项目时忽视了自己的健康。"
+  },
+  {
+    "word": "obtain",
+    "phonetic": "/əbˈteɪn/",
+    "meaning": "v. 获得，得到",
+    "scene": "ob-（朝向）+ tain（拿住）→ 伸手拿住。想象你申请了三个月，终于拿到那封录取信，就是 obtain。",
+    "example": "You must obtain permission before using the data.",
+    "exampleCn": "使用这些数据前必须获得许可。"
+  },
+  {
+    "word": "obvious",
+    "phonetic": "/ˈɑːbviəs/",
+    "meaning": "adj. 明显的，显然的",
+    "scene": "ob-（在……前）+ vi（路）→ 就在路前面挡着。想象你走进房间，大象就站在中间，谁都不会看不见，这就是 obvious。",
+    "example": "The answer is obvious once you see the pattern.",
+    "exampleCn": "一旦看出规律，答案就显而易见了。"
+  },
+  {
+    "word": "occupy",
+    "phonetic": "/ˈɑːkjupaɪ/",
+    "meaning": "v. 占据，占用",
+    "scene": "oc-（朝向）+ cup（拿）→ 拿住一块地方。想象图书馆里有人把书包放在座位上，那个座位就被他 occupy 了。",
+    "example": "The new building occupies most of the block.",
+    "exampleCn": "新大楼占据了街区的大部分。"
+  },
+  {
+    "word": "participate",
+    "phonetic": "/pɑːrˈtɪsɪpeɪt/",
+    "meaning": "v. 参与，参加",
+    "scene": "part（部分）+ cip（拿）→ 拿一份，成为其中一部分。想象分组做项目，你主动拿了一个角色，就是在 participate。",
+    "example": "All students are encouraged to participate in the discussion.",
+    "exampleCn": "鼓励所有学生参与讨论。"
+  },
+  {
+    "word": "perceive",
+    "phonetic": "/pərˈsiːv/",
+    "meaning": "v. 察觉，感知；认为",
+    "scene": "per-（完全）+ ceiv（抓）→ 完全抓住。想象你走在路上突然闻到雨的味道，还没看到雨就已经察觉到了，这就是 perceive。",
+    "example": "People perceive risk differently depending on experience.",
+    "exampleCn": "人们根据经验不同对风险的感知也不同。"
+  },
+  {
+    "word": "persist",
+    "phonetic": "/pərˈsɪst/",
+    "meaning": "v. 坚持；持续",
+    "scene": "per-（始终）+ sist（站立）→ 一直站在那里不倒。想象雨下了一整夜，第二天早上还在下，就是 persist。",
+    "example": "The problem persists despite repeated attempts to fix it.",
+    "exampleCn": "尽管多次尝试修复，问题仍然存在。"
+  },
+  {
+    "word": "phenomenon",
+    "phonetic": "/fəˈnɑːmɪnən/",
+    "meaning": "n. 现象",
+    "scene": "phen（显现）→ 显现出来的事。想象夜空中突然出现一片极光，所有人都抬头看，那个被看到的东西就是 phenomenon。",
+    "example": "Social media addiction is a growing phenomenon.",
+    "exampleCn": "社交媒体成瘾是一个日益严重的现象。"
+  },
+  {
+    "word": "potential",
+    "phonetic": "/pəˈtenʃl/",
+    "meaning": "adj. 潜在的；n. 潜力",
+    "scene": "potent（有力）→ 力量还没发出来。想象一颗种子，表面安静，里面却藏着长成大树的力量，那就是 potential。",
+    "example": "She has great potential as a researcher.",
+    "exampleCn": "她作为研究者有很大潜力。"
+  },
+  {
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "meaning": "adj. 精确的，准确的",
+    "scene": "pre-（预先）+ cis（切）→ 预先切得整整齐齐。想象用尺子量好再下刀，切出来的边笔直，就是 precise。",
+    "example": "The measurements need to be extremely precise.",
+    "exampleCn": "测量需要极其精确。"
+  },
+  {
+    "word": "predict",
+    "phonetic": "/prɪˈdɪkt/",
+    "meaning": "v. 预测，预言",
+    "scene": "pre-（预先）+ dict（说）→ 提前说出来。想象天气预报员在雨来之前就说“明天有雨”，就是在 predict。",
+    "example": "It is difficult to predict how the market will change.",
+    "exampleCn": "很难预测市场会如何变化。"
+  },
+  {
+    "word": "preliminary",
+    "phonetic": "/prɪˈlɪmɪneri/",
+    "meaning": "adj. 初步的，预备的",
+    "scene": "pre-（前）+ limin（门槛）→ 进门之前的那一步。想象正式比赛前先跑一次热身，那就是 preliminary。",
+    "example": "Preliminary results suggest the treatment works.",
+    "exampleCn": "初步结果表明该治疗有效。"
+  },
+  {
+    "word": "presume",
+    "phonetic": "/prɪˈzuːm/",
+    "meaning": "v. 假定，推测",
+    "scene": "pre-（预先）+ sum（拿）→ 先拿一个说法当真。想象你还没确认就在心里认定对方会来，那就是 presume。",
+    "example": "I presume you have already read the report.",
+    "exampleCn": "我猜你已经读过那份报告了。"
+  },
+  {
+    "word": "prevail",
+    "phonetic": "/prɪˈveɪl/",
+    "meaning": "v. 盛行；获胜",
+    "scene": "pre-（前）+ vail（力量）→ 力量更强，压过对方。想象拔河最后一边被拉过来，赢的那边就 prevail。",
+    "example": "Common sense prevailed in the end.",
+    "exampleCn": "最终常识占了上风。"
+  },
+  {
+    "word": "promote",
+    "phonetic": "/prəˈmoʊt/",
+    "meaning": "v. 促进；提升；推广",
+    "scene": "pro-（向前）+ mot（移动）→ 往前推。想象你在后面推一辆卡住的车，它动起来往前走，就是 promote。",
+    "example": "The campaign aims to promote healthy eating.",
+    "exampleCn": "该活动旨在促进健康饮食。"
+  },
+  {
+    "word": "propose",
+    "phonetic": "/prəˈpoʊz/",
+    "meaning": "v. 提议，建议；打算",
+    "scene": "pro-（向前）+ pos（放）→ 把想法放到大家面前。想象会议桌上你把方案往中间一放，说“大家看看”，就是 propose。",
+    "example": "She proposed a new method for handling the data.",
+    "exampleCn": "她提出了一种处理数据的新方法。"
+  },
+  {
+    "word": "pursue",
+    "phonetic": "/pərˈsuː/",
+    "meaning": "v. 追求，从事；追赶",
+    "scene": "pur-（向前）+ sue（跟随）→ 一直跟在后面追。想象你盯住一个目标，它走到哪你跟到哪，这就是 pursue。",
+    "example": "He decided to pursue a career in research.",
+    "exampleCn": "他决定从事研究工作。"
+  },
+  {
+    "word": "reveal",
+    "phonetic": "/rɪˈviːl/",
+    "meaning": "v. 揭示，透露",
+    "scene": "re-（反）+ veal（面纱）→ 把面纱掀开。想象舞台幕布一拉，后面的布景全露出来，就是 reveal。",
+    "example": "The survey revealed a surprising trend among young people.",
+    "exampleCn": "调查揭示了年轻人中一个令人惊讶的趋势。"
+  },
+  {
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "meaning": "adj. 显著的；重要的",
+    "scene": "sign（标记）+ fic（做）→ 值得做标记。想象实验数据里那条特别突出的线，你忍不住用红笔圈出来，它就是 significant。",
+    "example": "There was a significant increase in enrollment this year.",
+    "exampleCn": "今年入学人数显著增加。"
+  },
+  {
+    "word": "simulate",
+    "phonetic": "/ˈsɪmjuleɪt/",
+    "meaning": "v. 模拟，模仿",
+    "scene": "simul（相似）→ 做出一个相似的东西。想象飞行员在训练舱里模拟雨天飞行，虽然不是真下雨，但操作和真的一样，就是 simulate。",
+    "example": "The software can simulate real-world traffic conditions.",
+    "exampleCn": "该软件可以模拟真实交通状况。"
+  },
+  {
+    "word": "specify",
+    "phonetic": "/ˈspesɪfaɪ/",
+    "meaning": "v. 明确说明，具体指定",
+    "scene": "spec（看）→ 看得清清楚楚地说出来。想象写实验步骤时不写“加一点盐”，而写“加 3 克盐”，这就是 specify。",
+    "example": "The contract specifies the exact delivery date.",
+    "exampleCn": "合同明确指定了交货日期。"
+  },
+  {
+    "word": "stable",
+    "phonetic": "/ˈsteɪbl/",
+    "meaning": "adj. 稳定的，稳固的",
+    "scene": "st（站立）→ 站得住。想象一张三条腿一样长的桌子，怎么推都不晃，就是 stable。",
+    "example": "The patient's condition is now stable.",
+    "exampleCn": "病人情况现在稳定了。"
+  },
+  {
+    "word": "strategy",
+    "phonetic": "/ˈstrætədʒi/",
+    "meaning": "n. 策略，战略",
+    "scene": "strat（军队）+ egy（领导）→ 带兵打仗的整体安排。想象下棋时你不在想下一步，而是在想整盘怎么赢，那就是 strategy。",
+    "example": "We need a long-term strategy for reducing costs.",
+    "exampleCn": "我们需要一个降低成本的长期策略。"
+  },
+  {
+    "word": "substitute",
+    "phonetic": "/ˈsʌbstɪtuːt/",
+    "meaning": "n. 替代品；v. 替代",
+    "scene": "sub-（下面）+ stitut（站立）→ 站在下面等上场。想象球赛替补席上坐着的人，主力一受伤他就站到场上去，他就是 substitute。",
+    "example": "You can substitute honey for sugar in this recipe.",
+    "exampleCn": "在这个食谱中你可以用蜂蜜代替糖。"
+  },
+  {
+    "word": "sufficient",
+    "phonetic": "/səˈfɪʃnt/",
+    "meaning": "adj. 足够的，充分的",
+    "scene": "suf-（下面）+ fic（做）→ 下面垫得够厚。想象你往箱子里塞泡沫，塞到怎么晃都不响，那就 sufficient 了。",
+    "example": "We do not have sufficient evidence to support the claim.",
+    "exampleCn": "我们没有足够的证据支持这一说法。"
+  },
+  {
+    "word": "sustain",
+    "phonetic": "/səˈsteɪn/",
+    "meaning": "v. 维持；承受",
+    "scene": "sus-（下面）+ tain（拿住）→ 在下面托住。想象你用手托住一摞书，不让它倒，托住的动作就是 sustain。",
+    "example": "The economy cannot sustain such rapid growth forever.",
+    "exampleCn": "经济无法永远维持如此快速的增长。"
+  },
+  {
+    "word": "tendency",
+    "phonetic": "/ˈtendənsi/",
+    "meaning": "n. 倾向，趋势",
+    "scene": "tend（伸向）→ 总往某个方向伸。想象一棵树总朝阳光那边长，那就是它的 tendency。",
+    "example": "He has a tendency to interrupt others.",
+    "exampleCn": "他有打断别人的倾向。"
+  },
+  {
+    "word": "transform",
+    "phonetic": "/trænsˈfɔːrm/",
+    "meaning": "v. 转变，改变",
+    "scene": "trans-（越过）+ form（形状）→ 越过原来的形状。想象毛毛虫变成蝴蝶，形状完全不一样了，就是 transform。",
+    "example": "The internet has transformed the way we learn.",
+    "exampleCn": "互联网改变了我们学习的方式。"
+  },
+  {
+    "word": "transmit",
+    "phonetic": "/trænsˈmɪt/",
+    "meaning": "v. 传输，传递；传染",
+    "scene": "trans-（越过）+ mit（送）→ 送过去。想象电台把声音变成信号发到空中，你打开收音机就收到，就是 transmit。",
+    "example": "The disease can be transmitted through the air.",
+    "exampleCn": "这种疾病可以通过空气传播。"
+  },
+  {
+    "word": "undergo",
+    "phonetic": "/ˌʌndərˈɡoʊ/",
+    "meaning": "v. 经历，经受",
+    "scene": "under（下面）+ go（走）→ 从下面走过去。想象你钻过一段低矮的隧道，出来时身上还带着灰，那就是 undergo。",
+    "example": "The city has undergone dramatic changes in ten years.",
+    "exampleCn": "这座城市在十年间经历了巨大变化。"
+  },
+  {
+    "word": "undertake",
+    "phonetic": "/ˌʌndərˈteɪk/",
+    "meaning": "v. 承担，着手做",
+    "scene": "under（下面）+ take（拿）→ 把任务拿到自己手里。想象你接过一份厚厚的项目书，说“我来”，就是 undertake。",
+    "example": "She undertook the task of organizing the conference.",
+    "exampleCn": "她承担了组织会议的任务。"
+  },
+  {
+    "word": "utilize",
+    "phonetic": "/ˈjuːtəlaɪz/",
+    "meaning": "v. 利用，使用",
+    "scene": "util（有用）→ 让东西变得有用。想象把旧瓶子剪开当笔筒，瓶子还是瓶子，但被你 utilize 了。",
+    "example": "We should utilize existing resources more efficiently.",
+    "exampleCn": "我们应该更有效地利用现有资源。"
+  },
+  {
+    "word": "valid",
+    "phonetic": "/ˈvælɪd/",
+    "meaning": "adj. 有效的；合理的",
+    "scene": "val（价值）→ 有分量、站得住。想象一张门票没过期、能进场，它就是 valid。",
+    "example": "The results are valid only under certain conditions.",
+    "exampleCn": "这些结果只在特定条件下有效。"
+  },
+  {
+    "word": "vary",
+    "phonetic": "/ˈveri/",
+    "meaning": "v. 变化，不同",
+    "scene": "var（不同）→ 变得不一样。想象同一件衣服在不同灯光下颜色看起来不同，就是颜色 vary。",
+    "example": "Prices vary widely from store to store.",
+    "exampleCn": "各商店价格差别很大。"
+  },
+  {
+    "word": "verify",
+    "phonetic": "/ˈverɪfaɪ/",
+    "meaning": "v. 核实，证实",
+    "scene": "ver（真）→ 让它变成真的、确定的。想象你收到中奖短信，先打电话去官方确认，就是 verify。",
+    "example": "Please verify the accuracy of the data before publishing.",
+    "exampleCn": "发表前请核实数据的准确性。"
+  },
+  {
+    "word": "accompany",
+    "phonetic": "/əˈkʌmpəni/",
+    "meaning": "v. 陪伴，伴随",
+    "scene": "ac-（朝向）+ company（同伴）→ 做你的同伴。想象你深夜走山路，有人提着灯走在旁边，就是 accompany。",
+    "example": "Thunder is often accompanied by lightning.",
+    "exampleCn": "雷声常常伴随着闪电。"
+  },
+  {
+    "word": "accumulate",
+    "phonetic": "/əˈkjuːmjəleɪt/",
+    "meaning": "v. 积累，积聚",
+    "scene": "ac-（朝向）+ cumul（堆）→ 往一堆上堆。想象桌角的硬币一枚枚叠起来，越叠越高，就是 accumulate。",
+    "example": "Dust had accumulated on the old books.",
+    "exampleCn": "旧书上积了灰尘。"
+  },
+  {
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɑːlɪdʒ/",
+    "meaning": "v. 承认；感谢",
+    "scene": "ac-（朝向）+ knowledge（知道）→ 点头表示“我知道”。想象老师指出你的错误，你点头说“对，是我错了”，就是 acknowledge。",
+    "example": "He acknowledged that the mistake was his.",
+    "exampleCn": "他承认那是他的错误。"
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "meaning": "adj. 足够的，适当的",
+    "scene": "ad-（朝向）+ equ（相等）→ 刚好和需求持平。想象杯子里的水不多不少正好解渴，那就是 adequate。",
+    "example": "The room was small but adequate for our needs.",
+    "exampleCn": "房间不大，但足够我们使用。"
+  },
+  {
+    "word": "advocate",
+    "phonetic": "/ˈædvəkeɪt/",
+    "meaning": "v. 提倡，主张；n. 拥护者",
+    "scene": "ad-（朝向）+ voc（声音）→ 朝着某个方向发声。想象有人站在台上大声呼吁大家保护环境，他就在 advocate 环保。",
+    "example": "She advocates a more flexible approach to learning.",
+    "exampleCn": "她主张更灵活的学习方式。"
+  },
+  {
+    "word": "allocate",
+    "phonetic": "/ˈæləkeɪt/",
+    "meaning": "v. 分配，拨给",
+    "scene": "al-（朝向）+ loc（地方）→ 把东西放到各自的地方。想象你把一周的时间分给论文、实验和休息，就是在 allocate 时间。",
+    "example": "The government allocated more funds to education.",
+    "exampleCn": "政府向教育拨了更多资金。"
+  },
+  {
+    "word": "appreciate",
+    "phonetic": "/əˈpriːʃieɪt/",
+    "meaning": "v. 欣赏；感激；理解",
+    "scene": "ap-（朝向）+ preci（价值）→ 看出它的价值。想象你收到一份亲手做的礼物，越想越觉得珍贵，就是 appreciate。",
+    "example": "I really appreciate your help with the experiment.",
+    "exampleCn": "我非常感激你帮助我做实验。"
+  },
+  {
+    "word": "appropriate",
+    "phonetic": "/əˈproʊpriət/",
+    "meaning": "adj. 恰当的，合适的",
+    "scene": "ap-（朝向）+ propri（自己的）→ 像是专门为它准备的。想象你穿的衣服刚好符合场合，不夸张也不寒酸，就是 appropriate。",
+    "example": "Please choose an appropriate title for your essay.",
+    "exampleCn": "请为你的论文选择一个恰当的标题。"
+  },
+  {
+    "word": "assemble",
+    "phonetic": "/əˈsembl/",
+    "meaning": "v. 集合；组装",
+    "scene": "as-（朝向）+ sembl（相似）→ 把相似的零件凑到一起。想象你按说明书把散落的木板拼成一张桌子，就是 assemble。",
+    "example": "The students assembled in the hall for the lecture.",
+    "exampleCn": "学生们在礼堂集合听讲座。"
+  },
+  {
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "meaning": "v. 分配，指派",
+    "scene": "as-（朝向）+ sign（标记）→ 在名字旁边做标记。想象老师在你名字后写“第 3 组”，就是 assign 你到第 3 组。",
+    "example": "The teacher assigned each student a different topic.",
+    "exampleCn": "老师给每个学生分配了不同的题目。"
+  },
+  {
+    "word": "associate",
+    "phonetic": "/əˈsoʊsieɪt/",
+    "meaning": "v. 联想；关联；n. 同事",
+    "scene": "as-（朝向）+ soci（同伴）→ 把它们当成同伴放在一起。想象你一闻到某种味道就想起小时候，这就是 associate 味道和记忆。",
+    "example": "People often associate the color red with danger.",
+    "exampleCn": "人们常把红色和危险联系在一起。"
+  },
+  {
+    "word": "assure",
+    "phonetic": "/əˈʃʊr/",
+    "meaning": "v. 向……保证，使确信",
+    "scene": "as-（朝向）+ sure（确定）→ 让你心里确定下来。想象朋友紧张时你拍拍他肩膀说“没问题”，就是 assure 他。",
+    "example": "I can assure you that the data is accurate.",
+    "exampleCn": "我可以向你保证数据是准确的。"
+  },
+  {
+    "word": "attain",
+    "phonetic": "/əˈteɪn/",
+    "meaning": "v. 达到，获得",
+    "scene": "at-（朝向）+ tain（拿住）→ 伸手够到并拿住。想象你踮脚去够高处的书，终于拿到手，就是 attain。",
+    "example": "She attained a high level of proficiency in English.",
+    "exampleCn": "她的英语达到了很高的熟练程度。"
+  },
+  {
+    "word": "attribute",
+    "phonetic": "/əˈtrɪbjuːt/",
+    "meaning": "v. 归因于；n. 属性",
+    "scene": "at-（朝向）+ tribut（给予）→ 把原因给到某处。想象你把成功归功于团队，就是在 attribute success to the team。",
+    "example": "He attributes his success to hard work and luck.",
+    "exampleCn": "他把自己的成功归因于努力和运气。"
+  },
+  {
+    "word": "boost",
+    "phonetic": "/buːst/",
+    "meaning": "v. 促进，提高；n. 推动",
+    "scene": "想象给气球打气，它一下子鼓起来——boost 就是那一股往上推的力。经济、信心、销量都可以被 boost。",
+    "example": "The new policy is expected to boost economic growth.",
+    "exampleCn": "新政策预计将促进经济增长。"
+  },
+  {
+    "word": "collapse",
+    "phonetic": "/kəˈlæps/",
+    "meaning": "v. 倒塌；崩溃；n. 崩溃",
+    "scene": "col-（一起）+ laps（滑）→ 一起滑下去。想象积木塔被抽掉底部一块，整座塔瞬间塌下来，就是 collapse。",
+    "example": "The bridge collapsed under the weight of the truck.",
+    "exampleCn": "桥在卡车的重压下坍塌了。"
+  },
+  {
+    "word": "commit",
+    "phonetic": "/kəˈmɪt/",
+    "meaning": "v. 承诺；犯（错）；投入",
+    "scene": "com-（一起）+ mit（送）→ 把自己整个送进去。想象你签下一份协议，把自己未来几年交给一个目标，就是 commit。",
+    "example": "She committed herself to finishing the research by June.",
+    "exampleCn": "她承诺在六月前完成研究。"
+  },
+  {
+    "word": "complement",
+    "phonetic": "/ˈkɑːmplɪment/",
+    "meaning": "v. 补充，补足；n. 补充物",
+    "scene": "com-（一起）+ ple（填满）→ 把缺的那块填满。想象鞋和鞋带，没有鞋带鞋也能穿，但加上才完整，鞋带 complement 鞋。",
+    "example": "The two studies complement each other well.",
+    "exampleCn": "这两项研究很好地相互补充。"
+  },
+  {
+    "word": "comply",
+    "phonetic": "/kəmˈplaɪ/",
+    "meaning": "v. 遵守，服从",
+    "scene": "com-（一起）+ ply（折叠）→ 把自己折起来、弯下去。想象过安检时你按要求把电脑拿出来，就是 comply with 规定。",
+    "example": "All staff must comply with the safety regulations.",
+    "exampleCn": "所有员工都必须遵守安全规定。"
+  },
+  {
+    "word": "comprise",
+    "phonetic": "/kəmˈpraɪz/",
+    "meaning": "v. 包含，由……组成",
+    "scene": "com-（一起）+ pris（抓住）→ 把各部分抓在一起。想象一个拼图盒，里面装着所有拼图块，盒子 comprise 那些块。",
+    "example": "The committee comprises ten members from different fields.",
+    "exampleCn": "委员会由来自不同领域的十名成员组成。"
+  },
+  {
+    "word": "conceive",
+    "phonetic": "/kənˈsiːv/",
+    "meaning": "v. 构想，设想；怀孕",
+    "scene": "con-（一起）+ ceiv（拿）→ 把想法拿到脑子里。想象你在纸上画出一个还没建成的公园的样子，就是在 conceive 它。",
+    "example": "It is hard to conceive of a world without the internet.",
+    "exampleCn": "很难想象一个没有互联网的世界。"
+  },
+  {
+    "word": "confront",
+    "phonetic": "/kənˈfrʌnt/",
+    "meaning": "v. 面对，对抗",
+    "scene": "con-（一起）+ front（前额）→ 面对面顶上去。想象两个人面对面站着，谁也不退，就是 confront。",
+    "example": "We must confront the problem instead of avoiding it.",
+    "exampleCn": "我们必须面对问题，而不是回避它。"
+  },
+  {
+    "word": "consent",
+    "phonetic": "/kənˈsent/",
+    "meaning": "n. 同意，许可；v. 同意",
+    "scene": "con-（一起）+ sent（感觉）→ 感觉一致。想象做手术前医生让你签字，你点头说“可以”，那就是 consent。",
+    "example": "No one can use your data without your consent.",
+    "exampleCn": "未经你同意，没人可以使用你的数据。"
+  },
+  {
+    "word": "conserve",
+    "phonetic": "/kənˈsɜːrv/",
+    "meaning": "v. 保护，节约",
+    "scene": "con-（一起）+ serv（保持）→ 一起保持住。想象你离开房间时随手关灯，让电一直够用，就是 conserve 电。",
+    "example": "We should conserve water in dry seasons.",
+    "exampleCn": "干旱季节我们应该节约用水。"
+  },
+  {
+    "word": "constrain",
+    "phonetic": "/kənˈstreɪn/",
+    "meaning": "v. 限制，约束",
+    "scene": "con-（一起）+ strain（拉紧）→ 用绳子拉紧。想象你被安全带固定在座位上，活动范围被限制，就是 constrain。",
+    "example": "Limited funding constrained the scope of the study.",
+    "exampleCn": "有限的资金限制了研究的范围。"
+  },
+  {
+    "word": "consult",
+    "phonetic": "/kənˈsʌlt/",
+    "meaning": "v. 咨询，请教；查阅",
+    "scene": "con-（一起）+ sult（商量）→ 找人一起商量。想象你写论文卡住了，去敲导师的门问“您怎么看”，就是 consult。",
+    "example": "You should consult your advisor before changing the topic.",
+    "exampleCn": "换题目前你应该咨询导师。"
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "meaning": "v. 消耗；消费",
+    "scene": "con-（完全）+ sum（拿）→ 全部拿走。想象一群人围着一桌菜，很快盘子就空了，食物被 consume 了。",
+    "example": "This machine consumes a lot of electricity.",
+    "exampleCn": "这台机器耗电量很大。"
+  },
+  {
+    "word": "contradict",
+    "phonetic": "/ˌkɑːntrəˈdɪkt/",
+    "meaning": "v. 反驳，与……矛盾",
+    "scene": "contra-（相反）+ dict（说）→ 说相反的话。想象你说东，他偏说西，两个人说的对不上，就是 contradict。",
+    "example": "The new evidence contradicts the earlier theory.",
+    "exampleCn": "新证据与早先的理论相矛盾。"
+  },
+  {
+    "word": "convert",
+    "phonetic": "/kənˈvɜːrt/",
+    "meaning": "v. 转换，改变",
+    "scene": "con-（一起）+ vert（转）→ 整个转过来。想象你把 Word 文档转成 PDF，格式变了，内容还在，就是 convert。",
+    "example": "The old factory was converted into a museum.",
+    "exampleCn": "旧工厂被改造成了博物馆。"
+  },
+  {
+    "word": "cooperate",
+    "phonetic": "/koʊˈɑːpəreɪt/",
+    "meaning": "v. 合作，协作",
+    "scene": "co-（共同）+ oper（工作）→ 一起工作。想象几个人抬一张大桌子，各抬一角同时用力，就是 cooperate。",
+    "example": "The two universities cooperate on several research projects.",
+    "exampleCn": "这两所大学在多个研究项目上合作。"
+  },
+  {
+    "word": "coordinate",
+    "phonetic": "/koʊˈɔːrdɪneɪt/",
+    "meaning": "v. 协调；n. 坐标",
+    "scene": "co-（共同）+ ordin（顺序）→ 让各自的顺序合上。想象乐队指挥一抬手，各乐器同时进入，就是在 coordinate。",
+    "example": "She coordinated the efforts of all the team members.",
+    "exampleCn": "她协调了所有团队成员的工作。"
+  },
+  {
+    "word": "correspond",
+    "phonetic": "/ˌkɔːrəˈspɑːnd/",
+    "meaning": "v. 符合；通信",
+    "scene": "cor-（一起）+ respond（回应）→ 你回应我，我回应你。两个数据对得上，就是 correspond。",
+    "example": "His account does not correspond with the facts.",
+    "exampleCn": "他的说法与事实不符。"
+  },
+  {
+    "word": "criticize",
+    "phonetic": "/ˈkrɪtɪsaɪz/",
+    "meaning": "v. 批评，指责",
+    "scene": "crit（判断）→ 做出判断并说出来。想象评审人逐条指出论文的不足，就是在 criticize。",
+    "example": "The plan was criticized for being too expensive.",
+    "exampleCn": "该计划因过于昂贵而受到批评。"
+  },
+  {
+    "word": "deduce",
+    "phonetic": "/dɪˈduːs/",
+    "meaning": "v. 推断，演绎",
+    "scene": "de-（从）+ duc（引导）→ 从已知引出未知。想象你从“所有金属都导电”和“铁是金属”推出“铁导电”，就是 deduce。",
+    "example": "From these facts we can deduce the cause of the error.",
+    "exampleCn": "从这些事实我们可以推断出错误的原因。"
+  },
+  {
+    "word": "deficit",
+    "phonetic": "/ˈdefɪsɪt/",
+    "meaning": "n. 赤字；不足",
+    "scene": "de-（缺少）+ fic（做）→ 该有的没做够。想象账本上支出大于收入，中间差的那一块就是 deficit。",
+    "example": "The country is facing a serious trade deficit.",
+    "exampleCn": "该国正面临严重的贸易赤字。"
+  },
+  {
+    "word": "deliberate",
+    "phonetic": "/dɪˈlɪbərət/",
+    "meaning": "adj. 故意的；深思熟虑的",
+    "scene": "de-（完全）+ liber（称量）→ 放在天平上反复称。想象你买东西前货比三家，考虑很久才决定，就是 deliberate。",
+    "example": "The damage was not accidental but deliberate.",
+    "exampleCn": "损坏不是意外，而是故意的。"
+  },
+  {
+    "word": "denote",
+    "phonetic": "/dɪˈnoʊt/",
+    "meaning": "v. 表示，意味着",
+    "scene": "de-（完全）+ not（标记）→ 做个标记出来。想象地图上用红点表示首都，红点就 denote 首都。",
+    "example": "In this graph, the red line denotes temperature.",
+    "exampleCn": "在这个图中，红线表示温度。"
+  },
+  {
+    "word": "depress",
+    "phonetic": "/dɪˈpres/",
+    "meaning": "v. 使沮丧；压低",
+    "scene": "de-（向下）+ press（压）→ 往下压。想象一块石头压在胸口，你连呼吸都觉得沉，就是 depress。",
+    "example": "The bad news depressed everyone in the team.",
+    "exampleCn": "坏消息让团队里每个人都很沮丧。"
+  },
+  {
+    "word": "deprive",
+    "phonetic": "/dɪˈpraɪv/",
+    "meaning": "v. 剥夺，使丧失",
+    "scene": "de-（去掉）+ priv（私人）→ 把属于他的拿走。想象你正睡得香，被人一把掀开被子，你被 deprive 了睡眠。",
+    "example": "Noise deprived him of sleep for several nights.",
+    "exampleCn": "噪音使他好几夜无法入睡。"
+  },
+  {
+    "word": "detect",
+    "phonetic": "/dɪˈtekt/",
+    "meaning": "v. 察觉，发现",
+    "scene": "de-（去掉）+ tect（覆盖）→ 把盖子揭开。想象你揭开锅盖，看到里面冒出的热气，就是 detect 到了热。",
+    "example": "The device can detect very small changes in temperature.",
+    "exampleCn": "该装置能检测到极小的温度变化。"
+  },
+  {
+    "word": "deteriorate",
+    "phonetic": "/dɪˈtɪriəreɪt/",
+    "meaning": "v. 恶化，变坏",
+    "scene": "deterior（更坏）→ 一天比一天差。想象墙上的裂缝从小细纹变成大裂口，就是 deteriorate。",
+    "example": "His health deteriorated rapidly last month.",
+    "exampleCn": "上个月他的健康状况迅速恶化。"
+  },
+  {
+    "word": "deviate",
+    "phonetic": "/ˈdiːvieɪt/",
+    "meaning": "v. 偏离，背离",
+    "scene": "de-（离开）+ vi（路）→ 离开原来的路。想象你走着走着拐进一条小巷，偏离了导航路线，就是 deviate。",
+    "example": "The results deviate from the expected pattern.",
+    "exampleCn": "结果偏离了预期的模式。"
+  },
+  {
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "meaning": "v. 减少，缩小",
+    "scene": "di-（向下）+ min（小）→ 往小里走。想象一块冰放在太阳下，越化越小，就是 diminish。",
+    "example": "His influence diminished after the incident.",
+    "exampleCn": "那件事之后他的影响力减弱了。"
+  },
+  {
+    "word": "discard",
+    "phonetic": "/dɪˈskɑːrd/",
+    "meaning": "v. 丢弃，抛弃",
+    "scene": "dis-（分开）+ card（纸牌）→ 把不要的牌扔出去。想象打牌时你把没用的牌丢到桌上，就是 discard。",
+    "example": "Discard any data that is incomplete.",
+    "exampleCn": "丢弃任何不完整的数据。"
+  },
+  {
+    "word": "discipline",
+    "phonetic": "/ˈdɪsəplɪn/",
+    "meaning": "n. 学科；纪律；v. 训练",
+    "scene": "discip（学习）→ 一门需要长期学习的领域。想象一个实验室里人人按规矩操作，这种秩序就是 discipline。",
+    "example": "Linguistics is a relatively young discipline.",
+    "exampleCn": "语言学是一门相对年轻的学科。"
+  },
+  {
+    "word": "disclose",
+    "phonetic": "/dɪsˈkloʊz/",
+    "meaning": "v. 披露，透露",
+    "scene": "dis-（打开）+ close（关闭）→ 把关着的东西打开。想象一个密封的信封被拆开，里面的内容被 disclose。",
+    "example": "The company refused to disclose its financial details.",
+    "exampleCn": "公司拒绝披露其财务细节。"
+  },
+  {
+    "word": "discriminate",
+    "phonetic": "/dɪˈskrɪmɪneɪt/",
+    "meaning": "v. 歧视；区分",
+    "scene": "dis-（分开）+ crimin（判断）→ 把人按某种标准分开对待。想象招聘时因为性别把合格的人筛掉，就是 discriminate。",
+    "example": "It is illegal to discriminate against older workers.",
+    "exampleCn": "歧视年长员工是违法的。"
+  },
+  {
+    "word": "displace",
+    "phonetic": "/dɪsˈpleɪs/",
+    "meaning": "v. 取代；使离开原处",
+    "scene": "dis-（离开）+ place（位置）→ 让原来的东西离开位置。想象新机器一来，旧机器就被搬走，新机器 displace 了旧机器。",
+    "example": "Many workers were displaced by automation.",
+    "exampleCn": "许多工人被自动化取代了。"
+  },
+  {
+    "word": "dispose",
+    "phonetic": "/dɪˈspoʊz/",
+    "meaning": "v. 处理，处置；使倾向于",
+    "scene": "dis-（分开）+ pos（放）→ 把东西分开放到该去的地方。想象垃圾分类后分别丢进不同桶，就是 dispose of 垃圾。",
+    "example": "Please dispose of the chemicals safely.",
+    "exampleCn": "请安全处理这些化学品。"
+  },
+  {
+    "word": "disrupt",
+    "phonetic": "/dɪsˈrʌpt/",
+    "meaning": "v. 打断，扰乱",
+    "scene": "dis-（分开）+ rupt（断裂）→ 把连续的东西打断。想象会议开得正顺，有人推门进来大喊，思路被打断，就是 disrupt。",
+    "example": "The storm disrupted traffic across the region.",
+    "exampleCn": "暴风雨扰乱了整个地区的交通。"
+  },
+  {
+    "word": "distort",
+    "phonetic": "/dɪˈstɔːrt/",
+    "meaning": "v. 歪曲，扭曲",
+    "scene": "dis-（分开）+ tort（扭）→ 往两边扭。想象哈哈镜把你的脸拉得又长又歪，就是 distort。",
+    "example": "The media distorted what he actually said.",
+    "exampleCn": "媒体歪曲了他实际说的话。"
+  },
+  {
+    "word": "diverse",
+    "phonetic": "/daɪˈvɜːrs/",
+    "meaning": "adj. 多样的，不同的",
+    "scene": "di-（分开）+ vers（转）→ 各自转向不同方向。想象一个班里有人爱画画、有人爱编程、有人爱运动，就是 diverse。",
+    "example": "The team is made up of people from diverse backgrounds.",
+    "exampleCn": "团队由来自不同背景的人组成。"
+  },
+  {
+    "word": "domestic",
+    "phonetic": "/dəˈmestɪk/",
+    "meaning": "adj. 国内的；家庭的",
+    "scene": "dom（家）→ 家里的。想象国内市场就是你自家院子里的市场，和出口相对，就是 domestic market。",
+    "example": "Domestic demand for the product is growing.",
+    "exampleCn": "国内对该产品的需求正在增长。"
+  },
+  {
+    "word": "draft",
+    "phonetic": "/dræft/",
+    "meaning": "n. 草稿；v. 起草",
+    "scene": "想象你写论文先随手写下要点，字迹潦草、顺序也乱，但后面要慢慢改——那份就是 draft。",
+    "example": "She finished the first draft of her thesis last week.",
+    "exampleCn": "她上周完成了论文的初稿。"
+  },
+  {
+    "word": "dramatic",
+    "phonetic": "/drəˈmætɪk/",
+    "meaning": "adj. 急剧的；戏剧性的",
+    "scene": "drama（戏剧）→ 像戏一样起伏大。想象股价图上一条几乎垂直的线，涨得太猛，就是 dramatic rise。",
+    "example": "There has been a dramatic improvement in his health.",
+    "exampleCn": "他的健康状况有了显著改善。"
+  },
+  {
+    "word": "duration",
+    "phonetic": "/duˈreɪʃn/",
+    "meaning": "n. 持续时间，期间",
+    "scene": "dur（持久）→ 从头到尾持续的那段。想象电影开头到结尾之间的两小时，就是它的 duration。",
+    "example": "The duration of the experiment was three months.",
+    "exampleCn": "实验持续了三个月。"
+  },
+  {
+    "word": "dynamic",
+    "phonetic": "/daɪˈnæmɪk/",
+    "meaning": "adj. 动态的；有活力的",
+    "scene": "dynam（力量）→ 有力量在动。想象一条河不是静止的湖，水一直在流、在变，就是 dynamic。",
+    "example": "The market is dynamic and changes quickly.",
+    "exampleCn": "市场是动态的，变化很快。"
+  },
+  {
+    "word": "efficient",
+    "phonetic": "/ɪˈfɪʃnt/",
+    "meaning": "adj. 高效的，效率高的",
+    "scene": "ef-（出）+ fic（做）→ 做出来的多、浪费的少。想象同样一小时，有人只做一件事，有人做完三件，后者就是 efficient。",
+    "example": "The new system is more efficient than the old one.",
+    "exampleCn": "新系统比旧系统更高效。"
+  },
+  {
+    "word": "elaborate",
+    "phonetic": "/ɪˈlæbərət/",
+    "meaning": "adj. 精心制作的；v. 详细说明",
+    "scene": "e-（出）+ labor（劳动）→ 花了很多劳动做出来的。想象一件手工刺绣，针脚密密麻麻，就是 elaborate。",
+    "example": "Could you elaborate on your second point?",
+    "exampleCn": "你能详细说明一下你的第二点吗？"
+  },
+  {
+    "word": "embrace",
+    "phonetic": "/ɪmˈbreɪs/",
+    "meaning": "v. 拥抱；接受",
+    "scene": "em-（进入）+ brace（手臂）→ 用手臂抱住。想象你张开双臂迎接一个新想法，就是 embrace 它。",
+    "example": "The company embraced new technology quickly.",
+    "exampleCn": "该公司迅速接受了新技术。"
+  },
+  {
+    "word": "encounter",
+    "phonetic": "/ɪnˈkaʊntər/",
+    "meaning": "v. 遭遇，遇到；n. 相遇",
+    "scene": "en-（进入）+ counter（对面）→ 面对面碰上。想象你拐个弯突然撞见一只鹿，就是 encounter。",
+    "example": "We encountered several problems during the experiment.",
+    "exampleCn": "我们在实验过程中遇到了几个问题。"
+  },
+  {
+    "word": "endure",
+    "phonetic": "/ɪnˈdʊr/",
+    "meaning": "v. 忍受，忍耐；持续",
+    "scene": "en-（使）+ dur（持久）→ 硬撑下去。想象你在寒风中站了一小时，牙齿打颤但没走，就是 endure。",
+    "example": "She endured years of hardship to finish her degree.",
+    "exampleCn": "她忍受了多年艰辛才完成学位。"
+  },
+  {
+    "word": "enforce",
+    "phonetic": "/ɪnˈfɔːrs/",
+    "meaning": "v. 执行，实施；强制",
+    "scene": "en-（使）+ force（力量）→ 用力量让规则落地。想象交警拦下闯红灯的车，就是在 enforce 交规。",
+    "example": "The new law will be enforced from next month.",
+    "exampleCn": "新法律将从下个月开始执行。"
+  },
+  {
+    "word": "engage",
+    "phonetic": "/ɪnˈɡeɪdʒ/",
+    "meaning": "v. 从事；吸引；使参与",
+    "scene": "en-（进入）+ gage（抵押）→ 把自己押进去。想象你读一本小说读到忘了时间，整个人被吸进去，就是 engage。",
+    "example": "The teacher tried to engage students in the discussion.",
+    "exampleCn": "老师试图让学生参与讨论。"
+  },
+  {
+    "word": "enormous",
+    "phonetic": "/ɪˈnɔːrməs/",
+    "meaning": "adj. 巨大的，庞大的",
+    "scene": "e-（出）+ norm（标准）→ 超出标准。想象你站在山脚下抬头看，山高得超出你所有经验，就是 enormous。",
+    "example": "The project required an enormous amount of work.",
+    "exampleCn": "这个项目需要巨大的工作量。"
+  },
+  {
+    "word": "entail",
+    "phonetic": "/ɪnˈteɪl/",
+    "meaning": "v. 需要，涉及",
+    "scene": "en-（使）+ tail（切）→ 像切下来一样必须带着。想象读博这件事必然带着熬夜、实验、改论文，这些就是它 entail 的。",
+    "example": "This job entails a lot of travel.",
+    "exampleCn": "这份工作需要大量出差。"
+  },
+  {
+    "word": "enthusiasm",
+    "phonetic": "/ɪnˈθuːziæzəm/",
+    "meaning": "n. 热情，热心",
+    "scene": "en-（在内）+ thus（神）→ 心里像有神在烧。想象一个人讲起自己的研究时眼睛发亮，那就是 enthusiasm。",
+    "example": "Her enthusiasm for the project is contagious.",
+    "exampleCn": "她对项目的热情很有感染力。"
+  },
+  {
+    "word": "equip",
+    "phonetic": "/ɪˈkwɪp/",
+    "meaning": "v. 装备，配备",
+    "scene": "想象出海前把船装满淡水、食物和工具，让它能应对一切，就是 equip。",
+    "example": "The lab is equipped with modern instruments.",
+    "exampleCn": "实验室配备了现代仪器。"
+  },
+  {
+    "word": "equivalent",
+    "phonetic": "/ɪˈkwɪvələnt/",
+    "meaning": "adj. 相等的，等价的",
+    "scene": "equi-（相等）+ val（价值）→ 价值一样。想象一美元和一定数量的人民币能买同样的东西，它们就是 equivalent。",
+    "example": "One mile is equivalent to about 1.6 kilometers.",
+    "exampleCn": "一英里约等于1.6公里。"
+  },
+  {
+    "word": "erode",
+    "phonetic": "/ɪˈroʊd/",
+    "meaning": "v. 侵蚀，削弱",
+    "scene": "e-（出）+ rod（咬）→ 一点点咬掉。想象海浪日复一日拍打岩石，岩石慢慢被啃掉，就是 erode。",
+    "example": "Trust can be eroded by small lies over time.",
+    "exampleCn": "信任会被小谎言慢慢侵蚀。"
+  },
+  {
+    "word": "exaggerate",
+    "phonetic": "/ɪɡˈzædʒəreɪt/",
+    "meaning": "v. 夸大，夸张",
+    "scene": "ex-（出）+ agger（堆）→ 往外堆得过高。想象你说“我快饿死了”，其实只是有点饿，就是 exaggerate。",
+    "example": "The media tends to exaggerate the dangers.",
+    "exampleCn": "媒体倾向于夸大危险。"
+  },
+  {
+    "word": "exclude",
+    "phonetic": "/ɪkˈskluːd/",
+    "meaning": "v. 排除，不包括",
+    "scene": "ex-（出）+ clud（关闭）→ 关在门外。想象名单上没有你的名字，你被挡在门外，就是 exclude。",
+    "example": "The price excludes tax and delivery.",
+    "exampleCn": "价格不包括税费和运费。"
+  },
+  {
+    "word": "exhaust",
+    "phonetic": "/ɪɡˈzɔːst/",
+    "meaning": "v. 耗尽；使疲惫；n. 废气",
+    "scene": "ex-（出）+ haust（抽）→ 全部抽干。想象油箱里的油被抽到一滴不剩，车再也动不了，就是 exhaust。",
+    "example": "The long journey exhausted all of us.",
+    "exampleCn": "漫长的旅程让我们所有人都筋疲力尽。"
+  },
+  {
+    "word": "expel",
+    "phonetic": "/ɪkˈspel/",
+    "meaning": "v. 驱逐，开除；排出",
+    "scene": "ex-（出）+ pel（推）→ 推出去。想象学校里有人严重违纪，被勒令离开学校，就是 expel。",
+    "example": "He was expelled from school for cheating.",
+    "exampleCn": "他因作弊被学校开除。"
+  },
+  {
+    "word": "exploit",
+    "phonetic": "/ɪkˈsplɔɪt/",
+    "meaning": "v. 利用；剥削",
+    "scene": "ex-（出）+ ploit（折叠）→ 把里面藏的东西展开取出来。资源被取出来用，人被当成资源榨取，都是 exploit。",
+    "example": "The company was accused of exploiting its workers.",
+    "exampleCn": "该公司被指控剥削工人。"
+  },
+  {
+    "word": "expose",
+    "phonetic": "/ɪkˈspoʊz/",
+    "meaning": "v. 暴露，揭露；使接触",
+    "scene": "ex-（出）+ pos（放）→ 放到外面。想象你把藏在抽屉里的东西摆到桌上，所有人都能看到，就是 expose。",
+    "example": "The report exposed serious weaknesses in the system.",
+    "exampleCn": "报告揭露了该系统的严重缺陷。"
+  },
+  {
+    "word": "extract",
+    "phonetic": "/ɪkˈstrækt/",
+    "meaning": "v. 提取，提炼；n. 摘录",
+    "scene": "ex-（出）+ tract（拉）→ 往外拉。想象从矿石里把金属一点点拉出来，就是 extract。",
+    "example": "Scientists can extract DNA from a single hair.",
+    "exampleCn": "科学家能从一根头发中提取DNA。"
+  },
+  {
+    "word": "facilitate",
+    "phonetic": "/fəˈsɪlɪteɪt/",
+    "meaning": "v. 促进，使便利",
+    "scene": "facil（容易）→ 让事情变容易。想象给门装上自动感应器，进出不用手推，这个装置就在 facilitate 通行。",
+    "example": "The new software facilitates collaboration among team members.",
+    "exampleCn": "新软件促进了团队成员之间的协作。"
+  },
+  {
+    "word": "fluctuate",
+    "phonetic": "/ˈflʌktʃueɪt/",
+    "meaning": "v. 波动，起伏",
+    "scene": "fluct（流动）→ 像水一样上下动。想象温度计的水银柱一会儿升一会儿降，就是 fluctuate。",
+    "example": "Prices fluctuate according to supply and demand.",
+    "exampleCn": "价格随供求关系波动。"
+  },
+  {
+    "word": "formulate",
+    "phonetic": "/ˈfɔːrmjuleɪt/",
+    "meaning": "v. 制定，规划；阐述",
+    "scene": "form（形式）→ 把想法套进一个清楚的形式。想象你把模糊的念头写成一条条可执行的步骤，就是 formulate。",
+    "example": "The team formulated a clear plan for the project.",
+    "exampleCn": "团队为项目制定了清晰的计划。"
+  },
+  {
+    "word": "frustrate",
+    "phonetic": "/ˈfrʌstreɪt/",
+    "meaning": "v. 使沮丧，挫败",
+    "scene": "frustr（徒劳）→ 白费力气。想象你反复输密码都提示错误，越试越烦躁，就是 frustrate。",
+    "example": "The lack of progress frustrated everyone involved.",
+    "exampleCn": "缺乏进展让所有参与者都很沮丧。"
+  },
+  {
+    "word": "fulfill",
+    "phonetic": "/fʊlˈfɪl/",
+    "meaning": "v. 履行，实现；满足",
+    "scene": "ful（满）+ fill（填）→ 填得满满的。想象你完成了一个承诺，心里那块空的地方被填满，就是 fulfill。",
+    "example": "She fulfilled her promise to finish the report.",
+    "exampleCn": "她履行了完成报告的承诺。"
+  },
+  {
+    "word": "hamper",
+    "phonetic": "/ˈhæmpər/",
+    "meaning": "v. 妨碍，阻碍",
+    "scene": "想象你脚上绑着沙袋跑步，每一步都比平时吃力，就是 hamper。",
+    "example": "Heavy rain hampered the rescue efforts.",
+    "exampleCn": "大雨妨碍了救援工作。"
+  },
+  {
+    "word": "highlight",
+    "phonetic": "/ˈhaɪlaɪt/",
+    "meaning": "v. 突出，强调；n. 亮点",
+    "scene": "high（高）+ light（光）→ 用光打在高处。想象舞台上灯光只追着主角，其他人暗下去，主角被 highlight。",
+    "example": "The report highlights the need for better training.",
+    "exampleCn": "报告强调了加强培训的必要性。"
+  },
+  {
+    "word": "hypothesis",
+    "phonetic": "/haɪˈpɑːθəsɪs/",
+    "meaning": "n. 假设，假说",
+    "scene": "hypo-（下面）+ thesis（放置）→ 放在下面当基础的命题。想象你搭积木前先在底下放一块板，那块板就是 hypothesis。",
+    "example": "The experiment was designed to test the hypothesis.",
+    "exampleCn": "该实验旨在检验这一假设。"
+  },
+  {
+    "word": "illustrate",
+    "phonetic": "/ˈɪləstreɪt/",
+    "meaning": "v. 说明，阐明；配图",
+    "scene": "il-（使）+ lustr（光）→ 打光让它清楚。想象老师画了一个图，原本抽象的概念一下子亮起来，就是 illustrate。",
+    "example": "The chart illustrates the change over ten years.",
+    "exampleCn": "该图表说明了十年间的变化。"
+  },
+  {
+    "word": "implement",
+    "phonetic": "/ˈɪmplɪment/",
+    "meaning": "v. 实施，执行；n. 工具",
+    "scene": "im-（进入）+ ple（填满）→ 把计划填进现实。想象图纸上的方案被工人一砖一瓦建起来，就是 implement。",
+    "example": "The new policy will be implemented next year.",
+    "exampleCn": "新政策将于明年实施。"
+  },
+  {
+    "word": "implication",
+    "phonetic": "/ˌɪmplɪˈkeɪʃn/",
+    "meaning": "n. 影响，后果；含义",
+    "scene": "im-（进入）+ plic（折叠）→ 折在里面、没明说的东西。想象一句话表面简单，底下还藏着一层意思，那就是 implication。",
+    "example": "The findings have important implications for education.",
+    "exampleCn": "这些发现对教育有重要影响。"
+  },
+  {
+    "word": "impose",
+    "phonetic": "/ɪmˈpoʊz/",
+    "meaning": "v. 强加；征收",
+    "scene": "im-（进入）+ pos（放）→ 硬放到你身上。想象你本来没要求，对方却把一项任务压给你，就是 impose。",
+    "example": "The government imposed new taxes on imported goods.",
+    "exampleCn": "政府对进口商品征收了新税。"
+  },
+  {
+    "word": "incidence",
+    "phonetic": "/ˈɪnsɪdəns/",
+    "meaning": "n. 发生率，发病率",
+    "scene": "in-（进入）+ cid（落下）→ 事情落下来的次数。想象统计一个地区一年有多少人得某种病，那个数字就是 incidence。",
+    "example": "The incidence of the disease has fallen sharply.",
+    "exampleCn": "该病的发病率已大幅下降。"
+  },
+  {
+    "word": "incline",
+    "phonetic": "/ɪnˈklaɪn/",
+    "meaning": "v. 倾向；使倾斜；n. 斜坡",
+    "scene": "in-（向）+ clin（倾斜）→ 往一边斜。想象你心里那杆秤慢慢偏向一个选择，就是 incline to。",
+    "example": "I incline to agree with your first proposal.",
+    "exampleCn": "我倾向于同意你的第一个提议。"
+  },
+  {
+    "word": "incorporate",
+    "phonetic": "/ɪnˈkɔːrpəreɪt/",
+    "meaning": "v. 包含，纳入；合并",
+    "scene": "in-（进入）+ corpor（身体）→ 变成身体的一部分。想象你把新学到的技巧融进自己的写作里，就是 incorporate。",
+    "example": "The new design incorporates several safety features.",
+    "exampleCn": "新设计包含多项安全功能。"
+  },
+  {
+    "word": "induce",
+    "phonetic": "/ɪnˈduːs/",
+    "meaning": "v. 诱导，引起",
+    "scene": "in-（进入）+ duc（引导）→ 引着走进去。想象广告用各种画面引着你点下购买键，就是 induce。",
+    "example": "Nothing could induce him to change his mind.",
+    "exampleCn": "什么也无法诱使他改变主意。"
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbl/",
+    "meaning": "adj. 不可避免的",
+    "scene": "in-（不）+ evit（避开）+ able → 避不开的。想象你站在瀑布上方的河边，水迟早会把你冲下去，那就是 inevitable。",
+    "example": "Change is inevitable in any growing organization.",
+    "exampleCn": "在任何成长的组织中，变化都是不可避免的。"
+  },
+  {
+    "word": "infer",
+    "phonetic": "/ɪnˈfɜːr/",
+    "meaning": "v. 推断，推论",
+    "scene": "in-（进入）+ fer（带）→ 把线索带进去，推出结论。想象侦探看到地上的脚印，推断出有人来过，这就是 infer。",
+    "example": "From the data we can infer a clear trend.",
+    "exampleCn": "从数据中我们可以推断出明显的趋势。"
+  },
+  {
+    "word": "inhibit",
+    "phonetic": "/ɪnˈhɪbɪt/",
+    "meaning": "v. 抑制，阻碍",
+    "scene": "in-（不）+ hibit（拿）→ 按住不让动。想象你踩住刹车，车轮被抑制住，就是 inhibit。",
+    "example": "Fear can inhibit students from asking questions.",
+    "exampleCn": "恐惧会阻碍学生提问。"
+  },
+  {
+    "word": "initiate",
+    "phonetic": "/ɪˈnɪʃieɪt/",
+    "meaning": "v. 发起，开始",
+    "scene": "in-（进入）+ it（走）→ 迈出第一步。想象你想组织读书会，第一个在群里发消息说“我们开始吧”，就是 initiate。",
+    "example": "The university initiated a new research program.",
+    "exampleCn": "该大学发起了一个新的研究项目。"
+  },
+  {
+    "word": "innovate",
+    "phonetic": "/ˈɪnəveɪt/",
+    "meaning": "v. 创新，革新",
+    "scene": "in-（进入）+ nov（新）→ 把新的东西带进来。想象旧手机只能打电话，有人把它变成能上网的，就是 innovate。",
+    "example": "Companies must innovate to stay competitive.",
+    "exampleCn": "公司必须创新才能保持竞争力。"
+  },
+  {
+    "word": "inspect",
+    "phonetic": "/ɪnˈspekt/",
+    "meaning": "v. 检查，视察",
+    "scene": "in-（进入）+ spect（看）→ 走进去仔细看。想象质检员拿着手电筒一件件查看产品，就是 inspect。",
+    "example": "The equipment is inspected every three months.",
+    "exampleCn": "设备每三个月检查一次。"
+  },
+  {
+    "word": "instinct",
+    "phonetic": "/ˈɪnstɪŋkt/",
+    "meaning": "n. 本能，直觉",
+    "scene": "in-（内）+ stinct（刺）→ 心里被刺一下的反应。想象手碰到烫的东西，还没想就缩回来，那就是 instinct。",
+    "example": "Her first instinct was to say no.",
+    "exampleCn": "她的第一反应是说“不”。"
+  },
+  {
+    "word": "intense",
+    "phonetic": "/ɪnˈtens/",
+    "meaning": "adj. 强烈的；紧张的",
+    "scene": "in-（进入）+ tens（拉紧）→ 拉得紧紧的。想象聚光灯打到最亮，热得你睁不开眼，就是 intense。",
+    "example": "The competition for the scholarship is intense.",
+    "exampleCn": "奖学金的竞争非常激烈。"
+  },
+  {
+    "word": "interfere",
+    "phonetic": "/ˌɪntərˈfɪr/",
+    "meaning": "v. 干扰，干涉",
+    "scene": "inter-（之间）+ fere（打）→ 打到中间去。想象两个人正说话，你插到中间打断他们，就是 interfere。",
+    "example": "Noise from the street interfered with my work.",
+    "exampleCn": "街上的噪音干扰了我的工作。"
+  },
+  {
+    "word": "intervene",
+    "phonetic": "/ˌɪntərˈviːn/",
+    "meaning": "v. 干预，介入",
+    "scene": "inter-（之间）+ ven（来）→ 走到中间来。想象两个人吵架快打起来了，你站到中间把他们分开，就是 intervene。",
+    "example": "The teacher intervened before the argument got worse.",
+    "exampleCn": "老师在争论恶化之前介入了。"
+  },
+  {
+    "word": "intrinsic",
+    "phonetic": "/ɪnˈtrɪnsɪk/",
+    "meaning": "adj. 内在的，固有的",
+    "scene": "intrin-（内部）+ sic（旁边）→ 就在里面的。想象一块玉，价值不在包装，而在它本身，那就是 intrinsic value。",
+    "example": "Curiosity has intrinsic value in learning.",
+    "exampleCn": "好奇心在学习中具有内在价值。"
+  },
+  {
+    "word": "invoke",
+    "phonetic": "/ɪnˈvoʊk/",
+    "meaning": "v. 援引，调用；唤起",
+    "scene": "in-（进入）+ vok（声音）→ 把声音叫出来。想象你在论文里引用一条法律来支持观点，就是 invoke。",
+    "example": "The lawyer invoked an old law to defend his client.",
+    "exampleCn": "律师援引一条旧法律为当事人辩护。"
+  },
+  {
+    "word": "isolate",
+    "phonetic": "/ˈaɪsəleɪt/",
+    "meaning": "v. 隔离，孤立",
+    "scene": "isol（岛）→ 变成一座孤岛。想象把一个变量单独放到一边，排除其他影响，就是 isolate。",
+    "example": "Scientists isolated the virus from the patient's blood.",
+    "exampleCn": "科学家从病人血液中分离出了病毒。"
+  },
+  {
+    "word": "legitimate",
+    "phonetic": "/lɪˈdʒɪtɪmət/",
+    "meaning": "adj. 合法的；合理的",
+    "scene": "leg（法律）→ 法律认可的。想象一张盖了公章的合同，拿出去谁都得认，就是 legitimate。",
+    "example": "They have a legitimate reason to complain.",
+    "exampleCn": "他们有合理的理由投诉。"
+  },
+  {
+    "word": "magnify",
+    "phonetic": "/ˈmæɡnɪfaɪ/",
+    "meaning": "v. 放大，扩大",
+    "scene": "magn（大）→ 使变大。想象显微镜把一滴水里的微生物放大成怪物，就是 magnify。",
+    "example": "The lens magnifies the image ten times.",
+    "exampleCn": "这个镜头把图像放大了十倍。"
+  },
+  {
+    "word": "manipulate",
+    "phonetic": "/məˈnɪpjuleɪt/",
+    "meaning": "v. 操纵，控制；操作",
+    "scene": "mani（手）+ pul（拉）→ 用手拉扯。想象木偶师用线控制木偶的动作，就是 manipulate。",
+    "example": "He was accused of manipulating the results.",
+    "exampleCn": "他被指控操纵结果。"
+  },
+  {
+    "word": "mature",
+    "phonetic": "/məˈtʃʊr/",
+    "meaning": "adj. 成熟的；v. 成熟",
+    "scene": "想象一颗青果子放久了，颜色变深、味道变甜，就是 mature。人经历事情后变得沉稳，也是 mature。",
+    "example": "She is very mature for her age.",
+    "exampleCn": "就她的年龄而言，她很成熟。"
+  },
+  {
+    "word": "mediate",
+    "phonetic": "/ˈmiːdieɪt/",
+    "meaning": "v. 调解，斡旋",
+    "scene": "medi（中间）→ 站在中间。想象两个人争执不下，你站在中间传话、找折中方案，就是 mediate。",
+    "example": "The UN tried to mediate between the two sides.",
+    "exampleCn": "联合国试图在双方之间进行调解。"
+  },
+  {
+    "word": "migrate",
+    "phonetic": "/ˈmaɪɡreɪt/",
+    "meaning": "v. 迁移，移居",
+    "scene": "migr（移动）→ 从一处搬到另一处。想象候鸟每年秋天飞向南方，就是 migrate。",
+    "example": "Many young people migrate to big cities for work.",
+    "exampleCn": "许多年轻人迁往大城市工作。"
+  },
+  {
+    "word": "minimize",
+    "phonetic": "/ˈmɪnɪmaɪz/",
+    "meaning": "v. 最小化，使降到最低",
+    "scene": "minim（最小）→ 把数字往小里压。想象手机屏幕亮度调到最低，耗电就最少，这就是 minimize。",
+    "example": "We should minimize the risk of data loss.",
+    "exampleCn": "我们应该把数据丢失的风险降到最低。"
+  },
+  {
+    "word": "modify",
+    "phonetic": "/ˈmɑːdɪfaɪ/",
+    "meaning": "v. 修改，调整",
+    "scene": "mod（尺度）→ 按新尺度调整。想象把裤脚改短一寸，衣服还是那件衣服，但更合身了，这就是 modify。",
+    "example": "The design was modified to reduce costs.",
+    "exampleCn": "设计经过修改以降低成本。"
+  },
+  {
+    "word": "monitor",
+    "phonetic": "/ˈmɑːnɪtər/",
+    "meaning": "v. 监控，监测；n. 显示器",
+    "scene": "mon（警告）→ 盯着看，有情况就报警。想象护士站的心电监护仪一直闪着波形，就是在 monitor 病人。",
+    "example": "The system monitors air quality in real time.",
+    "exampleCn": "该系统实时监测空气质量。"
+  },
+  {
+    "word": "negotiate",
+    "phonetic": "/nɪˈɡoʊʃieɪt/",
+    "meaning": "v. 谈判，协商",
+    "scene": "neg-（不）+ oti（空闲）→ 不空闲，忙着谈。想象两方坐在桌前，你让一步我让一步，最后签下协议，就是 negotiate。",
+    "example": "The two companies are negotiating a new contract.",
+    "exampleCn": "两家公司正在谈判一份新合同。"
+  },
+  {
+    "word": "notion",
+    "phonetic": "/ˈnoʊʃn/",
+    "meaning": "n. 概念，观念",
+    "scene": "not（知道）→ 你知道的那个东西。想象你脑子里对“公平”有一个模糊的样子，那个样子就是 notion。",
+    "example": "He has a vague notion of what the job involves.",
+    "exampleCn": "他对这份工作做什么只有一个模糊的概念。"
+  },
+  {
+    "word": "obscure",
+    "phonetic": "/əbˈskjʊr/",
+    "meaning": "adj. 模糊的，晦涩的；v. 使模糊",
+    "scene": "ob-（在上）+ scur（遮盖）→ 被盖住了。想象雾把远处的山遮住，只看到一团灰影，就是 obscure。",
+    "example": "The meaning of the poem is rather obscure.",
+    "exampleCn": "这首诗的含义相当晦涩。"
+  },
+  {
+    "word": "obsolete",
+    "phonetic": "/ˌɑːbsəˈliːt/",
+    "meaning": "adj. 过时的，淘汰的",
+    "scene": "ob-（离开）+ sol（习惯）→ 离开习惯了。想象磁带、软盘，曾经人人用，现在没人要，就是 obsolete。",
+    "example": "These machines became obsolete years ago.",
+    "exampleCn": "这些机器多年前就过时了。"
+  },
+  {
+    "word": "offset",
+    "phonetic": "/ˈɔːfset/",
+    "meaning": "v. 抵消，弥补",
+    "scene": "off（离开）+ set（放置）→ 放到另一边去平衡。想象一边涨价一边降运费，两边相抵，就是 offset。",
+    "example": "Higher sales offset the increase in costs.",
+    "exampleCn": "销售额上升抵消了成本增加。"
+  },
+  {
+    "word": "optimal",
+    "phonetic": "/ˈɑːptɪməl/",
+    "meaning": "adj. 最佳的，最优的",
+    "scene": "optim（最好）→ 最好的那个点。想象温度调到 25 度时植物长得最快，那个温度就是 optimal。",
+    "example": "The conditions were optimal for plant growth.",
+    "exampleCn": "当时是植物生长的最佳条件。"
+  },
+  {
+    "word": "originate",
+    "phonetic": "/əˈrɪdʒɪneɪt/",
+    "meaning": "v. 起源，发源",
+    "scene": "origin（起源）→ 从源头出来。想象一条大河，你顺着水流往上走，最后找到一滴泉水，就是 originate。",
+    "example": "The custom originated in ancient China.",
+    "exampleCn": "这一习俗起源于古代中国。"
+  },
+  {
+    "word": "overlap",
+    "phonetic": "/ˌoʊvərˈlæp/",
+    "meaning": "v. 重叠，交叉；n. 重叠部分",
+    "scene": "over（在上）+ lap（搭）→ 一张压在另一张上。想象两张纸只搭住一个角，中间那块共同区域就是 overlap。",
+    "example": "Our research interests overlap in several areas.",
+    "exampleCn": "我们的研究兴趣在几个领域有重叠。"
+  },
+  {
+    "word": "overwhelm",
+    "phonetic": "/ˌoʊvərˈwelm/",
+    "meaning": "v. 压倒，淹没；使不知所措",
+    "scene": "over（在上）+ whelm（倾覆）→ 从上面整个盖下来。想象浪头比你高两倍，一下子把你拍进水里，就是 overwhelm。",
+    "example": "She was overwhelmed by the amount of work.",
+    "exampleCn": "工作量之大让她不知所措。"
+  },
+  {
+    "word": "paradox",
+    "phonetic": "/ˈpærədɑːks/",
+    "meaning": "n. 悖论，矛盾的事",
+    "scene": "para-（相反）+ dox（观点）→ 两个相反的观点同时成立。想象“越省时间越忙”这句话，听起来矛盾却常是真的，就是 paradox。",
+    "example": "It is a paradox that the richest country has so much poverty.",
+    "exampleCn": "最富有的国家却有如此多贫困，这是个悖论。"
+  },
+  {
+    "word": "perceive",
+    "phonetic": "/pərˈsiːv/",
+    "meaning": "v. 察觉，感知；认为",
+    "scene": "per-（完全）+ ceiv（抓）→ 完全抓住。想象你走在路上突然闻到雨的味道，还没看到雨就已经察觉到了，这就是 perceive。",
+    "example": "People perceive risk differently depending on experience.",
+    "exampleCn": "人们根据经验不同对风险的感知也不同。"
+  },
+  {
+    "word": "persist",
+    "phonetic": "/pərˈsɪst/",
+    "meaning": "v. 坚持；持续",
+    "scene": "per-（始终）+ sist（站立）→ 一直站在那里不倒。想象雨下了一整夜，第二天早上还在下，就是 persist。",
+    "example": "The problem persists despite repeated attempts to fix it.",
+    "exampleCn": "尽管多次尝试修复，问题仍然存在。"
+  },
+  {
+    "word": "phenomenon",
+    "phonetic": "/fəˈnɑːmɪnən/",
+    "meaning": "n. 现象",
+    "scene": "phen（显现）→ 显现出来的事。想象夜空中突然出现一片极光，所有人都抬头看，那个被看到的东西就是 phenomenon。",
+    "example": "Social media addiction is a growing phenomenon.",
+    "exampleCn": "社交媒体成瘾是一个日益严重的现象。"
+  },
+  {
+    "word": "plausible",
+    "phonetic": "/ˈplɔːzəbl/",
+    "meaning": "adj. 似乎合理的，可信的",
+    "scene": "plaus（鼓掌）→ 让人想鼓掌的。想象一个人解释得头头是道，你差点就信了，那个解释就是 plausible。",
+    "example": "His explanation sounds plausible but lacks evidence.",
+    "exampleCn": "他的解释听起来合理，但缺乏证据。"
+  },
+  {
+    "word": "precede",
+    "phonetic": "/prɪˈsiːd/",
+    "meaning": "v. 在……之前，先于",
+    "scene": "pre-（前）+ ced（走）→ 走在前面。想象队伍最前面那个人先走过路口，他就是 precede 其他人。",
+    "example": "A short introduction precedes each chapter.",
+    "exampleCn": "每章前面都有一段简短引言。"
+  },
+  {
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "meaning": "adj. 精确的，准确的",
+    "scene": "pre-（预先）+ cis（切）→ 预先切得整整齐齐。想象用尺子量好再下刀，切出来的边笔直，就是 precise。",
+    "example": "The measurements need to be extremely precise.",
+    "exampleCn": "测量需要极其精确。"
+  },
+  {
+    "word": "predominant",
+    "phonetic": "/prɪˈdɑːmɪnənt/",
+    "meaning": "adj. 主要的，占优势的",
+    "scene": "pre-（前）+ domin（统治）→ 在前面统治的。想象一片森林里松树最多，其他树都零星，松树就是 predominant。",
+    "example": "English is the predominant language in scientific publishing.",
+    "exampleCn": "英语是科学出版中的主要语言。"
+  },
+  {
+    "word": "preliminary",
+    "phonetic": "/prɪˈlɪmɪneri/",
+    "meaning": "adj. 初步的，预备的",
+    "scene": "pre-（前）+ limin（门槛）→ 进门之前的那一步。想象正式比赛前先跑一次热身，那就是 preliminary。",
+    "example": "Preliminary results suggest the treatment works.",
+    "exampleCn": "初步结果表明该治疗有效。"
+  },
+  {
+    "word": "prescribe",
+    "phonetic": "/prɪˈskraɪb/",
+    "meaning": "v. 开处方；规定",
+    "scene": "pre-（预先）+ scrib（写）→ 提前写下来。想象医生在处方笺上写药名和剂量，就是 prescribe。",
+    "example": "The doctor prescribed some medicine for the pain.",
+    "exampleCn": "医生开了一些止痛药。"
+  },
+  {
+    "word": "presume",
+    "phonetic": "/prɪˈzuːm/",
+    "meaning": "v. 假定，推测",
+    "scene": "pre-（预先）+ sum（拿）→ 先拿一个说法当真。想象你还没确认就在心里认定对方会来，那就是 presume。",
+    "example": "I presume you have already read the report.",
+    "exampleCn": "我猜你已经读过那份报告了。"
+  },
+  {
+    "word": "prevail",
+    "phonetic": "/prɪˈveɪl/",
+    "meaning": "v. 盛行；获胜",
+    "scene": "pre-（前）+ vail（力量）→ 力量更强，压过对方。想象拔河最后一边被拉过来，赢的那边就 prevail。",
+    "example": "Common sense prevailed in the end.",
+    "exampleCn": "最终常识占了上风。"
+  },
+  {
+    "word": "profound",
+    "phonetic": "/prəˈfaʊnd/",
+    "meaning": "adj. 深刻的，深远的",
+    "scene": "pro-（向前）+ found（底部）→ 一直探到底。想象一口井你看不到底，扔石头很久才听到回声，就是 profound。",
+    "example": "The book had a profound influence on my thinking.",
+    "exampleCn": "这本书对我的思想有深远影响。"
+  },
+  {
+    "word": "prohibit",
+    "phonetic": "/prəˈhɪbɪt/",
+    "meaning": "v. 禁止，阻止",
+    "scene": "pro-（向前）+ hibit（拿）→ 挡在前面不让拿。想象门口挂着“禁止入内”的牌子，就是 prohibit。",
+    "example": "The law prohibits smoking in public buildings.",
+    "exampleCn": "法律禁止在公共建筑内吸烟。"
+  },
+  {
+    "word": "prominent",
+    "phonetic": "/ˈprɑːmɪnənt/",
+    "meaning": "adj. 突出的，杰出的",
+    "scene": "pro-（向前）+ min（突出）→ 往前突出来。想象一群人站在一起，有个人高出半个头，一眼就看到他，就是 prominent。",
+    "example": "She is a prominent figure in the field of AI.",
+    "exampleCn": "她是人工智能领域的杰出人物。"
+  },
+  {
+    "word": "prompt",
+    "phonetic": "/prɑːmpt/",
+    "meaning": "v. 促使，提示；adj. 迅速的",
+    "scene": "pro-（向前）+ empt（拿）→ 往前递给你。想象老师看你卡住了，轻轻给一个提示，你马上接下去，就是 prompt。",
+    "example": "The news prompted him to change his plan.",
+    "exampleCn": "这个消息促使他改变了计划。"
+  },
+  {
+    "word": "prospect",
+    "phonetic": "/ˈprɑːspekt/",
+    "meaning": "n. 前景，可能性",
+    "scene": "pro-（向前）+ spect（看）→ 往前看看到的景象。想象你站在山顶望向远方，看到一片开阔地，那就是 prospect。",
+    "example": "The prospect of working abroad excited her.",
+    "exampleCn": "出国工作的前景让她兴奋。"
+  },
+  {
+    "word": "provoke",
+    "phonetic": "/prəˈvoʊk/",
+    "meaning": "v. 激起，引发；挑衅",
+    "scene": "pro-（向前）+ vok（声音）→ 把声音叫出来。想象有人故意说难听话，把你惹火了，就是 provoke。",
+    "example": "The decision provoked widespread criticism.",
+    "exampleCn": "这一决定引发了广泛批评。"
+  },
+  {
+    "word": "pursue",
+    "phonetic": "/pərˈsuː/",
+    "meaning": "v. 追求，从事；追赶",
+    "scene": "pur-（向前）+ sue（跟随）→ 一直跟在后面追。想象你盯住一个目标，它走到哪你跟到哪，这就是 pursue。",
+    "example": "He decided to pursue a career in research.",
+    "exampleCn": "他决定从事研究工作。"
+  },
+  {
+    "word": "radical",
+    "phonetic": "/ˈrædɪkl/",
+    "meaning": "adj. 根本的；激进的",
+    "scene": "radic（根）→ 从根上来的。想象一棵树要彻底改变，不是剪叶子，而是连根拔起换土，那就是 radical change。",
+    "example": "The company made radical changes to its strategy.",
+    "exampleCn": "公司对战略做了根本性改变。"
+  },
+  {
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːrs/",
+    "meaning": "v. 加强，强化",
+    "scene": "re-（再）+ in-（进入）+ force（力量）→ 再加力。想象墙已经砌好，你又在外面加一层钢筋水泥，就是 reinforce。",
+    "example": "The results reinforce our earlier findings.",
+    "exampleCn": "这些结果强化了我们早先的发现。"
+  },
+  {
+    "word": "reluctant",
+    "phonetic": "/rɪˈlʌktənt/",
+    "meaning": "adj. 不情愿的，勉强的",
+    "scene": "re-（反）+ luct（挣扎）→ 心里在挣扎。想象你被叫去参加一个不想去的聚会，脚步慢吞吞，就是 reluctant。",
+    "example": "He was reluctant to admit his mistake.",
+    "exampleCn": "他不愿承认自己的错误。"
+  },
+  {
+    "word": "render",
+    "phonetic": "/ˈrendər/",
+    "meaning": "v. 使成为；提供；渲染",
+    "scene": "ren-（回）+ der（给）→ 给回去。想象你把一件事做到某个程度，使它变成另一个样子，就是 render。",
+    "example": "The accident rendered him unable to work.",
+    "exampleCn": "事故使他无法工作。"
+  },
+  {
+    "word": "resemble",
+    "phonetic": "/rɪˈzembl/",
+    "meaning": "v. 像，与……相似",
+    "scene": "re-（再）+ sembl（相似）→ 再像一次。想象别人说你笑起来像你妈妈，就是 resemble。",
+    "example": "The two designs resemble each other closely.",
+    "exampleCn": "这两个设计彼此非常相似。"
+  },
+  {
+    "word": "reside",
+    "phonetic": "/rɪˈzaɪd/",
+    "meaning": "v. 居住；存在于",
+    "scene": "re-（回）+ sid（坐）→ 回到一个地方坐下来。想象你每天下班回到那个固定的家，就是 reside。",
+    "example": "The power to change resides in the people.",
+    "exampleCn": "改变的力量存在于人民之中。"
+  },
+  {
+    "word": "resolve",
+    "phonetic": "/rɪˈzɑːlv/",
+    "meaning": "v. 解决；决心；n. 决心",
+    "scene": "re-（再）+ solv（松开）→ 把结重新解开。想象一团乱麻你耐心地一根根理开，最后结没了，就是 resolve。",
+    "example": "They resolved the conflict through open discussion.",
+    "exampleCn": "他们通过公开讨论解决了冲突。"
+  },
+  {
+    "word": "restrain",
+    "phonetic": "/rɪˈstreɪn/",
+    "meaning": "v. 抑制，约束",
+    "scene": "re-（回）+ strain（拉紧）→ 往回拉紧。想象你想冲出去发火，但硬把自己拉住，就是 restrain。",
+    "example": "She could hardly restrain her anger.",
+    "exampleCn": "她几乎无法抑制自己的愤怒。"
+  },
+  {
+    "word": "restrict",
+    "phonetic": "/rɪˈstrɪkt/",
+    "meaning": "v. 限制，约束",
+    "scene": "re-（回）+ strict（拉紧）→ 拉回来，不让出去。想象一条绳子把你圈在一定范围内，就是 restrict。",
+    "example": "The government restricted the use of plastic bags.",
+    "exampleCn": "政府限制了塑料袋的使用。"
+  },
+  {
+    "word": "retain",
+    "phonetic": "/rɪˈteɪn/",
+    "meaning": "v. 保留，保持",
+    "scene": "re-（回）+ tain（拿住）→ 往回拿住不放。想象你读完一本书，过很久还能记住主要观点，就是 retain。",
+    "example": "The company retained most of its experienced staff.",
+    "exampleCn": "公司保留了大部分有经验的员工。"
+  },
+  {
+    "word": "reveal",
+    "phonetic": "/rɪˈviːl/",
+    "meaning": "v. 揭示，透露",
+    "scene": "re-（反）+ veal（面纱）→ 把面纱掀开。想象舞台幕布一拉，后面的布景全露出来，就是 reveal。",
+    "example": "The survey revealed a surprising trend among young people.",
+    "exampleCn": "调查揭示了年轻人中一个令人惊讶的趋势。"
+  },
+  {
+    "word": "revenue",
+    "phonetic": "/ˈrevənuː/",
+    "meaning": "n. 收入，税收",
+    "scene": "re-（回）+ ven（来）→ 回来的钱。想象公司卖货后钱一笔笔回到账上，那些回来的钱就是 revenue。",
+    "example": "The company's revenue grew by 20 percent last year.",
+    "exampleCn": "该公司去年收入增长了20%。"
+  },
+  {
+    "word": "reverse",
+    "phonetic": "/rɪˈvɜːrs/",
+    "meaning": "v. 颠倒，逆转；adj. 相反的",
+    "scene": "re-（反）+ vers（转）→ 往反方向转。想象你把车挂上倒挡，车开始往后走，就是 reverse。",
+    "example": "The new evidence reversed the earlier conclusion.",
+    "exampleCn": "新证据推翻了早先的结论。"
+  },
+  {
+    "word": "revise",
+    "phonetic": "/rɪˈvaɪz/",
+    "meaning": "v. 修订，修改；复习",
+    "scene": "re-（再）+ vis（看）→ 再看一遍。想象你写完论文后回头逐句重看、改错、调整，就是 revise。",
+    "example": "She revised her essay three times before submitting.",
+    "exampleCn": "她提交前把论文修改了三遍。"
+  },
+  {
+    "word": "rigid",
+    "phonetic": "/ˈrɪdʒɪd/",
+    "meaning": "adj. 僵硬的；严格的",
+    "scene": "rig（僵硬）→ 硬邦邦的。想象一根冻住的绳子，弯都弯不动，就是 rigid。",
+    "example": "The school has rigid rules about attendance.",
+    "exampleCn": "学校对出勤有严格规定。"
+  },
+  {
+    "word": "saturate",
+    "phonetic": "/ˈsætʃəreɪt/",
+    "meaning": "v. 使饱和，浸透",
+    "scene": "sat（足够）+ ur（水）→ 水多到不能再多。想象海绵吸饱水后，再滴一滴都会流出来，就是 saturate。",
+    "example": "The market is saturated with similar products.",
+    "exampleCn": "市场上同类产品已经饱和。"
+  },
+  {
+    "word": "scrutinize",
+    "phonetic": "/ˈskruːtənaɪz/",
+    "meaning": "v. 仔细审查",
+    "scene": "scrut（垃圾）→ 像在垃圾里翻找东西一样，一点点细看。想象会计逐行核对账单，就是 scrutinize。",
+    "example": "The committee scrutinized every detail of the proposal.",
+    "exampleCn": "委员会仔细审查了提案的每一个细节。"
+  },
+  {
+    "word": "sequence",
+    "phonetic": "/ˈsiːkwəns/",
+    "meaning": "n. 顺序，序列",
+    "scene": "sequ（跟随）→ 一个跟着一个。想象电影胶片一帧接一帧，顺序不能乱，就是 sequence。",
+    "example": "Please arrange the events in the correct sequence.",
+    "exampleCn": "请按正确顺序排列这些事件。"
+  },
+  {
+    "word": "simulate",
+    "phonetic": "/ˈsɪmjuleɪt/",
+    "meaning": "v. 模拟，模仿",
+    "scene": "simul（相似）→ 做出一个相似的东西。想象飞行员在训练舱里模拟雨天飞行，虽然不是真下雨，但操作和真的一样，就是 simulate。",
+    "example": "The software can simulate real-world traffic conditions.",
+    "exampleCn": "该软件可以模拟真实交通状况。"
+  },
+  {
+    "word": "sole",
+    "phonetic": "/soʊl/",
+    "meaning": "adj. 唯一的，单独的",
+    "scene": "sol（单独）→ 只剩一个。想象一片沙滩上只有你一个人的脚印，那就是 sole。",
+    "example": "She was the sole survivor of the accident.",
+    "exampleCn": "她是那场事故唯一的幸存者。"
+  },
+  {
+    "word": "somewhat",
+    "phonetic": "/ˈsʌmwʌt/",
+    "meaning": "adv. 有点，稍微",
+    "scene": "some（一些）+ what（什么）→ 有一些，但不完全。想象汤的味道有点咸，但还能喝，就是 somewhat salty。",
+    "example": "The results were somewhat surprising.",
+    "exampleCn": "结果有点令人惊讶。"
+  },
+  {
+    "word": "sophisticated",
+    "phonetic": "/səˈfɪstɪkeɪtɪd/",
+    "meaning": "adj. 复杂的；老练的",
+    "scene": "sophist（智者）→ 像智者一样。想象一台设备功能多到说明书有几百页，就是 sophisticated。",
+    "example": "The lab uses sophisticated equipment for analysis.",
+    "exampleCn": "实验室使用精密的设备进行分析。"
+  },
+  {
+    "word": "specify",
+    "phonetic": "/ˈspesɪfaɪ/",
+    "meaning": "v. 明确说明，具体指定",
+    "scene": "spec（看）→ 看得清清楚楚地说出来。想象写实验步骤时不写“加一点盐”，而写“加 3 克盐”，这就是 specify。",
+    "example": "The contract specifies the exact delivery date.",
+    "exampleCn": "合同明确指定了交货日期。"
+  },
+  {
+    "word": "speculate",
+    "phonetic": "/ˈspekjuleɪt/",
+    "meaning": "v. 推测，猜测",
+    "scene": "spec（看）→ 站在远处看，看不清就猜。想象你看到远处有人影，猜是不是朋友，就是 speculate。",
+    "example": "Scientists speculate that the virus came from animals.",
+    "exampleCn": "科学家推测该病毒来自动物。"
+  },
+  {
+    "word": "stable",
+    "phonetic": "/ˈsteɪbl/",
+    "meaning": "adj. 稳定的，稳固的",
+    "scene": "st（站立）→ 站得住。想象一张三条腿一样长的桌子，怎么推都不晃，就是 stable。",
+    "example": "The patient's condition is now stable.",
+    "exampleCn": "病人情况现在稳定了。"
+  },
+  {
+    "word": "stagnant",
+    "phonetic": "/ˈstæɡnənt/",
+    "meaning": "adj. 停滞的，不流动的",
+    "scene": "stagn（池塘）→ 像一潭死水。想象池塘很久没下雨，水不流、发绿发臭，就是 stagnant。",
+    "example": "The economy remained stagnant for years.",
+    "exampleCn": "经济多年停滞不前。"
+  },
+  {
+    "word": "stimulate",
+    "phonetic": "/ˈstɪmjuleɪt/",
+    "meaning": "v. 刺激，激励",
+    "scene": "stimul（刺棒）→ 用刺棒轻轻捅一下。想象你困得不行，有人给你一杯浓咖啡，你一下子精神了，就是 stimulate。",
+    "example": "The policy aims to stimulate economic growth.",
+    "exampleCn": "该政策旨在刺激经济增长。"
+  },
+  {
+    "word": "subordinate",
+    "phonetic": "/səˈbɔːrdɪnət/",
+    "meaning": "adj. 次要的，从属的；n. 下属",
+    "scene": "sub-（下）+ ordin（顺序）→ 排在下面的。想象一篇文章里，主要论点最大，支持它的例子排在下面，就是 subordinate。",
+    "example": "He treated his subordinates with respect.",
+    "exampleCn": "他尊重他的下属。"
+  },
+  {
+    "word": "subsequent",
+    "phonetic": "/ˈsʌbsɪkwənt/",
+    "meaning": "adj. 随后的，后来的",
+    "scene": "sub-（下）+ sequ（跟随）→ 跟在下面的。想象第一波海浪过去，紧接着第二波跟上来，那就是 subsequent wave。",
+    "example": "Subsequent studies confirmed the initial findings.",
+    "exampleCn": "随后的研究证实了最初的发现。"
+  },
+  {
+    "word": "substitute",
+    "phonetic": "/ˈsʌbstɪtuːt/",
+    "meaning": "n. 替代品；v. 替代",
+    "scene": "sub-（下面）+ stitut（站立）→ 站在下面等上场。想象球赛替补席上坐着的人，主力一受伤他就站到场上去，他就是 substitute。",
+    "example": "You can substitute honey for sugar in this recipe.",
+    "exampleCn": "在这个食谱中你可以用蜂蜜代替糖。"
+  },
+  {
+    "word": "subtle",
+    "phonetic": "/ˈsʌtl/",
+    "meaning": "adj. 微妙的，细微的",
+    "scene": "sub-（下）+ tle（编织）→ 织得很细。想象两种颜色差别极小，不仔细看根本分不出，就是 subtle difference。",
+    "example": "There is a subtle difference between the two words.",
+    "exampleCn": "这两个词之间有微妙的差别。"
+  },
+  {
+    "word": "sufficient",
+    "phonetic": "/səˈfɪʃnt/",
+    "meaning": "adj. 足够的，充分的",
+    "scene": "suf-（下面）+ fic（做）→ 下面垫得够厚。想象你往箱子里塞泡沫，塞到怎么晃都不响，那就 sufficient 了。",
+    "example": "We do not have sufficient evidence to support the claim.",
+    "exampleCn": "我们没有足够的证据支持这一说法。"
+  },
+  {
+    "word": "summarize",
+    "phonetic": "/ˈsʌməraɪz/",
+    "meaning": "v. 总结，概括",
+    "scene": "summ（总数）→ 把一堆东西加成一个总数。想象读完一本书后用三句话说出大意，就是 summarize。",
+    "example": "Please summarize the main points of the article.",
+    "exampleCn": "请概括这篇文章的要点。"
+  },
+  {
+    "word": "supplement",
+    "phonetic": "/ˈsʌplɪment/",
+    "meaning": "n. 补充物；v. 补充",
+    "scene": "sup-（下）+ ple（填满）→ 在下面再填一点。想象主菜不够，你再加一份小菜，那份小菜就是 supplement。",
+    "example": "He takes vitamin supplements every day.",
+    "exampleCn": "他每天服用维生素补充剂。"
+  },
+  {
+    "word": "suppress",
+    "phonetic": "/səˈpres/",
+    "meaning": "v. 压制，抑制；镇压",
+    "scene": "sup-（下）+ press（压）→ 往下压。想象你打喷嚏时硬把它憋回去，就是 suppress。",
+    "example": "She could not suppress a smile.",
+    "exampleCn": "她忍不住笑了出来。"
+  },
+  {
+    "word": "surpass",
+    "phonetic": "/sərˈpæs/",
+    "meaning": "v. 超过，胜过",
+    "scene": "sur-（上）+ pass（通过）→ 从上面越过去。想象跑步时你从外道超过前面的人，就是 surpass。",
+    "example": "The results surpassed all our expectations.",
+    "exampleCn": "结果超出了我们所有的预期。"
+  },
+  {
+    "word": "suspend",
+    "phonetic": "/səˈspend/",
+    "meaning": "v. 暂停，中止；悬挂",
+    "scene": "sus-（下）+ pend（挂）→ 挂起来不动。想象一盏吊灯挂在空中，不上不下，就是 suspend。",
+    "example": "The game was suspended because of heavy rain.",
+    "exampleCn": "比赛因大雨暂停。"
+  },
+  {
+    "word": "sustain",
+    "phonetic": "/səˈsteɪn/",
+    "meaning": "v. 维持；承受",
+    "scene": "sus-（下面）+ tain（拿住）→ 在下面托住。想象你用手托住一摞书，不让它倒，托住的动作就是 sustain。",
+    "example": "The economy cannot sustain such rapid growth forever.",
+    "exampleCn": "经济无法永远维持如此快速的增长。"
+  },
+  {
+    "word": "tackle",
+    "phonetic": "/ˈtækl/",
+    "meaning": "v. 处理，应对；n. 用具",
+    "scene": "想象球赛中对方带球冲过来，你正面迎上去把他拦住，就是 tackle。问题来了也一样，正面迎上去处理。",
+    "example": "We need to tackle this problem together.",
+    "exampleCn": "我们需要一起处理这个问题。"
+  },
+  {
+    "word": "temporary",
+    "phonetic": "/ˈtempəreri/",
+    "meaning": "adj. 暂时的，临时的",
+    "scene": "tempor（时间）→ 只占一小段时间。想象你出门旅行住的那间房，住几天就走，就是 temporary。",
+    "example": "This is only a temporary solution.",
+    "exampleCn": "这只是一个临时的解决办法。"
+  },
+  {
+    "word": "tendency",
+    "phonetic": "/ˈtendənsi/",
+    "meaning": "n. 倾向，趋势",
+    "scene": "tend（伸向）→ 总往某个方向伸。想象一棵树总朝阳光那边长，那就是它的 tendency。",
+    "example": "He has a tendency to interrupt others.",
+    "exampleCn": "他有打断别人的倾向。"
+  },
+  {
+    "word": "terminate",
+    "phonetic": "/ˈtɜːrmɪneɪt/",
+    "meaning": "v. 终止，结束",
+    "scene": "termin（界限）→ 走到边界就停。想象一条路走到头，前面是悬崖，你不得不停下来，就是 terminate。",
+    "example": "The contract was terminated due to a breach.",
+    "exampleCn": "合同因违约而被终止。"
+  },
+  {
+    "word": "thorough",
+    "phonetic": "/ˈθɜːroʊ/",
+    "meaning": "adj. 彻底的，详尽的",
+    "scene": "through（穿过）→ 从头穿到尾。想象打扫房间时不放过任何一个角落，连床底都擦到，就是 thorough。",
+    "example": "The police conducted a thorough investigation.",
+    "exampleCn": "警方进行了彻底的调查。"
+  },
+  {
+    "word": "transform",
+    "phonetic": "/trænsˈfɔːrm/",
+    "meaning": "v. 转变，改变",
+    "scene": "trans-（越过）+ form（形状）→ 越过原来的形状。想象毛毛虫变成蝴蝶，形状完全不一样了，就是 transform。",
+    "example": "The internet has transformed the way we learn.",
+    "exampleCn": "互联网改变了我们学习的方式。"
+  },
+  {
+    "word": "transmit",
+    "phonetic": "/trænsˈmɪt/",
+    "meaning": "v. 传输，传递；传染",
+    "scene": "trans-（越过）+ mit（送）→ 送过去。想象电台把声音变成信号发到空中，你打开收音机就收到，就是 transmit。",
+    "example": "The disease can be transmitted through the air.",
+    "exampleCn": "这种疾病可以通过空气传播。"
+  },
+  {
+    "word": "undergo",
+    "phonetic": "/ˌʌndərˈɡoʊ/",
+    "meaning": "v. 经历，经受",
+    "scene": "under（下面）+ go（走）→ 从下面走过去。想象你钻过一段低矮的隧道，出来时身上还带着灰，那就是 undergo。",
+    "example": "The city has undergone dramatic changes in ten years.",
+    "exampleCn": "这座城市在十年间经历了巨大变化。"
+  },
+  {
+    "word": "undertake",
+    "phonetic": "/ˌʌndərˈteɪk/",
+    "meaning": "v. 承担，着手做",
+    "scene": "under（下面）+ take（拿）→ 把任务拿到自己手里。想象你接过一份厚厚的项目书，说“我来”，就是 undertake。",
+    "example": "She undertook the task of organizing the conference.",
+    "exampleCn": "她承担了组织会议的任务。"
+  },
+  {
+    "word": "utilize",
+    "phonetic": "/ˈjuːtəlaɪz/",
+    "meaning": "v. 利用，使用",
+    "scene": "util（有用）→ 让东西变得有用。想象把旧瓶子剪开当笔筒，瓶子还是瓶子，但被你 utilize 了。",
+    "example": "We should utilize existing resources more efficiently.",
+    "exampleCn": "我们应该更有效地利用现有资源。"
+  },
+  {
+    "word": "vague",
+    "phonetic": "/veɪɡ/",
+    "meaning": "adj. 模糊的，含糊的",
+    "scene": "vag（漫游）→ 像雾里看花，轮廓飘忽不定。想象你回忆一个很久以前的梦，只剩一个模糊影子，就是 vague。",
+    "example": "He gave a vague answer to my question.",
+    "exampleCn": "他对我的问题给了个含糊的回答。"
+  },
+  {
+    "word": "valid",
+    "phonetic": "/ˈvælɪd/",
+    "meaning": "adj. 有效的；合理的",
+    "scene": "val（价值）→ 有分量、站得住。想象一张门票没过期、能进场，它就是 valid。",
+    "example": "The results are valid only under certain conditions.",
+    "exampleCn": "这些结果只在特定条件下有效。"
+  },
+  {
+    "word": "vanish",
+    "phonetic": "/ˈvænɪʃ/",
+    "meaning": "v. 消失，突然不见",
+    "scene": "van（空）+ ish → 变成空的。想象魔术师一挥手，桌上的硬币不见了，就是 vanish。",
+    "example": "The fog vanished as the sun rose.",
+    "exampleCn": "太阳升起时雾散了。"
+  },
+  {
+    "word": "vary",
+    "phonetic": "/ˈveri/",
+    "meaning": "v. 变化，不同",
+    "scene": "var（不同）→ 变得不一样。想象同一件衣服在不同灯光下颜色看起来不同，就是颜色 vary。",
+    "example": "Prices vary widely from store to store.",
+    "exampleCn": "各商店价格差别很大。"
+  },
+  {
+    "word": "vehicle",
+    "phonetic": "/ˈviːəkl/",
+    "meaning": "n. 车辆；工具，媒介",
+    "scene": "veh（运送）→ 用来运送的东西。想象一辆公交车把一车人从 A 送到 B，它就是 vehicle。语言也是思想的 vehicle。",
+    "example": "Language is a vehicle for expressing ideas.",
+    "exampleCn": "语言是表达思想的工具。"
+  },
+  {
+    "word": "verify",
+    "phonetic": "/ˈverɪfaɪ/",
+    "meaning": "v. 核实，证实",
+    "scene": "ver（真）→ 让它变成真的、确定的。想象你收到中奖短信，先打电话去官方确认，就是 verify。",
+    "example": "Please verify the accuracy of the data before publishing.",
+    "exampleCn": "发表前请核实数据的准确性。"
+  },
+  {
+    "word": "versatile",
+    "phonetic": "/ˈvɜːrsətl/",
+    "meaning": "adj. 多才多艺的；多用途的",
+    "scene": "vers（转）→ 能往多个方向转。想象一把瑞士军刀，能开瓶、能剪绳、能拧螺丝，就是 versatile。",
+    "example": "She is a versatile writer who can handle many topics.",
+    "exampleCn": "她是一位多才多艺的作家，能驾驭多种题材。"
+  },
+  {
+    "word": "viable",
+    "phonetic": "/ˈvaɪəbl/",
+    "meaning": "adj. 可行的，能存活的",
+    "scene": "vi（路）+ able（能）→ 有路可走。想象一个方案推演到最后，发现每一步都走得通，就是 viable。",
+    "example": "We need to find a viable solution to the problem.",
+    "exampleCn": "我们需要找到这个问题的可行解决方案。"
+  },
+  {
+    "word": "vigorous",
+    "phonetic": "/ˈvɪɡərəs/",
+    "meaning": "adj. 有力的，精力充沛的",
+    "scene": "vig（活力）→ 活力满满。想象一个人早上跑步，步伐大而有力，呼吸均匀，就是 vigorous。",
+    "example": "The proposal met with vigorous opposition.",
+    "exampleCn": "该提议遭到强烈反对。"
+  },
+  {
+    "word": "virtually",
+    "phonetic": "/ˈvɜːrtʃuəli/",
+    "meaning": "adv. 几乎，实际上",
+    "scene": "virtual（实质上的）→ 和真的差不多。想象网上开会，虽然人不在同一间房，但效果几乎和面对面一样，就是 virtually。",
+    "example": "The two designs are virtually identical.",
+    "exampleCn": "这两个设计几乎完全相同。"
+  },
+  {
+    "word": "vital",
+    "phonetic": "/ˈvaɪtl/",
+    "meaning": "adj. 至关重要的；生命的",
+    "scene": "vit（生命）→ 和命一样重要。想象心脏停跳几秒，全身都会出问题，它就是 vital organ。",
+    "example": "It is vital that we protect the environment.",
+    "exampleCn": "保护环境至关重要。"
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbl/",
+    "meaning": "adj. 脆弱的，易受伤害的",
+    "scene": "vulner（伤口）→ 容易受伤的。想象刚孵出的小鸟，一阵风就能把它吹落，就是 vulnerable。",
+    "example": "Young children are especially vulnerable to the disease.",
+    "exampleCn": "幼儿尤其容易感染这种疾病。"
+  },
+  {
+    "word": "withstand",
+    "phonetic": "/wɪðˈstænd/",
+    "meaning": "v. 承受，抵挡",
+    "scene": "with（对抗）+ stand（站立）→ 顶着站住。想象一棵大树在狂风中站住不倒，就是 withstand the storm。",
+    "example": "The bridge can withstand strong earthquakes.",
+    "exampleCn": "这座桥能经受强烈地震。"
+  },
+  {
+    "word": "yield",
+    "phonetic": "/jiːld/",
+    "meaning": "v. 产生，出产；屈服；n. 产量",
+    "scene": "想象一块田，种子种下去，秋天长出一片麦子——那块田 yield 了麦子。压力太大时，人也会 yield，让步。",
+    "example": "The experiment yielded surprising results.",
+    "exampleCn": "该实验产生了令人惊讶的结果。"
+  }
+]
